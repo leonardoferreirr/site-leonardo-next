@@ -406,8 +406,16 @@
     }
 
     @media (max-width: 768px) {
+        .ds-hero {
+            min-height: 85vh;
+        }
+
         .ds-container {
             padding: 80px 24px !important;
+        }
+
+        #projetos.ds-container {
+            padding-top: 24px !important;
         }
 
         .ds-section-title {
