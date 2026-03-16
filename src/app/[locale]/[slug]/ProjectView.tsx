@@ -32,7 +32,7 @@ export default function ProjectView({ project, ctaText }: { project: any, ctaTex
       </div>
 
       {/* Defesa do Projeto / Case Study */}
-      <div ref={setRef(1)} className="ds-grid ds-grid-2 fade-in-up delay-2" style={{ marginBottom: '32px', maxWidth: '1200px', margin: '0 auto', padding: '0 40px' }}>
+      <div ref={setRef(1)} className="ds-grid ds-grid-2 fade-in-up delay-2" style={{ maxWidth: '1200px', margin: '0 auto 32px auto', padding: '0 40px' }}>
         <div className="ds-glass-card">
           <h3 className="ds-h3 ds-text-stroke">{t('the_challenge')}</h3>
           <p className="ds-body" style={{ marginBottom: '32px' }}>
