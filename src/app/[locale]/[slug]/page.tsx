@@ -3,10 +3,22 @@ import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
 import ProjectView from './ProjectView';
 
+import { routing } from '@/routing'; // Import routing config
+
 export async function generateStaticParams() {
-  return projectsData.map((project) => ({
-    slug: project.slug,
-  }));
+  const params: { locale: string, slug: string }[] = [];
+  
+  // For each project, generate a static param pair for each supported locale
+  projectsData.forEach((project) => {
+    routing.locales.forEach((locale) => {
+      params.push({
+        locale: locale,
+        slug: project.slug,
+      });
+    });
+  });
+
+  return params;
 }
 
 export default async function ProjectPage(props: { params: Promise<{ slug: string, locale: string }> }) {

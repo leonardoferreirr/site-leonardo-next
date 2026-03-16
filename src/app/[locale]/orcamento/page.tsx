@@ -14,7 +14,7 @@ export default function OrcamentoPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const formData = new FormData(e.currentTarget);
     const data = {
       name: formData.get('name'),
@@ -172,12 +172,12 @@ export default function OrcamentoPage() {
             </div>
 
             <div className="fade-in-up delay-2" ref={setRef(3)}>
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting || submitted}
-                className="ds-btn ds-btn-primary" 
-                style={{ 
-                  width: '100%', border: 'none', outline: 'none', padding: '20px', 
+                className="ds-btn ds-btn-primary"
+                style={{
+                  width: '100%', border: 'none', outline: 'none', padding: '20px',
                   fontSize: '1rem', cursor: isSubmitting || submitted ? 'not-allowed' : 'pointer',
                   opacity: isSubmitting || submitted ? 0.7 : 1
                 }}

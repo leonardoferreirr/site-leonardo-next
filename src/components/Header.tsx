@@ -67,7 +67,7 @@ export default function Header() {
           }}
         >
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             style={{

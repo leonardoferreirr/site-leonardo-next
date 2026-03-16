@@ -116,9 +116,9 @@ export default function Home() {
       <section className="ds-container" id="contato">
         <div className="ds-grid ds-grid-2" style={{ alignItems: 'center' }}>
           <div className="fade-in-up" ref={setRef(19)}>
-             <div style={{ width: '100%', aspectRatio: '1/1', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--ds-shadow-light)' }}>
-                <img src="/assets/metal-rock.png" alt="CTA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-             </div>
+            <div style={{ width: '100%', aspectRatio: '1/1', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--ds-shadow-light)' }}>
+              <img src="/assets/metal-rock.png" alt="CTA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
           </div>
           <div className="fade-in-up delay-1" ref={setRef(20)} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }}>
             <h2 className="ds-h2 ds-text-stroke" style={{ marginBottom: '24px' }} dangerouslySetInnerHTML={{ __html: tCTA('title') }} />
