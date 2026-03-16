@@ -1,0 +1,192 @@
+{
+  "Header": {
+    "projects": "Portafolio",
+    "methodology": "Proceso",
+    "about": "Sobre",
+    "deliverables": "Entregables",
+    "contact": "Presupuesto"
+  },
+  "Hero": {
+    "title1": "Construimos marcas",
+    "title_stroke1": "fuertes",
+    "title2": "y",
+    "title_stroke2": "memorables",
+    "title3": "a través de diseño y estrategia.",
+    "cta_button": "Solicite una propuesta"
+  },
+  "Projects": {
+    "tag": "Portafolio",
+    "title": "Trabajos Seleccionados"
+  },
+  "CaseStudy": {
+    "case_study": "Estudio de Caso",
+    "the_challenge": "El Desafío",
+    "the_solution": "La Solución",
+    "client": "Cliente",
+    "services": "Servicios Ejecutados",
+    "year": "Año",
+    "back_portfolio": "Volver al Portafolio"
+  },
+  "Methodology": {
+    "tag": "Proceso",
+    "title": "La Metodología",
+    "steps": [
+      {
+        "title": "01. Inmersión y Análisis",
+        "desc": "Nos sumergimos en su negocio para alinear expectativas, mapear desafíos y definir los objetivos centrales de la marca."
+      },
+      {
+        "title": "02. Estrategia de Marca",
+        "desc": "Definimos el ADN del proyecto. Analizamos el propósito, el público objetivo y el posicionamiento en el mercado para crear una base sólida."
+      },
+      {
+        "title": "03. Dirección Visual",
+        "desc": "Traducimos la estrategia en estética. Creamos paneles semánticos (moodboards) con referencias del mercado para definir la atmósfera de la marca."
+      },
+      {
+        "title": "04. Diseño de Logotipo",
+        "desc": "Donde la esencia toma forma. Desarrollamos el símbolo, la tipografía y los colores basados en conceptos funcionales y llamativos."
+      },
+      {
+        "title": "05. Sistema de Identidad Visual",
+        "desc": "Expandimos la marca. Creamos gráficos, patrones, texturas y definimos el comportamiento visual en todos los puntos de contacto."
+      },
+      {
+        "title": "06. Presentación Estratégica",
+        "desc": "Revelamos el resultado. En una videollamada detallada, presentamos el proyecto aplicado en escenarios reales para su validación completa."
+      },
+      {
+        "title": "07. Entrega Final",
+        "desc": "Todo listo para el mundo. Preparamos y enviamos todos los archivos y directrices necesarios para la aplicación impecable de su nueva marca en el mercado."
+      }
+    ]
+  },
+  "About": {
+    "name": "Leonardo Ferreira",
+    "p1": "¡Hola! Mucho gusto, mi nombre es Leonardo, especialista en diseño estratégico y construcción de marcas.",
+    "p2": "Con más de 5 años de experiencia en el mercado creativo, me dedico a traducir la verdadera esencia de las empresas en identidades visuales de alto impacto. Mi pasión es transformar lo complejo en algo único, asegurando que la comunicación de su empresa sea inolvidable.",
+    "p3": "El diseño va mucho más allá de la estética. Trabajamos con una metodología sólida y orientada a resultados, garantizando que cada proyecto sea visualmente sofisticado, funcional y posicionado estratégicamente en el mercado.",
+    "quote": "\"La simplicidad consiste en restar lo obvio y añadir lo significativo.\" – John Maeda"
+  },
+  "Deliverables": {
+    "tag": "Entregables",
+    "title": "Lo que usted recibe",
+    "items": [
+      {
+        "title": "Logotipo Completo",
+        "desc": "Archivos flexibles y organizados (PDF, PNG, SVG, EPS) en RGB para medios digitales y CMYK para impresión, incluyendo códigos Pantone."
+      },
+      {
+        "title": "Ecosistema Visual",
+        "desc": "Todos los elementos de apoyo que hacen única a la identidad: gráficos, texturas, patrones, tipografía secundaria y paleta de colores técnica."
+      },
+      {
+        "title": "Creación de Prototipos y Mockups",
+        "desc": "Visualización de su marca en el mundo real. Aplicaciones en materiales publicitarios, piezas digitales, uniformes y papelería, definidos en el briefing."
+      },
+      {
+        "title": "Manual de Marca",
+        "desc": "La guía definitiva de su marca (Brandbook). Un documento detallado que estandariza el uso correcto de todos los elementos visuales para asegurar la consistencia en cualquier aplicación."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "¿Listo para llevar su empresa<br/>al siguiente nivel?",
+    "desc": "Complete la solicitud para que podamos entender mejor los objetivos y desafíos del proyecto, y luego programemos una conversación para alinear todas las expectativas. Si prefiere, siéntase libre de enviar un correo electrónico a:",
+    "button": "Solicite una propuesta"
+  },
+  "Footer": {
+    "instagram": "INSTAGRAM",
+    "linkedin": "LINKEDIN"
+  },
+  "ProjectsData": {
+    "projeto-mademax": {
+      "description": "MADEMAX es un fabricante de tejas de chapa de acero y tejas termoacústicas.",
+      "challenge": "El club MADEMAX establece un nuevo estándar para el tiro deportivo en Brasil, combinando el respeto por las tradiciones del deporte con una infraestructura de alto rendimiento y sofisticación táctica.",
+      "solution": "La identidad visual fue concebida para proyectar precisión absoluta y exclusividad, utilizando un símbolo central que recuerda a una mira y la convergencia de valores tradicionales. A través de una paleta que combina el azul profundo de la autoridad con el naranja táctico de la energía y precisión, la marca comunica seguridad, rigor técnico y prestigio. El diseño posiciona a MADEMAX no solo como un club de tiro, sino como un sello de excelencia para quienes buscan el dominio técnico en un entorno de absoluta confianza y herencia deportiva.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-biothera": {
+      "description": "Biothera opera en el segmento de salud y estética enfocada en lo natural.",
+      "challenge": "Especializada en soluciones biológicas para el agro-negocio, Biothera une la fuerza de la naturaleza con la eficiencia de la gestión sustentable.",
+      "solution": "El logotipo fusiona el símbolo de 'energía/poder' con elementos botánicos, simbolizando la activación de la vida y la productividad en el campo. La identidad visual comunica equilibrio e innovación biológica, estableciendo a Biothera como una referencia en sostenibilidad y tecnología agrícola.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-divinocar": {
+      "description": "Divino Car opera en el sector automotriz.",
+      "challenge": "Divino Car redefine el concepto de taller automotriz, elevando la confianza y la atención personalizada al estatus de diferenciador de marca.",
+      "solution": "La identidad visual utiliza una estética deportiva y tipografía dinámica para transmitir velocidad y excelencia técnica, mientras que la paleta de colores aporta una energía moderna y acogedora. El resultado es una marca fuerte que rompe con los clichés de la industria, centrándose en la experiencia y la seguridad del cliente.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-proconsult": {
+      "description": "ProConsult opera en la gestión de obras y consultoría.",
+      "challenge": "ProConsult nació para transformar la realidad operativa de las PYMEs, estructurando procesos que reducen la dependencia directa del fundador y devuelven claridad al negocio.",
+      "solution": "La identidad visual fue diseñada para transmitir solidez y fluidez, utilizando una paleta de tonos sobrios y un símbolo que remite a la conexión y la continuidad. El resultado es una marca que proyecta autoridad y previsibilidad, esencial para una consultoría que promete organización y libertad estratégica a sus clientes.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-hellobim": {
+      "description": "Hello BIM opera en el área de arquitectura y compatibilización.",
+      "challenge": "Hello BIM surgió para democratizar la enseñanza de la metodología BIM, transformando un proceso técnico complejo en algo práctico y accesible.",
+      "solution": "El diseño de la marca es modular y arquitectónico, reflejando la esencia misma de la construcción digital. A través de una comunicación visual vibrante y tipografía en bloques, la marca se posiciona como la puerta de entrada para los profesionales que buscan el dominio tecnológico en la arquitectura moderna.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-raxseguros": {
+      "description": "RAX opera con seguros y protección patrimonial.",
+      "challenge": "Como corredora enfocada en el sector corporativo y flotas de gran escala, RAX Seguros requiere una imagen de protección absoluta y escala.",
+      "solution": "La identidad visual utiliza un ícono de escudo geométrico y colores de alto contraste para transmitir vigilancia y precisión. El rebranding refuerza la capacidad de RAX para ofrecer soluciones a medida para grandes corporaciones, transformando la gestión de riesgos en un proceso estratégico y seguro.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-polysantos": {
+      "description": "Marca personal fotográfica y creativa.",
+      "challenge": "La oficina de Poly Santos se especializa en arquitectura modular, donde la estética atemporal se encuentra con la eficiencia constructiva.",
+      "solution": "La identidad visual se basó en líneas minimalistas que forman una estructura sólida, simbolizando la unión entre el diseño de lujo y la funcionalidad. La marca comunica sofisticación y precisión, reflejando la misión de la oficina de realizar sueños a través de proyectos inteligentes e innovadores.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-ecomove": {
+      "description": "Ecomove es una startup enfocada en movilidad eléctrica y sostenibilidad.",
+      "challenge": "ecomove surge para liderar la revolución de la movilidad urbana sostenible, ofreciendo monopatines y bicicletas eléctricas que redefinen el movimiento en las ciudades, haciéndolo limpio, eficiente e inclusivo.",
+      "solution": "La identidad visual fue diseñada para transmitir energía táctil y fluidez consciente, utilizando una paleta de colores única que combina el verde sostenible con el morado y azul cielo de la innovación. El símbolo central es un emblema 'eM' que fusiona orgánicamente la forma de un corazón con el trazo de un arco eléctrico, simbolizando el cuidado por el planeta y la activación de la vida urbana.",
+      "services": "Identidad Visual y Branding"
+    },
+    "projeto-remachcapital": {
+      "description": "Remach Capital opera en asesoramiento financiero y M&A.",
+      "challenge": "Remach Capital opera en el sector de protección financiera y seguros, donde la confianza y la ética son pilares fundamentales.",
+      "solution": "La identidad se desarrolló para traducir claridad y seguridad, utilizando formas geométricas robustas y una paleta azul tecnológica que comunica seriedad y seguimiento real. El diseño posiciona a Remach como una marca consultiva y accesible, capaz de simplificar decisiones complejas para sus clientes.",
+      "services": "Identidad Visual y Branding"
+    }
+  },
+  "Form": {
+    "back_home": "Volver al Inicio",
+    "title": "Formulario de Propuesta de Inversión",
+    "subtitle": "Este formulario es el primer paso para comprender mejor los desafíos y objetivos del proyecto, ¿vamos?",
+    "contact_info": "Datos de Contacto",
+    "full_name": "¿Cuál es tu nombre completo?",
+    "type_here": "Escribe aquí...",
+    "email": "Ingresa tu mejor correo",
+    "whatsapp": "WhatsApp (opcional)",
+    "instagram": "Instagram de la empresa (si hay)",
+    "company_data": "Datos de la empresa",
+    "company_name": "¿Nombre de tu empresa?",
+    "employees": "¿Cuántos empleados tiene actualmente su empresa?",
+    "select_option": "Selecciona una opción",
+    "emp_1_5": "1 a 5 empleados",
+    "emp_6_20": "6 a 20 empleados",
+    "emp_21_50": "21 a 50 empleados",
+    "emp_50_plus": "Más de 50 empleados",
+    "products": "¿Qué productos o servicios ofreces?",
+    "final_info": "Información Final",
+    "how_found": "¿Cómo nos encontraste?",
+    "ref_instagram": "Instagram",
+    "ref_linkedin": "LinkedIn",
+    "ref_google": "Google",
+    "ref_referral": "Indicación",
+    "ref_other": "Otros",
+    "revenue": "¿Cuál es la facturación mensual de su empresa?",
+    "rev_10k": "Hasta $10.000",
+    "rev_50k": "De $10.000 a $50.000",
+    "rev_100k": "De $50.000 a $100.000",
+    "rev_100k_plus": "Más de $100.000",
+    "message": "Cuéntanos sobre tu empresa y tus principales desafíos hoy",
+    "submit": "Enviar"
+  }
+}

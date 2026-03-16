@@ -1,0 +1,192 @@
+{
+  "Header": {
+    "projects": "Portfolio",
+    "methodology": "Process",
+    "about": "About",
+    "deliverables": "Deliverables",
+    "contact": "Budget"
+  },
+  "Hero": {
+    "title1": "We build",
+    "title_stroke1": "strong",
+    "title2": "and",
+    "title_stroke2": "memorable",
+    "title3": "brands through design and strategy.",
+    "cta_button": "Request a proposal"
+  },
+  "Projects": {
+    "tag": "Portfolio",
+    "title": "Selected Works"
+  },
+  "CaseStudy": {
+    "case_study": "Case Study",
+    "the_challenge": "The Challenge",
+    "the_solution": "The Solution",
+    "client": "Client",
+    "services": "Executed Services",
+    "year": "Year",
+    "back_portfolio": "Back to Portfolio"
+  },
+  "Methodology": {
+    "tag": "Process",
+    "title": "The Methodology",
+    "steps": [
+      {
+        "title": "01. Immersion and Analysis",
+        "desc": "We dive into your business to align expectations, map challenges, and define core brand goals."
+      },
+      {
+        "title": "02. Brand Strategy",
+        "desc": "We define the project DNA. We analyze purpose, target audience, and market positioning to build a solid foundation."
+      },
+      {
+        "title": "03. Visual Direction",
+        "desc": "Translating strategy into aesthetics. We create semantic boards (moodboards) with market references to shape the brand's atmosphere."
+      },
+      {
+        "title": "04. Logo Design",
+        "desc": "Where essence takes form. We develop the symbol, typography, and colors based on functional and striking concepts."
+      },
+      {
+        "title": "05. Visual Identity System",
+        "desc": "We expand the brand. We create graphics, patterns, textures, and define visual behavior across all touchpoints."
+      },
+      {
+        "title": "06. Strategic Presentation",
+        "desc": "Revealing the outcome. In a detailed video call, we present the project applied in real-life scenarios for your complete validation."
+      },
+      {
+        "title": "07. Final Delivery",
+        "desc": "Ready for the world. We prepare and send all necessary files and guidelines for flawless execution of your new brand in the market."
+      }
+    ]
+  },
+  "About": {
+    "name": "Leonardo Ferreira",
+    "p1": "Hello! Nice to meet you, my name is Leonardo, a specialist in strategic design and brand building.",
+    "p2": "With over 5 years of experience in the creative market, I am dedicated to translating the true essence of companies into high-impact visual identities. My passion is turning complexity into something unique, ensuring your company's communication is unforgettable.",
+    "p3": "Design goes far beyond aesthetics. We work with a solid, results-driven methodology, ensuring that every project is visually sophisticated, functional, and strategically positioned in the market.",
+    "quote": "\"Simplicity is subtracting the obvious and adding the meaningful.\" – John Maeda"
+  },
+  "Deliverables": {
+    "tag": "Deliverables",
+    "title": "What you receive",
+    "items": [
+      {
+        "title": "Complete Logo",
+        "desc": "Flexible and organized files (PDF, PNG, SVG, EPS) in RGB for digital use and CMYK for printing, including Pantone codes."
+      },
+      {
+        "title": "Visual Ecosystem",
+        "desc": "All supporting elements that make the identity unique: graphics, textures, patterns, secondary typography, and technical color palette."
+      },
+      {
+        "title": "Prototyping and Mockups",
+        "desc": "Visualization of your brand in the real world. Applications on advertising materials, digital assets, uniforms, and stationery, as defined in the briefing."
+      },
+      {
+        "title": "Brand Guidelines",
+        "desc": "The ultimate guide to your brand (Brandbook). A detailed document standardizing the correct use of all visual elements to ensure consistency across any application."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Ready to take your company<br/>to the next level?",
+    "desc": "Fill out the request so we can better understand the project's goals and challenges, and then schedule a conversation to align all expectations. If you prefer, feel free to send an email to:",
+    "button": "Request a proposal"
+  },
+  "Footer": {
+    "instagram": "INSTAGRAM",
+    "linkedin": "LINKEDIN"
+  },
+  "ProjectsData": {
+    "projeto-mademax": {
+      "description": "MADEMAX is a manufacturer of steel sheet tiles and thermoacoustic tiles.",
+      "challenge": "The MADEMAX club sets a new standard for sport shooting in Brazil, combining respect for the sport's traditions with high-performance infrastructure and tactical sophistication.",
+      "solution": "The visual identity was designed to project absolute precision and exclusivity, using a central symbol that resembles a crosshair and the convergence of traditional values. Through a palette combining deep authority blue with tactical precision orange, the brand communicates security, technical rigor, and prestige. The design positions MADEMAX not just as a shooting club, but as a seal of excellence for those seeking technical mastery in an environment of absolute trust and sporting heritage.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-biothera": {
+      "description": "Biothera operates in the natural health and aesthetics segment.",
+      "challenge": "Specializing in biological solutions for agribusiness, Biothera combines the power of nature with the efficiency of sustainable management.",
+      "solution": "The logo merges the symbol of 'energy/power' with botanical elements, symbolizing the activation of life and productivity in the field. The visual identity communicates balance and biological innovation, establishing Biothera as a benchmark in sustainability and agricultural technology.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-divinocar": {
+      "description": "Divino Car operates in the automotive sector.",
+      "challenge": "Divino Car redefines the concept of an automotive workshop, elevating trust and personalized care to the status of a brand differentiator.",
+      "solution": "The visual identity uses a sporty aesthetic and dynamic typography to convey speed and technical excellence, while the color palette brings a modern and welcoming energy. The result is a strong brand that breaks away from industry clichés, focusing on the customer's experience and safety.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-proconsult": {
+      "description": "ProConsult operates in construction management and consulting.",
+      "challenge": "ProConsult was born to transform the operational reality of SMEs, structuring processes that reduce direct dependence on the founder and restore clarity to the business.",
+      "solution": "The visual identity was designed to convey solidity and fluidity, using a palette of sober tones and a symbol that refers to connection and continuity. The result is a brand that projects authority and predictability, essential for a consultancy that promises organization and strategic freedom to its clients.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-hellobim": {
+      "description": "Hello BIM operates in the architecture and compatibilization area.",
+      "challenge": "Hello BIM emerged to democratize the teaching of the BIM methodology, transforming a complex technical process into something practical and accessible.",
+      "solution": "The brand's design is modular and architectural, reflecting the very essence of digital construction. Through vibrant visual communication and block typography, the brand positions itself as the gateway for professionals seeking technological mastery in modern architecture.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-raxseguros": {
+      "description": "RAX operates with insurance and heritage protection.",
+      "challenge": "As a brokerage focused on the corporate sector and large-scale fleets, RAX Seguros requires an image of absolute protection and scale.",
+      "solution": "The visual identity uses a geometric shield icon and high-contrast colors to convey vigilance and precision. The rebranding reinforces RAX's capacity to offer tailored solutions for large corporations, transforming risk management into a strategic and secure process.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-polysantos": {
+      "description": "Personal photographic and creative brand.",
+      "challenge": "The Poly Santos office specializes in modular architecture, where timeless aesthetics meet constructive efficiency.",
+      "solution": "The visual identity was built on minimalist lines that form a solid structure, symbolizing the union between luxury design and functionality. The brand communicates sophistication and precision, reflecting the office's mission to realize dreams through intelligent and innovative projects.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-ecomove": {
+      "description": "Ecomove is a startup focused on electric mobility and sustainability.",
+      "challenge": "ecomove emerges to lead the revolution of sustainable urban mobility, offering electric scooters and bicycles that redefine movement in cities, making it clean, efficient, and inclusive.",
+      "solution": "The visual identity was designed to convey tactile energy and conscious fluidity, using a unique color palette combining sustainability green with innovative purple and sky blue. The central symbol is an 'eM' emblem organically fusing the shape of a heart with the stroke of an electric arc, symbolizing care for the planet and the activation of urban life.",
+      "services": "Visual Identity and Branding"
+    },
+    "projeto-remachcapital": {
+      "description": "Remach Capital operates in financial advisory and M&A.",
+      "challenge": "Remach Capital operates in the financial protection and insurance sector, where trust and ethics are fundamental pillars.",
+      "solution": "The identity was developed to translate clarity and security, using robust geometric shapes and a technological blue palette that communicates seriousness and real tracking. The design positions Remach as a consultative and approachable brand, capable of simplifying complex decisions for its clients.",
+      "services": "Visual Identity and Branding"
+    }
+  },
+  "Form": {
+    "back_home": "Back to Home",
+    "title": "Investment Proposal Form",
+    "subtitle": "This form is the first step to better understand the project's challenges and goals. Let's go?",
+    "contact_info": "Contact Information",
+    "full_name": "What is your full name?",
+    "type_here": "Type here...",
+    "email": "Provide your best email",
+    "whatsapp": "WhatsApp (optional)",
+    "instagram": "Company Instagram (if applicable)",
+    "company_data": "Company Data",
+    "company_name": "Company name?",
+    "employees": "How many employees does your company currently have?",
+    "select_option": "Select an option",
+    "emp_1_5": "1 to 5 employees",
+    "emp_6_20": "6 to 20 employees",
+    "emp_21_50": "21 to 50 employees",
+    "emp_50_plus": "50+ employees",
+    "products": "What products or services do you offer?",
+    "final_info": "Final Information",
+    "how_found": "How did you find us?",
+    "ref_instagram": "Instagram",
+    "ref_linkedin": "LinkedIn",
+    "ref_google": "Google",
+    "ref_referral": "Referral",
+    "ref_other": "Other",
+    "revenue": "What is your company's monthly revenue?",
+    "rev_10k": "Up to $10,000",
+    "rev_50k": "$10,000 to $50,000",
+    "rev_100k": "$50,000 to $100,000",
+    "rev_100k_plus": "Above $100,000",
+    "message": "Tell us about your company and your main challenges today",
+    "submit": "Send"
+  }
+}

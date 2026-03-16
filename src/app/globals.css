@@ -1,26 +1,724 @@
-@import "tailwindcss";
+    
+        /* =========================================================================
+           1. CORE VARIABLES & THEME SETUP (Design System Base)
+           ========================================================================= */
+        :root {
+            --font-primary: "Helvetica Neue", "Arial", sans-serif;
+            --font-secondary: "Inter", sans-serif;
+            --font-monospace: "Courier New", monospace;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+            --ds-bg-color: #000000;
+            --ds-text-primary: #e0e0e0;
+            --ds-text-secondary: #ababab;
+            --ds-accent-primary: #FFFFFF;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+            --ds-glass-bg: rgba(255, 255, 255, 0.03);
+            --ds-glass-border: rgba(255, 255, 255, 0.15);
+            --ds-glass-hover: rgba(255, 255, 255, 0.08);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+            --ds-shadow-light: 0 4px 24px rgba(0, 0, 0, 0.5);
+            --ds-glow-subtle: 0 0 40px rgba(255, 255, 255, 0.05);
+            --ds-glow-strong: 0 0 20px rgba(255, 255, 255, 0.2);
+            --ds-glass-inner: 0 1px 0 rgba(255, 255, 255, 0.35) inset;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+            --speed-fast: 0.2s;
+            --speed-normal: 0.4s;
+            --speed-slow: 0.8s;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--ds-bg-color);
+            color: var(--ds-text-primary);
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            width: 6px;
+            background: #FFFFFF;
+            border: 4px solid #000000;
+            border-radius: 100px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            border: 4px solid #FFFFFF;
+            background: #000000;
+        }
+
+
+
+        /* =========================================================================
+           3. TYPOGRAPHY
+           ========================================================================= */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-primary);
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .ds-text-stroke {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+        }
+
+        .ds-text-stroke:hover {
+            color: var(--ds-text-primary);
+            -webkit-text-stroke: 1px transparent;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .ds-display-1 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+
+        .ds-h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        .ds-h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        .ds-h3 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .ds-body-lg {
+            font-size: 1.25rem;
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-body {
+            font-size: 1rem;
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-body-sm {
+            font-size: 0.875rem;
+            color: var(--ds-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* =========================================================================
+           4. LAYOUT & SECTIONS
+           ========================================================================= */
+        .ds-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        .ds-section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .ds-section-title .ds-body-sm {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .ds-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 40px;
+        }
+
+        /* =========================================================================
+           5. UI COMPONENTS
+           ========================================================================= */
+        .ds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--ds-text-primary);
+            background: transparent;
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--speed-normal) var(--ease-out-expo);
+            z-index: -1;
+        }
+
+        .ds-btn:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: var(--ds-glow-strong);
+            transform: translateY(-2px);
+        }
+
+        .ds-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .ds-btn-primary {
+            background: var(--ds-text-primary);
+            color: var(--ds-bg-color);
+            border-color: transparent;
+        }
+
+        .ds-btn-primary::before {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .ds-btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* =========================================================================
+           5.1 BEAM ANIMATE BUTTON CLASSES (WodClash Port)
+           ========================================================================= */
+        .shimmer-btn-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .shimmer-btn-wrapper .glow-bg {
+            position: absolute;
+            inset: -4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 9999px;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .shimmer-btn-wrapper:hover .glow-bg {
+            opacity: 1;
+            animation: ping-glow 2s infinite;
+        }
+
+        @keyframes ping-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes shimmer {
+            from {
+                transform: translateX(-100%) skewX(-15deg);
+            }
+
+            to {
+                transform: translateX(200%) skewX(-15deg);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Beam specific button overrides to clear standard ds-btn styles */
+        .ds-btn-beam {
+            position: relative;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 9999px;
+            padding: 1px;
+            line-height: 1;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .ds-btn-beam:hover {
+            transform: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        .ds-btn-beam::before {
+            display: none;
+        }
+
+        .ds-btn-beam-bg {
+            position: absolute;
+            top: -1000%;
+            bottom: -1000%;
+            left: -1000%;
+            right: -1000%;
+            background: conic-gradient(from 0deg, transparent 0 340deg, rgba(255, 255, 255, 1) 360deg);
+            animation: spin 3s linear infinite;
+        }
+
+        .ds-btn-beam-inner {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            padding: 16px 40px;
+            background: var(--ds-bg-color);
+            border: 1px solid var(--ds-glass-border);
+            transition: all 0.3s ease;
+            gap: 12px;
+        }
+
+        .ds-btn-beam:hover .ds-btn-beam-inner {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ds-btn-beam-shimmer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+
+        .ds-btn-beam-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transform: skewX(-12deg);
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ds-btn-beam:hover .ds-btn-beam-shimmer::before {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .ds-glass-card {
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner), var(--ds-shadow-light);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ds-glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--ds-glow-subtle);
+        }
+
+        .ds-grid {
+            display: grid;
+            gap: 40px;
+        }
+
+        .ds-grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        #projetos .ds-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            #projetos .ds-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Forms / Inputs */
+        .ds-input {
+            width: 100%;
+            padding: 16px 24px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            color: var(--ds-text-primary);
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 12px;
+            outline: none;
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-input::placeholder {
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-input:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: var(--ds-glow-subtle);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        select.ds-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="%23ababab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 24px center;
+            cursor: pointer;
+        }
+
+        /* SCROLL INTERSECTION ANIMATIONS (Surgimento) */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* =========================================================================
+           6. PROJETO ESPECÍFICOS: Carrossel de Cards Expansíveis
+           ========================================================================= */
+        .ds-carousel-wrapper {
+            position: relative;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+
+        .ds-carousel {
+            display: flex;
+            gap: 16px;
+            height: 480px;
+            /* ou 60vh se preferir mais fluidez */
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            align-items: stretch;
+            /* Hide scrollbar */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .ds-carousel::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari and Opera */
+        }
+
+        .ds-project-card {
+            min-width: 80px;
+            flex: 1;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid var(--ds-glass-border);
+            background: var(--ds-glass-bg);
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform var(--speed-normal) var(--ease-out-expo), border-color var(--speed-normal), box-shadow var(--speed-normal);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .ds-project-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .ds-project-card:hover {
+            flex: 8;
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: var(--ds-glow-strong);
+        }
+
+        .ds-project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 32px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 40%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            z-index: 2;
+        }
+
+        .ds-project-title-tag {
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            padding: 8px 16px;
+            color: var(--ds-accent-primary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: var(--font-secondary);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--ds-glass-inner);
+            display: inline-block;
+            margin: 0;
+            white-space: nowrap;
+
+            /* Initial state for animation */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.2s;
+        }
+
+        .ds-project-card:hover .ds-project-title-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .ds-methodology-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 32px 40px;
+            border-radius: 24px;
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+            transition: transform var(--speed-normal);
+        }
+
+        .ds-methodology-card:hover {
+            transform: translateX(16px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* =========================================================================
+           7. MOBILE PROJECTS VIEW (Sticky Scroll Swap)
+           ========================================================================= */
+        .mobile-projects-wrapper {
+            display: none; /* Hidden on desktop */
+        }
+
+        @media (max-width: 768px) {
+            .ds-carousel-wrapper {
+                display: none !important; /* Hide desktop carousel on mobile */
+            }
+
+            .mobile-projects-wrapper {
+                display: flex;
+                position: relative;
+                margin-left: -40px;  /* Break out of .ds-container padding */
+                margin-right: -40px; /* Break out of .ds-container padding */
+                padding: 40px 0 40px 40px; /* Reset left padding */
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .mobile-names-list {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 60px;
+                padding-top: 20vh;
+                padding-bottom: 50vh;
+            }
+
+            .mobile-images-sticky {
+                width: 50%;
+                flex-grow: 1; /* Fill remaining space exactly to the edge */
+                position: sticky;
+                top: 28vh;
+                height: 280px;
+                border-radius: 16px 0 0 16px;
+                overflow: hidden;
+            }
+        }
+
+        /* =========================================================================
+           8. RESPONSIVE HEADER & FOOTER
+           ========================================================================= */
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: var(--ds-text-secondary);
+        }
+
+        .footer-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            position: absolute;
+            right: 40px; /* Aligns with ds-container padding */
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px !important;
+            }
+
+            .main-nav {
+                width: 100%;
+                justify-content: space-between;
+                padding: 16px 24px !important;
+                overflow: visible !important; /* Allow drop-down to break out of glass card */
+            }
+
+            .mobile-menu-btn {
+                display: block !important;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: calc(100% + 16px);
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.85); /* Darker background for readability */
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
+                border: 1px solid var(--ds-glass-border);
+                border-radius: 24px;
+                padding: 24px;
+                box-shadow: var(--ds-shadow-light);
+                pointer-events: auto !important; /* Force interaction */
+                z-index: 200; /* Ensure on top */
+            }
+
+            .nav-links.mobile-open {
+                display: flex !important;
+                animation: slideDown 0.3s var(--ease-out-expo) forwards;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .nav-divider {
+                display: none; /* Hide vertical divider on mobile */
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 24px;
+                padding-top: 32px;
+                padding-bottom: 80px; /* Extra bottom padding on mobile */
+            }
+
+            .footer-actions {
+                position: static;
+                right: auto;
+            }
+        }

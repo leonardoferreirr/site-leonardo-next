@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eich Studio - Design System</title>
+    
+    <!-- Fonte Inter (referencial Eich) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* =========================================================================
+           1. CORE VARIABLES & THEME SETUP
+           ========================================================================= */
+        :root {
+            /* Eich Studio Font Fallbacks (Based on original) */
+            --font-primary: "Helvetica Neue", "Arial", sans-serif;
+            --font-secondary: "Inter", sans-serif;
+            --font-monospace: "Courier New", monospace;
+
+            /* Colors System - Dark Theme Base */
+            --ds-bg-color: #0d0d0d;        /* Deep Black Background */
+            --ds-text-primary: #e0e0e0;    /* Off-white */
+            --ds-text-secondary: #ababab;  /* Grey */
+            --ds-accent-primary: #FFFFFF;  /* Pure White Accents */
+            
+            /* Glassmorphism & Transparencies (Curated Media inspired) */
+            --ds-glass-bg: rgba(255, 255, 255, 0.03);
+            --ds-glass-border: rgba(255, 255, 255, 0.15); /* #ffffff26 */
+            --ds-glass-hover: rgba(255, 255, 255, 0.08);
+
+            /* Shadows & Glows */
+            --ds-shadow-light: 0 4px 24px rgba(0, 0, 0, 0.5);
+            --ds-glow-subtle: 0 0 40px rgba(255, 255, 255, 0.05);
+            --ds-glow-strong: 0 0 20px rgba(255, 255, 255, 0.2);
+            --ds-glass-inner: 0 1px 0 rgba(255, 255, 255, 0.35) inset; /* #ffffff59 */
+
+            /* Animation Timings */
+            --speed-fast: 0.2s;
+            --speed-normal: 0.4s;
+            --speed-slow: 0.8s;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--ds-bg-color);
+            color: var(--ds-text-primary);
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 14px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            width: 6px;
+            background: #FFFFFF;
+            border: 4px solid #000000;
+            border-radius: 100px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            border: 4px solid #FFFFFF;
+            background: #000000;
+        }
+
+        /* =========================================================================
+           2. GLOBAL BACKGROUND ANIMATIONS
+           ========================================================================= */
+        .ds-animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%);
+            animation: bg-pulse 10s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        .ds-animated-blur {
+            position: fixed;
+            width: 40vw; height: 40vh;
+            background: rgba(255,255,255,0.02);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: wander 20s infinite ease-in-out alternate;
+            pointer-events: none;
+        }
+
+        @keyframes bg-pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0.8; }
+        }
+
+        @keyframes wander {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30vw, 20vh); }
+            100% { transform: translate(-20vw, 40vh); }
+        }
+
+        /* =========================================================================
+           3. TYPOGRAPHY (Transparent Lettering & Stroke)
+           ========================================================================= */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        /* Lettering Transparente (Stroke Effect) */
+        .ds-text-stroke {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+        }
+        .ds-text-stroke:hover {
+            color: var(--ds-text-primary);
+            -webkit-text-stroke: 1px transparent;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .ds-display-1 { font-size: clamp(4rem, 8vw, 8rem); letter-spacing: -0.04em; line-height: 1; }
+        .ds-h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+        .ds-h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+        .ds-h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+        .ds-body-lg { font-size: 1.25rem; color: var(--ds-text-secondary); }
+        .ds-body { font-size: 1rem; color: var(--ds-text-secondary); }
+        .ds-body-sm { font-size: 0.875rem; color: var(--ds-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* =========================================================================
+           4. LAYOUT & SECTIONS
+           ========================================================================= */
+        .ds-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .ds-section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .ds-section-title .ds-body-sm {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        /* Hero Dobra 1 */
+        .ds-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ds-hero-glow {
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        /* =========================================================================
+           5. UI COMPONENTS (GLASSMORPHISM & ANIMATIONS)
+           ========================================================================= */
+        
+        /* 5.1 Buttons */
+        .ds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--ds-text-primary);
+            background: transparent;
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--speed-normal) var(--ease-out-expo);
+            z-index: -1;
+        }
+
+        .ds-btn:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: var(--ds-glow-strong);
+            transform: translateY(-2px);
+        }
+
+        .ds-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .ds-btn-primary {
+            background: var(--ds-text-primary);
+            color: var(--ds-bg-color);
+            border-color: transparent;
+        }
+        .ds-btn-primary::before { background: rgba(0,0,0,0.1); }
+        .ds-btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+        }
+
+        /* 5.2 Cards (Glass) */
+        .ds-glass-card {
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner), var(--ds-shadow-light);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ds-glass-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+
+        .ds-glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: var(--ds-glow-subtle);
+        }
+        .ds-glass-card:hover::after {
+            left: 200%;
+        }
+
+        /* 5.3 Inputs */
+        .ds-input-group {
+            display: flex; margin-bottom: 24px;
+            flex-direction: column; gap: 8px;
+        }
+        .ds-input {
+            width: 100%;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--ds-glass-border);
+            padding: 16px 24px;
+            color: var(--ds-text-primary);
+            border-radius: 12px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            transition: all var(--speed-normal);
+            outline: none;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset;
+        }
+        .ds-input:focus {
+            border-color: rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.05);
+        }
+        .ds-input::placeholder { color: rgba(255,255,255,0.2); }
+
+        /* 5.4 Badges & Tags */
+        .ds-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 14px;
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--ds-glass-inner);
+        }
+        .ds-badge.success { border-color: rgba(30, 255, 120, 0.3); color: #8dedb5; }
+        .ds-badge.warning { border-color: rgba(255, 200, 0, 0.3); color: #f5d76e; }
+
+        /* 5.5 Navbar */
+        .ds-navbar {
+            position: fixed;
+            top: 24px; left: 50%;
+            transform: translateX(-50%);
+            background: rgba(13, 13, 13, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            padding: 12px 24px;
+            display: flex; gap: 32px;
+            z-index: 100;
+            box-shadow: var(--ds-glass-inner);
+        }
+        .ds-nav-link {
+            color: var(--ds-text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color var(--speed-fast);
+        }
+        .ds-nav-link:hover { color: var(--ds-text-primary); }
+
+        /* =========================================================================
+           6. GRID SYSTEMS
+           ========================================================================= */
+        .ds-grid { display: grid; gap: 40px; }
+        .ds-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .ds-grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .ds-grid-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+        .ds-color-box {
+            height: 120px;
+            border-radius: 16px 16px 0 0;
+            margin-bottom: 16px;
+            border: 1px solid var(--ds-glass-border);
+        }
+
+        /* =========================================================================
+           7. SCROLL INTERSECTION ANIMATIONS (Surgimento)
+           ========================================================================= */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Delays for staggered animations */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Globals Animations -->
+    <div class="ds-animated-bg"></div>
+    <div class="ds-animated-blur"></div>
+
+    <!-- Navbar -->
+    <nav class="ds-navbar fade-in-up">
+        <a href="#hero" class="ds-nav-link">Design System</a>
+        <a href="#typography" class="ds-nav-link">Tipografia</a>
+        <a href="#colors" class="ds-nav-link">Cores</a>
+        <a href="#components" class="ds-nav-link">Componentes</a>
+    </nav>
+
+    <!-- 1ª DOBRA: HERO -->
+    <section class="ds-hero ds-container" id="hero">
+        <div class="ds-hero-glow"></div>
+        <div class="ds-badge fade-in-up delay-1" style="margin-bottom: 32px;">
+            <i data-feather="zap" style="width:14px; height:14px;"></i> Framework Visual
+        </div>
+        <h1 class="ds-display-1 fade-in-up delay-2">
+            DESIGN<br>
+            <span class="ds-text-stroke">SYSTEM</span>
+        </h1>
+        <p class="ds-body-lg fade-in-up delay-3" style="max-width: 600px; margin: 32px auto 48px;">
+            Inspirado no Eich Studio. Um padrão estético com foco em dark mode criativo, efeitos vazados na tipografia, glassmorphism e animações fluidas de surgimento.
+        </p>
+        <div class="fade-in-up delay-3" style="display: flex; gap: 16px; justify-content: center;">
+            <a href="#components" class="ds-btn ds-btn-primary">Ver Componentes <i data-feather="arrow-down"></i></a>
+            <a href="#typography" class="ds-btn">Explorar Tipografia</a>
+        </div>
+    </section>
+
+    <!-- 2. TIPOGRAFIA -->
+    <section class="ds-container" id="typography">
+        <div class="ds-section-title fade-in-up">
+            <span class="ds-body-sm">01. Tipografia</span>
+            <h2 class="ds-h2">Helvetica & Inter</h2>
+            <p class="ds-body">Contraste entre Display e Body Copy com pesos variados.</p>
+        </div>
+
+        <div class="ds-glass-card fade-in-up">
+            <div style="margin-bottom: 64px; display: flex; flex-direction: column; gap: 32px;">
+                <div>
+                    <span class="ds-body-sm" style="color: var(--ds-text-secondary); margin-bottom:8px; display:block;">Display 1 — Helvetica Neue Bold — 128px</span>
+                    <h1 class="ds-display-1">Aa <span class="ds-text-stroke">Vv</span></h1>
+                </div>
+                <div>
+                    <span class="ds-body-sm">H1 — Helvetica Neue Bold — 64px</span>
+                    <h1 class="ds-h1">Heading Nível 1</h1>
+                </div>
+                <div>
+                    <span class="ds-body-sm">H2 — Helvetica Neue Bold — 48px</span>
+                    <h2 class="ds-h2 ds-text-stroke">Heading Nível 2</h2>
+                </div>
+                <div>
+                    <span class="ds-body-sm">H3 — Helvetica Neue Bold — 40px</span>
+                    <h3 class="ds-h3">Heading Nível 3</h3>
+                </div>
+            </div>
+
+            <hr style="border:none; border-top: 1px solid var(--ds-glass-border); margin: 40px 0;">
+
+            <div class="ds-grid ds-grid-2">
+                <div>
+                    <span class="ds-body-sm" style="margin-bottom:16px; display:block;">Body Large — Inter Regular — 20px</span>
+                    <p class="ds-body-lg">Somos um Estúdio de Design especializado em projetos. Nosso objetivo é criar marcas fortes no mercado.</p>
+                </div>
+                <div>
+                    <span class="ds-body-sm" style="margin-bottom:16px; display:block;">Body Regular — Inter Regular — 16px</span>
+                    <p class="ds-body">A flexibilidade deste sistema permite composições consistentes, utilizando a transparência como elemento de hierarquia, garantindo a legibilidade através de fundos escuros.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CORES -->
+    <section class="ds-container" id="colors">
+        <div class="ds-section-title fade-in-up">
+            <span class="ds-body-sm">02. Cores</span>
+            <h2 class="ds-h2 ds-text-stroke">Fundo, Texto e Feedback</h2>
+        </div>
+
+        <div class="ds-grid ds-grid-4 fade-in-up delay-1">
+            
+            <div>
+                <div class="ds-color-box" style="background: var(--ds-bg-color);"></div>
+                <h4 class="ds-h3" style="font-size:1.2rem; margin-bottom:8px;">Deep Black</h4>
+                <p class="ds-body-sm">HEX #0D0D0D <br>Background / Surface</p>
+            </div>
+            <div>
+                <div class="ds-color-box" style="background: var(--ds-text-primary);"></div>
+                <h4 class="ds-h3" style="font-size:1.2rem; margin-bottom:8px;">Pure White</h4>
+                <p class="ds-body-sm">HEX #FFFFFF <br>Text Primary / Accents</p>
+            </div>
+            <div>
+                <div class="ds-color-box" style="background: var(--ds-text-secondary);"></div>
+                <h4 class="ds-h3" style="font-size:1.2rem; margin-bottom:8px;">Gray Neutral</h4>
+                <p class="ds-body-sm">HEX #ABABAB <br>Text Secondary / Details</p>
+            </div>
+            <div>
+                <div class="ds-color-box" style="background: var(--ds-glass-bg); backdrop-filter: blur(10px);"></div>
+                <h4 class="ds-h3" style="font-size:1.2rem; margin-bottom:8px;">Glass BG</h4>
+                <p class="ds-body-sm">RGBA(255,255,255,0.03) <br>Cards / Modals</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 4. UI COMPONENTS -->
+    <section class="ds-container" id="components">
+        <div class="ds-section-title fade-in-up">
+            <span class="ds-body-sm">03. Componentes</span>
+            <h2 class="ds-h2">Construindo interfaces</h2>
+            <p class="ds-body">Botões com hover glow, inputs translúcidos e cards de vidro.</p>
+        </div>
+
+        <div class="ds-grid ds-grid-2">
+            <!-- Botões e Inputs -->
+            <div class="ds-glass-card fade-in-up delay-1">
+                <h3 class="ds-h3" style="margin-bottom:32px;">Botões & Badges</h3>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom: 40px;">
+                    <button class="ds-btn ds-btn-primary">Ação Primária <i data-feather="arrow-right"></i></button>
+                    <button class="ds-btn">Ação Secundária</button>
+                    <button class="ds-btn" style="padding: 16px;"><i data-feather="menu"></i></button>
+                </div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom: 40px;">
+                    <span class="ds-badge"><i data-feather="info"></i> Neutro</span>
+                    <span class="ds-badge success"><i data-feather="check-circle"></i> Sucesso ativo</span>
+                    <span class="ds-badge warning"><i data-feather="alert-triangle"></i> Atenção</span>
+                </div>
+
+                <h3 class="ds-h3" style="margin-bottom:24px;">Formulários</h3>
+                <div class="ds-input-group">
+                    <label class="ds-body-sm">E-mail</label>
+                    <input type="email" class="ds-input" placeholder="seu@email.com">
+                </div>
+                <div class="ds-input-group">
+                    <label class="ds-body-sm">Mensagem</label>
+                    <textarea class="ds-input" rows="3" placeholder="Como podemos ajudar?"></textarea>
+                </div>
+            </div>
+
+            <!-- Cards e Módulos -->
+            <div class="fade-in-up delay-2" style="display: flex; flex-direction: column; gap: 40px;">
+                <div class="ds-glass-card">
+                    <div class="ds-badge" style="margin-bottom:16px;">Glass Card</div>
+                    <h3 class="ds-h3 ds-text-stroke">Design Elegante</h3>
+                    <p class="ds-body" style="margin-bottom:24px;">Hover sobre este card para perceber o efeito reflexivo (shine) cruzando a tela e o aumento do brilho na borda.</p>
+                    <button class="ds-btn" style="width:100%;">Saiba mais</button>
+                </div>
+
+                <div class="ds-glass-card" style="background: rgba(0,0,0,0.4);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 24px;">
+                        <h4 class="ds-body-lg" style="color:var(--ds-accent-primary);">Ícones Base</h4>
+                        <a href="#" class="ds-text-stroke" style="text-decoration:none;"><i data-feather="more-horizontal"></i></a>
+                    </div>
+                    <div style="display:flex; gap:24px;">
+                        <i data-feather="figma" style="color:var(--ds-text-secondary); width:32px; height:32px;"></i>
+                        <i data-feather="framer" style="color:var(--ds-text-secondary); width:32px; height:32px;"></i>
+                        <i data-feather="pen-tool" style="color:var(--ds-text-secondary); width:32px; height:32px;"></i>
+                        <i data-feather="layout" style="color:var(--ds-text-secondary); width:32px; height:32px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Space -->
+    <div style="height: 100px;"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Intersection Observer para as Animações "Surgimento" (fade-in-up)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Opcional: remover o observer depois de animar para não repetir subindo a tela
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
