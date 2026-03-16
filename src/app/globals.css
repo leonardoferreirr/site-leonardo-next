@@ -400,8 +400,12 @@
         }
 
         @media (max-width: 768px) {
-            #projetos .ds-grid {
-                grid-template-columns: 1fr;
+            #projetos .ds-grid,
+            .ds-grid-2 {
+                grid-template-columns: 1fr !important;
+            }
+            .ds-glass-card {
+                padding: 24px !important;
             }
         }
 
