@@ -398,10 +398,18 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* 3-Column Gallery */
+    .project-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
     @media (max-width: 768px) {
 
         #projetos .ds-grid,
-        .ds-grid-2 {
+        .ds-grid-2,
+        .project-gallery-grid {
             grid-template-columns: 1fr !important;
         }
 

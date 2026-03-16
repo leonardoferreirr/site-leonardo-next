@@ -63,7 +63,7 @@ export default function ProjectView({ project, ctaText }: { project: any, ctaTex
 
       {/* Galeria de Imagens */}
       <div ref={setRef(2)} style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', padding: '0 40px' }}>
-        <div style={{ padding: '0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }} className="project-gallery-grid">
+        <div style={{ padding: '0' }} className="project-gallery-grid">
           {project.images && project.images.length > 0 ? (
             project.images.map((src: string, i: number) => (
               <img ref={setRef(3 + i)} className="fade-in-up" key={i} src={src} alt={`${project.title} - ${i}`} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px', boxShadow: 'var(--ds-shadow-light)' }} />
