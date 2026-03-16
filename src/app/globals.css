@@ -406,6 +406,23 @@
     }
 
     @media (max-width: 768px) {
+        .ds-container {
+            padding: 80px 24px !important;
+        }
+
+        .ds-section-title {
+            margin-bottom: 48px !important;
+        }
+
+        .shimmer-btn-wrapper {
+            display: flex;
+            width: 100%;
+        }
+        
+        .ds-btn-beam {
+            width: 100%;
+            justify-content: center;
+        }
 
         #projetos .ds-grid,
         .ds-grid-2,
