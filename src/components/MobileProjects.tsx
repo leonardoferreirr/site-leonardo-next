@@ -66,7 +66,7 @@ export default function MobileProjects() {
                 fontStyle: 'normal',
                 textDecoration: 'underline',
                 textUnderlineOffset: '6px',
-                opacity: activeIndex === index ? 1 : 0.2,
+                opacity: activeIndex === index ? 1 : 0.3,
                 transition: 'opacity 0.5s ease, color 0.5s ease',
                 margin: 0,
                 color: activeIndex === index ? 'var(--ds-text-primary)' : '#333333'
