@@ -1,6 +1,7 @@
     /* =========================================================================
            1. CORE VARIABLES & THEME SETUP (Design System Base)
            ========================================================================= */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap');
     :root {
         --font-primary: "Helvetica Neue", "Arial", sans-serif;
         --font-secondary: "Inter", sans-serif;
@@ -82,14 +83,15 @@
     }
 
     .ds-text-stroke {
-        color: transparent;
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--ds-text-secondary);
         transition: all var(--speed-normal) var(--ease-out-expo);
     }
 
     .ds-text-stroke:hover {
         color: var(--ds-text-primary);
-        -webkit-text-stroke: 1px transparent;
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
