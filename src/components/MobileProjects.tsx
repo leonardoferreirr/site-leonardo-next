@@ -59,8 +59,13 @@ export default function MobileProjects() {
             ref={(el) => { elementsRef.current[index] = el; }}
           >
             <h3
-              className="ds-h3 ds-text-stroke"
+              className="ds-h3"
               style={{
+                fontFamily: 'var(--font-secondary)',
+                fontWeight: 400,
+                fontStyle: 'normal',
+                textDecoration: 'underline',
+                textUnderlineOffset: '6px',
                 opacity: activeIndex === index ? 1 : 0.5,
                 transition: 'opacity 0.5s ease, color 0.5s ease',
                 margin: 0,
