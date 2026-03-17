@@ -61,10 +61,10 @@ export default function MobileProjects() {
             <h3
               className="ds-h3 ds-text-stroke"
               style={{
-                opacity: activeIndex === index ? 1 : 0.3,
-                transition: 'opacity 0.5s ease',
+                opacity: activeIndex === index ? 1 : 0.5,
+                transition: 'opacity 0.5s ease, color 0.5s ease',
                 margin: 0,
-                color: activeIndex === index ? 'var(--ds-text-primary)' : 'transparent'
+                color: activeIndex === index ? 'var(--ds-text-primary)' : 'var(--ds-text-secondary)'
               }}
             >
               {project.title}
