@@ -668,9 +668,13 @@
             width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 32px;
-            padding-top: 20vh;
-            padding-bottom: 50vh;
+            justify-content: space-between;
+            min-height: calc(280px + 60vh); /* ensures enough scroll space */
+            gap: 24px;
+            /* Align first item to top of the sticky image (which is 28vh from viewport top) */
+            padding-top: 28vh;
+            /* Align last item to bottom of the sticky image (viewport height - image top - image height) */
+            padding-bottom: calc(100vh - 28vh - 280px);
         }
 
         .mobile-images-sticky {
@@ -682,6 +686,7 @@
             height: 280px;
             border-radius: 16px 0 0 16px;
             overflow: hidden;
+            display: flex;
         }
     }
 
