@@ -68,7 +68,7 @@ export default function OrcamentoPage() {
     <>
       <section className="ds-container" style={{ paddingTop: '80px', paddingBottom: 0 }}>
         {/* Voltar */}
-        <Link href="/" className="ds-body-sm fade-in-up" ref={setRef(0)}
+        <Link id="voltar-inicio-link" href="/" className="ds-body-sm fade-in-up" ref={setRef(0)}
           style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--ds-text-secondary)', textDecoration: 'none', marginBottom: '64px', transition: 'color var(--speed-fast)' }}>
           <i data-feather="arrow-left" style={{ width: '16px', height: '16px' }}></i> {t('back_home')}
         </Link>
