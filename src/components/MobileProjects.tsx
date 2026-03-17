@@ -62,7 +62,7 @@ export default function MobileProjects() {
               className="ds-h3"
               style={{
                 fontFamily: 'var(--font-secondary)',
-                fontWeight: 400,
+                fontWeight: 700,
                 fontStyle: 'normal',
                 textDecoration: 'underline',
                 textUnderlineOffset: '6px',
