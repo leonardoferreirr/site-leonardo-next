@@ -197,6 +197,12 @@ export default function OrcamentoPage() {
           </div>
           <div className="footer-actions">
             <div style={{ display: 'flex', gap: '16px' }}>
+              <a href="https://wa.me/5534936180691?text=Oi%20Léo!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20a%20minha%20marca!" target="_blank" rel="noopener noreferrer" className="ds-body-sm" style={{ color: 'var(--ds-text-primary)' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  <path d="M10.1 8c-.1-.3-.2-.3-.4-.3H9c-.2 0-.4.1-.6.3s-1 .9-1 2.3 1.2 2.6 1.4 2.8 2 2.9 4.7 4c.6.3 1.1.3 1.5.2s1.2-.5 1.4-1 .2-.9.1-1-.2-.2-.5-.3-1.6-.8-1.8-.9-.4-.1-.5.1-.7.9-.8 1c-.1.2-.3.2-.6.1-.8-.3-1.8-1.1-2.5-2-.2-.3-.1-.5 0-.7.2-.2.4-.4.5-.6s.2-.4.3-.6c.1-.3 0-.5-.1-.7s-.7-1.6-.9-2.1z"></path>
+                </svg>
+              </a>
               <a href="https://www.instagram.com/leonardoferreirr/" target="_blank" rel="noopener noreferrer" className="ds-body-sm" style={{ color: 'var(--ds-text-primary)' }}>
                 <i data-feather="instagram" style={{ width: '20px', height: '20px' }}></i>
               </a>
