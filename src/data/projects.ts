@@ -81,7 +81,8 @@ export const projectsData = [
     ],
     "client": "Divino Car",
     "services": "Identidade Visual e  Branding",
-    "year": "2025"
+    "year": "2025",
+    "website": "https://divinocar.com.br/"
   },
   {
     "slug": "projeto-proconsult",
@@ -110,7 +111,8 @@ export const projectsData = [
     ],
     "client": "ProConsult",
     "services": "Identidade Visual e  Branding",
-    "year": "2025"
+    "year": "2025",
+    "website": "https://www.proconsult.tech/"
   },
   {
     "slug": "projeto-hellobim",
@@ -137,7 +139,8 @@ export const projectsData = [
     ],
     "client": "Hello BIM",
     "services": "Identidade Visual e  Branding",
-    "year": "2023"
+    "year": "2023",
+    "website": "https://hellobim.com.br/msv-01/"
   },
   {
     "slug": "projeto-raxseguros",
@@ -245,6 +248,7 @@ export const projectsData = [
     ],
     "client": "Remach Capital",
     "services": "Identidade Visual e  Branding",
-    "year": "2025"
+    "year": "2025",
+    "website": "https://www.remachcapital.com.br/"
   }
 ];

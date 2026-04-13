@@ -58,6 +58,30 @@ export default function ProjectView({ project, ctaText }: { project: any, ctaTex
             <span className="ds-body-sm">{t('year')}</span>
             <p className="ds-body-lg" style={{ color: 'var(--ds-text-primary)', marginTop: '8px' }}>{project.year}</p>
           </div>
+          {project.website && (
+            <div style={{ borderBottom: '1px solid var(--ds-glass-border)', paddingBottom: '16px' }}>
+              <span className="ds-body-sm">{t('site')}</span>
+              <p style={{ marginTop: '8px' }}>
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ds-body-lg"
+                  style={{
+                    color: 'var(--ds-text-primary)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid rgba(255,255,255,0.3)',
+                    paddingBottom: '2px',
+                    transition: 'opacity var(--speed-fast)',
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = '0.6')}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                >
+                  {project.website.replace(/https?:\/\/(www\.)?/, '').replace(/\/$/, '')} ↗
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

@@ -26,7 +26,8 @@
     "client": "Cliente",
     "services": "Servicios Ejecutados",
     "year": "Año",
-    "back_portfolio": "Volver al Portafolio"
+    "back_portfolio": "Volver al Portafolio",
+    "site": "Sitio Web"
   },
   "Methodology": {
     "tag": "Proceso",
