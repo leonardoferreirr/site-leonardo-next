@@ -451,6 +451,12 @@
         .ds-glass-card {
             padding: 24px !important;
         }
+
+        .ds-display-1 {
+            font-size: clamp(1.75rem, 8vw, 2.5rem);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
     }
 
     /* Forms / Inputs */
