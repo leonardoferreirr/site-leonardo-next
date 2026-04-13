@@ -3,6 +3,7 @@
     "projects": "Portfólio",
     "methodology": "Processo",
     "about": "Sobre",
+    "blog": "Blog",
     "deliverables": "Entregáveis",
     "contact": "Orçamento"
   },
@@ -188,6 +189,12 @@
     "rev_100k_plus": "Acima de R$ 100.000",
     "message": "Fale um pouco sobre a sua empresa e os principais desafios que enfrentam hoje",
     "submit": "Enviar"
+  },
+  "Blog": {
+    "tag": "Conteúdo",
+    "title": "Blog sobre Design e Identidade Visual",
+    "subtitle": "Artigos sobre design estratégico, identidade visual e branding para empresas que querem se destacar.",
+    "read_more": "Ler artigo"
   },
   "Metadata": {
     "home_title": "Design UI/UX e Desenvolvimento Web",

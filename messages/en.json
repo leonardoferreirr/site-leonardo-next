@@ -3,6 +3,7 @@
     "projects": "Portfolio",
     "methodology": "Process",
     "about": "About",
+    "blog": "Blog",
     "deliverables": "Deliverables",
     "contact": "Budget"
   },
@@ -188,6 +189,12 @@
     "rev_100k_plus": "Above $100,000",
     "message": "Tell us about your company and your main challenges today",
     "submit": "Send"
+  },
+  "Blog": {
+    "tag": "Content",
+    "title": "Blog on Design and Visual Identity",
+    "subtitle": "Articles on strategic design, visual identity and branding for companies that want to stand out.",
+    "read_more": "Read article"
   },
   "Metadata": {
     "home_title": "UI/UX Design and Web Development",

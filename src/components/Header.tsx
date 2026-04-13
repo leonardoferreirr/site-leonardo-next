@@ -87,6 +87,7 @@ export default function Header() {
             <Link href="/#projetos" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
             <Link href="/#metodologia" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('methodology')}</Link>
             <Link href="/#sobre" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('about')}</Link>
+            <Link href="/blog" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('blog')}</Link>
             <Link href="/#entregaveis" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('deliverables')}</Link>
             <Link href="/#contato" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('contact')}</Link>
           </div>
