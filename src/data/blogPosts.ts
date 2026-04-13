@@ -24,8 +24,8 @@ export const blogPosts: BlogPost[] = [
     title: 'O que é identidade visual? Diferença entre logo, marca e branding',
     description:
       'Entenda de vez o que é identidade visual, como ela se diferencia do logotipo, da marca e do branding — e por que sua empresa precisa de um sistema visual completo.',
-    date: '2025-06-01',
-    dateModified: '2025-06-01',
+    date: '2026-04-13',
+    dateModified: '2026-04-13',
     author: 'Leonardo Ferreira',
     category: 'Identidade Visual',
     tags: ['identidade visual', 'logotipo', 'branding', 'marca', 'design estratégico'],
