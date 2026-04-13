@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { Link } from '@/routing';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { blogPosts } from '@/data/blogPosts';
 import Header from '@/components/Header';
@@ -34,7 +34,7 @@ export default function BlogPage() {
             {blogPosts.map((post, i) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}` as any}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <article
