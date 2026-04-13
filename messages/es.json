@@ -7,16 +7,16 @@
     "contact": "Presupuesto"
   },
   "Hero": {
-    "title1": "Construimos marcas",
-    "title_stroke1": "fuertes",
-    "title2": "y",
-    "title_stroke2": "memorables",
-    "title3": "a través de diseño y estrategia.",
+    "title1": "Creamos marcas que quedan",
+    "title_stroke1": "en la memoria",
+    "title2": ":",
+    "title_stroke2": "logotipo,",
+    "title3": "brandbook y sistema visual.",
     "cta_button": "Solicite una propuesta"
   },
   "Projects": {
     "tag": "Portafolio",
-    "title": "Trabajos Seleccionados"
+    "title": "Proyectos de Identidad Visual Desarrollados"
   },
   "CaseStudy": {
     "case_study": "Estudio de Caso",
@@ -29,7 +29,7 @@
   },
   "Methodology": {
     "tag": "Proceso",
-    "title": "La Metodología",
+    "title": "¿Cómo creamos identidades visuales que funcionan?",
     "steps": [
       {
         "title": "01. Inmersión y Análisis",
@@ -62,7 +62,7 @@
     ]
   },
   "About": {
-    "name": "Leonardo Ferreira",
+    "name": "¿Quién es Leonardo Ferreira y cómo puedo ayudar a tu marca?",
     "p1": "¡Hola! Mucho gusto, mi nombre es Leonardo, especialista en diseño estratégico y construcción de marcas.",
     "p2": "Con más de 5 años de experiencia en el mercado creativo, me dedico a traducir la verdadera esencia de las empresas en identidades visuales de alto impacto. Mi pasión es transformar lo complejo en algo único, asegurando que la comunicación de su empresa sea inolvidable.",
     "p3": "El diseño va mucho más allá de la estética. Trabajamos con una metodología sólida y orientada a resultados, garantizando que cada proyecto sea visualmente sofisticado, funcional y posicionado estratégicamente en el mercado.",
@@ -70,7 +70,7 @@
   },
   "Deliverables": {
     "tag": "Entregables",
-    "title": "Lo que usted recibe",
+    "title": "¿Qué está incluido en el proyecto de identidad visual?",
     "items": [
       {
         "title": "Logotipo Completo",

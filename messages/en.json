@@ -7,16 +7,16 @@
     "contact": "Budget"
   },
   "Hero": {
-    "title1": "We build",
-    "title_stroke1": "strong",
-    "title2": "and",
-    "title_stroke2": "memorable",
-    "title3": "brands through design and strategy.",
+    "title1": "We create brands that stay",
+    "title_stroke1": "in memory",
+    "title2": ":",
+    "title_stroke2": "logo,",
+    "title3": "brandbook and visual system.",
     "cta_button": "Request a proposal"
   },
   "Projects": {
     "tag": "Portfolio",
-    "title": "Selected Works"
+    "title": "Visual Identity Projects Developed"
   },
   "CaseStudy": {
     "case_study": "Case Study",
@@ -29,7 +29,7 @@
   },
   "Methodology": {
     "tag": "Process",
-    "title": "The Methodology",
+    "title": "How do we create visual identities that work?",
     "steps": [
       {
         "title": "01. Immersion and Analysis",
@@ -62,7 +62,7 @@
     ]
   },
   "About": {
-    "name": "Leonardo Ferreira",
+    "name": "Who is Leonardo Ferreira and how can I help your brand?",
     "p1": "Hello! Nice to meet you, my name is Leonardo, a specialist in strategic design and brand building.",
     "p2": "With over 5 years of experience in the creative market, I am dedicated to translating the true essence of companies into high-impact visual identities. My passion is turning complexity into something unique, ensuring your company's communication is unforgettable.",
     "p3": "Design goes far beyond aesthetics. We work with a solid, results-driven methodology, ensuring that every project is visually sophisticated, functional, and strategically positioned in the market.",
@@ -70,7 +70,7 @@
   },
   "Deliverables": {
     "tag": "Deliverables",
-    "title": "What you receive",
+    "title": "What is included in the visual identity project?",
     "items": [
       {
         "title": "Complete Logo",
