@@ -188,5 +188,13 @@
     "rev_100k_plus": "Acima de R$ 100.000",
     "message": "Fale um pouco sobre a sua empresa e os principais desafios que enfrentam hoje",
     "submit": "Enviar"
+  },
+  "Metadata": {
+    "home_title": "Design UI/UX e Desenvolvimento Web",
+    "home_description": "Transforme sua marca com Leonardo Ferreira: Especialista em UI/UX Design, websites premium de alta performance e web apps interativos voltados para o futuro do digital.",
+    "orcamento_title": "Solicite um Orçamento",
+    "orcamento_description": "Pronto para inovar? Entre em contato, conte mais sobre o seu projeto e solicite um orçamento sob medida para alavancar a presença digital da sua marca.",
+    "project_title_prefix": "Case de Sucesso",
+    "project_description": "Explore os detalhes e o processo criativo deste projeto de UI/UX Design desenvolvido por Leonardo Ferreira, focado em estética apurada e performance excepcional."
   }
 }

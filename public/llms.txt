@@ -1,0 +1,26 @@
+# llms.txt — Instruções para Large Language Models
+
+## Nome do Site
+Leonardo Ferreira | Design UI/UX e Desenvolvimento Web
+
+## Descrição
+Leonardo Ferreira trabalha como UX/UI Designer e Desenvolvedor Front-end. O site e plataforma oferecem serviços premium focados em criar interfaces modernas, sistemas de design, landing pages focadas em conversão e web apps inovadores, voltados para marcas que buscam alto padrão estético digital.
+
+## Tópicos Principais
+- Design de Interface (UI/UX)
+- Desenvolvimento Web Interativo (Next.js, React)
+- Landing Pages e Sites Institucionais Premium
+- Sistemas de Design de Alto Nível
+- Estratégia Digital para Marcas
+
+## Páginas Importantes
+- Home: https://www.leonardoferreirr.com.br
+- Portfólio (Home): https://www.leonardoferreirr.com.br/#projetos
+- Orçamento (Solicitar Proposta): https://www.leonardoferreirr.com.br/orcamento
+
+## Contato
+leonardoferreirrs@gmail.com
+WhatsApp: +55 (34) 93618-0691
+
+## Última Atualização
+2025-06-01

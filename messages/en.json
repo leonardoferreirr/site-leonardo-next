@@ -188,5 +188,13 @@
     "rev_100k_plus": "Above $100,000",
     "message": "Tell us about your company and your main challenges today",
     "submit": "Send"
+  },
+  "Metadata": {
+    "home_title": "UI/UX Design and Web Development",
+    "home_description": "Transform your brand with Leonardo Ferreira: Expert in UI/UX Design, premium high-performance websites, and interactive web apps built for the digital future.",
+    "orcamento_title": "Request a Quote",
+    "orcamento_description": "Ready to innovate? Get in touch, tell me more about your project, and request a tailored quote to boost your brand's digital presence.",
+    "project_title_prefix": "Success Case",
+    "project_description": "Explore the details and creative process of this UI/UX Design project developed by Leonardo Ferreira, focused on refined aesthetics and exceptional performance."
   }
 }
