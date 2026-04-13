@@ -30,7 +30,7 @@ export default function Home() {
         </div>
         <div style={{ maxWidth: '1000px', width: '100%', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <h1 className="ds-display-1 fade-in-up" ref={setRef(0)}>
-            {tHero('title1')} <span className="ds-text-stroke">{tHero('title_stroke1')}</span> {tHero('title2')} <span className="ds-text-stroke">{tHero('title_stroke2')}</span> {tHero('title3')}
+            {tHero('title1')} {tHero('title_stroke1')} {tHero('title2')} <em style={{ fontStyle: 'italic' }}>{tHero('title_stroke2')}</em> <em style={{ fontStyle: 'italic' }}>{tHero('title3')}</em>
           </h1>
           <div className="fade-in-up delay-1" ref={setRef(1)} style={{ marginTop: '56px' }}>
             <ButtonBeam href="/orcamento">{tHero('cta_button')}</ButtonBeam>
