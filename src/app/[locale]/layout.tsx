@@ -3,7 +3,7 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/routing';
 import '../globals.css';
-import SchemaMarkup from '@/components/seo/SchemaMarkup';
+import GlobalSchemas from '@/components/seo/GlobalSchemas';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;
@@ -61,34 +61,10 @@ export default async function LocaleLayout(props: {
   // side is the easiest way to get started
   const messages = await getMessages();
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Leonardo Ferreira",
-    "url": "https://www.leonardoferreirr.com.br",
-    "logo": "https://www.leonardoferreirr.com.br/assets/profile.png",
-    "sameAs": [
-      "https://www.linkedin.com/in/leonardo-ferreirr/",
-      "https://www.instagram.com/leonardoferreirr/"
-    ]
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://www.leonardoferreirr.com.br",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.leonardoferreirr.com.br?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
-
   return (
     <html lang={locale}>
       <head>
-        <SchemaMarkup schema={organizationSchema} />
-        <SchemaMarkup schema={websiteSchema} />
+        <GlobalSchemas />
         {/* Feather Icons CDN */}
         <script src="https://unpkg.com/feather-icons"></script>
 
