@@ -196,7 +196,8 @@ export default function BlogPostPage({ params }: { params: Promise<{ locale: str
       <footer style={{ borderTop: '1px solid var(--ds-glass-border)' }}>
         <div className="ds-container footer-container">
           <div className="ds-body-sm footer-copyright">
-            © 2023 Leonardo Ferreira. Todos os direitos reservados.
+            <span style={{ marginRight: '8px' }}>© 2023 Leonardo Ferreira. Todos os direitos reservados.</span>
+            <Link href="/privacidade" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacidade</Link>
           </div>
         </div>
       </footer>

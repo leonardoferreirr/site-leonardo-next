@@ -105,9 +105,15 @@ export default function ProjectView({ project, ctaText }: { project: any, ctaTex
       {/* FOOTER */}
       <footer style={{ borderTop: '1px solid var(--ds-glass-border)', marginTop: '120px' }}>
         <div className="ds-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: '40px', paddingBottom: '40px' }}>
-          <Link href="/" className="ds-body-sm" style={{ textDecoration: 'none', transition: 'color var(--speed-normal)', color: 'var(--ds-text-primary)' }}>
-            Voltar ao Início
-          </Link>
+          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+            <Link href="/" className="ds-body-sm" style={{ textDecoration: 'none', transition: 'color var(--speed-normal)', color: 'var(--ds-text-primary)' }}>
+              Voltar ao Início
+            </Link>
+            <span style={{ color: 'var(--ds-text-secondary)' }}>|</span>
+            <Link href="/privacidade" className="ds-body-sm" style={{ textDecoration: 'underline', transition: 'color var(--speed-normal)', color: 'var(--ds-text-secondary)' }}>
+              Privacidade
+            </Link>
+          </div>
         </div>
       </footer>
     </>

@@ -193,7 +193,8 @@ export default function OrcamentoPage() {
       <footer style={{ borderTop: '1px solid var(--ds-glass-border)', marginTop: '0px' }}>
         <div className="ds-container footer-container">
           <div className="ds-body-sm footer-copyright">
-            © 2023 Leonardo Ferreira. Todos os direitos reservados.
+            <span style={{ marginRight: '8px' }}>© 2023 Leonardo Ferreira. Todos os direitos reservados.</span>
+            <Link href="/privacidade" style={{ color: 'inherit', textDecoration: 'underline' }}>Privacidade</Link>
           </div>
           <div className="footer-actions">
             <div style={{ display: 'flex', gap: '16px' }}>
