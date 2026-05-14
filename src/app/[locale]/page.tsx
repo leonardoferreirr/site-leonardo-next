@@ -67,10 +67,12 @@ const PROJECTS: ProjectItemFull[] = [
   // === WEBSITES (6) — usa cover mobile (vertical) tambem no desktop pra encaixar nos cards verticais sem cropar
   { slug: 'projeto-p1marketing', title: 'P1 Marketing', imageSrc: '/assets/00. Cover/10. P1 Marketing.mobile.png', imageSrcMobile: '/assets/00. Cover/10. P1 Marketing.mobile.png', category: 'web', externalUrl: 'https://p1-marketing.vercel.app/' },
   { slug: 'projeto-nalupoke', title: 'Nalu Poke', imageSrc: '/assets/00. Cover/11. Nalu Poke.mobile.png', imageSrcMobile: '/assets/00. Cover/11. Nalu Poke.mobile.png', category: 'web', externalUrl: 'https://nalupoke.vercel.app/' },
-  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/12. Forset.mobile.png', imageSrcMobile: '/assets/00. Cover/12. Forset.mobile.png', category: 'web', externalUrl: 'https://site.forset.com.br/' },
-  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/13. Air Jordan.mobile.png', imageSrcMobile: '/assets/00. Cover/13. Air Jordan.mobile.png', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
-  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/14. Pokemon.mobile.png', imageSrcMobile: '/assets/00. Cover/14. Pokemon.mobile.png', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
-  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/15. GCarneiro.mobile.png', imageSrcMobile: '/assets/00. Cover/15. GCarneiro.mobile.png', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
+  { slug: 'projeto-neurosummit', title: 'Neuro Summit', imageSrc: '/assets/00. Cover/12. Neuro Summit.mobile.png', imageSrcMobile: '/assets/00. Cover/12. Neuro Summit.mobile.png', category: 'web', externalUrl: 'https://neurosummit.sensorial.life/' },
+  { slug: 'projeto-proconsult-site', title: 'ProConsult', imageSrc: '/assets/00. Cover/13. ProConsult Site.mobile.png', imageSrcMobile: '/assets/00. Cover/13. ProConsult Site.mobile.png', category: 'web', externalUrl: 'https://www.proconsult.tech/' },
+  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/14. Forset.mobile.png', imageSrcMobile: '/assets/00. Cover/14. Forset.mobile.png', category: 'web', externalUrl: 'https://site.forset.com.br/' },
+  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/15. Air Jordan.mobile.png', imageSrcMobile: '/assets/00. Cover/15. Air Jordan.mobile.png', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
+  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/16. Pokemon.mobile.png', imageSrcMobile: '/assets/00. Cover/16. Pokemon.mobile.png', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
+  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/17. GCarneiro.mobile.png', imageSrcMobile: '/assets/00. Cover/17. GCarneiro.mobile.png', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
 ];
 
 const BRAND_PROJECTS = PROJECTS.filter((p) => p.category === 'brand');
