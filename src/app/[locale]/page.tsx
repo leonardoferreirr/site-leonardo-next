@@ -155,11 +155,14 @@ export default function Home() {
       </svg>
     ),
     ai: (
-      // Sparkles / IA mágica
+      // Robô (Lucide Bot)
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6z"/>
-        <path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/>
-        <path d="M4 14l.6 1.6L6 16l-1.4.4L4 18l-.6-1.6L2 16l1.4-.4z"/>
+        <path d="M12 8V4H8"/>
+        <rect width="16" height="12" x="4" y="8" rx="2"/>
+        <path d="M2 14h2"/>
+        <path d="M20 14h2"/>
+        <path d="M15 13v2"/>
+        <path d="M9 13v2"/>
       </svg>
     ),
     social: (
