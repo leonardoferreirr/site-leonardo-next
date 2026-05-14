@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     "slug": "projeto-mademax",
+    "category": "brand",
     "title": "MADEMAX",
     "description": "A MADEMAX é uma fabricante de telhas em chapa de aço e telha termoacústica.",
     "coverImage": "/assets/00. Cover/01. MADEMAX.png",
@@ -28,6 +29,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-biothera",
+    "category": "brand",
     "title": "Biothera",
     "description": "A Biothera atua no segmento de saúde e estética voltada para o natural.",
     "coverImage": "/assets/00. Cover/02. Biothera.png",
@@ -54,6 +56,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-divinocar",
+    "category": "brand",
     "title": "Divino Car",
     "description": "A Divino Car atua no setor automotivo.",
     "coverImage": "/assets/00. Cover/03. Divino Car.png",
@@ -86,6 +89,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-proconsult",
+    "category": "brand",
     "title": "ProConsult",
     "description": "A ProConsult atua em gestão de obras e consultoria.",
     "coverImage": "/assets/00. Cover/04. ProConsult.png",
@@ -116,6 +120,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-hellobim",
+    "category": "brand",
     "title": "Hello BIM",
     "description": "A Hello BIM atua na área de arquitetura e compatibilização.",
     "coverImage": "/assets/00. Cover/05. Hello BIM.png",
@@ -144,6 +149,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-raxseguros",
+    "category": "brand",
     "title": "RAX Seguros",
     "description": "A RAX atua com seguros e proteção de patrimônio.",
     "coverImage": "/assets/00. Cover/06. RAX Seguros.png",
@@ -170,6 +176,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-polysantos",
+    "category": "brand",
     "title": "Poly Santos",
     "description": "Marca pessoal fotográfica e criativa.",
     "coverImage": "/assets/00. Cover/07. Poly Santos.png",
@@ -201,6 +208,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-ecomove",
+    "category": "brand",
     "title": "Ecomove",
     "description": "A Ecomove é uma startup focada em mobilidade elétrica e sustentabilidade.",
     "coverImage": "/assets/00. Cover/08. Ecomove.png",
@@ -225,6 +233,7 @@ export const projectsData = [
   },
   {
     "slug": "projeto-remachcapital",
+    "category": "brand",
     "title": "Remach Capital",
     "description": "Remach Capital atua em assessoria financeira e M&A.",
     "coverImage": "/assets/00. Cover/09. Remach Capital.png",
@@ -250,5 +259,89 @@ export const projectsData = [
     "services": "Identidade Visual e  Branding",
     "year": "2025",
     "website": "https://www.remachcapital.com.br/"
+  },
+  {
+    "slug": "projeto-p1marketing",
+    "category": "web",
+    "title": "P1 Marketing",
+    "description": "Site de uma agência de performance em Uberlândia — estética racing, identidade dark com verde neon.",
+    "coverImage": "/assets/00. Cover/10. P1 Marketing.png",
+    "challenge": "Traduzir o conceito de 'pole position' em uma experiência web que comunicasse velocidade, performance e sofisticação técnica.",
+    "solution": "Site full Next.js com hero scroll-driven, frame sequence, paleta racing (ink + verde neon), tipografia Syncopate. Cursor customizado, loader 3.2.1.GO, animações performáticas e responsivas.",
+    "images": [],
+    "client": "P1 Marketing",
+    "services": "Webdesign e Desenvolvimento",
+    "year": "2026",
+    "website": "https://p1-marketing.vercel.app/"
+  },
+  {
+    "slug": "projeto-nalupoke",
+    "category": "web",
+    "title": "Nalu Poke",
+    "description": "Loja de poke bowls em Uberlândia, com cardápio digital interativo e identidade jovem.",
+    "coverImage": "/assets/00. Cover/11. Nalu Poke.png",
+    "challenge": "Construir presença digital pra um food service que precisava se diferenciar num mercado cada vez mais saturado de poke houses.",
+    "solution": "Site em Next.js com cardápio interativo, fotos vibrantes do produto, integração com WhatsApp pra pedidos e identidade visual jovem que conversa direto com o público. Performance, mobile-first e SEO local trabalhado pra brigar em buscas tipo 'poke uberlândia'.",
+    "images": [],
+    "client": "Nalu Poke",
+    "services": "Webdesign e Desenvolvimento",
+    "year": "2025",
+    "website": "https://nalupoke.vercel.app/"
+  },
+  {
+    "slug": "projeto-forset",
+    "category": "web",
+    "title": "Forset",
+    "description": "Site institucional da Forset — design clean e moderno pra apresentar serviços com clareza.",
+    "coverImage": "/assets/00. Cover/12. Forset.png",
+    "challenge": "Construir presença digital sólida que transmitisse credibilidade técnica e ao mesmo tempo fosse acessível ao cliente final.",
+    "solution": "Site institucional construído com Next.js, foco em performance e SEO técnico. Estrutura editorial limpa, hierarquia tipográfica forte e CTAs estratégicos em cada seção.",
+    "images": [],
+    "client": "Forset",
+    "services": "Webdesign e Desenvolvimento",
+    "year": "2025",
+    "website": "https://site.forset.com.br/"
+  },
+  {
+    "slug": "projeto-airjordan",
+    "category": "web",
+    "title": "Air Jordan",
+    "description": "Portfolio conceitual inspirado em Air Jordan — sticky stack 3D, organic cards, scroll-driven animations.",
+    "coverImage": "/assets/00. Cover/13. Air Jordan.png",
+    "challenge": "Provar tecnicamente o quanto é possível levar de animação e interatividade rica sem comprometer a performance.",
+    "solution": "Sticky stack 3D com perspectiva real, organic cards com hover orgânico, transições GSAP otimizadas, fontes variáveis e LCP abaixo de 1.2s. Showcase do que é possível em webdesign de ponta.",
+    "images": [],
+    "client": "Portfolio Concept",
+    "services": "Webdesign e Animação",
+    "year": "2025",
+    "website": "https://airjordan-portfolio.vercel.app/"
+  },
+  {
+    "slug": "projeto-pokemon",
+    "category": "web",
+    "title": "Pokémon",
+    "description": "Landing page tributo ao primeiro filme de Pokémon — narrativa visual cinematográfica, lens reveal, starfield parallax.",
+    "coverImage": "/assets/00. Cover/14. Pokemon.png",
+    "challenge": "Criar uma experiência cinematográfica e emocional ao redor de uma propriedade icônica, sem cair em clichês de fan-site.",
+    "solution": "Lens reveal no hero, starfield parallax em camadas, storytelling em scroll com timing cinematográfico, tipografia clássica e UI minimal pra dar protagonismo às artes.",
+    "images": [],
+    "client": "Tribute Project",
+    "services": "Webdesign e Storytelling Visual",
+    "year": "2025",
+    "website": "https://pokemon.leonardoferreirr.com.br/"
+  },
+  {
+    "slug": "projeto-gcarneiro",
+    "category": "web",
+    "title": "GCarneiro",
+    "description": "Site profissional pra escritório premium — identidade refinada e UX direto.",
+    "coverImage": "/assets/00. Cover/15. GCarneiro.png",
+    "challenge": "Comunicar autoridade e confiança de um escritório premium num formato digital limpo, sem excesso visual.",
+    "solution": "Identidade refinada com paleta sóbria, tipografia clássica e layout editorial. UX direto ao ponto, com hierarquia de conversão clara e SEO técnico bem trabalhado.",
+    "images": [],
+    "client": "GCarneiro",
+    "services": "Webdesign e Branding Digital",
+    "year": "2025",
+    "website": "https://www.gcarneiro.com.br/"
   }
 ];

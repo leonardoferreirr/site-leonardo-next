@@ -1,9 +1,27 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import { routing } from '@/routing';
 import '../globals.css';
 import GlobalSchemas from '@/components/seo/GlobalSchemas';
+import PageTransition from '@/components/PageTransition';
+import LenisProvider from '@/components/LenisProvider';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800'],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  weight: '400',
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;
@@ -62,7 +80,7 @@ export default async function LocaleLayout(props: {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${inter.variable} ${instrumentSerif.variable}`}>
       <head>
         <GlobalSchemas />
         {/* Feather Icons CDN */}
@@ -88,7 +106,8 @@ export default async function LocaleLayout(props: {
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=2116057592584389&ev=PageView&noscript=1" alt="" />
         </noscript>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <LenisProvider />
+          <PageTransition>{children}</PageTransition>
         </NextIntlClientProvider>
       </body>
     </html>

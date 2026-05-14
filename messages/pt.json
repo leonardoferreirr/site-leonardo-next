@@ -4,20 +4,24 @@
     "methodology": "Processo",
     "about": "Sobre",
     "blog": "Blog",
-    "deliverables": "Entregáveis",
-    "contact": "Orçamento"
+    "contact": "Orçamento",
+    "services": "Serviços"
   },
   "Hero": {
-    "title1": "Criamos marcas que ficam",
-    "title_stroke1": "na memória",
-    "title2": ":",
-    "title_stroke2": "logotipo,",
-    "title3": "brandbook e sistema visual.",
+    "title1": "Soluções de",
+    "title_stroke1": "ponta a ponta",
+    "title2": "pra sua marca",
+    "title_stroke2": "aparecer",
+    "title3": "no digital.",
+    "subline": "Branding, websites e tráfego pra empresas que querem ser grandes.",
     "cta_button": "Solicite uma proposta"
   },
   "Projects": {
     "tag": "Portfólio",
-    "title": "Projetos de Identidade Visual Desenvolvidos"
+    "title": "Projetos que entregamos",
+    "filter_all": "Todos",
+    "filter_brand": "Branding",
+    "filter_web": "Websites"
   },
   "CaseStudy": {
     "case_study": "Estudo de Caso",
@@ -31,43 +35,35 @@
   },
   "Methodology": {
     "tag": "Processo",
-    "title": "Como criamos identidades visuais que funcionam?",
+    "title": "Como entregamos cada projeto.",
     "steps": [
       {
-        "title": "01. Imersão e Análise",
-        "desc": "Mergulhamos no seu negócio para alinhar expectativas, mapear os desafios e definir os objetivos centrais da marca."
+        "title": "01. Imersão e Diagnóstico",
+        "desc": "Mergulhamos no seu negócio: produto, público, concorrência, objetivos. Sem essa etapa, o resto é achismo."
       },
       {
-        "title": "02. Estratégia de Marca",
-        "desc": "Definimos o DNA do projeto. Analisamos o propósito, o público-alvo e o posicionamento no mercado para criar uma base sólida."
+        "title": "02. Estratégia",
+        "desc": "Definimos posicionamento, mensagem central, awareness do público e KPIs. Tudo escrito antes de virar pixel ou anúncio."
       },
       {
-        "title": "03. Direcionamento Visual",
-        "desc": "Traduzimos a estratégia em estética. Criamos painéis semânticos (moodboards) com referências de mercado para definir a atmosfera da marca."
+        "title": "03. Direcionamento Criativo",
+        "desc": "Moodboards, referências, escolha de estética e tom. Aprovação aqui evita retrabalho na execução."
       },
       {
-        "title": "04. Design de Logotipo",
-        "desc": "Onde a essência ganha forma. Desenvolvemos o símbolo, tipografia e cores baseados em conceitos funcionais e marcantes."
+        "title": "04. Execução",
+        "desc": "Design da marca, desenvolvimento do site ou criação de campanha. Iteração com você no caminho, não só no final."
       },
       {
-        "title": "05. Sistema de Identidade Visual",
-        "desc": "Expandimos a marca. Criamos os grafismos, padrões, texturas e definimos o comportamento visual em todos os pontos de contato."
-      },
-      {
-        "title": "06. Apresentação Estratégica",
-        "desc": "Revelamos o resultado. Em uma chamada de vídeo detalhada, apresentamos o projeto aplicado em cenários reais para sua validação completa."
-      },
-      {
-        "title": "07. Entrega Final",
-        "desc": "Tudo pronto para o mundo. Preparamos e enviamos todos os arquivos e diretrizes necessários para a aplicação impecável da sua nova marca no mercado."
+        "title": "05. Entrega e Acompanhamento",
+        "desc": "Arquivos finais, deploy, ativação de campanha, manual de uso. Acompanhamento dos primeiros resultados."
       }
     ]
   },
   "About": {
-    "name": "Quem é Leonardo Ferreira e como posso ajudar sua marca?",
-    "p1": "Olá! Muito prazer, me chamo Leonardo, especialista em design estratégico e construção de marcas.",
-    "p2": "Com mais de 5 anos de experiência no mercado criativo, me dedico a traduzir a verdadeira essência das empresas em identidades visuais de alto impacto. Minha paixão é transformar o complexo em algo único, garantindo que a comunicação da sua empresa seja inesquecível.",
-    "p3": "O design vai muito além da estética. Trabalhamos com uma metodologia sólida e focada em resultados, assegurando que cada projeto seja visualmente sofisticado, funcional e estrategicamente posicionado no mercado.",
+    "name": "Quem é Leonardo Ferreira",
+    "p1": "Olá! Sou o Leonardo, especialista em marketing digital.",
+    "p2": "Mais de 6 anos no mercado criativo, trabalhando com marcas, sites e campanhas que precisam parecer grandes desde o primeiro contato com o público.",
+    "p3": "Trabalho com método. Cada entrega, seja uma marca, um site, uma campanha ou um conteúdo, passa por estratégia, criação e acompanhamento. O design é parte; o resultado é o que importa, e o resultado vem de execução consistente, repetida e medida.",
     "quote": "\"Simplicidade é subtrair o óbvio e acrescentar o significativo.\" – John Maeda"
   },
   "Deliverables": {
@@ -93,8 +89,8 @@
     ]
   },
   "CTA": {
-    "title": "Pronto para elevar sua empresa<br/>para o próximo nível?",
-    "desc": "Preencha a solicitação para que possamos entender melhor sobre os objetivos e desafios do projeto e em seguida marcar uma conversa para alinhar todas as expectativas. Se preferir, fique à vontade para enviar um e-mail para:",
+    "title": "Pronto pra elevar sua empresa<br/>pro próximo nível?",
+    "desc": "Preencha a solicitação pra eu entender melhor os objetivos e desafios do projeto, e em seguida marcamos uma conversa pra alinhar tudo. Se preferir, envie um e-mail direto pra:",
     "button": "Solicite uma proposta"
   },
   "Footer": {
@@ -155,6 +151,42 @@
       "challenge": "A Remach Capital atua no setor de proteção financeira e seguros, onde a confiança e a ética são os\n                    pilares fundamentais.",
       "solution": "A identidade foi desenvolvida para traduzir clareza e segurança, utilizando formas geométricas\n                    robustas e uma paleta de azul tecnológico que comunica seriedade e acompanhamento real. O design\n                    posiciona a Remach como uma marca consultiva e próxima, capaz de simplificar decisões complexas para\n                    seus clientes.",
       "services": "Identidade Visual e  Branding"
+    },
+    "projeto-p1marketing": {
+      "description": "Site de uma agência de performance em Uberlândia — estética racing, identidade dark com verde neon.",
+      "challenge": "Traduzir o conceito de 'pole position' em uma experiência web que comunicasse velocidade, performance e sofisticação técnica.",
+      "solution": "Site full Next.js com hero scroll-driven, frame sequence, paleta racing (ink + verde neon), tipografia Syncopate. Cursor customizado, loader 3.2.1.GO, animações performáticas e responsivas.",
+      "services": "Webdesign e Desenvolvimento"
+    },
+    "projeto-forset": {
+      "description": "Site institucional da Forset — design clean e moderno pra apresentar serviços com clareza.",
+      "challenge": "Construir presença digital sólida que transmitisse credibilidade técnica e ao mesmo tempo fosse acessível ao cliente final.",
+      "solution": "Site institucional construído com Next.js, foco em performance e SEO técnico. Estrutura editorial limpa, hierarquia tipográfica forte e CTAs estratégicos em cada seção.",
+      "services": "Webdesign e Desenvolvimento"
+    },
+    "projeto-airjordan": {
+      "description": "Portfolio conceitual inspirado em Air Jordan — sticky stack 3D, organic cards, scroll-driven animations.",
+      "challenge": "Provar tecnicamente o quanto é possível levar de animação e interatividade rica sem comprometer a performance.",
+      "solution": "Sticky stack 3D com perspectiva real, organic cards com hover orgânico, transições GSAP otimizadas, fontes variáveis e LCP abaixo de 1.2s. Showcase do que é possível em webdesign de ponta.",
+      "services": "Webdesign e Animação"
+    },
+    "projeto-pokemon": {
+      "description": "Landing page tributo ao primeiro filme de Pokémon — narrativa visual cinematográfica, lens reveal, starfield parallax.",
+      "challenge": "Criar uma experiência cinematográfica e emocional ao redor de uma propriedade icônica, sem cair em clichês de fan-site.",
+      "solution": "Lens reveal no hero, starfield parallax em camadas, storytelling em scroll com timing cinematográfico, tipografia clássica e UI minimal pra dar protagonismo às artes.",
+      "services": "Webdesign e Storytelling Visual"
+    },
+    "projeto-gcarneiro": {
+      "description": "Site profissional pra escritório premium — identidade refinada e UX direto.",
+      "challenge": "Comunicar autoridade e confiança de um escritório premium num formato digital limpo, sem excesso visual.",
+      "solution": "Identidade refinada com paleta sóbria, tipografia clássica e layout editorial. UX direto ao ponto, com hierarquia de conversão clara e SEO técnico bem trabalhado.",
+      "services": "Webdesign e Branding Digital"
+    },
+    "projeto-nalupoke": {
+      "description": "Loja de poke bowls em Uberlândia, com cardápio digital interativo e identidade jovem.",
+      "challenge": "Construir presença digital pra um food service que precisava se diferenciar num mercado cada vez mais saturado de poke houses.",
+      "solution": "Site em Next.js com cardápio interativo, fotos vibrantes do produto, integração com WhatsApp pra pedidos e identidade visual jovem que conversa direto com o público. Performance, mobile-first e SEO local trabalhado pra brigar em buscas tipo 'poke uberlândia'.",
+      "services": "Webdesign e Desenvolvimento"
     }
   },
   "Form": {
@@ -193,16 +225,62 @@
   },
   "Blog": {
     "tag": "Conteúdo",
-    "title": "Blog sobre Design e Identidade Visual",
-    "subtitle": "Artigos sobre design estratégico, identidade visual e branding para empresas que querem se destacar.",
+    "title": "Blog sobre Design, Web e Marketing",
+    "subtitle": "Artigos sobre design estratégico, desenvolvimento web e tráfego pago pra empresas que querem se destacar.",
     "read_more": "Ler artigo"
   },
   "Metadata": {
-    "home_title": "Design UI/UX e Desenvolvimento Web",
-    "home_description": "Transforme sua marca com Leonardo Ferreira: Especialista em UI/UX Design, websites premium de alta performance e web apps interativos voltados para o futuro do digital.",
+    "home_title": "Branding, Webdesign e Tráfego Pago",
+    "home_description": "Leonardo Ferreira — branding, websites em Next.js e gestão de tráfego pra empresas que querem parecer grandes desde o primeiro contato com o público.",
     "orcamento_title": "Solicite um Orçamento",
     "orcamento_description": "Pronto para inovar? Entre em contato, conte mais sobre o seu projeto e solicite um orçamento sob medida para alavancar a presença digital da sua marca.",
     "project_title_prefix": "Case de Sucesso",
     "project_description": "Explore os detalhes e o processo criativo deste projeto de UI/UX Design desenvolvido por Leonardo Ferreira, focado em estética apurada e performance excepcional."
+  },
+  "Pillars": {
+    "tag": "Serviços",
+    "title": "Entregamos uma marca consistente do logo ao último pixel.",
+    "items": [
+      {
+        "key": "brand",
+        "title": "Branding",
+        "desc": "Identidade visual completa: naming, logo, paleta, tipografia, sistema visual e manual de marca. Pra você sair sério."
+      },
+      {
+        "key": "web",
+        "title": "Websites",
+        "desc": "Sites e landing pages performáticas em Next.js. Design, código e deploy. Multi-idioma quando precisa."
+      },
+      {
+        "key": "traffic",
+        "title": "Tráfego pago",
+        "desc": "Campanhas Meta Ads e Google Ads pra atrair, converter e escalar. Estratégia, criativos e otimização contínua."
+      },
+      {
+        "key": "graphic",
+        "title": "Design gráfico",
+        "desc": "Posts, carrosséis e stories pra Instagram e LinkedIn. Direção visual consistente com a sua marca, prontos pra publicar."
+      },
+      {
+        "key": "video",
+        "title": "Edição de vídeo",
+        "desc": "Reels, VSLs, vídeos institucionais e ads. Corte, motion, color e legenda — entrega pronta pra publicar em cada plataforma."
+      },
+      {
+        "key": "ai",
+        "title": "Automações com IA",
+        "desc": "Atendimento automatizado no WhatsApp e prospecção ativa com IA. Sua equipe foca em fechar; a IA cuida do volume."
+      },
+      {
+        "key": "social",
+        "title": "Social media",
+        "desc": "Planejamento de conteúdo, calendário editorial, publicação e engajamento. Sua presença nas redes sem furo."
+      },
+      {
+        "key": "copy",
+        "title": "Copywriting",
+        "desc": "Copy de site, anúncios, e-mails e roteiros. Texto que vende, sem clichê, na voz da sua marca."
+      }
+    ]
   }
 }

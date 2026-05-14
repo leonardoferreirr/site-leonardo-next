@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Leonardo Ferreira</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Embed the site's globals.css variables and core classes */
+        :root {
+            --font-primary: "Helvetica Neue", "Arial", sans-serif;
+            --font-secondary: "Inter", sans-serif;
+            --font-monospace: "Courier New", monospace;
+
+            --ds-bg-color: #000000;
+            --ds-text-primary: #e0e0e0;
+            --ds-text-secondary: #ababab;
+            --ds-accent-primary: #FFFFFF;
+
+            --ds-glass-bg: rgba(255, 255, 255, 0.03);
+            --ds-glass-border: rgba(255, 255, 255, 0.15);
+            --ds-glass-hover: rgba(255, 255, 255, 0.08);
+
+            --ds-shadow-light: 0 4px 24px rgba(0, 0, 0, 0.5);
+            --ds-glow-subtle: 0 0 40px rgba(255, 255, 255, 0.05);
+            --ds-glow-strong: 0 0 20px rgba(255, 255, 255, 0.2);
+            --ds-glass-inner: 0 1px 0 rgba(255, 255, 255, 0.35) inset;
+
+            --speed-fast: 0.2s;
+            --speed-normal: 0.4s;
+            --speed-slow: 0.8s;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--ds-bg-color);
+            color: var(--ds-text-primary);
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* TYPOGRAPHY */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-primary);
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .ds-text-stroke {
+            font-family: "Playfair Display", serif;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--ds-text-secondary);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+        }
+
+        .ds-text-stroke:hover {
+            color: var(--ds-text-primary);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .ds-display-1 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+
+        .ds-h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        .ds-h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        .ds-h3 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .ds-body-lg {
+            font-size: 1.25rem;
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-body {
+            font-size: 1rem;
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-body-sm {
+            font-size: 0.875rem;
+            color: var(--ds-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* BUTTONS */
+        .ds-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--ds-text-primary);
+            background: transparent;
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--speed-normal) var(--ease-out-expo);
+            z-index: -1;
+        }
+
+        .ds-btn:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: var(--ds-glow-strong);
+            transform: translateY(-2px);
+        }
+
+        .ds-btn:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .ds-btn-primary {
+            background: var(--ds-text-primary);
+            color: var(--ds-bg-color);
+            border-color: transparent;
+        }
+
+        .ds-btn-primary::before {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .ds-btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* BEAM BUTTON */
+        .shimmer-btn-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .shimmer-btn-wrapper .glow-bg {
+            position: absolute;
+            inset: -4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 9999px;
+            filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .shimmer-btn-wrapper:hover .glow-bg {
+            opacity: 1;
+            animation: ping-glow 2s infinite;
+        }
+
+        @keyframes ping-glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes shimmer {
+            from {
+                transform: translateX(-100%) skewX(-15deg);
+            }
+
+            to {
+                transform: translateX(200%) skewX(-15deg);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ds-btn-beam {
+            position: relative;
+            z-index: 10;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 9999px;
+            padding: 1px;
+            line-height: 1;
+            text-decoration: none;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .ds-btn-beam-bg {
+            position: absolute;
+            top: -1000%;
+            bottom: -1000%;
+            left: -1000%;
+            right: -1000%;
+            background: conic-gradient(from 0deg, transparent 0 340deg, rgba(255, 255, 255, 1) 360deg);
+            animation: spin 3s linear infinite;
+        }
+
+        .ds-btn-beam-inner {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            padding: 16px 40px;
+            background: var(--ds-bg-color);
+            border: 1px solid var(--ds-glass-border);
+            transition: all 0.3s ease;
+            gap: 12px;
+            color: var(--ds-text-primary);
+        }
+
+        .ds-btn-beam:hover .ds-btn-beam-inner {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ds-btn-beam-shimmer {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+
+        .ds-btn-beam-shimmer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transform: skewX(-12deg);
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ds-btn-beam:hover .ds-btn-beam-shimmer::before {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* CARDS */
+        .ds-glass-card {
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner), var(--ds-shadow-light);
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ds-glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: var(--ds-glow-subtle);
+        }
+
+        .ds-methodology-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 32px 40px;
+            border-radius: 24px;
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+            transition: transform var(--speed-normal);
+        }
+
+        .ds-methodology-card:hover {
+            transform: translateX(16px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* INPUTS */
+        .ds-input {
+            width: 100%;
+            padding: 16px 24px;
+            font-family: var(--font-secondary);
+            font-size: 1rem;
+            color: var(--ds-text-primary);
+            background: var(--ds-glass-bg);
+            border: 1px solid var(--ds-glass-border);
+            border-radius: 12px;
+            outline: none;
+            transition: all var(--speed-normal) var(--ease-out-expo);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: var(--ds-glass-inner);
+        }
+
+        .ds-input::placeholder {
+            color: var(--ds-text-secondary);
+        }
+
+        .ds-input:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: var(--ds-glow-subtle);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        select.ds-input {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="%23ababab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 24px center;
+            cursor: pointer;
+        }
+
+        /* Ajustes específicos para exibição na página de DS simulando o site */
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .color-swatch-fill {
+            height: 140px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .typo-preview {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--ds-glass-border);
+        }
+
+        .typo-preview:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .typo-preview-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ds-text-secondary);
+            margin-bottom: 16px;
+            font-family: var(--font-monospace);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION: Simula o ds-hero original -->
+    <section class="ds-hero" style="position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; inset: 0; z-index: -1; display: flex; align-items: center; justify-content: center;">
+            <!-- Simulação do elemento visual de fundo -->
+            <div
+                style="width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%;">
+            </div>
+        </div>
+        <div style="max-width: 1000px; width: 100%; margin: 0 auto; position: relative; z-index: 1;">
+            <h1 class="ds-display-1 fade-in-up">
+                Design System <br> <em class="ds-text-stroke">Leonardo</em> <em class="ds-text-stroke">Faria</em>
+            </h1>
+            <p class="ds-body-lg fade-in-up" style="max-width: 600px; margin: 0 auto; margin-top: 24px;">
+                Identidade visual, paleta de cores, tipografia e componentes base aplicados ao ecossistema atual.
+            </p>
+            <div class="fade-in-up delay-1" style="margin-top: 56px;">
+                <div class="shimmer-btn-wrapper">
+                    <div class="glow-bg"></div>
+                    <a href="#cores" class="ds-btn-beam">
+                        <span class="ds-btn-beam-bg"></span>
+                        <span class="ds-btn-beam-inner">
+                            <span class="ds-btn-beam-shimmer"></span>
+                            Explorar Componentes
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. CORES (Estilo Methodology Card) -->
+    <section class="ds-container" id="cores">
+        <div class="ds-section-title">
+            <span class="ds-body-sm">Cores</span>
+            <h2 class="ds-h2">Paleta Core</h2>
+        </div>
+
+        <div class="color-palette">
+            <!-- Swatch 1 -->
+            <div class="ds-methodology-card" style="padding: 0; overflow: hidden; gap: 0;">
+                <div class="color-swatch-fill"
+                    style="background: var(--ds-bg-color); border-bottom: 1px solid var(--ds-glass-border);"></div>
+                <div style="padding: 24px;">
+                    <h3 class="ds-body-lg" style="color: #fff; font-weight: 600; margin-bottom: 8px;">Background</h3>
+                    <p class="ds-body-sm" style="font-family: var(--font-monospace);">--ds-bg-color<br>#000000</p>
+                </div>
+            </div>
+
+            <!-- Swatch 2 -->
+            <div class="ds-methodology-card" style="padding: 0; overflow: hidden; gap: 0;">
+                <div class="color-swatch-fill"
+                    style="background: var(--ds-text-primary); border-bottom: 1px solid var(--ds-glass-border);"></div>
+                <div style="padding: 24px;">
+                    <h3 class="ds-body-lg" style="color: #fff; font-weight: 600; margin-bottom: 8px;">Text Primary</h3>
+                    <p class="ds-body-sm" style="font-family: var(--font-monospace);">--ds-text-primary<br>#E0E0E0</p>
+                </div>
+            </div>
+
+            <!-- Swatch 3 -->
+            <div class="ds-methodology-card" style="padding: 0; overflow: hidden; gap: 0;">
+                <div class="color-swatch-fill"
+                    style="background: var(--ds-text-secondary); border-bottom: 1px solid var(--ds-glass-border);">
+                </div>
+                <div style="padding: 24px;">
+                    <h3 class="ds-body-lg" style="color: #fff; font-weight: 600; margin-bottom: 8px;">Text Secondary
+                    </h3>
+                    <p class="ds-body-sm" style="font-family: var(--font-monospace);">--ds-text-secondary<br>#ABABAB</p>
+                </div>
+            </div>
+
+            <!-- Swatch 4 -->
+            <div class="ds-methodology-card" style="padding: 0; overflow: hidden; gap: 0;">
+                <div class="color-swatch-fill"
+                    style="background: var(--ds-accent-primary); border-bottom: 1px solid var(--ds-glass-border);">
+                </div>
+                <div style="padding: 24px;">
+                    <h3 class="ds-body-lg" style="color: #000; font-weight: 600; margin-bottom: 8px;">Accent Primary
+                    </h3>
+                    <p class="ds-body-sm" style="font-family: var(--font-monospace); color: rgba(0,0,0,0.6);">
+                        --ds-accent-primary<br>#FFFFFF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TIPOGRAFIA -->
+    <section class="ds-container" id="tipografia">
+        <div class="ds-section-title">
+            <span class="ds-body-sm">Tipografia</span>
+            <h2 class="ds-h2">Escala e Estilos</h2>
+        </div>
+
+        <div class="ds-glass-card">
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-display-1</div>
+                <div class="ds-display-1">Visionary Design <br><em class="ds-text-stroke">Digital</em></div>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-h1</div>
+                <div class="ds-h1">Building Experiences</div>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-h2</div>
+                <h2 class="ds-h2">Methodology & Approach</h2>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-h3</div>
+                <h3 class="ds-h3">Featured Projects</h3>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-body-lg</div>
+                <p class="ds-body-lg">Clean, sans-serif, optimized for digital screens. Used for introductions, hero
+                    paragraphs, and prominent readable segments.</p>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-body</div>
+                <p class="ds-body">Default body paragraph text. Used across standard descriptions, methodological steps,
+                    and general content flows throughout the platform.</p>
+            </div>
+
+            <div class="typo-preview">
+                <div class="typo-preview-label">.ds-body-sm</div>
+                <p class="ds-body-sm">Small Uppercase Label</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. COMPONENTES -->
+    <section class="ds-container" id="componentes">
+        <div class="ds-section-title">
+            <span class="ds-body-sm">Componentes</span>
+            <h2 class="ds-h2">Botões e Formulários</h2>
+        </div>
+
+        <div class="ds-grid ds-grid-2">
+            <!-- Botões -->
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+                <div class="ds-glass-card"
+                    style="padding: 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+                    <div class="typo-preview-label" style="margin-bottom: 0;">.ds-btn</div>
+                    <a href="#" class="ds-btn">
+                        Ver Projetos
+                    </a>
+
+                    <div class="typo-preview-label" style="margin-bottom: 0; margin-top: 16px;">.ds-btn-primary</div>
+                    <a href="#" class="ds-btn ds-btn-primary">
+                        Entrar em Contato
+                    </a>
+
+                    <div class="typo-preview-label" style="margin-bottom: 0; margin-top: 16px;">.ds-btn-beam</div>
+                    <div class="shimmer-btn-wrapper">
+                        <div class="glow-bg"></div>
+                        <a href="#" class="ds-btn-beam">
+                            <span class="ds-btn-beam-bg"></span>
+                            <span class="ds-btn-beam-inner">
+                                <span class="ds-btn-beam-shimmer"></span>
+                                Solicitar Orçamento
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário -->
+            <div class="ds-glass-card" style="padding: 40px;">
+                <div class="typo-preview-label">.ds-input</div>
+                <div style="display: flex; flex-direction: column; gap: 24px;">
+                    <input type="text" class="ds-input" placeholder="Seu Nome (*)">
+                    <input type="email" class="ds-input" placeholder="Seu E-mail Corporativo (*)">
+                    <select class="ds-input">
+                        <option value="" disabled selected>Orçamento Estimado</option>
+                        <option value="1">R$ 5.000 - R$ 10.000</option>
+                        <option value="2">R$ 10.000+</option>
+                    </select>
+                    <textarea class="ds-input" rows="4" placeholder="Detalhes do projeto..."></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="border-top: 1px solid var(--ds-glass-border); margin-top: 60px;">
+        <div class="ds-container footer-container">
+            <div class="ds-body-sm footer-copyright">
+                © Leonardo Ferreira. Design System Overview.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -4,20 +4,24 @@
     "methodology": "Process",
     "about": "About",
     "blog": "Blog",
-    "deliverables": "Deliverables",
-    "contact": "Budget"
+    "contact": "Quote",
+    "services": "Services"
   },
   "Hero": {
-    "title1": "We create brands that stay",
-    "title_stroke1": "in memory",
-    "title2": ":",
-    "title_stroke2": "logo,",
-    "title3": "brandbook and visual system.",
+    "title1": "End-to-end",
+    "title_stroke1": "digital solutions",
+    "title2": "for your brand to",
+    "title_stroke2": "stand out",
+    "title3": "online.",
+    "subline": "Branding, websites and paid traffic for companies that want to be big.",
     "cta_button": "Request a proposal"
   },
   "Projects": {
     "tag": "Portfolio",
-    "title": "Visual Identity Projects Developed"
+    "title": "Projects we delivered",
+    "filter_all": "All",
+    "filter_brand": "Branding",
+    "filter_web": "Websites"
   },
   "CaseStudy": {
     "case_study": "Case Study",
@@ -31,43 +35,35 @@
   },
   "Methodology": {
     "tag": "Process",
-    "title": "How do we create visual identities that work?",
+    "title": "How we deliver each project.",
     "steps": [
       {
-        "title": "01. Immersion and Analysis",
-        "desc": "We dive into your business to align expectations, map challenges, and define core brand goals."
+        "title": "01. Immersion & Diagnosis",
+        "desc": "We dive into your business: product, audience, competition, goals. Without this step, the rest is guesswork."
       },
       {
-        "title": "02. Brand Strategy",
-        "desc": "We define the project DNA. We analyze purpose, target audience, and market positioning to build a solid foundation."
+        "title": "02. Strategy",
+        "desc": "We define positioning, core message, audience awareness and KPIs. All written down before turning into pixels or ads."
       },
       {
-        "title": "03. Visual Direction",
-        "desc": "Translating strategy into aesthetics. We create semantic boards (moodboards) with market references to shape the brand's atmosphere."
+        "title": "03. Creative Direction",
+        "desc": "Moodboards, references, aesthetic and tone choices. Approval here prevents rework in execution."
       },
       {
-        "title": "04. Logo Design",
-        "desc": "Where essence takes form. We develop the symbol, typography, and colors based on functional and striking concepts."
+        "title": "04. Execution",
+        "desc": "Brand design, website development or campaign creation. Iteration with you along the way, not only at the end."
       },
       {
-        "title": "05. Visual Identity System",
-        "desc": "We expand the brand. We create graphics, patterns, textures, and define visual behavior across all touchpoints."
-      },
-      {
-        "title": "06. Strategic Presentation",
-        "desc": "Revealing the outcome. In a detailed video call, we present the project applied in real-life scenarios for your complete validation."
-      },
-      {
-        "title": "07. Final Delivery",
-        "desc": "Ready for the world. We prepare and send all necessary files and guidelines for flawless execution of your new brand in the market."
+        "title": "05. Delivery & Follow-up",
+        "desc": "Final files, deploy, campaign activation, usage guidelines. Follow-up of the first results."
       }
     ]
   },
   "About": {
-    "name": "Who is Leonardo Ferreira and how can I help your brand?",
-    "p1": "Hello! Nice to meet you, my name is Leonardo, a specialist in strategic design and brand building.",
-    "p2": "With over 5 years of experience in the creative market, I am dedicated to translating the true essence of companies into high-impact visual identities. My passion is turning complexity into something unique, ensuring your company's communication is unforgettable.",
-    "p3": "Design goes far beyond aesthetics. We work with a solid, results-driven methodology, ensuring that every project is visually sophisticated, functional, and strategically positioned in the market.",
+    "name": "Who is Leonardo Ferreira",
+    "p1": "Hi! I'm Leonardo, specialist in digital marketing.",
+    "p2": "Over 6 years in the creative market, working on brands, websites and campaigns that need to look big from the first interaction with the audience.",
+    "p3": "I work with method. Every deliverable, a brand, a website, a campaign or a content piece, goes through strategy, creation and follow-up. Design is part of it; results are what matter, and results come from consistent, repeated and measured execution.",
     "quote": "\"Simplicity is subtracting the obvious and adding the meaningful.\" – John Maeda"
   },
   "Deliverables": {
@@ -94,7 +90,7 @@
   },
   "CTA": {
     "title": "Ready to take your company<br/>to the next level?",
-    "desc": "Fill out the request so we can better understand the project's goals and challenges, and then schedule a conversation to align all expectations. If you prefer, feel free to send an email to:",
+    "desc": "Fill the request so I can understand the project goals and challenges, and then we schedule a conversation to align everything. Or send an email directly to:",
     "button": "Request a proposal"
   },
   "Footer": {
@@ -155,6 +151,42 @@
       "challenge": "Remach Capital operates in the financial protection and insurance sector, where trust and ethics are fundamental pillars.",
       "solution": "The identity was developed to translate clarity and security, using robust geometric shapes and a technological blue palette that communicates seriousness and real tracking. The design positions Remach as a consultative and approachable brand, capable of simplifying complex decisions for its clients.",
       "services": "Visual Identity and Branding"
+    },
+    "projeto-p1marketing": {
+      "description": "Website of a performance agency in Uberlândia — racing aesthetics, dark identity with neon green.",
+      "challenge": "Translate the 'pole position' concept into a web experience that communicated speed, performance and technical sophistication.",
+      "solution": "Full Next.js site with scroll-driven hero, frame sequence, racing palette (ink + neon green), Syncopate typography. Custom cursor, 3.2.1.GO loader, performant and responsive animations.",
+      "services": "Webdesign and Development"
+    },
+    "projeto-forset": {
+      "description": "Forset's institutional website — clean and modern design to present services clearly.",
+      "challenge": "Build a solid digital presence that conveyed technical credibility while remaining accessible to the end client.",
+      "solution": "Institutional website built with Next.js, focused on performance and technical SEO. Clean editorial structure, strong typographic hierarchy and strategic CTAs in each section.",
+      "services": "Webdesign and Development"
+    },
+    "projeto-airjordan": {
+      "description": "Conceptual portfolio inspired by Air Jordan — 3D sticky stack, organic cards, scroll-driven animations.",
+      "challenge": "Technically prove how much rich animation and interactivity is possible without compromising performance.",
+      "solution": "3D sticky stack with real perspective, organic cards with organic hover, optimized GSAP transitions, variable fonts and LCP below 1.2s. Showcase of what's possible in top-tier webdesign.",
+      "services": "Webdesign and Animation"
+    },
+    "projeto-pokemon": {
+      "description": "Landing page tribute to the first Pokémon movie — cinematic visual narrative, lens reveal, starfield parallax.",
+      "challenge": "Create a cinematic and emotional experience around an iconic property without falling into fan-site clichés.",
+      "solution": "Lens reveal in the hero, layered starfield parallax, scroll storytelling with cinematic timing, classic typography and minimal UI to give protagonism to the artwork.",
+      "services": "Webdesign and Visual Storytelling"
+    },
+    "projeto-gcarneiro": {
+      "description": "Professional site for a premium office — refined identity and straightforward UX.",
+      "challenge": "Communicate authority and trust of a premium office in a clean digital format, without visual excess.",
+      "solution": "Refined identity with sober palette, classic typography and editorial layout. Straightforward UX with clear conversion hierarchy and well-crafted technical SEO.",
+      "services": "Webdesign and Digital Branding"
+    },
+    "projeto-nalupoke": {
+      "description": "Poke bowls shop in Uberlândia, with interactive digital menu and youthful identity.",
+      "challenge": "Build digital presence for a food service that needed to stand out in an increasingly saturated poke house market.",
+      "solution": "Next.js site with interactive menu, vibrant product photos, WhatsApp integration for orders, and a youthful visual identity that speaks directly to the audience. Performance, mobile-first and local SEO crafted to compete in searches like 'poke uberlândia'.",
+      "services": "Webdesign and Development"
     }
   },
   "Form": {
@@ -193,16 +225,62 @@
   },
   "Blog": {
     "tag": "Content",
-    "title": "Blog on Design and Visual Identity",
-    "subtitle": "Articles on strategic design, visual identity and branding for companies that want to stand out.",
+    "title": "Blog about Design, Web and Marketing",
+    "subtitle": "Articles about strategic design, web development and paid traffic for companies that want to stand out.",
     "read_more": "Read article"
   },
   "Metadata": {
-    "home_title": "UI/UX Design and Web Development",
-    "home_description": "Transform your brand with Leonardo Ferreira: Expert in UI/UX Design, premium high-performance websites, and interactive web apps built for the digital future.",
+    "home_title": "Branding, Webdesign and Paid Traffic",
+    "home_description": "Leonardo Ferreira — branding, websites in Next.js and paid traffic management for companies that want to look big from the first interaction.",
     "orcamento_title": "Request a Quote",
     "orcamento_description": "Ready to innovate? Get in touch, tell me more about your project, and request a tailored quote to boost your brand's digital presence.",
     "project_title_prefix": "Success Case",
     "project_description": "Explore the details and creative process of this UI/UX Design project developed by Leonardo Ferreira, focused on refined aesthetics and exceptional performance."
+  },
+  "Pillars": {
+    "tag": "Services",
+    "title": "We deliver a brand consistent from logo to last pixel.",
+    "items": [
+      {
+        "key": "brand",
+        "title": "Branding",
+        "desc": "Complete visual identity: naming, logo, palette, typography, visual system and brand guidelines. So you look serious."
+      },
+      {
+        "key": "web",
+        "title": "Websites",
+        "desc": "High-performance sites and landing pages in Next.js. Design, code and deploy. Multi-language when needed."
+      },
+      {
+        "key": "traffic",
+        "title": "Paid traffic",
+        "desc": "Meta Ads and Google Ads campaigns to attract, convert and scale. Strategy, creatives and ongoing optimization."
+      },
+      {
+        "key": "graphic",
+        "title": "Graphic design",
+        "desc": "Posts, carousels and stories for Instagram and LinkedIn. Consistent visual direction aligned with your brand, ready to publish."
+      },
+      {
+        "key": "video",
+        "title": "Video editing",
+        "desc": "Reels, VSLs, institutional videos and ads. Cuts, motion, color and captions — delivered ready to post on every platform."
+      },
+      {
+        "key": "ai",
+        "title": "AI automations",
+        "desc": "Automated WhatsApp support and active prospecting with AI. Your team closes; AI handles the volume."
+      },
+      {
+        "key": "social",
+        "title": "Social media",
+        "desc": "Content planning, editorial calendar, publishing and engagement. Your presence on social, without gaps."
+      },
+      {
+        "key": "copy",
+        "title": "Copywriting",
+        "desc": "Copy for websites, ads, emails and scripts. Text that sells, no clichés, in your brand's voice."
+      }
+    ]
   }
 }

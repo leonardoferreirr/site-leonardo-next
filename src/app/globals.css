@@ -1,11 +1,11 @@
     /* =========================================================================
            1. CORE VARIABLES & THEME SETUP (Design System Base)
            ========================================================================= */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
     :root {
-        --font-primary: "Helvetica Neue", "Arial", sans-serif;
-        --font-secondary: "Inter", sans-serif;
-        --font-monospace: "Courier New", monospace;
+        --font-primary: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-secondary: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-display: var(--font-serif), "Instrument Serif", Georgia, serif;
+        --font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
         --ds-bg-color: #000000;
         --ds-text-primary: #e0e0e0;
@@ -83,9 +83,10 @@
     }
 
     .ds-text-stroke {
-        font-family: "Playfair Display", serif;
+        font-family: var(--font-display);
         font-style: italic;
-        font-weight: 600;
+        font-weight: 400;
+        letter-spacing: -0.01em;
         color: var(--ds-text-secondary);
         transition: all var(--speed-normal) var(--ease-out-expo);
     }
@@ -95,11 +96,29 @@
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
+    /* Override: H3 dos cards e nomes de projeto NÃO usam serif italic
+       (mantém apenas em h1/h2 pra ficar editorial sem cansar a vista) */
+    .ds-h3.ds-text-stroke,
+    .ds-project-title-tag.ds-text-stroke {
+        font-family: var(--font-primary);
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+
     .ds-display-1 {
-        font-size: clamp(3rem, 6vw, 6rem);
-        letter-spacing: -0.04em;
-        line-height: 1;
+        font-size: clamp(3rem, 6.5vw, 6.5rem);
+        letter-spacing: -0.045em;
+        line-height: 0.98;
         margin-bottom: 32px;
+        font-weight: 700;
+    }
+
+    .ds-display-1 em {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: -0.025em;
     }
 
     .ds-h1 {
@@ -139,12 +158,12 @@
     .ds-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 120px 40px;
+        padding: 80px 40px;
     }
 
     .ds-section-title {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 64px;
     }
 
     .ds-section-title .ds-body-sm {
@@ -413,11 +432,11 @@
         }
 
         .ds-container {
-            padding: 80px 24px !important;
+            padding: 64px 24px !important;
         }
 
         #projetos.ds-container {
-            padding-top: 24px !important;
+            padding-top: 32px !important;
         }
 
         #voltar-inicio-link {
@@ -429,7 +448,7 @@
         }
 
         .ds-section-title {
-            margin-bottom: 48px !important;
+            margin-bottom: 40px !important;
         }
 
         .shimmer-btn-wrapper {
@@ -496,6 +515,13 @@
         cursor: pointer;
     }
 
+    /* Lenis smooth scroll requirements */
+    html.lenis, html.lenis body { height: auto; }
+    .lenis.lenis-smooth { scroll-behavior: auto !important; }
+    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+    .lenis.lenis-stopped { overflow: hidden; }
+    .lenis.lenis-smooth iframe { pointer-events: none; }
+
     /* SCROLL INTERSECTION ANIMATIONS (Surgimento) */
     .fade-in-up {
         opacity: 0;
@@ -506,6 +532,132 @@
     .fade-in-up.visible {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    /* Hero split text reveal */
+    @keyframes splitReveal {
+        0% { opacity: 0; transform: translateY(100%); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Marquee loop horizontal infinito */
+    @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    @keyframes marqueeScrollReverse {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+
+    /* PILARES — carrossel scroll horizontal Netflix-style com peek do próximo card */
+    .ds-pillars-container {
+        /* deixa container largo pra carrossel respirar; volta padding nas pontas */
+        max-width: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .ds-pillars-container .ds-section-title {
+        padding-left: 40px;
+        padding-right: 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ds-pillars-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 40px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 4px 40px 40px;
+        /* margem hacky pra mostrar peek do próximo card */
+    }
+    .ds-pillars-track::-webkit-scrollbar {
+        display: none;
+    }
+    .ds-pillar-card {
+        flex: 0 0 auto;
+        /* Desktop: 3 cards + peek de 20% do 4º = ~1/3.4 da largura */
+        width: clamp(260px, calc((100vw - 40px - 40px - 60px) / 3.4), 360px);
+        scroll-snap-align: start;
+        padding: 28px;
+        border-radius: 20px;
+        border: 1px solid var(--ds-glass-border);
+        background: var(--ds-glass-bg);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: border-color 0.4s var(--ease-out-expo),
+                    box-shadow 0.4s var(--ease-out-expo),
+                    transform 0.4s var(--ease-out-expo),
+                    background 0.4s var(--ease-out-expo);
+    }
+    .ds-pillar-card:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+    .ds-pillar-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--ds-glass-bg);
+        border: 1px solid var(--ds-glass-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ds-text-primary);
+        flex-shrink: 0;
+    }
+    .ds-pillar-title {
+        font-family: var(--font-primary);
+        font-weight: 600;
+        font-size: clamp(1.2rem, 1.4vw, 1.5rem);
+        letter-spacing: -0.02em;
+        color: var(--ds-text-primary);
+        margin: 0;
+        line-height: 1.15;
+    }
+    .ds-pillar-desc {
+        font-family: var(--font-primary);
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: var(--ds-text-secondary);
+        margin: 0;
+    }
+    @media (max-width: 768px) {
+        .ds-pillars-container .ds-section-title {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .ds-pillars-track {
+            scroll-padding-left: 24px;
+            padding: 4px 24px 32px;
+            gap: 14px;
+        }
+        .ds-pillar-card {
+            width: 78vw;
+            padding: 24px;
+        }
+    }
+
+    /* Reduzir motion pra acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+        .fade-in-up,
+        .fade-in-up.visible {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+        [style*="splitReveal"] {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
     }
 
     .delay-1 {
@@ -561,6 +713,10 @@
         cursor: pointer;
         border: 1px solid var(--ds-glass-border);
         background: var(--ds-glass-bg);
+        transition: flex 0.6s var(--ease-out-expo),
+                    border-color 0.4s var(--ease-out-expo),
+                    box-shadow 0.4s var(--ease-out-expo),
+                    transform 0.4s var(--ease-out-expo);
         transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform var(--speed-normal) var(--ease-out-expo), border-color var(--speed-normal), box-shadow var(--speed-normal);
         box-shadow: var(--ds-glass-inner);
     }
@@ -578,8 +734,9 @@
 
     .ds-project-card:hover {
         flex: 8;
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: var(--ds-glow-strong);
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55), 0 0 40px rgba(255, 255, 255, 0.08);
+        transform: translateY(-6px);
     }
 
     .ds-project-overlay {
@@ -643,6 +800,42 @@
         border-color: rgba(255, 255, 255, 0.2);
     }
 
+    /* Stacking cards effect (P1 / Nalu Poke style) */
+    .ds-methodology-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 48px;
+        /* contexto de empilhamento estavel pra sticky */
+        position: relative;
+    }
+
+    .ds-methodology-card-stack {
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 48px 48px;
+        border-radius: 24px;
+        background: #0a0a0a;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+        min-height: 220px;
+        will-change: transform;
+        transition: border-color 0.4s ease;
+    }
+
+    .ds-methodology-card-stack:hover {
+        border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    @media (max-width: 768px) {
+        .ds-methodology-card-stack {
+            padding: 32px 24px;
+            min-height: 180px;
+        }
+    }
+
     /* =========================================================================
            7. MOBILE PROJECTS VIEW (Sticky Scroll Swap)
            ========================================================================= */
@@ -661,11 +854,8 @@
             display: flex;
             position: relative;
             margin-left: -40px;
-            /* Break out of .ds-container padding */
             margin-right: -40px;
-            /* Break out of .ds-container padding */
             padding: 40px 0 40px 40px;
-            /* Reset left padding */
             align-items: flex-start;
             gap: 16px;
         }
@@ -675,7 +865,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 90vh; /* gives enough scrolling */
+            min-height: 90vh;
             gap: 24px;
             padding-top: 0;
             padding-bottom: 0;
@@ -684,13 +874,24 @@
         .mobile-images-sticky {
             width: 50%;
             flex-grow: 1;
-            /* Fill remaining space exactly to the edge */
             position: sticky;
             top: 28vh;
             height: 280px;
             border-radius: 16px 0 0 16px;
             overflow: hidden;
             display: flex;
+            align-self: flex-start;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-images-sticky img {
+            display: block;
+        }
+
+        .mobile-names-list .ds-h3 {
+            font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
+            line-height: 1.05 !important;
+            word-break: break-word;
         }
     }
 
