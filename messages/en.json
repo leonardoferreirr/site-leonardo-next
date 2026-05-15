@@ -221,7 +221,11 @@
     "rev_100k": "$50,000 to $100,000",
     "rev_100k_plus": "Above $100,000",
     "message": "Tell us about your company and your main challenges today",
-    "submit": "Send"
+    "submit": "Send",
+    "error_title": "Submission failed",
+    "error_subtitle": "Your connection may have dropped or a blocker stopped the request. Try again, or talk to me directly on WhatsApp.",
+    "retry": "Try Again",
+    "talk_whatsapp": "Talk on WhatsApp"
   },
   "Blog": {
     "tag": "Content",

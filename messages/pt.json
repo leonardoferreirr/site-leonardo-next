@@ -221,7 +221,11 @@
     "rev_100k": "R$ 50.000 a R$ 100.000",
     "rev_100k_plus": "Acima de R$ 100.000",
     "message": "Fale um pouco sobre a sua empresa e os principais desafios que enfrentam hoje",
-    "submit": "Enviar"
+    "submit": "Enviar",
+    "error_title": "Falha no envio",
+    "error_subtitle": "Sua conexão pode ter caído ou algum bloqueador impediu o envio. Tenta de novo, ou me chama no WhatsApp que respondo direto.",
+    "retry": "Tentar Novamente",
+    "talk_whatsapp": "Falar no WhatsApp"
   },
   "Blog": {
     "tag": "Conteúdo",
