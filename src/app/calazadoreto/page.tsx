@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const WA = '5511999999999'; // [A CONFIRMAR] WhatsApp do Leonardo
+const WA = '5534997697377'; // Leonardo
 
 const MSG = {
   avulso:
@@ -79,7 +79,6 @@ function ScreenFeature({
         <img src={image} alt={alt} loading="lazy" />
       </div>
       <div className="cd-screen-body">
-        <span className="cd-tag">{tag}</span>
         <h3>
           <span className="cd-screen-num">{n}</span>
           {title}
@@ -109,9 +108,18 @@ function ModelAvulso() {
         </p>
       </div>
 
+      <div className="cd-price-banner cd-rv">
+        <div className="cd-price-banner-amount">
+          <span className="cd-price-cur">R$</span>
+          <span className="cd-price-num">5.000</span>
+        </div>
+        <div className="cd-price-banner-meta">
+          em até <strong>12x sem juros</strong> no cartão
+        </div>
+      </div>
+
       <div className="cd-cards">
         <div className="cd-card cd-rv">
-          <span className="cd-card-eyebrow">O que está incluso</span>
           <h4>Sistema completo em produção</h4>
           <p>Os seis módulos navegáveis acima, deploy em domínio próprio, autenticação ativa e identidade visual já calibrada com a marca Calaza Doreto.</p>
           <ul className="cd-bullets">
@@ -123,19 +131,17 @@ function ModelAvulso() {
         </div>
 
         <div className="cd-card cd-rv">
-          <span className="cd-card-eyebrow">Cronograma</span>
-          <h4>4 a 6 semanas até o go-live</h4>
-          <p>Trabalho dividido em três fases: kickoff e alinhamento, plug-ins (Supabase, Asaas, NFS-e), e refinamento final com a equipe usando.</p>
+          <h4>2 a 4 semanas até o go-live</h4>
+          <p>Trabalho dividido em fases: kickoff e alinhamento, integrações (Supabase, Asaas, NFS-e) e refinamento final com a equipe usando.</p>
           <ul className="cd-bullets">
             <li>Semana 1: kickoff, acesso e alinhamento de identidade</li>
-            <li>Semana 2-3: integrações Asaas e NFS-e</li>
-            <li>Semana 4-5: validação com casos reais da Calaza</li>
-            <li>Semana 6: go-live e handover</li>
+            <li>Semana 2: integrações Asaas e NFS-e</li>
+            <li>Semana 3: validação com casos reais da Calaza</li>
+            <li>Semana 4: go-live e handover</li>
           </ul>
         </div>
 
         <div className="cd-card cd-rv">
-          <span className="cd-card-eyebrow">Garantia</span>
           <h4>30 dias de ajuste pós-entrega</h4>
           <p>Bug, comportamento inesperado, ajuste fino de fluxo: cobertos sem custo nos primeiros 30 dias após o go-live.</p>
           <ul className="cd-bullets">
@@ -146,7 +152,6 @@ function ModelAvulso() {
         </div>
 
         <div className="cd-card cd-rv">
-          <span className="cd-card-eyebrow">Não incluso</span>
           <h4>O que fica fora do escopo</h4>
           <p>Pra evitar surpresas, o que está fora desse contrato (e pode entrar como projeto novo ou no modelo recorrente):</p>
           <ul className="cd-bullets">
@@ -190,14 +195,19 @@ function ModelRecorrente() {
           <div className="cd-tier-hours">
             4h <small>por semana</small>
           </div>
+          <div className="cd-tier-price">
+            <span className="cd-tier-rate">R$ 100/hora</span>
+            <span className="cd-tier-monthly">≈ R$ 1.600/mês</span>
+          </div>
           <p className="cd-tier-sub">
             Manter o CRM rodando, fazer ajustes pontuais e responder ao time quando precisarem.
           </p>
           <ul className="cd-bullets">
             <li>Correções e ajustes finos</li>
             <li>Reuniões quinzenais de alinhamento</li>
-            <li>SLA de resposta em até 24 horas úteis</li>
+            <li>SLA de atendimento em até 4 horas úteis</li>
             <li>Pequenos refinamentos de UX</li>
+            <li>Acesso direto via WhatsApp em horário comercial</li>
           </ul>
           <div className="cd-tier-fit">
             <strong>Quando encaixa:</strong> operação estável, equipe acostumada com o
@@ -211,13 +221,17 @@ function ModelRecorrente() {
           <div className="cd-tier-hours">
             8h <small>por semana</small>
           </div>
+          <div className="cd-tier-price">
+            <span className="cd-tier-rate">R$ 90/hora</span>
+            <span className="cd-tier-monthly">≈ R$ 2.880/mês</span>
+          </div>
           <p className="cd-tier-sub">
             Evolução contínua: novas integrações, melhorias de fluxo e relatórios sob medida
             entrando todo mês.
           </p>
           <ul className="cd-bullets">
             <li>Tudo do Light</li>
-            <li>Reuniões semanais de roadmap</li>
+            <li>Reuniões quinzenais de roadmap</li>
             <li>1 entrega de melhoria a cada 2 semanas</li>
             <li>Integrações novas (e-mail, WhatsApp, etc)</li>
             <li>Dashboards e relatórios sob demanda</li>
@@ -233,6 +247,10 @@ function ModelRecorrente() {
           <div className="cd-tier-hours">
             16h <small>por semana</small>
           </div>
+          <div className="cd-tier-price">
+            <span className="cd-tier-rate">R$ 80/hora</span>
+            <span className="cd-tier-monthly">≈ R$ 5.120/mês</span>
+          </div>
           <p className="cd-tier-sub">
             Eu virtualmente como o head de produto da Calaza Doreto. O CRM evolui pra ser o
             sistema central do escritório.
@@ -240,9 +258,8 @@ function ModelRecorrente() {
           <ul className="cd-bullets">
             <li>Tudo do Standard</li>
             <li>Construção de novos módulos completos</li>
-            <li>Reuniões 2x na semana com sócios e líderes</li>
+            <li>Reuniões semanais com sócios e líderes</li>
             <li>Roadmap trimestral com OKRs definidos</li>
-            <li>Acesso direto via WhatsApp em horário comercial</li>
           </ul>
           <div className="cd-tier-fit">
             <strong>Quando encaixa:</strong> visão de transformar o CRM em sistema central do
@@ -321,11 +338,10 @@ export default function CalazaDoretoProposalPage() {
       <section className="cd-hero">
         <div className="cd-wrap">
           <div className="cd-brand">
-            <span className="cd-brand-mark">L</span>
             <span>Leonardo Ferreira · Proposta · Junho 2026</span>
           </div>
 
-          <span className="cd-eyebrow">Calaza Doreto · CRM de cobrança</span>
+          <span className="cd-eyebrow">Olá, pessoal da Calaza Doreto! Apresento para vocês</span>
           <h1 className="cd-h1">
             Um sistema <em>sob medida</em> pra cobrar bem, sem virar planilha.
           </h1>
@@ -346,7 +362,6 @@ export default function CalazaDoretoProposalPage() {
       <section className="cd-section cd-screens">
         <div className="cd-wrap">
           <div className="cd-model-head cd-rv">
-            <span className="cd-eyebrow">O produto</span>
             <h2 className="cd-h2">
               Tudo que já está <em>pronto e rodando.</em>
             </h2>
@@ -461,10 +476,6 @@ export default function CalazaDoretoProposalPage() {
             <ToggleSwitch model={model} onChange={setModel} />
           </div>
 
-          <div className="cd-models-intro cd-rv">
-            <span className="cd-eyebrow">Modelos de proposta</span>
-          </div>
-
           {model === 'avulso' ? <ModelAvulso /> : <ModelRecorrente />}
         </div>
       </section>
@@ -474,7 +485,6 @@ export default function CalazaDoretoProposalPage() {
         <div className="cd-wrap">
           <div className="cd-stack-grid">
             <div className="cd-rv">
-              <span className="cd-eyebrow">Stack técnica</span>
               <h2 className="cd-h2">
                 Construído pra <em>durar.</em>
               </h2>
@@ -543,7 +553,6 @@ export default function CalazaDoretoProposalPage() {
       {/* CTA FINAL */}
       <section className="cd-section cd-cta-final">
         <div className="cd-wrap">
-          <span className="cd-eyebrow">Próximo passo</span>
           <h2 className="cd-h2">
             Vamos colocar isso <em>de pé.</em>
           </h2>
