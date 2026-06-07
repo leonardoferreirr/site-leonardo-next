@@ -337,10 +337,6 @@ export default function CalazaDoretoProposalPage() {
       {/* HERO */}
       <section className="cd-hero">
         <div className="cd-wrap">
-          <div className="cd-brand">
-            <span>Leonardo Ferreira · Proposta · Junho 2026</span>
-          </div>
-
           <span className="cd-eyebrow">Olá, pessoal da Calaza Doreto! Apresento para vocês</span>
           <h1 className="cd-h1">
             Um sistema <em>sob medida</em> pra cobrar bem, sem virar planilha.
@@ -350,11 +346,6 @@ export default function CalazaDoretoProposalPage() {
             cobranças, NFs sincronizadas e régua automática. Esta proposta apresenta duas
             formas de receber esse sistema na Calaza Doreto.
           </p>
-
-          <div className="cd-toggle-wrap">
-            <ToggleSwitch model={model} onChange={setModel} />
-            <span className="cd-toggle-hint">Alterna entre os modelos a qualquer momento</span>
-          </div>
         </div>
       </section>
 
