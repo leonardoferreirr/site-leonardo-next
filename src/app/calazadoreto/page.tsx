@@ -216,7 +216,6 @@ function ModelRecorrente() {
         </div>
 
         <div className="cd-tier cd-tier-featured cd-rv">
-          <span className="cd-tier-flag">Recomendado</span>
           <h4>Standard</h4>
           <div className="cd-tier-hours">
             8h <small>por semana</small>
