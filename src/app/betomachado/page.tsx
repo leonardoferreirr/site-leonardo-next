@@ -67,7 +67,6 @@ export default function BetoMachadoProposalPage() {
               <img src="/betomachado/beto.jpg" alt="Beto Machado, pianista e produtor musical" />
             </div>
             <div className="bm-story-body bm-rv">
-              <span className="bm-eyebrow">Sua história</span>
               <h2 className="bm-h2">
                 Pianista desde os 15. <em>Profissional, vivido, premiado.</em>
               </h2>
@@ -110,9 +109,6 @@ export default function BetoMachadoProposalPage() {
       {/* DUAS MARCAS */}
       <section className="bm-section">
         <div className="bm-wrap">
-          <div className="bm-rv" style={{ textAlign: 'center', marginBottom: '0.6rem' }}>
-            <span className="bm-eyebrow">As duas marcas</span>
-          </div>
           <div className="bm-rv" style={{ textAlign: 'center' }}>
             <h2 className="bm-h2" style={{ margin: '0 auto 1rem', maxWidth: '24ch' }}>
               Dois momentos da vida, <em>duas identidades que se reconhecem.</em>
@@ -125,7 +121,6 @@ export default function BetoMachadoProposalPage() {
 
           <div className="bm-marks-grid">
             <div className="bm-mark-card bm-rv">
-              <span className="bm-mark-tag">Marca 01</span>
               <h3>Beto Machado Ateliê de Música</h3>
               <div className="bm-mark-sub">A festa, o salão cheio, o sim da noiva.</div>
               <p>
@@ -143,7 +138,6 @@ export default function BetoMachadoProposalPage() {
             </div>
 
             <div className="bm-mark-card bm-rv">
-              <span className="bm-mark-tag">Marca 02</span>
               <h3>Beto Machado Cartório e Afeto</h3>
               <div className="bm-mark-sub">O sim no civil, a formalização afetiva.</div>
               <p>
@@ -167,7 +161,6 @@ export default function BetoMachadoProposalPage() {
       <section className="bm-section bm-steps">
         <div className="bm-wrap">
           <div className="bm-rv">
-            <span className="bm-eyebrow">Como vamos trabalhar</span>
             <h2 className="bm-h2">
               Três etapas, <em>seis semanas, zero achismo.</em>
             </h2>
@@ -215,7 +208,6 @@ export default function BetoMachadoProposalPage() {
       <section className="bm-section">
         <div className="bm-wrap">
           <div className="bm-rv">
-            <span className="bm-eyebrow">O que você recebe</span>
             <h2 className="bm-h2">
               Tudo que a marca precisa <em>para viver no mundo real.</em>
             </h2>
@@ -277,7 +269,6 @@ export default function BetoMachadoProposalPage() {
       <section className="bm-section bm-steps">
         <div className="bm-wrap">
           <div className="bm-rv">
-            <span className="bm-eyebrow">Prazo</span>
             <h2 className="bm-h2">
               Seis semanas <em>do início ao manual final.</em>
             </h2>
@@ -333,7 +324,6 @@ export default function BetoMachadoProposalPage() {
       <section className="bm-section bm-invest" id="investimento">
         <div className="bm-wrap">
           <div className="bm-invest-head bm-rv">
-            <span className="bm-eyebrow">Investimento</span>
             <h2 className="bm-h2">
               Quatro caminhos. <em>Você escolhe até onde a gente vai.</em>
             </h2>
