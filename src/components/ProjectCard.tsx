@@ -77,7 +77,7 @@ export default function ProjectCard({
       {badge}
       <picture>
         {imageSrcMobile && <source media="(max-width: 768px)" srcSet={imageSrcMobile} />}
-        <img src={imageSrc} alt={title} />
+        <img src={imageSrc} alt={title} loading="lazy" decoding="async" />
       </picture>
       <div className="ds-project-overlay">
         <h3 className="ds-project-title-tag">{title}</h3>

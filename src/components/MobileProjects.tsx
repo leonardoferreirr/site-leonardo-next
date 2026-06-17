@@ -16,24 +16,24 @@ type Project = {
 
 const projects: Project[] = [
   // === BRANDING (9) ===
-  { slug: 'projeto-mademax', title: 'MADEMAX', imageSrc: '/assets/00. Cover/01. MADEMAX.png', category: 'brand' },
-  { slug: 'projeto-biothera', title: 'Biothera', imageSrc: '/assets/00. Cover/02. Biothera.png', category: 'brand' },
-  { slug: 'projeto-divinocar', title: 'Divino Car', imageSrc: '/assets/00. Cover/03. Divino Car.png', category: 'brand' },
-  { slug: 'projeto-proconsult', title: 'ProConsult', imageSrc: '/assets/00. Cover/04. ProConsult.png', category: 'brand' },
-  { slug: 'projeto-hellobim', title: 'Hello BIM', imageSrc: '/assets/00. Cover/05. Hello BIM.png', category: 'brand' },
-  { slug: 'projeto-raxseguros', title: 'RAX Seguros', imageSrc: '/assets/00. Cover/06. RAX Seguros.png', category: 'brand' },
-  { slug: 'projeto-polysantos', title: 'Poly Santos', imageSrc: '/assets/00. Cover/07. Poly Santos.png', category: 'brand' },
-  { slug: 'projeto-ecomove', title: 'Ecomove', imageSrc: '/assets/00. Cover/08. Ecomove.png', category: 'brand' },
-  { slug: 'projeto-remachcapital', title: 'Remach Capital', imageSrc: '/assets/00. Cover/09. Remach Capital.png', category: 'brand' },
+  { slug: 'projeto-mademax', title: 'MADEMAX', imageSrc: '/assets/00. Cover/01. MADEMAX.webp', category: 'brand' },
+  { slug: 'projeto-biothera', title: 'Biothera', imageSrc: '/assets/00. Cover/02. Biothera.webp', category: 'brand' },
+  { slug: 'projeto-divinocar', title: 'Divino Car', imageSrc: '/assets/00. Cover/03. Divino Car.webp', category: 'brand' },
+  { slug: 'projeto-proconsult', title: 'ProConsult', imageSrc: '/assets/00. Cover/04. ProConsult.webp', category: 'brand' },
+  { slug: 'projeto-hellobim', title: 'Hello BIM', imageSrc: '/assets/00. Cover/05. Hello BIM.webp', category: 'brand' },
+  { slug: 'projeto-raxseguros', title: 'RAX Seguros', imageSrc: '/assets/00. Cover/06. RAX Seguros.webp', category: 'brand' },
+  { slug: 'projeto-polysantos', title: 'Poly Santos', imageSrc: '/assets/00. Cover/07. Poly Santos.webp', category: 'brand' },
+  { slug: 'projeto-ecomove', title: 'Ecomove', imageSrc: '/assets/00. Cover/08. Ecomove.webp', category: 'brand' },
+  { slug: 'projeto-remachcapital', title: 'Remach Capital', imageSrc: '/assets/00. Cover/09. Remach Capital.webp', category: 'brand' },
   // === WEBSITES (8) ===
-  { slug: 'projeto-p1marketing', title: 'P1 Marketing', imageSrc: '/assets/00. Cover/10. P1 Marketing.png', imageSrcMobile: '/assets/00. Cover/10. P1 Marketing.mobile.png', category: 'web', externalUrl: 'https://p1-marketing.vercel.app/' },
-  { slug: 'projeto-nalupoke', title: 'Nalu Poke', imageSrc: '/assets/00. Cover/11. Nalu Poke.png', imageSrcMobile: '/assets/00. Cover/11. Nalu Poke.mobile.png', category: 'web', externalUrl: 'https://nalupoke.vercel.app/' },
-  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/12. Forset.png', imageSrcMobile: '/assets/00. Cover/12. Forset.mobile.png', category: 'web', externalUrl: 'https://site.forset.com.br/' },
-  { slug: 'projeto-neurosummit', title: 'Neuro Summit', imageSrc: '/assets/00. Cover/13. Neuro Summit.png', imageSrcMobile: '/assets/00. Cover/13. Neuro Summit.mobile.png', category: 'web', externalUrl: 'https://neurosummit.sensorial.life/' },
-  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/14. Air Jordan.png', imageSrcMobile: '/assets/00. Cover/14. Air Jordan.mobile.png', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
-  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/15. Pokemon.png', imageSrcMobile: '/assets/00. Cover/15. Pokemon.mobile.png', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
-  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/16. GCarneiro.png', imageSrcMobile: '/assets/00. Cover/16. GCarneiro.mobile.png', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
-  { slug: 'projeto-proconsult-site', title: 'ProConsult', imageSrc: '/assets/00. Cover/17. ProConsult Site.png', imageSrcMobile: '/assets/00. Cover/17. ProConsult Site.mobile.png', category: 'web', externalUrl: 'https://www.proconsult.tech/' },
+  { slug: 'projeto-p1marketing', title: 'P1 Marketing', imageSrc: '/assets/00. Cover/10. P1 Marketing.webp', imageSrcMobile: '/assets/00. Cover/10. P1 Marketing.mobile.webp', category: 'web', externalUrl: 'https://p1-marketing.vercel.app/' },
+  { slug: 'projeto-nalupoke', title: 'Nalu Poke', imageSrc: '/assets/00. Cover/11. Nalu Poke.webp', imageSrcMobile: '/assets/00. Cover/11. Nalu Poke.mobile.webp', category: 'web', externalUrl: 'https://nalupoke.vercel.app/' },
+  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/12. Forset.webp', imageSrcMobile: '/assets/00. Cover/12. Forset.mobile.webp', category: 'web', externalUrl: 'https://site.forset.com.br/' },
+  { slug: 'projeto-neurosummit', title: 'Neuro Summit', imageSrc: '/assets/00. Cover/13. Neuro Summit.webp', imageSrcMobile: '/assets/00. Cover/13. Neuro Summit.mobile.webp', category: 'web', externalUrl: 'https://neurosummit.sensorial.life/' },
+  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/14. Air Jordan.webp', imageSrcMobile: '/assets/00. Cover/14. Air Jordan.mobile.webp', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
+  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/15. Pokemon.webp', imageSrcMobile: '/assets/00. Cover/15. Pokemon.mobile.webp', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
+  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/16. GCarneiro.webp', imageSrcMobile: '/assets/00. Cover/16. GCarneiro.mobile.webp', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
+  { slug: 'projeto-proconsult-site', title: 'ProConsult', imageSrc: '/assets/00. Cover/17. ProConsult Site.webp', imageSrcMobile: '/assets/00. Cover/17. ProConsult Site.mobile.webp', category: 'web', externalUrl: 'https://www.proconsult.tech/' },
 ];
 
 export default function MobileProjects({ filter = 'all' as Category }: { filter?: Category }) {
@@ -140,6 +140,8 @@ export default function MobileProjects({ filter = 'all' as Category }: { filter?
             key={project.slug}
             src={project.imageSrcMobile || project.imageSrc}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             style={{
               position: 'absolute',
               inset: 0,

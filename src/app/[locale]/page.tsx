@@ -55,24 +55,24 @@ type ProjectItemFull = ProjectItem & { imageSrcMobile?: string };
 
 const PROJECTS: ProjectItemFull[] = [
   // === BRANDING (9) ===
-  { slug: 'projeto-mademax', title: 'MADEMAX', imageSrc: '/assets/00. Cover/01. MADEMAX.png', category: 'brand' },
-  { slug: 'projeto-biothera', title: 'Biothera', imageSrc: '/assets/00. Cover/02. Biothera.png', category: 'brand' },
-  { slug: 'projeto-divinocar', title: 'Divino Car', imageSrc: '/assets/00. Cover/03. Divino Car.png', category: 'brand' },
-  { slug: 'projeto-proconsult', title: 'ProConsult', imageSrc: '/assets/00. Cover/04. ProConsult.png', category: 'brand' },
-  { slug: 'projeto-hellobim', title: 'Hello BIM', imageSrc: '/assets/00. Cover/05. Hello BIM.png', category: 'brand' },
-  { slug: 'projeto-raxseguros', title: 'RAX Seguros', imageSrc: '/assets/00. Cover/06. RAX Seguros.png', category: 'brand' },
-  { slug: 'projeto-polysantos', title: 'Poly Santos', imageSrc: '/assets/00. Cover/07. Poly Santos.png', category: 'brand' },
-  { slug: 'projeto-ecomove', title: 'Ecomove', imageSrc: '/assets/00. Cover/08. Ecomove.png', category: 'brand' },
-  { slug: 'projeto-remachcapital', title: 'Remach Capital', imageSrc: '/assets/00. Cover/09. Remach Capital.png', category: 'brand' },
+  { slug: 'projeto-mademax', title: 'MADEMAX', imageSrc: '/assets/00. Cover/01. MADEMAX.webp', category: 'brand' },
+  { slug: 'projeto-biothera', title: 'Biothera', imageSrc: '/assets/00. Cover/02. Biothera.webp', category: 'brand' },
+  { slug: 'projeto-divinocar', title: 'Divino Car', imageSrc: '/assets/00. Cover/03. Divino Car.webp', category: 'brand' },
+  { slug: 'projeto-proconsult', title: 'ProConsult', imageSrc: '/assets/00. Cover/04. ProConsult.webp', category: 'brand' },
+  { slug: 'projeto-hellobim', title: 'Hello BIM', imageSrc: '/assets/00. Cover/05. Hello BIM.webp', category: 'brand' },
+  { slug: 'projeto-raxseguros', title: 'RAX Seguros', imageSrc: '/assets/00. Cover/06. RAX Seguros.webp', category: 'brand' },
+  { slug: 'projeto-polysantos', title: 'Poly Santos', imageSrc: '/assets/00. Cover/07. Poly Santos.webp', category: 'brand' },
+  { slug: 'projeto-ecomove', title: 'Ecomove', imageSrc: '/assets/00. Cover/08. Ecomove.webp', category: 'brand' },
+  { slug: 'projeto-remachcapital', title: 'Remach Capital', imageSrc: '/assets/00. Cover/09. Remach Capital.webp', category: 'brand' },
   // === WEBSITES (6) — usa cover mobile (vertical) tambem no desktop pra encaixar nos cards verticais sem cropar
-  { slug: 'projeto-p1marketing', title: 'P1 Marketing', imageSrc: '/assets/00. Cover/10. P1 Marketing.mobile.png', imageSrcMobile: '/assets/00. Cover/10. P1 Marketing.mobile.png', category: 'web', externalUrl: 'https://p1-marketing.vercel.app/' },
-  { slug: 'projeto-nalupoke', title: 'Nalu Poke', imageSrc: '/assets/00. Cover/11. Nalu Poke.mobile.png', imageSrcMobile: '/assets/00. Cover/11. Nalu Poke.mobile.png', category: 'web', externalUrl: 'https://nalupoke.vercel.app/' },
-  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/12. Forset.mobile.png', imageSrcMobile: '/assets/00. Cover/12. Forset.mobile.png', category: 'web', externalUrl: 'https://site.forset.com.br/' },
-  { slug: 'projeto-neurosummit', title: 'Neuro Summit', imageSrc: '/assets/00. Cover/13. Neuro Summit.mobile.png', imageSrcMobile: '/assets/00. Cover/13. Neuro Summit.mobile.png', category: 'web', externalUrl: 'https://neurosummit.sensorial.life/' },
-  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/14. Air Jordan.mobile.png', imageSrcMobile: '/assets/00. Cover/14. Air Jordan.mobile.png', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
-  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/15. Pokemon.mobile.png', imageSrcMobile: '/assets/00. Cover/15. Pokemon.mobile.png', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
-  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/16. GCarneiro.mobile.png', imageSrcMobile: '/assets/00. Cover/16. GCarneiro.mobile.png', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
-  { slug: 'projeto-proconsult-site', title: 'ProConsult', imageSrc: '/assets/00. Cover/17. ProConsult Site.mobile.png', imageSrcMobile: '/assets/00. Cover/17. ProConsult Site.mobile.png', category: 'web', externalUrl: 'https://www.proconsult.tech/' },
+  { slug: 'projeto-p1marketing', title: 'P1 Marketing', imageSrc: '/assets/00. Cover/10. P1 Marketing.mobile.webp', imageSrcMobile: '/assets/00. Cover/10. P1 Marketing.mobile.webp', category: 'web', externalUrl: 'https://p1-marketing.vercel.app/' },
+  { slug: 'projeto-nalupoke', title: 'Nalu Poke', imageSrc: '/assets/00. Cover/11. Nalu Poke.mobile.webp', imageSrcMobile: '/assets/00. Cover/11. Nalu Poke.mobile.webp', category: 'web', externalUrl: 'https://nalupoke.vercel.app/' },
+  { slug: 'projeto-forset', title: 'Forset', imageSrc: '/assets/00. Cover/12. Forset.mobile.webp', imageSrcMobile: '/assets/00. Cover/12. Forset.mobile.webp', category: 'web', externalUrl: 'https://site.forset.com.br/' },
+  { slug: 'projeto-neurosummit', title: 'Neuro Summit', imageSrc: '/assets/00. Cover/13. Neuro Summit.mobile.webp', imageSrcMobile: '/assets/00. Cover/13. Neuro Summit.mobile.webp', category: 'web', externalUrl: 'https://neurosummit.sensorial.life/' },
+  { slug: 'projeto-airjordan', title: 'Air Jordan', imageSrc: '/assets/00. Cover/14. Air Jordan.mobile.webp', imageSrcMobile: '/assets/00. Cover/14. Air Jordan.mobile.webp', category: 'web', externalUrl: 'https://airjordan-portfolio.vercel.app/' },
+  { slug: 'projeto-pokemon', title: 'Pokémon', imageSrc: '/assets/00. Cover/15. Pokemon.mobile.webp', imageSrcMobile: '/assets/00. Cover/15. Pokemon.mobile.webp', category: 'web', externalUrl: 'https://pokemon.leonardoferreirr.com.br/' },
+  { slug: 'projeto-gcarneiro', title: 'GCarneiro', imageSrc: '/assets/00. Cover/16. GCarneiro.mobile.webp', imageSrcMobile: '/assets/00. Cover/16. GCarneiro.mobile.webp', category: 'web', externalUrl: 'https://www.gcarneiro.com.br/' },
+  { slug: 'projeto-proconsult-site', title: 'ProConsult', imageSrc: '/assets/00. Cover/17. ProConsult Site.mobile.webp', imageSrcMobile: '/assets/00. Cover/17. ProConsult Site.mobile.webp', category: 'web', externalUrl: 'https://www.proconsult.tech/' },
 ];
 
 const BRAND_PROJECTS = PROJECTS.filter((p) => p.category === 'brand');
@@ -87,7 +87,7 @@ export default function Home() {
   const tCTA = useTranslations('CTA');
 
   const { setRef } = useIntersectionObserver();
-  const sphereRef = useRef<HTMLImageElement>(null);
+  const sphereRef = useRef<HTMLVideoElement>(null);
 
   // Scroll-driven 3D parallax no sphere
   useEffect(() => {
@@ -192,10 +192,15 @@ export default function Home() {
       {/* 1. HERO */}
       <section className="ds-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: -1, display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: '1200px' }}>
-          <img
+          <video
             ref={sphereRef}
-            src="/assets/spherewave.gif"
-            alt=""
+            src="/assets/spherewave.mp4"
+            poster="/assets/sphere-poster.webp"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="none"
             aria-hidden
             style={{
               width: '100%',
@@ -208,7 +213,7 @@ export default function Home() {
               transformStyle: 'preserve-3d',
               transition: 'opacity 0.4s',
             }}
-          />
+          ></video>
         </div>
         <div style={{ maxWidth: '1000px', width: '100%', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <h1 className="ds-display-1">
@@ -392,7 +397,7 @@ export default function Home() {
         <div className="ds-grid ds-grid-2" style={{ alignItems: 'center' }}>
           <div className="fade-in-up" ref={setRef(30)}>
             <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--ds-shadow-light)' }}>
-              <img src="/assets/profile.png" alt="Leonardo Ferreira" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/assets/profile.webp" alt="Leonardo Ferreira" loading="lazy" width={1080} height={1080} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
           <div className="fade-in-up delay-1" ref={setRef(31)} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -412,7 +417,7 @@ export default function Home() {
         <div className="ds-grid ds-grid-2" style={{ alignItems: 'center' }}>
           <div className="fade-in-up" ref={setRef(40)}>
             <div style={{ width: '100%', aspectRatio: '1/1', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--ds-shadow-light)' }}>
-              <img src="/assets/metal-rock.png" alt="CTA" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src="/assets/metal-rock.webp" alt="CTA" loading="lazy" width={2048} height={2048} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </div>
           <div className="fade-in-up delay-1" ref={setRef(41)} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', textAlign: 'left' }}>
