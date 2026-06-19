@@ -226,14 +226,11 @@ export default function FormularioDeBrandingPage() {
           <div style={{ marginBottom: '48px' }}>
             <SectionTitle sub="Para eu saber com quem e com qual marca estou falando.">Sobre você e a marca</SectionTitle>
             <Field label="Seu nome" name="name" required />
-            <Field label="Seu melhor email" name="email" type="email" required hint="É para onde eu vou te responder." />
+            <Field label="Seu melhor email" name="email" type="email" required />
 
             {/* Telefone / WhatsApp com seletor de país */}
             <div style={fieldGap}>
               <label className="ds-body-sm" style={labelStyle}>Telefone / WhatsApp</label>
-              <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '0 0 10px 0', fontSize: '0.85rem', opacity: 0.85 }}>
-                Pode ser um número com ou sem WhatsApp, é só pra eu ter um segundo canal além do e-mail.
-              </p>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <select
                   className="ds-input"
@@ -261,11 +258,6 @@ export default function FormularioDeBrandingPage() {
                   style={{ flex: '1 1 200px' }}
                 />
               </div>
-              <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '8px 0 0 0', fontSize: '0.8rem', opacity: 0.7 }}>
-                {country.code
-                  ? `${country.name}: ${country.digits} dígitos (com DDD/área), sem o +${country.code}.`
-                  : 'Inclua o código do país antes do número.'}
-              </p>
             </div>
 
             <Field label="Nome da marca ou projeto" name="brand" required />
