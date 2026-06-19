@@ -25,7 +25,7 @@ const fieldGap: React.CSSProperties = { marginBottom: '24px' };
 function Field({
   label,
   name,
-  required,
+  required = true,
   placeholder,
   textarea,
   type = 'text',
@@ -42,7 +42,7 @@ function Field({
   return (
     <div style={fieldGap}>
       <label className="ds-body-sm" style={labelStyle}>
-        {label} {required ? <span style={{ color: 'var(--ds-accent, #e63946)' }}>*</span> : null}
+        {label}
       </label>
       {hint ? (
         <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '0 0 10px 0', fontSize: '0.85rem', opacity: 0.85 }}>
@@ -199,8 +199,7 @@ export default function FormularioDeBrandingPage() {
         <h1 className="ds-h2 ds-text-stroke">Formulário de Branding</h1>
         <p className="ds-body" style={{ maxWidth: '640px', margin: '24px auto 0 auto' }}>
           Esse é o ponto de partida do projeto da sua identidade visual. Quanto mais verdade você colocar aqui, mais a
-          marca vai ter a sua cara. Não existe resposta certa ou errada, responda do seu jeito. Os campos com asterisco
-          são obrigatórios, o resto é bem-vindo.
+          marca vai ter a sua cara. Não existe resposta certa ou errada, responda do seu jeito.
         </p>
       </div>
 
@@ -233,7 +232,7 @@ export default function FormularioDeBrandingPage() {
             <div style={fieldGap}>
               <label className="ds-body-sm" style={labelStyle}>Telefone / WhatsApp</label>
               <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '0 0 10px 0', fontSize: '0.85rem', opacity: 0.85 }}>
-                Se preferir contato por e-mail ou SMS, sem problema, esse campo é opcional.
+                Pode ser um número com ou sem WhatsApp, é só pra eu ter um segundo canal além do e-mail.
               </p>
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <select
@@ -252,6 +251,7 @@ export default function FormularioDeBrandingPage() {
                 <input
                   type="tel"
                   inputMode="numeric"
+                  required
                   className="ds-input"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/[^\d\s()-]/g, ''))}
