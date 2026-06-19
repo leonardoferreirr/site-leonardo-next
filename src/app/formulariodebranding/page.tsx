@@ -2,9 +2,22 @@
 
 import { useState } from 'react';
 
-const WEB3FORMS_KEY = 'd2607090-4ff0-49c9-abf0-5b95c9b62afc';
 const WHATSAPP_FALLBACK =
   'https://wa.me/5534936180691?text=Oi%20L%C3%A9o!%20Tentei%20enviar%20o%20formul%C3%A1rio%20de%20branding%20mas%20deu%20erro.%20Posso%20te%20mandar%20por%20aqui?';
+
+// País: bandeira, nome, código e quantos dígitos o número nacional costuma ter.
+const COUNTRIES = [
+  { code: '55', flag: '🇧🇷', name: 'Brasil', digits: 11, sample: '11999998888' },
+  { code: '1', flag: '🇺🇸', name: 'EUA / Canadá', digits: 10, sample: '2025550173' },
+  { code: '351', flag: '🇵🇹', name: 'Portugal', digits: 9, sample: '912345678' },
+  { code: '34', flag: '🇪🇸', name: 'Espanha', digits: 9, sample: '612345678' },
+  { code: '44', flag: '🇬🇧', name: 'Reino Unido', digits: 10, sample: '7400123456' },
+  { code: '52', flag: '🇲🇽', name: 'México', digits: 10, sample: '5512345678' },
+  { code: '54', flag: '🇦🇷', name: 'Argentina', digits: 10, sample: '1123456789' },
+  { code: '353', flag: '🇮🇪', name: 'Irlanda', digits: 9, sample: '851234567' },
+  { code: '61', flag: '🇦🇺', name: 'Austrália', digits: 9, sample: '412345678' },
+  { code: '', flag: '🌐', name: 'Outro país', digits: 15, sample: 'código + número' },
+];
 
 const labelStyle: React.CSSProperties = { display: 'block', marginBottom: '8px' };
 const fieldGap: React.CSSProperties = { marginBottom: '24px' };
@@ -72,25 +85,25 @@ export default function FormularioDeBrandingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
+  const [countryCode, setCountryCode] = useState('55');
+  const [phone, setPhone] = useState('');
+  const country = COUNTRIES.find((c) => c.code === countryCode) || COUNTRIES[0];
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(false);
 
     const formData = new FormData(e.currentTarget);
-    const get = (k: string) => String(formData.get(k) || '');
+    const get = (k: string) => String(formData.get(k) || '').trim();
+
+    const telefone = phone.trim() ? `${country.code ? '+' + country.code + ' ' : ''}${phone.trim()} (${country.name})` : '';
 
     const payload: Record<string, string> = {
-      access_key: WEB3FORMS_KEY,
-      subject: `Novo formulário de branding: ${get('brand') || get('name') || 'sem nome'}`,
-      from_name: 'Formulário de Branding (site)',
-      email: get('email') || 'no-reply@leonardoferreirr.com.br',
-      replyto: get('email'),
-
       // Sobre você e a marca
       nome: get('name'),
       email_contato: get('email'),
-      whatsapp: get('whatsapp'),
+      telefone,
       marca: get('brand'),
       segmento: get('segment'),
       site_e_redes: get('links'),
@@ -136,10 +149,10 @@ export default function FormularioDeBrandingPage() {
     };
 
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000);
+    const timeoutId = setTimeout(() => controller.abort(), 20000);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('/api/branding', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(payload),
@@ -215,7 +228,46 @@ export default function FormularioDeBrandingPage() {
             <SectionTitle sub="Para eu saber com quem e com qual marca estou falando.">Sobre você e a marca</SectionTitle>
             <Field label="Seu nome" name="name" required />
             <Field label="Seu melhor email" name="email" type="email" required hint="É para onde eu vou te responder." />
-            <Field label="Seu WhatsApp" name="whatsapp" />
+
+            {/* Telefone / WhatsApp com seletor de país */}
+            <div style={fieldGap}>
+              <label className="ds-body-sm" style={labelStyle}>Telefone / WhatsApp</label>
+              <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '0 0 10px 0', fontSize: '0.85rem', opacity: 0.85 }}>
+                Se preferir contato por e-mail ou SMS, sem problema, esse campo é opcional.
+              </p>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <select
+                  className="ds-input"
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  aria-label="País"
+                  style={{ flex: '0 0 auto', width: 'auto', minWidth: '170px' }}
+                >
+                  {COUNTRIES.map((c) => (
+                    <option key={c.name} value={c.code}>
+                      {c.flag} {c.name} {c.code ? `+${c.code}` : ''}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  className="ds-input"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value.replace(/[^\d\s()-]/g, ''))}
+                  maxLength={country.digits + 6}
+                  placeholder={country.sample}
+                  aria-label="Número"
+                  style={{ flex: '1 1 200px' }}
+                />
+              </div>
+              <p className="ds-body-sm" style={{ color: 'var(--ds-text-secondary)', margin: '8px 0 0 0', fontSize: '0.8rem', opacity: 0.7 }}>
+                {country.code
+                  ? `${country.name}: ${country.digits} dígitos (com DDD/área), sem o +${country.code}.`
+                  : 'Inclua o código do país antes do número.'}
+              </p>
+            </div>
+
             <Field label="Nome da marca ou projeto" name="brand" required />
             <Field label="O que a marca vende, o segmento dela" name="segment" required />
             <Field label="Site e redes sociais, se já tiver" name="links" />
