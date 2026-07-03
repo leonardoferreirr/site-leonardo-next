@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CRM · Leonardo Ferreira</title>
+<meta name="description" content="Um CRM que prospecta, conversa por WhatsApp e e-mail com um assistente de IA e organiza cada oportunidade, desenhado para o seu negócio, com a sua identidade." />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ground:#060608; --ground-2:#0b0b0f; --panel:#0e0e13;
+    --glass:rgba(255,255,255,.045); --glass-2:rgba(255,255,255,.07);
+    --line:rgba(255,255,255,.10); --line-soft:rgba(255,255,255,.06);
+    --ink:#f4f4f6; --muted:#9a9aa4; --faint:#63636e;
+    --accent:#ffffff;
+    --serif:'Instrument Serif','Iowan Old Style',Palatino,Georgia,serif;
+    --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --wa:#8fd9a8; /* verde discreto só p/ o selo WhatsApp nos mockups */
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.55;overflow-x:hidden;
+  }
+  body::before{ /* brilho ambiente atrás do topo */
+    content:"";position:fixed;inset:-20% -20% auto -20%;height:80vh;z-index:0;pointer-events:none;
+    background:radial-gradient(60% 60% at 50% 0%,rgba(255,255,255,.07),transparent 70%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{text-wrap:balance;margin:0}
+  .serif{font-family:var(--serif);font-weight:400;letter-spacing:.2px}
+  em{font-style:italic}
+
+  /* ---- nav ---- */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:500;letter-spacing:.2px}
+  .brand img{height:30px;width:auto;opacity:.95}
+  .brand span{font-size:15px;color:var(--muted)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;border-radius:999px;font-size:14px;
+    font-weight:500;padding:11px 20px;border:1px solid transparent;cursor:pointer;
+    transition:transform .18s ease,background .18s ease,border-color .18s ease;
+  }
+  .btn-primary{background:var(--accent);color:#0a0a0a}
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-ghost{background:var(--glass);border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{background:var(--glass-2);transform:translateY(-1px)}
+  .nav-cta{padding:9px 17px}
+
+  /* ---- hero ---- */
+  header.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,66px);line-height:1.02;letter-spacing:.3px}
+  .hero h1 em{color:var(--ink)}
+  .hero .lede{color:var(--muted);font-size:18px;max-width:34ch;margin:22px 0 30px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .fine{color:var(--faint);font-size:13px;margin-top:16px}
+
+  /* ---- glass panel base (mockups) ---- */
+  .panel{
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(12px);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.05);
+    overflow:hidden;
+  }
+  .chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line-soft)}
+  .chrome i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
+  .chrome b{margin-left:8px;font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.3px}
+  .float{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+
+  /* ---- kanban mock ---- */
+  .kan{display:flex;gap:9px;padding:14px}
+  .kcol{flex:1;min-width:0}
+  .kcol h4{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:var(--muted);margin:0 0 9px;letter-spacing:.2px}
+  .kcol h4 span{color:var(--faint);font-variant-numeric:tabular-nums}
+  .kcard{background:var(--glass);border:1px solid var(--line-soft);border-radius:10px;padding:9px 10px;margin-bottom:8px}
+  .kcard p{margin:0;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .kcard .meta{display:flex;align-items:center;justify-content:space-between;margin-top:7px}
+  .chip{font-size:9.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);letter-spacing:.2px}
+  .chip.wa{color:var(--wa);border-color:rgba(143,217,168,.3)}
+  .val{font-size:10px;color:var(--faint);font-variant-numeric:tabular-nums}
+
+  /* ---- sections ---- */
+  section{padding:70px 0}
+  .lead-serif{color:var(--muted);font-size:18px;max-width:52ch;margin:0 auto 44px;text-align:center;font-family:var(--serif);font-style:italic}
+  h2.big{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);line-height:1.08}
+
+  /* verticais */
+  .verts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .vcard{background:var(--glass);border:1px solid var(--line-soft);border-radius:14px;padding:20px}
+  .vcard:hover{border-color:var(--line);background:var(--glass-2)}
+  .vcard h3{font-size:16px;font-weight:600;margin-bottom:6px}
+  .vcard p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
+
+  /* feature rows */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;padding:44px 0}
+  .feat.rev .txt{order:2}
+  .feat .txt h2{margin-bottom:16px}
+  .feat .txt p{color:var(--muted);font-size:16px;max-width:42ch;margin:0}
+
+  /* inbox mock */
+  .inbox{display:grid;grid-template-columns:64px 1fr;height:100%}
+  .rail{border-right:1px solid var(--line-soft);padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .av{width:34px;height:34px;border-radius:50%;background:var(--glass-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted)}
+  .av.on{border-color:var(--accent);color:var(--ink)}
+  .thread{padding:16px 16px 18px}
+  .bub{max-width:78%;padding:9px 12px;border-radius:13px;font-size:12.5px;margin-bottom:10px;line-height:1.45}
+  .bub.in{background:var(--glass);border:1px solid var(--line-soft);border-bottom-left-radius:4px}
+  .bub.out{background:#f4f4f6;color:#111;margin-left:auto;border-bottom-right-radius:4px}
+  .ia{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--faint);margin:2px 0 12px}
+  .ia b{color:var(--muted);font-weight:500}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--wa)}
+
+  /* financeiro mock */
+  .fin{padding:16px}
+  .fin .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .fcard{background:var(--glass);border:1px solid var(--line-soft);border-radius:11px;padding:12px}
+  .fcard small{color:var(--faint);font-size:10.5px;display:block;margin-bottom:6px}
+  .fcard b{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.3px}
+  .fcard.hi b{color:var(--accent)}
+  .bars{display:flex;align-items:flex-end;gap:8px;height:78px;padding:10px 12px;background:var(--glass);border:1px solid var(--line-soft);border-radius:11px}
+  .bar{flex:1;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.12));border-radius:4px 4px 2px 2px;opacity:.55}
+  .bar.now{opacity:1;background:linear-gradient(180deg,var(--accent),rgba(255,255,255,.2))}
+
+  /* prospecção mock */
+  .radar{padding:14px}
+  .rrow{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line-soft)}
+  .rrow:last-child{border-bottom:0}
+  .rrow .nm{flex:1;min-width:0}
+  .rrow .nm p{margin:0;font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rrow .nm s{display:block;text-decoration:none;color:var(--faint);font-size:10.5px;margin-top:2px}
+  .score{width:70px}
+  .score i{display:block;height:5px;border-radius:3px;background:var(--glass-2);overflow:hidden;position:relative}
+  .score i::after{content:"";position:absolute;inset:0;width:var(--w,60%);background:var(--accent);border-radius:3px}
+  .go{font-size:10px;color:var(--wa);border:1px solid rgba(143,217,168,.3);border-radius:999px;padding:3px 9px;white-space:nowrap}
+
+  /* cta band */
+  .cta{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:26px 0 8px}
+  .cta p{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:21px;margin:0}
+
+  /* personalização */
+  .veste{--demo:#ffffff}
+  .veste-wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .swatches{display:flex;gap:10px;margin:22px 0 8px}
+  .sw{width:30px;height:30px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;transition:transform .15s ease}
+  .sw:hover{transform:scale(1.12)}
+  .sw[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 2px var(--ground)}
+  .preview{padding:18px}
+  .pv-card{background:var(--glass);border:1px solid var(--line-soft);border-radius:12px;padding:16px}
+  .pv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .pv-logo{width:26px;height:26px;border-radius:7px;background:var(--demo);transition:background .3s ease}
+  .pv-pill{font-size:10px;color:#0b0b0b;background:var(--demo);border-radius:999px;padding:4px 10px;font-weight:600;transition:background .3s ease}
+  .pv-bar{height:6px;border-radius:4px;background:var(--demo);opacity:.9;margin:8px 0;transition:background .3s ease}
+  .pv-bar.s{width:64%;opacity:.4}
+  .pv-bar.m{width:82%;opacity:.65}
+
+  /* closing */
+  .close{text-align:center;padding:96px 0 80px}
+  .close h2{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(30px,4.4vw,50px);line-height:1.08;max-width:20ch;margin:0 auto 30px}
+  .close .fine{color:var(--faint);font-size:13.5px;margin-top:16px}
+
+  footer{border-top:1px solid var(--line-soft);padding:34px 0;display:flex;align-items:center;justify-content:space-between;color:var(--faint);font-size:13px}
+  footer img{height:22px;opacity:.8}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+  /* reveal ao rolar (cards e blocos sobem à medida que aparecem) */
+  .rise,.vcard{transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1),border-color .2s ease,background .2s ease}
+  html.js .rise,html.js .vcard{opacity:0;transform:translateY(22px)}
+  html.js .rise.in,html.js .vcard.in{opacity:1;transform:none}
+
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  @media (max-width:860px){
+    header.hero{grid-template-columns:1fr;gap:34px;padding:34px 0}
+    .verts{grid-template-columns:1fr 1fr}
+    .feat,.feat.rev,.veste-wrap{grid-template-columns:1fr;gap:26px}
+    .feat.rev .txt{order:0}
+    .brand span{display:none}
+  }
+  @media (max-width:640px){
+    .kan{overflow-x:auto;gap:8px;scrollbar-width:none}
+    .kan::-webkit-scrollbar{display:none}
+    .kcol{flex:0 0 auto;min-width:140px}
+  }
+  @media (max-width:520px){ .verts{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html.js .rise,html.js .vcard{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="brand" href="#top" aria-label="Leonardo Ferreira">
+      <img src="/crm/mascote.png" alt="Leonardo Ferreira" />
+      <span>CRM</span>
+    </a>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Agendar uma conversa</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="rise">
+      <h1 class="serif">Você faz o seu trabalho. <em>O CRM traz os próximos clientes.</em></h1>
+      <p class="lede">Ele prospecta, conversa por WhatsApp e e-mail com um assistente de IA e organiza cada oportunidade, desenhado para o seu negócio, com a sua identidade.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Agendar uma conversa</a>
+      </div>
+      <p class="fine">Uma conversa rápida, sem compromisso.</p>
+    </div>
+
+    <div class="panel float" aria-hidden="true">
+      <div class="chrome"><i></i><i></i><i></i><b>Funil</b></div>
+      <div class="kan">
+        <div class="kcol">
+          <h4>Novo <span>128</span></h4>
+          <div class="kcard"><p>Imobiliária Aurora</p><div class="meta"><span class="chip">E-mail</span></div></div>
+          <div class="kcard"><p>Dr. Renato · Odonto</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+        </div>
+        <div class="kcol">
+          <h4>Contatado <span>54</span></h4>
+          <div class="kcard"><p>Contabilidade Prisma</p><div class="meta"><span class="chip">E-mail</span></div></div>
+          <div class="kcard"><p>Studio Bianca</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+        </div>
+        <div class="kcol">
+          <h4>Respondeu <span>19</span></h4>
+          <div class="kcard"><p>Adv. Marlene Sá</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+        </div>
+        <div class="kcol">
+          <h4>Reunião <span>7</span></h4>
+          <div class="kcard"><p>Clínica Vittá</p><div class="meta"><span class="chip">E-mail</span><span class="val">qua 14h</span></div></div>
+        </div>
+        <div class="kcol">
+          <h4>Cliente <span>3</span></h4>
+          <div class="kcard"><p>Corretora Nunes</p><div class="meta"><span class="chip wa">WhatsApp</span><span class="val">ativo</span></div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- para quem é -->
+  <section id="quem">
+    <p class="lead-serif rise">Feito para quem vive de relacionamento e não pode deixar uma oportunidade esfriando no WhatsApp.</p>
+    <div class="verts">
+      <div class="vcard"><h3>Advocacia</h3><p>Triagem e acompanhamento de casos sem perder o timing de quem procurou você.</p></div>
+      <div class="vcard"><h3>Contabilidade</h3><p>Novos contratos entram e a base atual é nutrida, sem você lembrar de cada um.</p></div>
+      <div class="vcard"><h3>Imobiliária</h3><p>Todo lead respondido na hora. Antes do corretor do lado responder.</p></div>
+      <div class="vcard"><h3>Odontologia</h3><p>Menos falta na cadeira: lembrete, confirmação e reativação no automático.</p></div>
+      <div class="vcard"><h3>Clínicas &amp; consultórios</h3><p>Agenda cheia com confirmação e um retorno de pós-atendimento que ninguém esquece.</p></div>
+      <div class="vcard"><h3>E o seu negócio</h3><p>Se você vende conversando, ele se molda ao seu jeito de atender.</p></div>
+    </div>
+  </section>
+
+  <div class="cta rise">
+    <p>Isso pode ter a cara do seu negócio.</p>
+    <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Quero no meu negócio</a>
+  </div>
+
+  <!-- telas -->
+  <section id="telas">
+    <div class="feat">
+      <div class="txt rise">
+        <h2 class="big serif">Ele prospecta enquanto você atende.</h2>
+        <p>Encontra negócios parecidos com os seus melhores clientes e faz a primeira abordagem por WhatsApp e e-mail, no ritmo certo pra chegar como convite, não como spam.</p>
+      </div>
+      <div class="panel" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><b>Prospecção</b></div>
+        <div class="radar">
+          <div class="rrow"><div class="nm"><p>Odonto Sorriso Pleno</p><s>128 avaliações · site fraco</s></div><div class="score"><i style="--w:88%"></i></div><span class="go">Abordar</span></div>
+          <div class="rrow"><div class="nm"><p>Imobiliária Vale Verde</p><s>96 avaliações · sem site</s></div><div class="score"><i style="--w:74%"></i></div><span class="go">Abordar</span></div>
+          <div class="rrow"><div class="nm"><p>Contabilidade Horizonte</p><s>61 avaliações</s></div><div class="score"><i style="--w:62%"></i></div><span class="go">Abordar</span></div>
+          <div class="rrow"><div class="nm"><p>Escritório Lima &amp; Costa</p><s>203 avaliações</s></div><div class="score"><i style="--w:53%"></i></div><span class="go">Abordar</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt rise">
+        <h2 class="big serif">Conversa como gente.</h2>
+        <p>Um assistente de IA responde na hora, entende o que a pessoa quer, qualifica e já te passa o bastão. WhatsApp e e-mail no mesmo lugar, e cada resposta move o cliente no funil sozinha.</p>
+      </div>
+      <div class="panel" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><b>Conversas</b></div>
+        <div class="inbox">
+          <div class="rail"><div class="av on">RA</div><div class="av">CP</div><div class="av">SB</div><div class="av">VV</div></div>
+          <div class="thread">
+            <div class="bub in">Oi! Vi que vocês mexem com identidade visual. Quanto ficaria pra minha clínica?</div>
+            <div class="ia"><span class="dot"></span><b>Assistente respondeu na hora</b></div>
+            <div class="bub out">Que ótimo te ver por aqui 🙌 Pra te passar certinho, me conta: quantas unidades a clínica tem hoje?</div>
+            <div class="bub in">Duas, e vou abrir a terceira ano que vem.</div>
+            <div class="bub out">Perfeito. Já anotei aqui e o Leonardo te chama pra uma conversa rápida. Prefere hoje 16h ou amanhã de manhã?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="txt rise">
+        <h2 class="big serif">Nada se perde.</h2>
+        <p>Cada lead, cada resposta, cada reunião e cada real fechado: rastreado. Você abre e enxerga o negócio inteiro: o que entrou, o que está quente e quanto virou receita.</p>
+      </div>
+      <div class="panel" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><b>Financeiro</b></div>
+        <div class="fin">
+          <div class="cards">
+            <div class="fcard hi"><small>Faturamento do mês</small><b>R$ 12.400</b></div>
+            <div class="fcard"><small>Recorrente ativo</small><b>R$ 3.900</b></div>
+            <div class="fcard"><small>Clientes</small><b>7</b></div>
+          </div>
+          <div class="bars">
+            <div class="bar" style="height:34%"></div>
+            <div class="bar" style="height:46%"></div>
+            <div class="bar" style="height:40%"></div>
+            <div class="bar" style="height:63%"></div>
+            <div class="bar" style="height:58%"></div>
+            <div class="bar now" style="height:82%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta rise">
+    <p>Pronto pra ver rodando no seu dia a dia?</p>
+    <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Agendar uma conversa</a>
+  </div>
+
+  <!-- personalização -->
+  <section id="veste" class="veste">
+    <div class="veste-wrap">
+      <div class="rise">
+        <h2 class="big serif">O sistema não tem a minha cara. Tem a <em>sua</em>.</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:16px 0 0">Cores, logo, o seu nicho e o seu jeito de falar: tudo ajustável. Escolha uma cor e veja a marca virar a sua:</p>
+        <div class="swatches" role="group" aria-label="Escolha uma cor de acento">
+          <button class="sw" data-accent="#ffffff" style="background:#fff" aria-pressed="true" aria-label="Branco"></button>
+          <button class="sw" data-accent="#34d399" style="background:#34d399" aria-pressed="false" aria-label="Verde"></button>
+          <button class="sw" data-accent="#60a5fa" style="background:#60a5fa" aria-pressed="false" aria-label="Azul"></button>
+          <button class="sw" data-accent="#c084fc" style="background:#c084fc" aria-pressed="false" aria-label="Violeta"></button>
+          <button class="sw" data-accent="#fbbf24" style="background:#fbbf24" aria-pressed="false" aria-label="Âmbar"></button>
+        </div>
+      </div>
+      <div class="panel preview" aria-hidden="true">
+        <div class="pv-card">
+          <div class="pv-top"><div class="pv-logo"></div><span class="pv-pill">Cliente</span></div>
+          <div class="pv-bar m"></div>
+          <div class="pv-bar s"></div>
+          <div class="pv-bar" style="width:48%;opacity:.9"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- fechamento -->
+  <section class="close">
+    <h2>Imagina abrir amanhã e já ter conversas novas esperando por você.</h2>
+    <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Quero ver no meu negócio</a>
+    <p class="fine">Sem compromisso. A gente conversa e você decide.</p>
+  </section>
+
+  <footer>
+    <a class="brand" href="#top"><img src="/crm/mascote.png" alt="Leonardo Ferreira" /></a>
+    <span>© 2026 Leonardo Ferreira · leonardoferreirr.com.br</span>
+  </footer>
+
+</div>
+
+<script>
+  // personalização: troca de cor de acento
+  var sw = document.querySelectorAll(".sw");
+  var veste = document.getElementById("veste");
+  sw.forEach(function (b) {
+    b.addEventListener("click", function () {
+      veste.style.setProperty("--demo", b.dataset.accent);
+      sw.forEach(function (s) { s.setAttribute("aria-pressed", "false"); });
+      b.setAttribute("aria-pressed", "true");
+    });
+  });
+
+  // reveal ao rolar: cada bloco/card sobe quando entra na tela.
+  // Redundante de propósito (load + scroll + IntersectionObserver + rede de
+  // segurança) pra NUNCA deixar uma seção escondida se um gatilho falhar.
+  var alvos = document.querySelectorAll(".rise, .vcard");
+  function emVista(el) {
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight - 40 && r.bottom > 0;
+  }
+  function revelar() {
+    alvos.forEach(function (el) {
+      if (!el.classList.contains("in") && emVista(el)) el.classList.add("in");
+    });
+  }
+  revelar();
+  requestAnimationFrame(revelar);
+  window.addEventListener("scroll", revelar, { passive: true });
+  window.addEventListener("resize", revelar);
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -40px 0px" });
+    alvos.forEach(function (el) { io.observe(el); });
+  }
+  // rede de segurança: nada fica escondido pra sempre.
+  setTimeout(function () { alvos.forEach(function (el) { el.classList.add("in"); }); }, 4000);
+</script>
+</body>
+</html>
