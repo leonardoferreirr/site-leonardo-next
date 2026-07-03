@@ -19,6 +19,7 @@
     --serif:'Instrument Serif','Iowan Old Style',Palatino,Georgia,serif;
     --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     --wa:#8fd9a8; /* verde discreto só p/ o selo WhatsApp nos mockups */
+    --c1:#34d399; --c2:#60a5fa; --c3:#c084fc; --c4:#fbbf24; /* paleta dos mockups (= swatches) */
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -137,6 +138,29 @@
   .score i{display:block;height:5px;border-radius:3px;background:var(--glass-2);overflow:hidden;position:relative}
   .score i::after{content:"";position:absolute;inset:0;width:var(--w,60%);background:var(--accent);border-radius:3px}
   .go{font-size:10px;color:var(--wa);border:1px solid rgba(143,217,168,.3);border-radius:999px;padding:3px 9px;white-space:nowrap}
+
+  /* cor nos mockups: bolinhas do Mac + gráficos + cards de cliente (fundo segue dark) */
+  .chrome i:nth-child(1){background:#ff5f57} /* vermelho */
+  .chrome i:nth-child(2){background:#febc2e} /* amarelo */
+  .chrome i:nth-child(3){background:#28c840} /* verde */
+  .bars .bar{opacity:.72}
+  .bars .bar:nth-child(1){background:linear-gradient(180deg,var(--c1),rgba(52,211,153,.12))}
+  .bars .bar:nth-child(2){background:linear-gradient(180deg,var(--c2),rgba(96,165,250,.12))}
+  .bars .bar:nth-child(3){background:linear-gradient(180deg,var(--c3),rgba(192,132,252,.12))}
+  .bars .bar:nth-child(4){background:linear-gradient(180deg,var(--c4),rgba(251,191,36,.12))}
+  .bars .bar:nth-child(5){background:linear-gradient(180deg,var(--c1),rgba(52,211,153,.12))}
+  .bars .bar.now{opacity:1;background:linear-gradient(180deg,var(--c2),rgba(96,165,250,.28))}
+  .fin .cards .fcard:nth-child(1) b{color:var(--c1)}
+  .fin .cards .fcard:nth-child(2) b{color:var(--c2)}
+  .fin .cards .fcard:nth-child(3) b{color:var(--c3)}
+  .rail .av:nth-child(1){border-color:var(--c1);color:var(--c1)}
+  .rail .av:nth-child(2){border-color:var(--c2);color:var(--c2)}
+  .rail .av:nth-child(3){border-color:var(--c3);color:var(--c3)}
+  .rail .av:nth-child(4){border-color:var(--c4);color:var(--c4)}
+  .radar .rrow:nth-child(1) .score i::after{background:var(--c1)}
+  .radar .rrow:nth-child(2) .score i::after{background:var(--c2)}
+  .radar .rrow:nth-child(3) .score i::after{background:var(--c3)}
+  .radar .rrow:nth-child(4) .score i::after{background:var(--c4)}
 
   /* cta band */
   .cta{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;padding:26px 0 8px}
