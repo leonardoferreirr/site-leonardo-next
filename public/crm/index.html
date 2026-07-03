@@ -139,6 +139,16 @@
   .score i::after{content:"";position:absolute;inset:0;width:var(--w,60%);background:var(--accent);border-radius:3px}
   .go{font-size:10px;color:var(--wa);border:1px solid rgba(143,217,168,.3);border-radius:999px;padding:3px 9px;white-space:nowrap}
 
+  /* tela de Nichos (mesma formatação das linhas da Prospecção) */
+  .nichos-wrap{max-width:600px;margin:0 auto}
+  .ndot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;background:var(--muted)}
+  .nichos .rrow .nm p{white-space:normal}
+  .nichos .rrow:nth-child(1) .ndot{background:var(--c1)}
+  .nichos .rrow:nth-child(2) .ndot{background:var(--c2)}
+  .nichos .rrow:nth-child(3) .ndot{background:var(--c3)}
+  .nichos .rrow:nth-child(4) .ndot{background:var(--c4)}
+  .nichos .rrow:nth-child(5) .ndot{background:var(--c1)}
+
   /* cor nos mockups: bolinhas do Mac + gráficos + cards de cliente (fundo segue dark) */
   .chrome i:nth-child(1){background:#ff5f57} /* vermelho */
   .chrome i:nth-child(2){background:#febc2e} /* amarelo */
@@ -268,16 +278,20 @@
     </div>
   </header>
 
-  <!-- para quem é -->
+  <!-- nichos (tela do app) -->
   <section id="quem">
     <p class="lead-serif rise">Feito para quem vive de relacionamento e não pode deixar uma oportunidade esfriando no WhatsApp.</p>
-    <div class="verts">
-      <div class="vcard"><h3>Advocacia</h3><p>Triagem e acompanhamento de casos sem perder o timing de quem procurou você.</p></div>
-      <div class="vcard"><h3>Contabilidade</h3><p>Novos contratos entram e a base atual é nutrida, sem você lembrar de cada um.</p></div>
-      <div class="vcard"><h3>Imobiliária</h3><p>Todo lead respondido na hora. Antes do corretor do lado responder.</p></div>
-      <div class="vcard"><h3>Odontologia</h3><p>Menos falta na cadeira: lembrete, confirmação e reativação no automático.</p></div>
-      <div class="vcard"><h3>Clínicas &amp; consultórios</h3><p>Agenda cheia com confirmação e um retorno de pós-atendimento que ninguém esquece.</p></div>
-      <div class="vcard"><h3>E o seu negócio</h3><p>Se você vende conversando, ele se molda ao seu jeito de atender.</p></div>
+    <div class="nichos-wrap rise">
+      <div class="panel">
+        <div class="chrome"><i></i><i></i><i></i><b>Nichos</b></div>
+        <div class="radar nichos">
+          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Advocacia</p><s>triagem de casos sem perder o timing de quem procurou</s></div></div>
+          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Contabilidade</p><s>novos contratos entram e a base atual é nutrida sozinha</s></div></div>
+          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Imobiliária</p><s>todo lead respondido na hora, antes do concorrente</s></div></div>
+          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Odontologia</p><s>menos falta na cadeira: lembrete e reativação no automático</s></div></div>
+          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Clínicas e consultórios</p><s>agenda cheia com confirmação e pós-atendimento</s></div></div>
+        </div>
+      </div>
     </div>
   </section>
 
