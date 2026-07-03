@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CRM · Leonardo Ferreira</title>
 <meta name="description" content="Um CRM que prospecta, conversa por WhatsApp e e-mail com um assistente de IA e organiza cada oportunidade, desenhado para o seu negócio, com a sua identidade." />
+<link rel="icon" type="image/png" href="/crm/icon.png" />
+<link rel="apple-touch-icon" href="/crm/icon.png" />
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,12 +56,17 @@
   .nav-cta{padding:9px 17px}
 
   /* ---- hero ---- */
-  header.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  header.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:stretch}
   .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,66px);line-height:1.02;letter-spacing:.3px}
   .hero h1 em{color:var(--ink)}
   .hero .lede{color:var(--muted);font-size:18px;max-width:34ch;margin:22px 0 30px}
   .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
   .hero .fine{color:var(--faint);font-size:13px;margin-top:16px}
+  /* painel acompanha a altura do texto (topo do H1 → base do botão); o kanban
+     preenche e o excesso vertical é cortado, sugerindo "mais leads abaixo" */
+  .hero>.rise{position:relative}
+  .hero .panel{display:flex;flex-direction:column}
+  .hero .kan{flex:1;align-items:flex-start}
 
   /* ---- glass panel base (mockups) ---- */
   .panel{
@@ -73,17 +80,21 @@
   .chrome b{margin-left:8px;font-weight:500;font-size:12px;color:var(--muted);letter-spacing:.3px}
   .float{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 
-  /* ---- kanban mock ---- */
-  .kan{display:flex;gap:9px;padding:14px}
-  .kcol{flex:1;min-width:0}
+  /* ---- kanban mock (rola na horizontal, colunas de largura fixa) ---- */
+  .kan{display:flex;gap:11px;padding:14px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+  .kan::-webkit-scrollbar{height:8px}
+  .kan::-webkit-scrollbar-track{background:transparent}
+  .kan::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
+  .kan::-webkit-scrollbar-thumb:hover{background:var(--glass-2)}
+  .kcol{flex:0 0 auto;width:152px}
   .kcol h4{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:var(--muted);margin:0 0 9px;letter-spacing:.2px}
   .kcol h4 span{color:var(--faint);font-variant-numeric:tabular-nums}
-  .kcard{background:var(--glass);border:1px solid var(--line-soft);border-radius:10px;padding:9px 10px;margin-bottom:8px}
+  .kcard{background:var(--glass);border:1px solid var(--line-soft);border-radius:10px;padding:12px 11px;margin-bottom:9px}
   .kcard p{margin:0;font-size:12px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .kcard .meta{display:flex;align-items:center;justify-content:space-between;margin-top:7px}
-  .chip{font-size:9.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);letter-spacing:.2px}
+  .kcard .meta{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:8px}
+  .chip{font-size:9.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted);letter-spacing:.2px;white-space:nowrap;flex:0 0 auto}
   .chip.wa{color:var(--wa);border-color:rgba(143,217,168,.3)}
-  .val{font-size:10px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .val{font-size:10px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap;flex:0 0 auto}
 
   /* ---- sections ---- */
   section{padding:70px 0}
@@ -102,6 +113,7 @@
   .feat.rev .txt{order:2}
   .feat .txt h2{margin-bottom:16px}
   .feat .txt p{color:var(--muted);font-size:16px;max-width:42ch;margin:0}
+  .feat-cta{margin-top:22px}
 
   /* inbox mock */
   .inbox{display:grid;grid-template-columns:64px 1fr;height:100%}
@@ -211,6 +223,11 @@
 
   @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
+  /* desktop: tira o "sem compromisso" do cálculo de altura, pra a base do
+     painel casar com a base do BOTÃO (não do texto fino abaixo dele) */
+  @media (min-width:861px){
+    .hero .fine{position:absolute;top:100%;left:0;margin-top:12px}
+  }
   @media (max-width:860px){
     header.hero{grid-template-columns:1fr;gap:34px;padding:34px 0}
     .verts{grid-template-columns:1fr 1fr}
@@ -236,7 +253,6 @@
   <nav>
     <a class="brand" href="#top" aria-label="Leonardo Ferreira">
       <img src="/crm/mascote.png" alt="Leonardo Ferreira" />
-      <span>CRM</span>
     </a>
     <a class="btn btn-primary nav-cta" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Agendar uma conversa</a>
   </nav>
@@ -258,49 +274,57 @@
           <h4>Novo <span>128</span></h4>
           <div class="kcard"><p>Imobiliária Aurora</p><div class="meta"><span class="chip">E-mail</span></div></div>
           <div class="kcard"><p>Dr. Renato · Odonto</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+          <div class="kcard"><p>Adv. Nogueira</p><div class="meta"><span class="chip">E-mail</span></div></div>
         </div>
         <div class="kcol">
           <h4>Contatado <span>54</span></h4>
           <div class="kcard"><p>Contabilidade Prisma</p><div class="meta"><span class="chip">E-mail</span></div></div>
           <div class="kcard"><p>Studio Bianca</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+          <div class="kcard"><p>Imob. Vale Verde</p><div class="meta"><span class="chip">E-mail</span></div></div>
         </div>
         <div class="kcol">
           <h4>Respondeu <span>19</span></h4>
           <div class="kcard"><p>Adv. Marlene Sá</p><div class="meta"><span class="chip wa">WhatsApp</span></div></div>
+          <div class="kcard"><p>Dr. Paulo · Odonto</p><div class="meta"><span class="chip">E-mail</span></div></div>
         </div>
         <div class="kcol">
           <h4>Reunião <span>7</span></h4>
           <div class="kcard"><p>Clínica Vittá</p><div class="meta"><span class="chip">E-mail</span><span class="val">qua 14h</span></div></div>
+          <div class="kcard"><p>Contábil Ápice</p><div class="meta"><span class="chip wa">WhatsApp</span><span class="val">sex 9h</span></div></div>
         </div>
         <div class="kcol">
           <h4>Cliente <span>3</span></h4>
           <div class="kcard"><p>Corretora Nunes</p><div class="meta"><span class="chip wa">WhatsApp</span><span class="val">ativo</span></div></div>
+          <div class="kcard"><p>Odonto Prime</p><div class="meta"><span class="chip">E-mail</span><span class="val">ativo</span></div></div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- nichos (tela do app) -->
+  <!-- nichos (tela do app) — quadro à esquerda, texto à direita, CTA sob o quadro -->
   <section id="quem">
-    <p class="lead-serif rise">Feito para quem vive de relacionamento e não pode deixar uma oportunidade esfriando no WhatsApp.</p>
-    <div class="nichos-wrap rise">
-      <div class="panel">
-        <div class="chrome"><i></i><i></i><i></i><b>Nichos</b></div>
-        <div class="radar nichos">
-          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Advocacia</p><s>triagem de casos sem perder o timing de quem procurou</s></div></div>
-          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Contabilidade</p><s>novos contratos entram e a base atual é nutrida sozinha</s></div></div>
-          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Imobiliária</p><s>todo lead respondido na hora, antes do concorrente</s></div></div>
-          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Odontologia</p><s>menos falta na cadeira: lembrete e reativação no automático</s></div></div>
-          <div class="rrow"><span class="ndot"></span><div class="nm"><p>Clínicas e consultórios</p><s>agenda cheia com confirmação e pós-atendimento</s></div></div>
+    <div class="feat rev">
+      <div class="txt rise">
+        <h2 class="big serif">Feito para quem vive de relacionamento e não pode deixar uma oportunidade esfriando.</h2>
+        <p>Advocacia, contabilidade, imobiliária, odontologia, clínicas: o mesmo motor, ajustado pra dor de cada negócio, com a sua identidade.</p>
+      </div>
+      <div class="rise">
+        <div class="panel" aria-hidden="true">
+          <div class="chrome"><i></i><i></i><i></i><b>Nichos</b></div>
+          <div class="radar nichos">
+            <div class="rrow"><span class="ndot"></span><div class="nm"><p>Advocacia</p><s>triagem de casos sem perder o timing de quem procurou</s></div></div>
+            <div class="rrow"><span class="ndot"></span><div class="nm"><p>Contabilidade</p><s>novos contratos entram e a base atual é nutrida sozinha</s></div></div>
+            <div class="rrow"><span class="ndot"></span><div class="nm"><p>Imobiliária</p><s>todo lead respondido na hora, antes do concorrente</s></div></div>
+            <div class="rrow"><span class="ndot"></span><div class="nm"><p>Odontologia</p><s>menos falta na cadeira: lembrete e reativação no automático</s></div></div>
+            <div class="rrow"><span class="ndot"></span><div class="nm"><p>Clínicas e consultórios</p><s>agenda cheia com confirmação e pós-atendimento</s></div></div>
+          </div>
+        </div>
+        <div class="feat-cta">
+          <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Quero no meu negócio</a>
         </div>
       </div>
     </div>
   </section>
-
-  <div class="cta rise">
-    <p>Isso pode ter a cara do seu negócio.</p>
-    <a class="btn btn-primary" href="https://wa.me/5534936180691?text=Oi%20Leo!%20Quero%20desenvolver%20um%20CRM%20pra%20minha%20empresa.">Quero no meu negócio</a>
-  </div>
 
   <!-- telas -->
   <section id="telas">
