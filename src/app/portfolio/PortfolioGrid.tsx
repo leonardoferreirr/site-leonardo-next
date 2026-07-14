@@ -61,8 +61,11 @@ export default function PortfolioGrid() {
             <div className="pf-thumb">
               <img
                 src={p.cover}
+                srcSet={`${p.cover.replace('.webp', '-sm.webp')} 480w, ${p.cover} 1200w`}
+                sizes="(max-width: 860px) 50vw, (max-width: 1180px) 33vw, 25vw"
                 alt={`Site ${p.title}, ${p.segment}`}
-                loading={i < 8 ? 'eager' : 'lazy'}
+                loading={i < 4 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : undefined}
                 decoding="async"
                 width={1200}
                 height={750}
