@@ -81,18 +81,18 @@ export const webProjects: WebProject[] = [
     url: 'https://neurosummit.sensorial.life/',
   },
   {
-    title: 'Air Jordan',
-    segment: 'Experiência interativa',
-    category: 'conceito',
-    cover: '/assets/00. Cover/14. Air Jordan.webp',
-    url: 'https://airjordan-portfolio.vercel.app/',
+    title: 'BIP Vale',
+    segment: 'Loteamento industrial',
+    category: 'imoveis',
+    cover: '/assets/portfolio/bipvale.webp',
+    url: 'https://bipvale.vercel.app/',
   },
   {
-    title: 'Pokémon',
-    segment: 'Narrativa cinematográfica',
-    category: 'conceito',
-    cover: '/assets/00. Cover/15. Pokemon.webp',
-    url: 'https://pokemon.leonardoferreirr.com.br/',
+    title: 'BRN Streaming',
+    segment: 'Estúdio de transmissão',
+    category: 'marketing',
+    cover: '/assets/portfolio/brnstreaming.webp',
+    url: 'https://brnstreaming.vercel.app/',
   },
   {
     title: 'GCarneiro',
@@ -108,7 +108,6 @@ export const webProjects: WebProject[] = [
     cover: '/assets/00. Cover/17. ProConsult Site.webp',
     url: 'https://www.proconsult.tech/',
   },
-
   {
     title: 'Lizzy Prime',
     segment: 'Consórcio',
@@ -117,11 +116,11 @@ export const webProjects: WebProject[] = [
     url: 'https://lizzyprime.vercel.app/',
   },
   {
-    title: 'BIP Vale',
-    segment: 'Loteamento industrial',
-    category: 'imoveis',
-    cover: '/assets/portfolio/bipvale.webp',
-    url: 'https://bipvale.vercel.app/',
+    title: 'Air Jordan',
+    segment: 'Experiência interativa',
+    category: 'conceito',
+    cover: '/assets/00. Cover/14. Air Jordan.webp',
+    url: 'https://airjordan-portfolio.vercel.app/',
   },
   {
     title: 'Race Valley',
@@ -152,11 +151,11 @@ export const webProjects: WebProject[] = [
     url: 'https://lpcanopus.vercel.app/',
   },
   {
-    title: 'BRN Streaming',
-    segment: 'Estúdio de transmissão',
-    category: 'marketing',
-    cover: '/assets/portfolio/brnstreaming.webp',
-    url: 'https://brnstreaming.vercel.app/',
+    title: 'Pokémon',
+    segment: 'Narrativa cinematográfica',
+    category: 'conceito',
+    cover: '/assets/00. Cover/15. Pokemon.webp',
+    url: 'https://pokemon.leonardoferreirr.com.br/',
   },
   {
     title: 'Invista Capital',
@@ -165,7 +164,6 @@ export const webProjects: WebProject[] = [
     cover: '/assets/portfolio/invistacapital.webp',
     url: 'https://invistacapital.vercel.app/',
   },
-
   {
     title: 'Remach',
     segment: 'Planejamento financeiro',
@@ -222,7 +220,6 @@ export const webProjects: WebProject[] = [
     cover: '/assets/portfolio/tempora.webp',
     url: 'https://www.clinicatempora.com.br/',
   },
-
   {
     title: 'Casa Design',
     segment: 'Móveis planejados',
@@ -272,7 +269,6 @@ export const webProjects: WebProject[] = [
     cover: '/assets/portfolio/retroemcampo.webp',
     url: 'https://www.retroemcampo.com.br/',
   },
-
   {
     title: 'The Toxic Land',
     segment: 'Loja de camisetas',
@@ -329,7 +325,6 @@ export const webProjects: WebProject[] = [
     cover: '/assets/portfolio/beatrizbenita.webp',
     url: 'https://www.beatrizbenita.adv.br/',
   },
-
   {
     title: 'Ferreira Advocacia',
     segment: 'Assessoria jurídica',
