@@ -12,15 +12,7 @@ export default function PortfolioPage() {
     <main className="pf-page">
       <div className="pf-shell">
         <nav className="pf-nav">
-          <a className="pf-brand" href="/">
-            Leonardo Ferreira
-          </a>
-          <a className="pf-back" href="/">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Voltar ao site
-          </a>
+          <span className="pf-brand">Leonardo Ferreira</span>
         </nav>
 
         <header className="pf-hero">
@@ -29,8 +21,7 @@ export default function PortfolioPage() {
           </h1>
           <p className="pf-sub">
             Cada projeto aqui está no ar, funcionando e gerando resultado para quem confiou no
-            trabalho. Clique em qualquer um para abrir o site de verdade, não uma imagem de
-            apresentação.
+            trabalho. Clique em qualquer um para abrir o site de verdade.
           </p>
         </header>
 

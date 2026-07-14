@@ -256,7 +256,7 @@ export const webProjects: WebProject[] = [
     segment: 'Transportadora',
     category: 'corporativo',
     cover: '/assets/portfolio/tadex.webp',
-    url: 'https://tadex.vercel.app/',
+    url: 'https://tadex.com.br/landingpage',
   },
   {
     title: 'United Way',
