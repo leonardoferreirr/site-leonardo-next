@@ -53,8 +53,8 @@ export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
  */
 export const webProjects: WebProject[] = [
   {
-    title: 'P1 Marketing',
-    segment: 'Agência de performance',
+    title: 'P1',
+    segment: 'Agência de marketing',
     category: 'marketing',
     cover: '/assets/00. Cover/10. P1 Marketing.webp',
     url: 'https://p1-marketing.vercel.app/',
@@ -68,7 +68,7 @@ export const webProjects: WebProject[] = [
   },
   {
     title: 'Forset',
-    segment: 'Ranking de beach tennis',
+    segment: 'Aplicativo de beach tennis',
     category: 'saude',
     cover: '/assets/00. Cover/12. Forset.webp',
     url: 'https://site.forset.com.br/',
@@ -81,18 +81,18 @@ export const webProjects: WebProject[] = [
     url: 'https://neurosummit.sensorial.life/',
   },
   {
-    title: 'BIP Vale',
-    segment: 'Loteamento industrial',
-    category: 'imoveis',
-    cover: '/assets/portfolio/bipvale.webp',
-    url: 'https://bipvale.vercel.app/',
-  },
-  {
     title: 'BRN Streaming',
     segment: 'Estúdio de transmissão',
     category: 'marketing',
     cover: '/assets/portfolio/brnstreaming.webp',
     url: 'https://www.brnstreaming.com/',
+  },
+  {
+    title: 'BIP Vale',
+    segment: 'Loteamento industrial',
+    category: 'imoveis',
+    cover: '/assets/portfolio/bipvale.webp',
+    url: 'https://bipvale.vercel.app/',
   },
   {
     title: 'GCarneiro',
@@ -102,11 +102,11 @@ export const webProjects: WebProject[] = [
     url: 'https://www.gcarneiro.com.br/',
   },
   {
-    title: 'ProConsult',
-    segment: 'Consultoria em gestão',
-    category: 'corporativo',
-    cover: '/assets/00. Cover/17. ProConsult Site.webp',
-    url: 'https://www.proconsult.tech/',
+    title: 'Retrô em Campo',
+    segment: 'Camisas de futebol',
+    category: 'ecommerce',
+    cover: '/assets/portfolio/retroemcampo.webp',
+    url: 'https://www.retroemcampo.com.br/',
   },
   {
     title: 'Lizzy Prime',
@@ -200,21 +200,21 @@ export const webProjects: WebProject[] = [
     url: 'https://sensorial-lp.vercel.app/',
   },
   {
-    title: 'Nutriclau',
+    title: 'Clau Carvalho',
     segment: 'Nutrição',
     category: 'saude',
     cover: '/assets/portfolio/nutriclau.webp',
     url: 'https://www.nutriclaucarvalho.com.br/',
   },
   {
-    title: 'IdealPrev',
+    title: 'Clínica IdealPrev',
     segment: 'Clínica médica',
     category: 'saude',
     cover: '/assets/portfolio/idealprev.webp',
-    url: 'https://idealprev-sa-de-conecta.vercel.app/',
+    url: 'https://clinicaidealprev.com.br/',
   },
   {
-    title: 'Têmpora',
+    title: 'Clínica Têmpora',
     segment: 'Fisioterapia',
     category: 'saude',
     cover: '/assets/portfolio/tempora.webp',
@@ -263,11 +263,11 @@ export const webProjects: WebProject[] = [
     url: 'https://unitedwayswga.vercel.app/',
   },
   {
-    title: 'Retrô em Campo',
-    segment: 'Camisas de futebol',
-    category: 'ecommerce',
-    cover: '/assets/portfolio/retroemcampo.webp',
-    url: 'https://www.retroemcampo.com.br/',
+    title: 'ProConsult',
+    segment: 'Consultoria em gestão',
+    category: 'corporativo',
+    cover: '/assets/00. Cover/17. ProConsult Site.webp',
+    url: 'https://www.proconsult.tech/',
   },
   {
     title: 'The Toxic Land',
@@ -333,7 +333,7 @@ export const webProjects: WebProject[] = [
     url: 'https://www.ferreiraadvocaciabrasil.com.br/',
   },
   {
-    title: 'Método RAIZ',
+    title: 'Bianca Jensen',
     segment: 'Nutrição',
     category: 'saude',
     cover: '/assets/portfolio/biancajensen.webp',
