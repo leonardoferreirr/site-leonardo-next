@@ -92,7 +92,7 @@ export const webProjects: WebProject[] = [
     segment: 'Estúdio de transmissão',
     category: 'marketing',
     cover: '/assets/portfolio/brnstreaming.webp',
-    url: 'https://brnstreaming.vercel.app/',
+    url: 'https://www.brnstreaming.com/',
   },
   {
     title: 'GCarneiro',
