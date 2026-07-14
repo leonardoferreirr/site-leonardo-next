@@ -20,7 +20,7 @@ export type WebProject = {
 export const CATEGORY_LABELS: Record<WebCategory | 'todos', string> = {
   todos: 'Todos',
   marketing: 'Marketing',
-  saude: 'Saúde',
+  saude: 'Saúde e Bem-estar',
   imoveis: 'Imóveis e Construção',
   financas: 'Finanças',
   eventos: 'Eventos',
@@ -69,7 +69,7 @@ export const webProjects: WebProject[] = [
   {
     title: 'Forset',
     segment: 'Ranking de beach tennis',
-    category: 'corporativo',
+    category: 'saude',
     cover: '/assets/00. Cover/12. Forset.webp',
     url: 'https://site.forset.com.br/',
   },
@@ -266,13 +266,6 @@ export const webProjects: WebProject[] = [
     url: 'https://unitedwayswga.vercel.app/',
   },
   {
-    title: 'OnLife África',
-    segment: 'Telemedicina',
-    category: 'saude',
-    cover: '/assets/portfolio/onlifeafrica.webp',
-    url: 'https://onlifeafrica.vercel.app/',
-  },
-  {
     title: 'Retrô em Campo',
     segment: 'Camisas de futebol',
     category: 'ecommerce',
@@ -356,7 +349,7 @@ export const webProjects: WebProject[] = [
     segment: 'Harmonização orofacial',
     category: 'saude',
     cover: '/assets/portfolio/academiaface.webp',
-    url: 'https://www.academiabrasileiradaface.com.br/',
+    url: 'https://poshof.academiabrasileiradaface.com.br/',
   },
   {
     title: 'Nupis',
@@ -385,5 +378,12 @@ export const webProjects: WebProject[] = [
     category: 'corporativo',
     cover: '/assets/portfolio/dmlguincho.webp',
     url: 'https://www.dmlguinchoelogistica.com.br/',
+  },
+  {
+    title: 'Ecossistema Aceleração 10x',
+    segment: 'Recrutamento e treinamento',
+    category: 'corporativo',
+    cover: '/assets/portfolio/ecossistema10x.webp',
+    url: 'https://www.ecossistemaaceleracao10x.com.br/',
   },
 ];
