@@ -148,7 +148,7 @@ export const webProjects: WebProject[] = [
     segment: 'Lançamento imobiliário',
     category: 'imoveis',
     cover: '/assets/portfolio/canopus.webp',
-    url: 'https://lpcanopus.vercel.app/',
+    url: 'https://www.aptosemsp.com.br/today/',
   },
   {
     title: 'Pokémon',
