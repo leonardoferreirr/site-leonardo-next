@@ -53,11 +53,11 @@ export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
  */
 export const webProjects: WebProject[] = [
   {
-    title: 'P1',
-    segment: 'Agência de marketing',
-    category: 'marketing',
-    cover: '/assets/portfolio/p1.webp',
-    url: 'https://p1-marketing.vercel.app/',
+    title: 'Paulani',
+    segment: 'Gestão empresarial',
+    category: 'corporativo',
+    cover: '/assets/portfolio/paulani.webp',
+    url: 'https://paulani.vercel.app/',
   },
   {
     title: 'Nalu Poke',
@@ -79,6 +79,13 @@ export const webProjects: WebProject[] = [
     category: 'eventos',
     cover: '/assets/portfolio/neuro-summit.webp',
     url: 'https://neurosummit.sensorial.life/',
+  },
+  {
+    title: 'Fino Acabamento',
+    segment: 'Revestimentos e porcelanato',
+    category: 'imoveis',
+    cover: '/assets/portfolio/fino-acabamento.webp',
+    url: 'https://finoacabamento.vercel.app/',
   },
   {
     title: 'BRN Streaming',
@@ -156,6 +163,13 @@ export const webProjects: WebProject[] = [
     category: 'conceito',
     cover: '/assets/portfolio/pokemon.webp',
     url: 'https://pokemon.leonardoferreirr.com.br/',
+  },
+  {
+    title: 'Danilo Lovisaro',
+    segment: 'Professor de Direito',
+    category: 'juridico',
+    cover: '/assets/portfolio/danilo-lovisaro.webp',
+    url: 'https://danilolovisaro.vercel.app/',
   },
   {
     title: 'Invista Capital',
