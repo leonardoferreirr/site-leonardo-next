@@ -256,6 +256,13 @@ export const webProjects: WebProject[] = [
     url: 'https://www.clinicatempora.com.br/',
   },
   {
+    title: 'D7 Home',
+    segment: 'Móveis modulares',
+    category: 'ecommerce',
+    cover: '/assets/portfolio/d7-home.webp',
+    url: 'https://lupplace.lojavirtualnuvem.com.br/',
+  },
+  {
     title: 'Casa Design',
     segment: 'Móveis planejados',
     category: 'imoveis',
