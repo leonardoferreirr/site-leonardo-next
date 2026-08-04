@@ -420,14 +420,14 @@ export default function AmericaPlasteringPro() {
         <div className="ap-wrap">
           <div className="ap-price ap-rv">
             <span className="ap-eyebrow" style={{ margin: 0 }}>
-              Investimento
+              Investimento sugerido
             </span>
             <div className="ap-price__amount">
-              <span className="ap-price__cur">R$</span>
-              <span className="ap-price__num">8.000</span>
+              <span className="ap-price__cur">US$</span>
+              <span className="ap-price__num">1.500</span>
             </div>
             <p className="ap-note" style={{ maxWidth: '54ch', textAlign: 'center' }}>
-              Valor fechado para o escopo acima, do mapa de arquitetura à virada em produção. As 717
+              Valor sugerido para o escopo acima, do mapa de arquitetura à virada em produção. As 717
               páginas entram na reestruturação sem cobrança por página.
             </p>
             <div className="ap-price__inc">
