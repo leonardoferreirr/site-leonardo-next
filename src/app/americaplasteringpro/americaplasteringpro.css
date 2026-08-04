@@ -1,0 +1,298 @@
+/* ============================================================
+   America Plastering Pro · Auditoria técnica
+   Standalone (preto + Instrument Serif itálico + janelas de UI)
+   ============================================================ */
+
+:root {
+  --ap-bg: #000000;
+  --ap-bg-soft: #070707;
+  --ap-text: #ededed;
+  --ap-text-soft: #a8a8a8;
+  --ap-text-faint: #6b6b6b;
+  --ap-line: rgba(255, 255, 255, 0.10);
+  --ap-line-strong: rgba(255, 255, 255, 0.22);
+  --ap-glass: rgba(255, 255, 255, 0.035);
+  --ap-glass-hover: rgba(255, 255, 255, 0.07);
+  --ap-crit: #f0736c;
+  --ap-alto: #f5b860;
+  --ap-medio: #7fa9d8;
+  --ap-ok: #6cf09a;
+  --speed-fast: 0.22s;
+  --speed-normal: 0.45s;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-primary: var(--font-sans), 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-serif), 'Instrument Serif', Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--ap-bg);
+  color: var(--ap-text);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #fff; border: 4px solid #000; border-radius: 999px; }
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 2px; }
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.ap-page { background: var(--ap-bg); min-height: 100vh; }
+.ap-wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+@media (max-width: 720px) { .ap-wrap { padding: 0 1.4rem; } }
+
+.ap-section { padding: 7.5rem 0; position: relative; }
+@media (max-width: 720px) { .ap-section { padding: 4.5rem 0; } }
+
+.ap-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ap-text-soft);
+  margin-bottom: 1.3rem;
+}
+
+/* ============================================================
+   Tipografia
+   ============================================================ */
+.ap-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.ap-h1 em { font-style: italic; }
+
+.ap-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.ap-h2 em { font-style: italic; }
+
+.ap-h3 { font-size: 1.06rem; font-weight: 600; letter-spacing: -0.005em; }
+
+.ap-lead {
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  color: var(--ap-text-soft);
+  max-width: 46ch;
+  font-weight: 300;
+}
+.ap-note { font-size: 0.9rem; color: var(--ap-text-faint); max-width: 62ch; font-weight: 300; }
+.ap-mono { font-family: var(--font-mono); font-size: 0.84em; }
+
+/* ============================================================
+   Navegação
+   ============================================================ */
+.ap-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 2rem;
+  transition: background var(--speed-normal) var(--ease), backdrop-filter var(--speed-normal);
+}
+.ap-nav.solid { background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(14px); }
+.ap-nav__mark { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--ap-text-soft); }
+.ap-nav__mark b { color: var(--ap-text); font-weight: 600; }
+@media (max-width: 720px) { .ap-nav { padding: 1.1rem 1.4rem; } .ap-nav__cta { display: none; } }
+
+.ap-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #fff; color: #000;
+  padding: 0.82rem 1.5rem; border-radius: 999px;
+  font-size: 0.92rem; font-weight: 500; border: 0; cursor: pointer;
+  transition: transform var(--speed-fast) var(--ease), opacity var(--speed-fast);
+}
+.ap-btn:hover { transform: translateY(-2px); opacity: 0.92; }
+.ap-btn--ghost {
+  background: transparent; color: var(--ap-text);
+  border: 1px solid var(--ap-line-strong);
+}
+.ap-btn--ghost:hover { background: var(--ap-glass-hover); }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.ap-hero { padding: 11rem 0 6rem; }
+@media (max-width: 720px) { .ap-hero { padding: 7.5rem 0 3.5rem; } }
+.ap-hero__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+}
+@media (max-width: 940px) { .ap-hero__grid { grid-template-columns: 1fr; } }
+.ap-hero__col { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+
+/* ============================================================
+   Janela de UI (mockup)
+   ============================================================ */
+.ap-win {
+  background: #0b0b0b;
+  border: 1px solid var(--ap-line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.ap-win__bar {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid var(--ap-line);
+  background: #101010;
+}
+.ap-win__dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.ap-win__dot--r { background: #ff5f57; }
+.ap-win__dot--y { background: #febc2e; }
+.ap-win__dot--g { background: #28c840; }
+.ap-win__title {
+  margin-left: 0.5rem; font-size: 0.8rem; color: var(--ap-text-soft);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ap-win__body { padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.ap-win__code {
+  font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.8;
+  color: var(--ap-text-soft); overflow-x: auto; white-space: pre; padding-bottom: 0.2rem;
+}
+.ap-win__code b { color: var(--ap-crit); font-weight: 600; }
+.ap-win__code i { color: var(--ap-ok); font-style: normal; }
+
+/* linhas dentro da janela */
+.ap-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.68rem 0; border-bottom: 1px solid var(--ap-line);
+}
+.ap-row:last-child { border-bottom: 0; }
+.ap-row__l { display: flex; flex-direction: column; gap: 0.12rem; min-width: 0; }
+.ap-row__t { font-size: 0.88rem; }
+.ap-row__s { font-size: 0.75rem; color: var(--ap-text-faint); }
+.ap-row__v { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ap-text-soft); white-space: nowrap; }
+
+.ap-pill {
+  font-size: 0.68rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+  border: 1px solid currentColor; white-space: nowrap;
+}
+.ap-pill--crit { color: var(--ap-crit); }
+.ap-pill--alto { color: var(--ap-alto); }
+.ap-pill--medio { color: var(--ap-medio); }
+.ap-pill--ok { color: var(--ap-ok); }
+
+/* barra de proporção */
+.ap-bar { height: 5px; border-radius: 999px; background: rgba(255,255,255,0.09); overflow: hidden; min-width: 60px; }
+.ap-bar > span { display: block; height: 100%; border-radius: 999px; background: var(--ap-text); }
+.ap-bar--crit > span { background: var(--ap-crit); }
+
+/* ============================================================
+   Números
+   ============================================================ */
+.ap-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1px; background: var(--ap-line); border: 1px solid var(--ap-line); border-radius: 12px; overflow: hidden;
+}
+.ap-stat { background: var(--ap-bg-soft); padding: 1.5rem 1.3rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.ap-stat b { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 400; line-height: 1; }
+.ap-stat span { font-size: 0.8rem; color: var(--ap-text-faint); }
+
+/* ============================================================
+   Blocos alternados
+   ============================================================ */
+.ap-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem); align-items: center;
+}
+@media (max-width: 940px) { .ap-split { grid-template-columns: 1fr; } }
+.ap-split__txt { display: flex; flex-direction: column; gap: 1.2rem; align-items: flex-start; }
+.ap-split--flip .ap-split__txt { order: 2; }
+@media (max-width: 940px) { .ap-split--flip .ap-split__txt { order: 0; } }
+
+/* ============================================================
+   Achados
+   ============================================================ */
+.ap-finds { display: flex; flex-direction: column; gap: 1px; background: var(--ap-line);
+  border: 1px solid var(--ap-line); border-radius: 12px; overflow: hidden; }
+.ap-find {
+  background: var(--ap-bg-soft); padding: 1.5rem 1.6rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+  transition: background var(--speed-fast);
+}
+.ap-find:hover { background: var(--ap-glass); }
+.ap-find__top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem 0.9rem; }
+.ap-find p { font-size: 0.94rem; color: var(--ap-text-soft); font-weight: 300; max-width: 78ch; }
+.ap-find__ev {
+  font-family: var(--font-mono); font-size: 0.76rem; line-height: 1.7;
+  color: var(--ap-text-faint); background: rgba(255,255,255,0.03);
+  border: 1px solid var(--ap-line); border-radius: 6px;
+  padding: 0.65rem 0.8rem; overflow-x: auto; white-space: pre-wrap; word-break: break-word;
+}
+.ap-find__ev b { color: var(--ap-crit); font-weight: 600; }
+
+/* ============================================================
+   Escopo
+   ============================================================ */
+.ap-pkgs { display: flex; flex-direction: column; gap: 1px; background: var(--ap-line);
+  border: 1px solid var(--ap-line); border-radius: 12px; overflow: hidden; }
+.ap-pkg {
+  background: var(--ap-bg-soft); padding: 1.35rem 1.6rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 0.3rem 1rem; align-items: baseline;
+}
+.ap-pkg p { grid-column: 1 / -1; font-size: 0.9rem; color: var(--ap-text-faint); font-weight: 300; }
+.ap-pkg__n { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ap-text-faint); white-space: nowrap; }
+
+/* ============================================================
+   Preço
+   ============================================================ */
+.ap-price {
+  border: 1px solid var(--ap-line-strong); border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012));
+  padding: clamp(2rem, 5vw, 3.4rem);
+  display: flex; flex-direction: column; gap: 1.6rem; align-items: center; text-align: center;
+}
+.ap-price__amount { display: flex; align-items: baseline; gap: 0.35rem; justify-content: center; }
+.ap-price__cur { font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--ap-text-soft); }
+.ap-price__num { font-family: var(--font-display); font-size: clamp(3.4rem, 9vw, 6rem); line-height: 0.95; }
+.ap-price__inc { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 60ch; }
+.ap-price__inc span {
+  font-size: 0.8rem; color: var(--ap-text-soft);
+  border: 1px solid var(--ap-line); border-radius: 999px; padding: 0.32rem 0.8rem;
+}
+
+/* ============================================================
+   Rodapé
+   ============================================================ */
+.ap-foot {
+  border-top: 1px solid var(--ap-line); padding: 3.5rem 0 4rem;
+  display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between; align-items: center;
+}
+.ap-foot span { font-size: 0.82rem; color: var(--ap-text-faint); }
+
+/* ============================================================
+   Revelação no scroll
+   ============================================================ */
+.ap-rv { opacity: 0; transform: translateY(26px); transition: opacity 0.9s var(--ease), transform 1s var(--ease); }
+.ap-rv.in { opacity: 1; transform: none; }
+.ap-rv-d1 { transition-delay: 0.09s; }
+.ap-rv-d2 { transition-delay: 0.18s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ap-rv { opacity: 1; transform: none; transition: none; }
+  .ap-btn:hover { transform: none; }
+}
