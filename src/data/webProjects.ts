@@ -123,6 +123,20 @@ export const webProjects: WebProject[] = [
     url: 'https://lizzyprime.vercel.app/',
   },
   {
+    title: 'Pedras do Brasil',
+    segment: 'Pedra natural',
+    category: 'imoveis',
+    cover: '/assets/portfolio/pedras-do-brasil.webp',
+    url: 'https://pedrasdobrasil.vercel.app/',
+  },
+  {
+    title: 'AeroPrev',
+    segment: 'Direito previdenciário',
+    category: 'juridico',
+    cover: '/assets/portfolio/aeroprev.webp',
+    url: 'https://landingpageaeroprev.vercel.app/v2',
+  },
+  {
     title: 'Air Jordan',
     segment: 'Experiência interativa',
     category: 'conceito',
@@ -156,6 +170,13 @@ export const webProjects: WebProject[] = [
     category: 'imoveis',
     cover: '/assets/portfolio/canopus.webp',
     url: 'https://www.aptosemsp.com.br/today/',
+  },
+  {
+    title: 'Tadex',
+    segment: 'Transportadora',
+    category: 'corporativo',
+    cover: '/assets/portfolio/tadex.webp',
+    url: 'https://tadex.com.br/',
   },
   {
     title: 'Pokémon',
@@ -261,13 +282,6 @@ export const webProjects: WebProject[] = [
     category: 'imoveis',
     cover: '/assets/portfolio/ld-services.webp',
     url: 'https://www.ldservicespainting.com/',
-  },
-  {
-    title: 'Tadex',
-    segment: 'Transportadora',
-    category: 'corporativo',
-    cover: '/assets/portfolio/tadex.webp',
-    url: 'https://tadex.com.br/landingpage',
   },
   {
     title: 'United Way',
