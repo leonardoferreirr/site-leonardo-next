@@ -21,7 +21,6 @@
   --speed-normal: 0.45s;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --font-primary: var(--font-sans), 'Inter', system-ui, sans-serif;
-  --font-display: var(--font-serif), 'Instrument Serif', Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
 }
 
@@ -57,7 +56,7 @@ img { display: block; max-width: 100%; }
 .ap-wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 @media (max-width: 720px) { .ap-wrap { padding: 0 1.4rem; } }
 
-.ap-section { padding: 7.5rem 0; position: relative; }
+.ap-section { padding: 5rem 0; position: relative; }
 @media (max-width: 720px) { .ap-section { padding: 4.5rem 0; } }
 
 .ap-eyebrow {
@@ -74,24 +73,22 @@ img { display: block; max-width: 100%; }
    Tipografia
    ============================================================ */
 .ap-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
   font-weight: 400;
-  line-height: 1.04;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.ap-h1 em { font-style: normal; color: var(--ap-text-soft); }
+
+.ap-h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
-.ap-h1 em { font-style: italic; }
-
-.ap-h2 {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4vw, 3.1rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-}
-.ap-h2 em { font-style: italic; }
+.ap-h2 em { font-style: normal; color: var(--ap-text-soft); }
 
 .ap-h3 { font-size: 1.06rem; font-weight: 600; letter-spacing: -0.005em; }
 
@@ -135,7 +132,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    Hero
    ============================================================ */
-.ap-hero { padding: 11rem 0 6rem; }
+.ap-hero { padding: 8.5rem 0 4rem; }
 @media (max-width: 720px) { .ap-hero { padding: 7.5rem 0 3.5rem; } }
 .ap-hero__grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -209,7 +206,7 @@ img { display: block; max-width: 100%; }
   gap: 1px; background: var(--ap-line); border: 1px solid var(--ap-line); border-radius: 12px; overflow: hidden;
 }
 .ap-stat { background: var(--ap-bg-soft); padding: 1.5rem 1.3rem; display: flex; flex-direction: column; gap: 0.25rem; }
-.ap-stat b { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.9rem); font-weight: 400; line-height: 1; }
+.ap-stat b { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 500; line-height: 1; letter-spacing: -0.03em; }
 .ap-stat span { font-size: 0.8rem; color: var(--ap-text-faint); }
 
 /* ============================================================
@@ -268,7 +265,7 @@ img { display: block; max-width: 100%; }
 }
 .ap-price__amount { display: flex; align-items: baseline; gap: 0.35rem; justify-content: center; }
 .ap-price__cur { font-size: clamp(1.1rem, 2vw, 1.5rem); color: var(--ap-text-soft); }
-.ap-price__num { font-family: var(--font-display); font-size: clamp(3.4rem, 9vw, 6rem); line-height: 0.95; }
+.ap-price__num { font-size: clamp(2.8rem, 7vw, 4.4rem); line-height: 1; font-weight: 500; letter-spacing: -0.035em; }
 .ap-price__inc { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; max-width: 60ch; }
 .ap-price__inc span {
   font-size: 0.8rem; color: var(--ap-text-soft);

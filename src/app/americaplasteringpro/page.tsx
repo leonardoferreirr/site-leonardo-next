@@ -2,11 +2,6 @@
 
 import { useEffect, useRef } from 'react';
 
-const WA = '5534997697377'; // Leonardo
-const MSG =
-  'Oi Leonardo, vi a auditoria do America Plastering Pro. Quero conversar sobre a reestruturação.';
-const waLink = `https://wa.me/${WA}?text=${encodeURIComponent(MSG)}`;
-
 /* ---------- janela de UI ---------- */
 function Janela({
   titulo,
@@ -68,7 +63,7 @@ const ACHADOS: {
     sev: 'Crítico',
     titulo: 'O telefone exibido não é o telefone que disca',
     texto:
-      'Em todos os botões de telefone do site, o número que a pessoa lê é (781) 818-5107 e o número que o clique disca é +1 781-851-6385. São números diferentes. No celular, tocar no botão liga para um número que nunca foi anunciado. O título que aparece no Google, nas 695 páginas de cidade, traz o primeiro número.',
+      'Em todos os botões de telefone conferidos, o número que aparece na tela é (781) 818-5107 e o número no atributo href é +1 781-851-6385. São números diferentes. No celular, o toque no botão inicia a chamada para o segundo. O título que aparece no resultado de busca das páginas de cidade traz o primeiro.',
     ev: (
       <>
         {'<a href="tel:'}
@@ -84,52 +79,52 @@ const ACHADOS: {
   {
     tom: 'alto',
     sev: 'Alto',
-    titulo: 'As 695 páginas de cidade não têm marcação de negócio local',
+    titulo: 'As 695 páginas de cidade não declaram dados estruturados de negócio local',
     texto:
-      'Só a home declara dados estruturados, e apenas do tipo Organization. Nenhuma página de cidade declara LocalBusiness, Service ou área atendida. O site inteiro foi construído para busca local e justamente a camada que o Google usa para entender "serviço X na cidade Y" está vazia.',
+      'Apenas a home declara dados estruturados, do tipo Organization. Nenhuma página de cidade declara LocalBusiness, Service ou área atendida. É a camada usada pelos buscadores para associar serviço e localidade.',
   },
   {
     tom: 'alto',
     sev: 'Alto',
-    titulo: 'Sete páginas no ar ficaram fora de todas as sitemaps',
+    titulo: 'Sete páginas publicadas estão fora de todas as sitemaps',
     texto:
-      'Respondem 200, estão no menu principal e não constam em nenhuma sitemap: /about-us/, /portfolio/ e as quatro filhas de drywall (installation, finishing, remodeling e home-additions).',
+      'Respondem 200 e constam no menu principal, mas não aparecem em nenhuma das oito sitemaps do domínio: /about-us/, /portfolio/ e as quatro filhas de drywall (installation, finishing, remodeling e home-additions).',
   },
   {
     tom: 'alto',
     sev: 'Alto',
-    titulo: '400 URLs aparecem em duas sitemaps ao mesmo tempo',
+    titulo: '400 URLs aparecem em duas sitemaps simultaneamente',
     texto:
-      'O índice declara 1.111 entradas para 711 endereços únicos. A paginação das sitemaps está repetindo o mesmo bloco, o que desperdiça rastreamento e polui os relatórios do Search Console.',
+      'O índice declara 1.111 entradas para 711 endereços únicos. A paginação das sitemaps repete o mesmo bloco de URLs, o que duplica o rastreamento e distorce os relatórios do Search Console.',
   },
   {
     tom: 'medio',
     sev: 'Médio',
-    titulo: 'Uma integração morta dispara em toda visita',
+    titulo: 'Requisição a endpoint externo retorna 401 em toda visita',
     texto:
-      'Cada carregamento de página chama um endpoint de rastreamento que responde 401. É código rodando em 717 páginas sem entregar nada.',
+      'Cada carregamento de página dispara uma chamada a um endpoint de rastreamento que responde 401. A integração está presente em todas as páginas e não completa.',
     ev: <>401 · luulxhajwrxnthjutibc.supabase.co/rest/v1/public_tracking_configs</>,
   },
   {
     tom: 'medio',
     sev: 'Médio',
-    titulo: 'Nenhuma imagem tem carregamento adiado',
+    titulo: 'Nenhuma imagem usa carregamento adiado',
     texto:
-      'Zero imagens com loading="lazy". Com 1,0 a 2,2 MB e 93 a 111 requisições por página, é o ganho de velocidade mais barato disponível.',
+      'Nenhuma imagem declara loading="lazy". As páginas medidas transferem de 1,0 a 2,2 MB em 93 a 111 requisições.',
   },
   {
     tom: 'medio',
     sev: 'Médio',
-    titulo: 'Alvos de toque pequenos no celular',
+    titulo: 'Alvos de toque abaixo do mínimo recomendado',
     texto:
-      '25 dos 49 links e botões da home ficam abaixo de 40 px em tela de 390 px, e o menor texto corrido é 12 px. O layout responde bem e não há rolagem horizontal.',
+      'Em viewport de 390 px, 25 dos 49 links e botões da home ficam abaixo de 40 px de altura ou largura. O menor texto corrido é 12 px. Não há rolagem horizontal e o layout responde corretamente.',
   },
   {
     tom: 'medio',
     sev: 'Menor',
     titulo: 'A mesma URL responde com e sem barra final',
     texto:
-      '/contact e /contact/ devolvem 200 com HTML idêntico. A canonical aponta para a versão com barra, então o risco de indexação está contido. É higiene, não urgência.',
+      '/contact e /contact/ retornam 200 com HTML idêntico, sem redirecionamento entre as duas formas. A canonical aponta para a versão com barra, o que contém o risco de indexação duplicada.',
   },
 ];
 
@@ -137,7 +132,7 @@ const PACOTES = [
   {
     t: 'Arquitetura e modelo de conteúdo',
     n: '10 a 16 h',
-    d: 'Mapa das 717 rotas, modelo dos dados de cidade e serviço, plano de redirecionamento sem perder o que já está indexado.',
+    d: 'Mapa das 717 rotas, modelo de dados de cidade e serviço, plano de redirecionamento preservando o que está indexado.',
   },
   {
     t: 'Sistema visual e nove layouts',
@@ -152,22 +147,22 @@ const PACOTES = [
   {
     t: 'Formulário e integração',
     n: '10 a 16 h',
-    d: 'Formulário refeito mantendo a rota para o GoHighLevel, antispam, validação e confirmação.',
+    d: 'Formulário reconstruído mantendo o envio para o GoHighLevel, antispam, validação e confirmação.',
   },
   {
     t: 'Migração de SEO',
     n: '14 a 22 h',
-    d: 'Redirecionamentos, canonicals, sitemaps corrigidas, marcação de negócio local nas 695 páginas, títulos e descrições por template.',
+    d: 'Redirecionamentos, canonicals, sitemaps corrigidas, dados estruturados de negócio local nas 695 páginas, títulos e descrições por template.',
   },
   {
     t: 'Correção dos defeitos desta auditoria',
     n: '6 a 10 h',
-    d: 'Telefone, integração morta, imagens adiadas, alvos de toque e barra final.',
+    d: 'Telefone, integração com retorno 401, carregamento adiado de imagens, alvos de toque e barra final.',
   },
   {
     t: 'Performance, testes e publicação',
     n: '14 a 22 h',
-    d: 'Peso de imagem, requisições, testes em telas reais, checagem de rastreamento e virada.',
+    d: 'Peso de imagem, número de requisições, testes em viewports reais, verificação de rastreamento e virada em produção.',
   },
 ];
 
@@ -204,30 +199,25 @@ export default function AmericaPlasteringPro() {
     <main className="ap-page">
       <nav className="ap-nav" ref={navRef}>
         <div className="ap-nav__mark">
-          <b>Leonardo Ferreira</b>
+          <b>America Plastering Pro</b>
           <span>· auditoria técnica</span>
         </div>
-        <a className="ap-btn ap-nav__cta" href={waLink} target="_blank" rel="noopener">
-          Conversar sobre a reestruturação
-        </a>
       </nav>
 
-      {/* ================= HERO ================= */}
+      {/* ================= ABERTURA ================= */}
       <header className="ap-hero">
         <div className="ap-wrap ap-hero__grid">
           <div className="ap-hero__col ap-rv">
-            <span className="ap-eyebrow">America Plastering Pro</span>
-            <h1 className="ap-h1">
-              717 páginas no ar. O botão de ligar <em>disca um número que ninguém anunciou.</em>
-            </h1>
+            <span className="ap-eyebrow">Mapa técnico e escopo</span>
+            <h1 className="ap-h1">americaplasteringpro.com</h1>
             <p className="ap-lead">
-              Auditoria técnica completa do americaplasteringpro.com. Todas as páginas
-              inventariadas, defeitos verificados no HTML servido em produção e um escopo de
-              reestruturação com preço fechado.
+              Levantamento de páginas, redirecionamentos, formulários e defeitos, feito por leitura
+              integral das sitemaps do domínio e renderização das páginas em navegador. Base para
+              dimensionar a reestruturação.
             </p>
-            <a className="ap-btn" href={waLink} target="_blank" rel="noopener">
-              Conversar sobre a reestruturação
-            </a>
+            <p className="ap-note">
+              WordPress com Elementor Pro · servidor LiteSpeed · Massachusetts, Estados Unidos
+            </p>
           </div>
 
           <div className="ap-rv ap-rv-d1">
@@ -241,8 +231,8 @@ export default function AmericaPlasteringPro() {
                 <i>(781) 818-5107</i>
                 {'\n</a>'}
               </div>
-              <Linha titulo="O que a pessoa lê" valor="(781) 818-5107" />
-              <Linha titulo="O que o clique disca" valor="+1 781-851-6385" />
+              <Linha titulo="Número exibido na tela" valor="(781) 818-5107" />
+              <Linha titulo="Número no atributo href" valor="+1 781-851-6385" />
               <Linha
                 titulo="Páginas conferidas"
                 sub="todas com a mesma divergência"
@@ -263,7 +253,7 @@ export default function AmericaPlasteringPro() {
             </div>
             <div className="ap-stat">
               <b>695</b>
-              <span>saem de um template</span>
+              <span>geradas por template</span>
             </div>
             <div className="ap-stat">
               <b>9</b>
@@ -277,21 +267,20 @@ export default function AmericaPlasteringPro() {
         </div>
       </section>
 
-      {/* ================= O REENQUADRAMENTO ================= */}
-      <section className="ap-section" style={{ paddingTop: 0 }}>
+      {/* ================= ESTRUTURA ================= */}
+      <section className="ap-section">
         <div className="ap-wrap ap-split">
           <div className="ap-split__txt ap-rv">
-            <h2 className="ap-h2">
-              São 717 páginas, mas <em>são nove layouts.</em>
-            </h2>
+            <h2 className="ap-h2">Estrutura das 717 páginas</h2>
             <p className="ap-lead">
-              As 695 páginas de cidade saem de um único template, cruzando seis serviços com 121
+              As 695 páginas de cidade derivam de um único template, cruzando seis serviços com 121
               cidades de Massachusetts. As outras 22 se distribuem em oito layouts.
             </p>
             <p className="ap-note">
-              É isso que torna a reestruturação viável. O trabalho não é refazer 717 páginas: é
-              reconstruir nove layouts, criar o motor que gera as 695 a partir de uma tabela e migrar
-              as URLs preservando o que já está indexado.
+              O dimensionamento do trabalho segue o número de layouts, não o número de páginas: nove
+              layouts a reconstruir, um motor que gera as 695 a partir de uma tabela e a migração das
+              URLs preservando o que já está indexado. Média de 2.900 palavras por página de cidade,
+              com 57% a 69% de sobreposição de vocabulário entre elas.
             </p>
           </div>
           <div className="ap-rv ap-rv-d1">
@@ -312,12 +301,10 @@ export default function AmericaPlasteringPro() {
       <section className="ap-section" style={{ paddingTop: 0 }}>
         <div className="ap-wrap ap-split ap-split--flip">
           <div className="ap-split__txt ap-rv">
-            <h2 className="ap-h2">
-              As 22 páginas <em>próprias.</em>
-            </h2>
+            <h2 className="ap-h2">As 22 páginas próprias</h2>
             <p className="ap-lead">
-              São as que têm conteúdo autoral e sustentam a marca. Duas delas estão vivas no menu e
-              fora de todas as sitemaps, junto com as quatro filhas de drywall.
+              São as páginas com conteúdo autoral. Duas delas constam no menu principal e estão fora
+              de todas as sitemaps, assim como as quatro filhas de drywall.
             </p>
           </div>
           <div className="ap-rv ap-rv-d1">
@@ -348,15 +335,12 @@ export default function AmericaPlasteringPro() {
 
       {/* ================= ACHADOS ================= */}
       <section className="ap-section">
-        <div className="ap-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-          <div className="ap-rv" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <span className="ap-eyebrow">Oito achados</span>
-            <h2 className="ap-h2">
-              O que está <em>quebrado hoje.</em>
-            </h2>
+        <div className="ap-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="ap-rv" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <h2 className="ap-h2">Defeitos encontrados</h2>
             <p className="ap-note">
-              Ordenados por impacto comercial. Cada um foi conferido no HTML entregue pelo servidor,
-              não inferido a partir do visual.
+              Ordenados por impacto. Cada item foi conferido no HTML entregue pelo servidor e nas
+              requisições de rede da página renderizada.
             </p>
           </div>
 
@@ -375,20 +359,22 @@ export default function AmericaPlasteringPro() {
         </div>
       </section>
 
-      {/* ================= STACK ================= */}
+      {/* ================= FORMULÁRIO E STACK ================= */}
       <section className="ap-section" style={{ paddingTop: 0 }}>
         <div className="ap-wrap ap-split">
           <div className="ap-split__txt ap-rv">
-            <h2 className="ap-h2">
-              O que está <em>rodando por baixo.</em>
-            </h2>
+            <h2 className="ap-h2">Formulário e rota do lead</h2>
             <p className="ap-lead">
-              WordPress com Elementor Pro sobre o tema Hello e um tema filho. Cache pelo WP Rocket,
-              servidor LiteSpeed com PHP 8.5.
+              Existe um único formulário, idêntico nas 717 páginas, montado no Elementor Pro e
+              enviado por AJAX para a própria URL da página.
             </p>
             <p className="ap-note">
-              Uma boa notícia para o orçamento: os leads já vão para o GoHighLevel, que também serve o
-              chat flutuante. O CRM continua de pé e não precisa ser reconstruído nem migrado.
+              Os envios seguem para o GoHighLevel, que também serve o chat flutuante. A camada de CRM
+              permanece operante e está fora do escopo de reconstrução. Proteção antispam por honeypot
+              e reCAPTCHA. Stack: WordPress sobre tema Hello Elementor com tema filho, cache pelo WP
+              Rocket, servidor LiteSpeed com PHP 8.5, sitemaps geradas pelo Yoast, medição por Google
+              Analytics. Os redirecionamentos de domínio estão corretos: http encaminha para https e
+              www encaminha para a raiz, sem cadeia intermediária.
             </p>
           </div>
           <div className="ap-rv ap-rv-d1">
@@ -399,7 +385,7 @@ export default function AmericaPlasteringPro() {
               <Linha titulo="email" sub="e-mail" valor="Contato" />
               <Linha titulo="service" sub="lista suspensa" valor="Serviço" />
               <Linha titulo="details" sub="texto livre" valor="Projeto" />
-              <Linha titulo="Destino do lead" sub="via AJAX" valor="GoHighLevel" />
+              <Linha titulo="Destino do envio" sub="via AJAX" valor="GoHighLevel" />
             </Janela>
           </div>
         </div>
@@ -407,15 +393,13 @@ export default function AmericaPlasteringPro() {
 
       {/* ================= ESCOPO ================= */}
       <section className="ap-section" style={{ paddingTop: 0 }}>
-        <div className="ap-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-          <div className="ap-rv" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <span className="ap-eyebrow">Escopo</span>
-            <h2 className="ap-h2">
-              O que a reestruturação <em>envolve.</em>
-            </h2>
+        <div className="ap-wrap" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="ap-rv" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <h2 className="ap-h2">Escopo da reestruturação</h2>
             <p className="ap-note">
-              Horas de execução, sem contar reuniões e rodadas extras de aprovação. O conteúdo atual é
-              reaproveitado e reorganizado, não reescrito do zero.
+              Pacotes de trabalho e estimativa de horas de execução, sem contabilizar reuniões e
+              rodadas extras de aprovação. O conteúdo existente é reaproveitado e reorganizado, não
+              reescrito. Total estimado: 127 a 194 horas.
             </p>
           </div>
 
@@ -431,7 +415,7 @@ export default function AmericaPlasteringPro() {
         </div>
       </section>
 
-      {/* ================= PREÇO ================= */}
+      {/* ================= INVESTIMENTO ================= */}
       <section className="ap-section" style={{ paddingTop: 0 }}>
         <div className="ap-wrap">
           <div className="ap-price ap-rv">
@@ -442,47 +426,44 @@ export default function AmericaPlasteringPro() {
               <span className="ap-price__cur">R$</span>
               <span className="ap-price__num">8.000</span>
             </div>
-            <p className="ap-lead" style={{ maxWidth: '52ch', textAlign: 'center' }}>
-              Projeto fechado, do mapa de arquitetura à virada em produção. As 717 páginas entram
-              renovadas, sem cobrança por página.
+            <p className="ap-note" style={{ maxWidth: '54ch', textAlign: 'center' }}>
+              Valor fechado para o escopo acima, do mapa de arquitetura à virada em produção. As 717
+              páginas entram na reestruturação sem cobrança por página.
             </p>
             <div className="ap-price__inc">
-              <span>Nove layouts novos</span>
+              <span>Nove layouts</span>
               <span>Motor das 695 páginas de cidade</span>
               <span>Formulário e integração</span>
               <span>Migração de SEO</span>
-              <span>Marcação de negócio local</span>
-              <span>Os oito defeitos corrigidos</span>
+              <span>Dados estruturados de negócio local</span>
+              <span>Correção dos oito defeitos</span>
               <span>Performance e publicação</span>
             </div>
-            <a className="ap-btn" href={waLink} target="_blank" rel="noopener">
-              Conversar sobre a reestruturação
-            </a>
           </div>
         </div>
       </section>
 
       {/* ================= MÉTODO ================= */}
       <section className="ap-section" style={{ paddingTop: 0 }}>
-        <div className="ap-wrap ap-rv" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <span className="ap-eyebrow">Como foi levantado</span>
-          <h2 className="ap-h2" style={{ maxWidth: '18ch' }}>
-            Sem <em>achismo.</em>
-          </h2>
+        <div
+          className="ap-wrap ap-rv"
+          style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}
+        >
+          <h2 className="ap-h2">Como foi levantado</h2>
           <p className="ap-note">
-            O inventário das 717 páginas saiu da leitura integral das oito sitemaps do domínio,
-            somada às páginas do menu que não constam nelas. Os defeitos foram conferidos no HTML
-            servido em produção e nas páginas renderizadas em navegador, incluindo as requisições de
-            rede, os dados estruturados e o comportamento em tela de celular.
+            O inventário das 717 páginas vem da leitura integral das oito sitemaps do domínio, somada
+            às páginas presentes no menu principal que não constam nelas. Os defeitos foram
+            verificados no HTML entregue pelo servidor e nas páginas renderizadas em navegador,
+            incluindo requisições de rede, dados estruturados e comportamento em viewport de celular.
+            A verificação por página foi feita em 14 páginas, cobrindo os seis tipos de serviço, os
+            dois hubs, a home e o contato.
           </p>
         </div>
       </section>
 
       <footer className="ap-wrap ap-foot">
-        <span>Leonardo Ferreira · auditoria técnica · americaplasteringpro.com</span>
-        <a className="ap-btn ap-btn--ghost" href={waLink} target="_blank" rel="noopener">
-          Falar no WhatsApp
-        </a>
+        <span>Auditoria técnica · americaplasteringpro.com · agosto de 2026</span>
+        <span>Leonardo Ferreira</span>
       </footer>
     </main>
   );
