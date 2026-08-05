@@ -396,13 +396,6 @@ export const webProjects: WebProject[] = [
     url: 'https://www.jessicalaia.com.br/',
   },
   {
-    title: 'Dropping',
-    segment: 'Venda sem estoque',
-    category: 'ecommerce',
-    cover: '/assets/portfolio/dropping.webp',
-    url: 'https://www.dropping.com.br/',
-  },
-  {
     title: 'DML Logística',
     segment: 'Guincho e logística',
     category: 'corporativo',
