@@ -127,7 +127,7 @@ export const webProjects: WebProject[] = [
     segment: 'Pedra natural',
     category: 'imoveis',
     cover: '/assets/portfolio/pedras-do-brasil.webp',
-    url: 'https://pedrasdobrasil.vercel.app/',
+    url: 'https://www.pedrasdobrasilfoz.com.br/',
   },
   {
     title: 'AeroPrev',
