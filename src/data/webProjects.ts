@@ -85,7 +85,7 @@ export const webProjects: WebProject[] = [
     segment: 'Revestimentos e porcelanato',
     category: 'imoveis',
     cover: '/assets/portfolio/fino-acabamento.webp',
-    url: 'https://finoacabamento.vercel.app/',
+    url: 'https://www.finoacabamentopisos.com.br/',
   },
   {
     title: 'BRN Streaming',
@@ -99,7 +99,7 @@ export const webProjects: WebProject[] = [
     segment: 'Loteamento industrial',
     category: 'imoveis',
     cover: '/assets/portfolio/bip-vale.webp',
-    url: 'https://bipvale.vercel.app/',
+    url: 'https://bipvale.com/',
   },
   {
     title: 'GCarneiro',
@@ -134,7 +134,7 @@ export const webProjects: WebProject[] = [
     segment: 'Direito previdenciário',
     category: 'juridico',
     cover: '/assets/portfolio/aeroprev.webp',
-    url: 'https://landingpageaeroprev.vercel.app/v2',
+    url: 'https://www.aeroprev.com.br/',
   },
   {
     title: 'Air Jordan',
@@ -204,7 +204,9 @@ export const webProjects: WebProject[] = [
     segment: 'Planejamento financeiro',
     category: 'financas',
     cover: '/assets/portfolio/remach.webp',
-    url: 'https://www.remachcapital.com.br/',
+    // Exceção à regra do domínio próprio: remachcapital.com.br saiu do ar.
+    // O www. não resolve em vercel.app, o host válido é sem prefixo.
+    url: 'https://remach.vercel.app/',
   },
   {
     title: 'The Auad Method',
@@ -242,25 +244,11 @@ export const webProjects: WebProject[] = [
     url: 'https://www.nutriclaucarvalho.com.br/',
   },
   {
-    title: 'Clínica IdealPrev',
-    segment: 'Clínica médica',
-    category: 'saude',
-    cover: '/assets/portfolio/clinica-idealprev.webp',
-    url: 'https://clinicaidealprev.com.br/',
-  },
-  {
     title: 'Clínica Têmpora',
     segment: 'Fisioterapia',
     category: 'saude',
     cover: '/assets/portfolio/clinica-tempora.webp',
     url: 'https://www.clinicatempora.com.br/',
-  },
-  {
-    title: 'D7 Home',
-    segment: 'Móveis modulares',
-    category: 'ecommerce',
-    cover: '/assets/portfolio/d7-home.webp',
-    url: 'https://lupplace.lojavirtualnuvem.com.br/',
   },
   {
     title: 'Casa Design',
@@ -275,13 +263,6 @@ export const webProjects: WebProject[] = [
     category: 'imoveis',
     cover: '/assets/portfolio/cts-construction.webp',
     url: 'https://www.ctsconstructioninc.com/',
-  },
-  {
-    title: 'G&M ProServices',
-    segment: 'Pintura e marcenaria',
-    category: 'imoveis',
-    cover: '/assets/portfolio/g-m-proservices.webp',
-    url: 'https://www.gmproservicesinc.com/',
   },
   {
     title: 'LD Services',
@@ -408,5 +389,26 @@ export const webProjects: WebProject[] = [
     category: 'corporativo',
     cover: '/assets/portfolio/ecossistema-aceleracao-10x.webp',
     url: 'https://www.ecossistemaaceleracao10x.com.br/',
+  },
+  {
+    title: 'Clínica IdealPrev',
+    segment: 'Clínica médica',
+    category: 'saude',
+    cover: '/assets/portfolio/clinica-idealprev.webp',
+    url: 'https://clinicaidealprev.com.br/',
+  },
+  {
+    title: 'D7 Home',
+    segment: 'Móveis modulares',
+    category: 'ecommerce',
+    cover: '/assets/portfolio/d7-home.webp',
+    url: 'https://lupplace.lojavirtualnuvem.com.br/',
+  },
+  {
+    title: 'G&M ProServices',
+    segment: 'Pintura e marcenaria',
+    category: 'imoveis',
+    cover: '/assets/portfolio/g-m-proservices.webp',
+    url: 'https://www.gmproservicesinc.com/',
   },
 ];
