@@ -49,7 +49,10 @@ export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
  * 9-16  os projetos mais fortes do acervo
  * 17-40 meio
  * 41+   trabalhos do início de carreira
- * Sempre que o cliente tem domínio próprio, o link aponta para ele.
+ * O link SEMPRE aponta para o deploy na Vercel, que é o que eu controlo.
+ * Domínio do cliente não serve de prova: ele pode revisar o site com outra
+ * pessoa, deixar vencer ou tirar do ar, e o card passa a mostrar algo que não
+ * é meu. As exceções estão comentadas caso a caso.
  */
 export const webProjects: WebProject[] = [
   {
@@ -71,20 +74,23 @@ export const webProjects: WebProject[] = [
     segment: 'Aplicativo de beach tennis',
     category: 'saude',
     cover: '/assets/portfolio/forset.webp',
-    url: 'https://site.forset.com.br/',
+    url: 'https://forset.vercel.app/',
   },
   {
     title: 'Neuro Summit',
     segment: 'Simpósio científico',
     category: 'eventos',
     cover: '/assets/portfolio/neuro-summit.webp',
-    url: 'https://neurosummit.sensorial.life/',
+    url: 'https://neuro-summit-landing.vercel.app/',
   },
   {
     title: 'Fino Acabamento',
     segment: 'Revestimentos e porcelanato',
     category: 'imoveis',
     cover: '/assets/portfolio/fino-acabamento.webp',
+    // Exceção: o projeto 'finoacabamento' na Vercel não tem alias público .vercel.app.
+    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
+    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
     url: 'https://www.finoacabamentopisos.com.br/',
   },
   {
@@ -92,27 +98,30 @@ export const webProjects: WebProject[] = [
     segment: 'Estúdio de transmissão',
     category: 'marketing',
     cover: '/assets/portfolio/brn-streaming.webp',
-    url: 'https://www.brnstreaming.com/',
+    url: 'https://brnstreaming.vercel.app/',
   },
   {
     title: 'BIP Vale',
     segment: 'Loteamento industrial',
     category: 'imoveis',
     cover: '/assets/portfolio/bip-vale.webp',
-    url: 'https://bipvale.com/',
+    url: 'https://bipvale.vercel.app/',
   },
   {
     title: 'GCarneiro',
     segment: 'Consultoria de treino',
     category: 'saude',
     cover: '/assets/portfolio/gcarneiro.webp',
-    url: 'https://www.gcarneiro.com.br/',
+    url: 'https://gcarneiro.vercel.app/',
   },
   {
     title: 'Retrô em Campo',
     segment: 'Camisas de futebol',
     category: 'ecommerce',
     cover: '/assets/portfolio/retro-em-campo.webp',
+    // Exceção: o projeto 'retro-em-campo' na Vercel não tem alias público .vercel.app.
+    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
+    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
     url: 'https://www.retroemcampo.com.br/',
   },
   {
@@ -127,6 +136,9 @@ export const webProjects: WebProject[] = [
     segment: 'Pedra natural',
     category: 'imoveis',
     cover: '/assets/portfolio/pedras-do-brasil.webp',
+    // Exceção: o projeto 'pedrasdobrasil-landing' na Vercel não tem alias público .vercel.app.
+    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
+    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
     url: 'https://www.pedrasdobrasilfoz.com.br/',
   },
   {
@@ -134,27 +146,30 @@ export const webProjects: WebProject[] = [
     segment: 'Direito previdenciário',
     category: 'juridico',
     cover: '/assets/portfolio/aeroprev.webp',
-    url: 'https://www.aeroprev.com.br/',
+    url: 'https://landingpageaeroprev.vercel.app/',
   },
   {
     title: 'Air Jordan',
     segment: 'Experiência interativa',
     category: 'conceito',
     cover: '/assets/portfolio/air-jordan.webp',
-    url: 'https://airjordan-portfolio.vercel.app/',
+    url: 'https://airjordan-eight.vercel.app/',
   },
   {
     title: 'Race Valley',
     segment: 'Evento esportivo',
     category: 'eventos',
     cover: '/assets/portfolio/race-valley.webp',
-    url: 'https://www.valleygroup.com.br/',
+    url: 'https://racevalley.vercel.app/',
   },
   {
     title: 'Mia Compra',
     segment: 'Envios dos Estados Unidos',
     category: 'corporativo',
     cover: '/assets/portfolio/mia-compra.webp',
+    // Exceção: o projeto 'miacompra' na Vercel não tem alias público .vercel.app.
+    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
+    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
     url: 'https://www.miacompra.com/',
   },
   {
@@ -162,28 +177,28 @@ export const webProjects: WebProject[] = [
     segment: 'Consultoria jurídica',
     category: 'juridico',
     cover: '/assets/portfolio/acc-consultoria.webp',
-    url: 'https://www.acconsultoriajuridica.com.br/',
+    url: 'https://acconsultoria.vercel.app/',
   },
   {
     title: 'Canopus',
     segment: 'Lançamento imobiliário',
     category: 'imoveis',
     cover: '/assets/portfolio/canopus.webp',
-    url: 'https://www.aptosemsp.com.br/today/',
+    url: 'https://aptosemsp-hub.vercel.app/',
   },
   {
     title: 'Tadex',
     segment: 'Transportadora',
     category: 'corporativo',
     cover: '/assets/portfolio/tadex.webp',
-    url: 'https://tadex.com.br/',
+    url: 'https://tadex.vercel.app/',
   },
   {
     title: 'Pokémon',
     segment: 'Narrativa cinematográfica',
     category: 'conceito',
     cover: '/assets/portfolio/pokemon.webp',
-    url: 'https://pokemon.leonardoferreirr.com.br/',
+    url: 'https://pokemon-kappa-neon.vercel.app/',
   },
   {
     title: 'Danilo Lovisaro',
@@ -204,8 +219,6 @@ export const webProjects: WebProject[] = [
     segment: 'Planejamento financeiro',
     category: 'financas',
     cover: '/assets/portfolio/remach.webp',
-    // Exceção à regra do domínio próprio: remachcapital.com.br saiu do ar.
-    // O www. não resolve em vercel.app, o host válido é sem prefixo.
     url: 'https://remach.vercel.app/',
   },
   {
@@ -213,14 +226,14 @@ export const webProjects: WebProject[] = [
     segment: 'Formação médica',
     category: 'saude',
     cover: '/assets/portfolio/the-auad-method.webp',
-    url: 'https://www.drapalomaauad.com/',
+    url: 'https://palomaauad.vercel.app/',
   },
   {
     title: 'OnLife',
     segment: 'Telemedicina',
     category: 'saude',
     cover: '/assets/portfolio/onlife.webp',
-    url: 'https://www.onlifetelemedicina.com/',
+    url: 'https://onlifebrasil.vercel.app/',
   },
   {
     title: 'Miami Haus',
@@ -241,35 +254,35 @@ export const webProjects: WebProject[] = [
     segment: 'Nutrição',
     category: 'saude',
     cover: '/assets/portfolio/clau-carvalho.webp',
-    url: 'https://www.nutriclaucarvalho.com.br/',
+    url: 'https://nutriclau.vercel.app/',
   },
   {
     title: 'Clínica Têmpora',
     segment: 'Fisioterapia',
     category: 'saude',
     cover: '/assets/portfolio/clinica-tempora.webp',
-    url: 'https://www.clinicatempora.com.br/',
+    url: 'https://clinicatempora.vercel.app/',
   },
   {
     title: 'Casa Design',
     segment: 'Móveis planejados',
     category: 'imoveis',
     cover: '/assets/portfolio/casa-design.webp',
-    url: 'https://www.casadesigncuritiba.com.br/',
+    url: 'https://casadesign-coral.vercel.app/',
   },
   {
     title: 'CTS Construction',
     segment: 'Construção e reforma',
     category: 'imoveis',
     cover: '/assets/portfolio/cts-construction.webp',
-    url: 'https://www.ctsconstructioninc.com/',
+    url: 'https://ctsconstruction.vercel.app/',
   },
   {
     title: 'LD Services',
     segment: 'Pintura profissional',
     category: 'imoveis',
     cover: '/assets/portfolio/ld-services.webp',
-    url: 'https://www.ldservicespainting.com/',
+    url: 'https://ldservicesinc.vercel.app/',
   },
   {
     title: 'United Way',
@@ -283,7 +296,7 @@ export const webProjects: WebProject[] = [
     segment: 'Consultoria em gestão',
     category: 'corporativo',
     cover: '/assets/portfolio/proconsult.webp',
-    url: 'https://www.proconsult.tech/',
+    url: 'https://proconsult-lake.vercel.app/',
   },
   {
     title: 'The Toxic Land',
@@ -297,14 +310,14 @@ export const webProjects: WebProject[] = [
     segment: 'Moda esportiva',
     category: 'ecommerce',
     cover: '/assets/portfolio/blck-belt.webp',
-    url: 'https://www.blckbelt.com.br/',
+    url: 'https://blckbelt-store.vercel.app/',
   },
   {
     title: 'Bella Scelta',
     segment: 'Beleza e autocuidado',
     category: 'ecommerce',
     cover: '/assets/portfolio/bella-scelta.webp',
-    url: 'https://www.bellasceltashop.com/',
+    url: 'https://bella-scelta.vercel.app/',
   },
   {
     title: 'Torofila',
@@ -318,13 +331,16 @@ export const webProjects: WebProject[] = [
     segment: 'Portões e automação',
     category: 'imoveis',
     cover: '/assets/portfolio/portao-eletronico-mg.webp',
-    url: 'https://www.portaoeletronicomg.com/',
+    url: 'https://portaoeletronico.vercel.app/',
   },
   {
     title: 'ArcBus',
     segment: 'Ar-condicionado para ônibus',
     category: 'corporativo',
     cover: '/assets/portfolio/arcbus.webp',
+    // Exceção: o projeto 'arcbus' na Vercel não tem alias público .vercel.app.
+    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
+    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
     url: 'https://www.arcbus.com.br/',
   },
   {
@@ -332,83 +348,83 @@ export const webProjects: WebProject[] = [
     segment: 'Gestão para marcenarias',
     category: 'corporativo',
     cover: '/assets/portfolio/hunter-sob-medida.webp',
-    url: 'https://www.huntersobmedida.com.br/',
+    url: 'https://huntersobmedida.vercel.app/',
   },
   {
     title: 'Beatriz Benita',
     segment: 'Advocacia',
     category: 'juridico',
     cover: '/assets/portfolio/beatriz-benita.webp',
-    url: 'https://www.beatrizbenita.adv.br/',
+    url: 'https://beatrizbenita.vercel.app/',
   },
   {
     title: 'Ferreira Advocacia',
     segment: 'Assessoria jurídica',
     category: 'juridico',
     cover: '/assets/portfolio/ferreira-advocacia.webp',
-    url: 'https://www.ferreiraadvocaciabrasil.com.br/',
+    url: 'https://ferreiraadvocacia.vercel.app/',
   },
   {
     title: 'Bianca Jensen',
     segment: 'Nutrição',
     category: 'saude',
     cover: '/assets/portfolio/bianca-jensen.webp',
-    url: 'https://www.biancajensennutri.com.br/',
+    url: 'https://biancajensennutri.vercel.app/',
   },
   {
     title: 'Academia Brasileira da Face',
     segment: 'Harmonização orofacial',
     category: 'saude',
     cover: '/assets/portfolio/academia-brasileira-da-face.webp',
-    url: 'https://poshof.academiabrasileiradaface.com.br/',
+    url: 'https://academiabrasileiradaface.vercel.app/',
   },
   {
     title: 'Nupis',
     segment: 'Consultoria de comunicação',
     category: 'marketing',
     cover: '/assets/portfolio/nupis.webp',
-    url: 'https://www.nupisdigital.com.br/',
+    url: 'https://nupis.vercel.app/',
   },
   {
     title: 'Jéssica Laia',
     segment: 'Psicologia',
     category: 'saude',
     cover: '/assets/portfolio/jessica-laia.webp',
-    url: 'https://www.jessicalaia.com.br/',
+    url: 'https://jessicalaia.vercel.app/',
   },
   {
     title: 'DML Logística',
     segment: 'Guincho e logística',
     category: 'corporativo',
     cover: '/assets/portfolio/dml-logistica.webp',
-    url: 'https://www.dmlguinchoelogistica.com.br/',
+    url: 'https://dmlguincho.vercel.app/',
   },
   {
     title: 'Ecossistema Aceleração 10x',
     segment: 'Recrutamento e treinamento',
     category: 'corporativo',
     cover: '/assets/portfolio/ecossistema-aceleracao-10x.webp',
-    url: 'https://www.ecossistemaaceleracao10x.com.br/',
+    url: 'https://ecossistemaaceleracao10x10x.vercel.app/',
   },
   {
     title: 'Clínica IdealPrev',
     segment: 'Clínica médica',
     category: 'saude',
     cover: '/assets/portfolio/clinica-idealprev.webp',
-    url: 'https://clinicaidealprev.com.br/',
+    url: 'https://idealprev-sa-de-conecta.vercel.app/',
   },
   {
     title: 'D7 Home',
     segment: 'Móveis modulares',
     category: 'ecommerce',
     cover: '/assets/portfolio/d7-home.webp',
-    url: 'https://lupplace.lojavirtualnuvem.com.br/',
+    url: 'https://d7home.vercel.app/',
   },
   {
     title: 'G&M ProServices',
     segment: 'Pintura e marcenaria',
     category: 'imoveis',
     cover: '/assets/portfolio/g-m-proservices.webp',
-    url: 'https://www.gmproservicesinc.com/',
+    url: 'https://gmproservices.vercel.app/',
   },
 ];
