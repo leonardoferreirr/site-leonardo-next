@@ -56,9 +56,9 @@ export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
  * O link SEMPRE aponta para o deploy na Vercel, que é o que eu controlo.
  * Domínio do cliente não serve de prova: ele pode revisar o site com outra
  * pessoa, deixar vencer ou tirar do ar, e o card passa a mostrar algo que não
- * é meu. Projeto sem endereço .vercel.app próprio não entra no portfólio: em
- * 13/10/2026 saíram Fino Acabamento, Retrô em Campo, Pedras do Brasil e Mia
- * Compra, que só tinham o domínio do cliente.
+ * é meu. Projeto sem endereço .vercel.app próprio não entra no portfólio.
+ * Fino Acabamento, Retrô em Campo e Pedras do Brasil ganharam o alias em
+ * 13/10/2026; Mia Compra ficou de fora.
  */
 export const webProjects: WebProject[] = [
   {
@@ -104,6 +104,13 @@ export const webProjects: WebProject[] = [
     url: 'https://neuro-summit-landing.vercel.app/',
   },
   {
+    title: 'Fino Acabamento',
+    segment: 'Revestimentos e porcelanato',
+    category: 'imoveis',
+    cover: '/assets/portfolio/fino-acabamento.webp',
+    url: 'https://finoacabamento.vercel.app/',
+  },
+  {
     title: 'BRN Streaming',
     segment: 'Estúdio de transmissão',
     category: 'marketing',
@@ -125,11 +132,25 @@ export const webProjects: WebProject[] = [
     url: 'https://gcarneiro.vercel.app/',
   },
   {
+    title: 'Retrô em Campo',
+    segment: 'Camisas de futebol',
+    category: 'ecommerce',
+    cover: '/assets/portfolio/retro-em-campo.webp',
+    url: 'https://retroemcampo.vercel.app/',
+  },
+  {
     title: 'Lizzy Prime',
     segment: 'Consórcio',
     category: 'financas',
     cover: '/assets/portfolio/lizzy-prime.webp',
     url: 'https://lizzyprime.vercel.app/',
+  },
+  {
+    title: 'Pedras do Brasil',
+    segment: 'Pedra natural',
+    category: 'imoveis',
+    cover: '/assets/portfolio/pedras-do-brasil.webp',
+    url: 'https://pedrasdobrasilfoz.vercel.app/',
   },
   {
     title: 'AeroPrev',
