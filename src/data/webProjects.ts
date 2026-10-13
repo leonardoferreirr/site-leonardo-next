@@ -1,4 +1,5 @@
 export type WebCategory =
+  | 'restaurantes'
   | 'marketing'
   | 'saude'
   | 'imoveis'
@@ -19,6 +20,7 @@ export type WebProject = {
 
 export const CATEGORY_LABELS: Record<WebCategory | 'todos', string> = {
   todos: 'Todos',
+  restaurantes: 'Restaurantes',
   marketing: 'Marketing',
   saude: 'Saúde e Bem-estar',
   imoveis: 'Imóveis e Construção',
@@ -32,6 +34,7 @@ export const CATEGORY_LABELS: Record<WebCategory | 'todos', string> = {
 
 export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
   'todos',
+  'restaurantes',
   'marketing',
   'saude',
   'imoveis',
@@ -45,29 +48,46 @@ export const CATEGORY_ORDER: (WebCategory | 'todos')[] = [
 
 /**
  * Ordem intencional:
- * 1-8   destaques que já vinham do site principal, na prioridade original
+ * 1-3   abertura escolhida a dedo: Buenas, Nalu Poke e Wigga, nessa ordem
+ * 4-8   destaques que já vinham do site principal, na prioridade original
  * 9-16  os projetos mais fortes do acervo
  * 17-40 meio
  * 41+   trabalhos do início de carreira
  * O link SEMPRE aponta para o deploy na Vercel, que é o que eu controlo.
  * Domínio do cliente não serve de prova: ele pode revisar o site com outra
  * pessoa, deixar vencer ou tirar do ar, e o card passa a mostrar algo que não
- * é meu. As exceções estão comentadas caso a caso.
+ * é meu. Projeto sem endereço .vercel.app próprio não entra no portfólio: em
+ * 13/10/2026 saíram Fino Acabamento, Retrô em Campo, Pedras do Brasil e Mia
+ * Compra, que só tinham o domínio do cliente.
  */
 export const webProjects: WebProject[] = [
+  {
+    title: '¡Buenas! Taquería',
+    segment: 'Taquería em Los Angeles',
+    category: 'restaurantes',
+    cover: '/assets/portfolio/buenas-taqueria.webp',
+    url: 'https://buenastaqueria.vercel.app/',
+  },
+  {
+    title: 'Nalu Poke',
+    segment: 'Cardápio digital',
+    category: 'restaurantes',
+    cover: '/assets/portfolio/nalu-poke.webp',
+    url: 'https://nalupoke.vercel.app/',
+  },
+  {
+    title: 'Wigga',
+    segment: 'Esquadrias de PVC',
+    category: 'imoveis',
+    cover: '/assets/portfolio/wigga.webp',
+    url: 'https://wiggaesquadrias.vercel.app/',
+  },
   {
     title: 'Paulani',
     segment: 'Gestão empresarial',
     category: 'corporativo',
     cover: '/assets/portfolio/paulani.webp',
     url: 'https://paulani.vercel.app/',
-  },
-  {
-    title: 'Nalu Poke',
-    segment: 'Cardápio digital',
-    category: 'ecommerce',
-    cover: '/assets/portfolio/nalu-poke.webp',
-    url: 'https://nalupoke.vercel.app/',
   },
   {
     title: 'Forset',
@@ -82,16 +102,6 @@ export const webProjects: WebProject[] = [
     category: 'eventos',
     cover: '/assets/portfolio/neuro-summit.webp',
     url: 'https://neuro-summit-landing.vercel.app/',
-  },
-  {
-    title: 'Fino Acabamento',
-    segment: 'Revestimentos e porcelanato',
-    category: 'imoveis',
-    cover: '/assets/portfolio/fino-acabamento.webp',
-    // Exceção: o projeto 'finoacabamento' na Vercel não tem alias público .vercel.app.
-    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
-    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
-    url: 'https://www.finoacabamentopisos.com.br/',
   },
   {
     title: 'BRN Streaming',
@@ -115,31 +125,11 @@ export const webProjects: WebProject[] = [
     url: 'https://gcarneiro.vercel.app/',
   },
   {
-    title: 'Retrô em Campo',
-    segment: 'Camisas de futebol',
-    category: 'ecommerce',
-    cover: '/assets/portfolio/retro-em-campo.webp',
-    // Exceção: o projeto 'retro-em-campo' na Vercel não tem alias público .vercel.app.
-    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
-    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
-    url: 'https://www.retroemcampo.com.br/',
-  },
-  {
     title: 'Lizzy Prime',
     segment: 'Consórcio',
     category: 'financas',
     cover: '/assets/portfolio/lizzy-prime.webp',
     url: 'https://lizzyprime.vercel.app/',
-  },
-  {
-    title: 'Pedras do Brasil',
-    segment: 'Pedra natural',
-    category: 'imoveis',
-    cover: '/assets/portfolio/pedras-do-brasil.webp',
-    // Exceção: o projeto 'pedrasdobrasil-landing' na Vercel não tem alias público .vercel.app.
-    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
-    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
-    url: 'https://www.pedrasdobrasilfoz.com.br/',
   },
   {
     title: 'AeroPrev',
@@ -161,16 +151,6 @@ export const webProjects: WebProject[] = [
     category: 'eventos',
     cover: '/assets/portfolio/race-valley.webp',
     url: 'https://racevalley.vercel.app/',
-  },
-  {
-    title: 'Mia Compra',
-    segment: 'Envios dos Estados Unidos',
-    category: 'corporativo',
-    cover: '/assets/portfolio/mia-compra.webp',
-    // Exceção: o projeto 'miacompra' na Vercel não tem alias público .vercel.app.
-    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
-    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
-    url: 'https://www.miacompra.com/',
   },
   {
     title: 'ACC Consultoria',
@@ -338,10 +318,7 @@ export const webProjects: WebProject[] = [
     segment: 'Ar-condicionado para ônibus',
     category: 'corporativo',
     cover: '/assets/portfolio/arcbus.webp',
-    // Exceção: o projeto 'arcbus' na Vercel não tem alias público .vercel.app.
-    // Só existe o domínio do cliente e as URLs com sufixo do time, que pedem
-    // login. Para blindar este card, criar o alias na Vercel e trocar aqui.
-    url: 'https://www.arcbus.com.br/',
+    url: 'https://arcbus.vercel.app/',
   },
   {
     title: 'Hunter Sob Medida',
