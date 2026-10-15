@@ -10,6 +10,7 @@ import MobileProjects from '@/components/MobileProjects';
 import ScrollProgress from '@/components/ScrollProgress';
 import Magnetic from '@/components/Magnetic';
 import Marquee from '@/components/Marquee';
+import CodeField from '@/components/CodeField';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 function SplitText({ text, baseDelay = 0 }: { text: string; baseDelay?: number }) {
@@ -186,12 +187,16 @@ export default function Home() {
 
   return (
     <>
+      {/* fundo de código; sticky porque o PageTransition tem transform (fixed não funciona dentro dele) */}
+      <CodeField variant="sticky" />
       <ScrollProgress />
       <Header />
 
       {/* 1. HERO */}
-      <section className="ds-hero" style={{ position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, zIndex: -1, display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: '1200px' }}>
+      {/* zIndex auto e esfera em -2: a ordem fica esfera, fundo de código (-1), texto. Com o 10 do CSS
+          o hero virava camada própria e o quadrado preto do vídeo tapava o código (o screen não vale em vídeo) */}
+      <section className="ds-hero" style={{ position: 'relative', overflow: 'hidden', zIndex: 'auto' }}>
+        <div style={{ position: 'absolute', inset: 0, zIndex: -2, display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: '1200px' }}>
           <video
             ref={sphereRef}
             src="/assets/spherewave.mp4"

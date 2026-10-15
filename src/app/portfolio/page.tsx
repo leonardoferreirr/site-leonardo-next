@@ -1,3 +1,4 @@
+import CodeField from '@/components/CodeField';
 import PortfolioGrid from './PortfolioGrid';
 import './portfolio.css';
 
@@ -25,6 +26,7 @@ function WhatsAppIcon() {
 export default function PortfolioPage() {
   return (
     <main className="pf-page">
+      <CodeField />
       <div className="pf-shell">
         <nav className="pf-nav">
           <span className="pf-brand">Leonardo Ferreira</span>
