@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Poppins, JetBrains_Mono } from 'next/font/google';
+import { poppins, mono } from '@/fonts/site';
 import { routing } from '@/routing';
 import '../globals.css';
 import GlobalSchemas from '@/components/seo/GlobalSchemas';
@@ -9,22 +9,8 @@ import PageTransition from '@/components/PageTransition';
 import LenisProvider from '@/components/LenisProvider';
 import ThirdPartyScripts from '@/components/ThirdPartyScripts';
 
-// Poppins em tudo, sem itálico (pedido do Leonardo em out/2026); mono só nos detalhes técnicos
-const poppins = Poppins({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-  weight: ['300', '400', '500', '600'],
-});
-
-// mono não entra no preload: só aparece em detalhes e não pode disputar banda com a imagem do topo
-const mono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  weight: ['400'],
-  display: 'swap',
-  preload: false,
-});
+// Poppins em tudo, sem itálico (pedido do Leonardo em out/2026); mono só nos detalhes técnicos.
+// As fontes moram em src/fonts (ver o motivo lá).
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const resolvedParams = await params;

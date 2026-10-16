@@ -1,23 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter, Instrument_Serif } from 'next/font/google';
+import { inter, instrumentSerif } from '@/fonts/legacy';
 import './betomachado.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-  // sem preload: no build do Turbopack a Inter vazava para o preload da home nova (48 KB no caminho do LCP)
-  preload: false,
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  weight: '400',
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'Proposta · Beto Machado · Leonardo Ferreira',

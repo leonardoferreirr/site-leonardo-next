@@ -1,15 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { inter } from '@/fonts/legacy';
 import './americaplasteringpro.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
-  weight: ['300', '400', '500', '600'],
-  // sem preload: no build do Turbopack a Inter vazava para o preload da home nova (48 KB no caminho do LCP)
-  preload: false,
-});
 
 export const metadata: Metadata = {
   title: 'America Plastering Pro · auditoria técnica',
