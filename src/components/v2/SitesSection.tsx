@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight } from './Icons';
+import SectionCta from './SectionCta';
 import { KIND_LABEL, KIND_PLURAL, SITES, siteCover, tr, type Site, type SiteKind } from '@/data/v2/catalog';
 
 // bento dos destaques: [7,5] [4,4,4] [5,7] e um panorâmico no fim
@@ -153,6 +154,7 @@ export default function SitesSection() {
         </div>
 
         <SiteIndex locale={locale} />
+        <SectionCta />
       </div>
     </section>
   );

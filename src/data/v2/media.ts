@@ -49,22 +49,34 @@ const reel = (slug: string) => ({
   full: `/assets/v2/video/${slug}-full.mp4`,
 });
 
-// reels de marca (OLIPOP, Nike, Amazônia) são conteúdo do perfil dele, não projeto para a marca
-export const REELS: Reel[] = [
+// reels do perfil levam o nome dele (pedido de 16/10); os de marca (OLIPOP, Nike...) são análise, não projeto para a marca
+const perfil = (pt: string, en: string, es: string) => ({ pt: `Reel do perfil: ${pt}`, en: `Profile reel: ${en}`, es: `Reel del perfil: ${es}` });
+const disp = (pt: string, en: string, es: string) => ({ pt: `Corte de futebol: ${pt}`, en: `Football cut: ${en}`, es: `Corte de fútbol: ${es}` });
+
+// vídeos ainda em conversão: saem desta lista quando os arquivos estiverem em public/assets/v2/video
+const PENDENTES = new Set<string>(['reel-marimaria', 'reel-timex', 'dispensados-vasco', 'dispensados-neymar', 'dispensados-var']);
+
+const TODOS: Reel[] = [
   { slug: 'p1-luiz', title: 'P1 Marketing', sub: { pt: 'Vídeo de portfólio para agência', en: 'Portfolio video for an agency', es: 'Video de portafolio para agencia' }, ...reel('p1-luiz') },
-  { slug: 'dispensados-azambuja', title: 'Dispensados', sub: { pt: 'Corte de futebol: final da Libertadores', en: 'Football cut: Libertadores final', es: 'Corte de fútbol: final de la Libertadores' }, ...reel('dispensados-azambuja') },
-  { slug: 'dispensados-gaug', title: 'Dispensados', sub: { pt: 'Corte de futebol: Barra FC', en: 'Football cut: Barra FC', es: 'Corte de fútbol: Barra FC' }, ...reel('dispensados-gaug') },
-  { slug: 'reel-mg', title: 'MG Pães de Queijo', sub: { pt: 'Reel do perfil: marca criada do zero', en: 'Profile reel: a brand built from scratch', es: 'Reel del perfil: marca creada desde cero' }, ...reel('reel-mg') },
-  { slug: 'reel-olipop', title: 'OLIPOP', sub: { pt: 'Reel do perfil: análise de marca', en: 'Profile reel: brand breakdown', es: 'Reel del perfil: análisis de marca' }, ...reel('reel-olipop') },
-  { slug: 'reel-amazonia', title: 'Amazônia', sub: { pt: 'Reel do perfil: análise de marca', en: 'Profile reel: brand breakdown', es: 'Reel del perfil: análisis de marca' }, ...reel('reel-amazonia') },
-  { slug: 'reel-nike', title: 'Venda emocional', sub: { pt: 'Reel do perfil: Nike, Apple e McDonald’s', en: 'Profile reel: Nike, Apple and McDonald’s', es: 'Reel del perfil: Nike, Apple y McDonald’s' }, ...reel('reel-nike') },
+  { slug: 'reel-mg', title: 'Leonardo Ferreira', sub: perfil('criação de logo', 'logo design', 'creación de logo'), ...reel('reel-mg') },
+  { slug: 'dispensados-azambuja', title: 'Dispensados', sub: disp('final da Libertadores', 'Libertadores final', 'final de la Libertadores'), ...reel('dispensados-azambuja') },
+  { slug: 'reel-cr7', title: 'Leonardo Ferreira', sub: perfil('tráfego pago', 'paid ads', 'tráfico pago'), ...reel('reel-cr7') },
+  { slug: 'dispensados-gaug', title: 'Dispensados', sub: disp('Barra FC', 'Barra FC', 'Barra FC'), ...reel('dispensados-gaug') },
+  { slug: 'reel-olipop', title: 'Leonardo Ferreira', sub: perfil('análise da OLIPOP', 'OLIPOP breakdown', 'análisis de OLIPOP'), ...reel('reel-olipop') },
+  { slug: 'dispensados-vasco', title: 'Dispensados', sub: disp('o ano do Vasco', 'Vasco’s year', 'el año del Vasco'), ...reel('dispensados-vasco') },
+  { slug: 'reel-marimaria', title: 'Leonardo Ferreira', sub: perfil('Mari Maria x Larissa Manoela', 'Mari Maria x Larissa Manoela', 'Mari Maria x Larissa Manoela'), ...reel('reel-marimaria') },
+  { slug: 'dispensados-neymar', title: 'Dispensados', sub: disp('Santos e Neymar', 'Santos and Neymar', 'Santos y Neymar'), ...reel('dispensados-neymar') },
+  { slug: 'reel-timex', title: 'Leonardo Ferreira', sub: perfil('a copy da Timex', 'Timex copywriting', 'el copy de Timex'), ...reel('reel-timex') },
+  { slug: 'dispensados-var', title: 'Dispensados', sub: disp('VAR e arbitragem', 'VAR and refereeing', 'VAR y arbitraje'), ...reel('dispensados-var') },
+  { slug: 'reel-amazonia', title: 'Leonardo Ferreira', sub: perfil('análise de marca', 'brand breakdown', 'análisis de marca'), ...reel('reel-amazonia') },
+  { slug: 'reel-nike', title: 'Leonardo Ferreira', sub: perfil('venda emocional', 'emotional selling', 'venta emocional'), ...reel('reel-nike') },
 ];
+
+export const REELS: Reel[] = TODOS.filter((r) => !PENDENTES.has(r.slug));
 
 const lab = (slug: string) => ({ cover: `/assets/v2/lab/${slug}-cover.webp`, loop: `/assets/v2/lab/${slug}-loop.mp4` });
 
+// só o Lab 3D (16/10): Prisma, Pixar e beija-flor saíram
 export const LAB: LabItem[] = [
   { slug: 'lab-3d', title: 'Lab 3D', desc: { pt: '55 objetos 3D interativos, feitos em código', en: '55 interactive 3D objects, built in code', es: '55 objetos 3D interactivos, hechos en código' }, stack: 'Babylon.js + TypeScript', url: 'https://lab-3d.vercel.app/', ...lab('lab-3d') },
-  { slug: 'prisma', title: 'Prisma', desc: { pt: 'Cristal 3D guiado pela rolagem', en: 'A 3D crystal driven by scroll', es: 'Cristal 3D guiado por el scroll' }, stack: 'Babylon.js + GSAP', url: 'https://blenderprisma.vercel.app/', ...lab('prisma') },
-  { slug: 'beija-flor', title: 'Beija-flor 3D', desc: { pt: 'Modelo 3D realista na página. Modelo por LasquetiSpice, CC BY 4.0', en: 'A realistic 3D model on the page. Model by LasquetiSpice, CC BY 4.0', es: 'Modelo 3D realista en la página. Modelo de LasquetiSpice, CC BY 4.0' }, stack: 'WebGL', ...lab('beija-flor') },
-  { slug: 'pixar-popup', title: 'Pixar Pop-up Book', desc: { pt: 'Portfólio ilustrado de 6 filmes', en: 'An illustrated portfolio of 6 films', es: 'Portafolio ilustrado de 6 películas' }, stack: 'Illustrator + Photoshop', ...lab('pixar-popup') },
 ];

@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowRight } from './Icons';
+import SectionCta from './SectionCta';
 import { useCycle, useInView, useReducedMotion } from './hooks';
 import { AGENCY, SYSTEMS, tr, type System } from '@/data/v2/catalog';
 import { Link } from '@/routing';
@@ -198,6 +199,7 @@ export default function SystemsSection() {
         <p className="v2-mono" style={{ marginTop: 28, color: '#8a8a8a' }}>
           * {t('demo')}
         </p>
+        <SectionCta />
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import { Link } from '@/routing';
 import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight, Close, Play } from './Icons';
+import SectionCta from './SectionCta';
 import { useInView, useReducedMotion } from './hooks';
 import { BRANDS, CATEGORY_COLOR, tr } from '@/data/v2/catalog';
 import { LAB, REELS, SOCIAL, type Reel } from '@/data/v2/media';
@@ -52,6 +53,7 @@ export function IdentitySection() {
             );
           })}
         </div>
+        <SectionCta />
       </div>
     </section>
   );
@@ -98,6 +100,9 @@ export function SocialSection() {
       <div ref={ref} className={`v2-social${!inView || reduced ? ' is-paused' : ''}`}>
         {row(top, false, Math.max(60, top.length * 4))}
         {row(bottom, true, Math.max(60, bottom.length * 4))}
+      </div>
+      <div className="v2-wrap">
+        <SectionCta />
       </div>
     </section>
   );
@@ -170,6 +175,7 @@ export function VideoSection() {
         <span className="v2-stack" style={{ display: 'block', marginTop: 20 }}>
           {'{ Premiere + Photoshop + React }'}
         </span>
+        <SectionCta />
       </div>
 
       {open ? (
@@ -246,11 +252,12 @@ export function LabSection() {
             {t('title')}
           </h2>
         </div>
-        <div className="v2-lab">
+        <div className={`v2-lab${LAB.length === 1 ? ' v2-lab--single' : ''}`}>
           {LAB.map((item) => (
             <LabCard key={item.slug} item={item} locale={locale} openLabel={t('open')} />
           ))}
         </div>
+        <SectionCta />
       </div>
     </section>
   );

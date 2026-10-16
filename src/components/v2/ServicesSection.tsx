@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import PixelIcon from './PixelIcon';
+import SectionCta from './SectionCta';
 import { SERVICES, TOOLS, tr, type Category } from '@/data/v2/catalog';
 
 export default function ServicesSection() {
@@ -41,6 +42,7 @@ export default function ServicesSection() {
             </li>
           ))}
         </ul>
+        <SectionCta light />
       </div>
     </section>
   );

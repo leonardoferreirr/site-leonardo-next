@@ -2,10 +2,9 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/routing';
-import { ArrowRight, Mail, WhatsApp } from './Icons';
+import { ArrowRight, WhatsApp } from './Icons';
+import SectionCta, { WHATSAPP_URL } from './SectionCta';
 
-const WA = 'https://wa.me/5534936180691?text=Oi%20L%C3%A9o!%20Vim%20pelo%20site%20e%20queria%20falar%20sobre%20um%20projeto!';
-const EMAIL = 'leonardoferreirrs@gmail.com';
 const STEP_COLORS = ['#4da3ff', '#6be07a', '#ffb547', '#ff5c8a'];
 
 export function AboutSection() {
@@ -41,6 +40,7 @@ export function AboutSection() {
             </div>
           ))}
         </div>
+        <SectionCta light />
       </div>
     </section>
   );
@@ -62,11 +62,8 @@ export function ContactSection() {
             <Link href="/orcamento" className="v2-btn v2-btn--solid">
               {t('primary')} <ArrowRight />
             </Link>
-            <a href={WA} target="_blank" rel="noopener" className="v2-btn v2-btn--ghost">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="v2-btn v2-btn--ghost">
               <WhatsApp /> {t('whatsapp')}
-            </a>
-            <a href={`mailto:${EMAIL}`} className="v2-btn v2-btn--ghost">
-              <Mail /> {t('email')}
             </a>
           </div>
         </div>

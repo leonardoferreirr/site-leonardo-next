@@ -1965,3 +1965,28 @@ html[data-hdr='off'] .v2-subnav {
     margin-top: 8px;
   }
 }
+
+/* botão de contato no fim das seções */
+.v2-sec-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+.v2-btn--ink {
+  background: #0b0b0b;
+  color: #fff !important;
+  border: 1px solid #0b0b0b;
+}
+
+.v2-btn--ink:hover {
+  transform: translateY(-2px);
+  background: #262626;
+}
+
+/* lab com um item só: centralizado e mais largo */
+.v2-lab--single {
+  grid-template-columns: minmax(0, 860px);
+  justify-content: center;
+}
+
