@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { Inter, Instrument_Serif } from 'next/font/google';
+import { Poppins, JetBrains_Mono } from 'next/font/google';
 import { routing } from '@/routing';
 import '../globals.css';
 import GlobalSchemas from '@/components/seo/GlobalSchemas';
@@ -9,18 +9,18 @@ import PageTransition from '@/components/PageTransition';
 import LenisProvider from '@/components/LenisProvider';
 import ThirdPartyScripts from '@/components/ThirdPartyScripts';
 
-const inter = Inter({
+// Poppins em tudo, sem itálico (pedido do Leonardo em out/2026); mono só nos detalhes técnicos
+const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600'],
 });
 
-const instrumentSerif = Instrument_Serif({
+const mono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-serif',
-  weight: '400',
-  style: ['normal', 'italic'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
   display: 'swap',
 });
 
@@ -81,7 +81,7 @@ export default async function LocaleLayout(props: {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${instrumentSerif.variable}`}>
+    <html lang={locale} className={`${poppins.variable} ${mono.variable}`}>
       <head>
         <GlobalSchemas />
       </head>

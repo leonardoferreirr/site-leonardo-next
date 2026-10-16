@@ -187,6 +187,12 @@
       "challenge": "Construir presencia digital para un food service que necesitaba diferenciarse en un mercado cada vez más saturado de poke houses.",
       "solution": "Sitio en Next.js con menú interactivo, fotos vibrantes del producto, integración con WhatsApp para pedidos e identidad visual joven que habla directo con el público. Rendimiento, mobile-first y SEO local trabajado para competir en búsquedas tipo 'poke uberlândia'.",
       "services": "Diseño Web y Desarrollo"
+    },
+    "projeto-nexa": {
+      "description": "NEXA.co es una consultoría de negocios.",
+      "challenge": "Una consultoría que necesitaba una marca a la altura de lo que vende: claridad, método y dirección para el futuro del negocio del cliente.",
+      "solution": "El símbolo reúne pétalos alrededor de un centro común, con uno de ellos en naranja marcando el paso adelante. El azul marino y el naranja aportan seriedad y energía en la misma medida, y la Nunito Sans mantiene la lectura ligera del cartel a la taza.",
+      "services": "Identidad Visual y Branding"
     }
   },
   "Form": {
@@ -234,8 +240,8 @@
     "read_more": "Leer artículo"
   },
   "Metadata": {
-    "home_title": "Branding, Diseño Web y Tráfico Pago",
-    "home_description": "Leonardo Ferreira — branding, sitios web en Next.js y gestión de tráfico pago para empresas que quieren parecer grandes desde el primer contacto.",
+    "home_title": "Sitios, sistemas e identidad visual",
+    "home_description": "Leonardo Ferreira: sitios, sistemas a medida, identidad visual, social media y video para empresas que quieren parecer grandes desde el primer contacto.",
     "orcamento_title": "Solicite un Presupuesto",
     "orcamento_description": "¿Listo para innovar? Contáctame, cuéntame más sobre tu proyecto y solicita un presupuesto a medida para impulsar la presencia digital de tu marca.",
     "project_title_prefix": "Caso de Éxito",
@@ -286,5 +292,113 @@
         "desc": "Copy para sitios, anuncios, emails y guiones. Texto que vende, sin clichés, en la voz de tu marca."
       }
     ]
+  },
+  "Home2": {
+    "nav": {
+      "work": "Trabajos",
+      "systems": "Sistemas",
+      "services": "Servicios",
+      "about": "Sobre mí",
+      "blog": "Blog",
+      "cta": "Presupuesto",
+      "menu": "Abrir menú",
+      "close": "Cerrar menú"
+    },
+    "hero": {
+      "title_a": "Diseño y código,",
+      "title_b": "del boceto al lanzamiento.",
+      "sub": "Sitios, sistemas a medida, identidad visual, social media y video para empresas que quieren parecer grandes desde el primer contacto.",
+      "cta_primary": "Solicitar propuesta",
+      "cta_secondary": "Ver trabajos",
+      "status": "Agenda abierta · atiendo en portugués, inglés y español",
+      "show_label": "Vitrina de proyectos"
+    },
+    "stats": {
+      "sites": "sitios en línea",
+      "systems": "sistemas a medida",
+      "brands": "identidades visuales",
+      "years": "años en el mercado"
+    },
+    "sites": {
+      "title": "Sitios",
+      "lead": "De landing page a e-commerce, todos en línea y rápidos en el celular. Haz clic y abre el sitio real.",
+      "index_title": "Todos los sitios",
+      "all": "Todos",
+      "more": "Ver los {count}",
+      "less": "Mostrar menos"
+    },
+    "systems": {
+      "title": "Sistemas",
+      "lead": "Software a medida para operar el negocio, no solo para aparecer.",
+      "soon": "PRÓXIMAMENTE",
+      "agency_cta": "Avísame cuando abra",
+      "demo": "pantallas con datos de demostración, sin nombres de clientes",
+      "kpi_sent": "enviados",
+      "kpi_opens": "aperturas",
+      "kpi_clicks": "clics",
+      "kpi_meetings": "reuniones"
+    },
+    "services": {
+      "title": "Lo que hago",
+      "lead": "Un solo flujo, de la estrategia al lanzamiento, con las herramientas que uso de verdad en cada servicio.",
+      "tools_label": "Herramientas"
+    },
+    "identity": {
+      "title": "Identidad visual",
+      "lead": "Marcas construidas del diagnóstico al manual, con un sistema visual listo para usar.",
+      "case": "ver el caso"
+    },
+    "social": {
+      "title": "Social media",
+      "lead": "Posts, carruseles y creativos de anuncio para restaurantes, clínicas, SaaS y servicios."
+    },
+    "video": {
+      "title": "Video",
+      "lead": "Reels, cortes y videos de portafolio con subtítulos, música y efectos de sonido.",
+      "play": "Ver",
+      "close": "Cerrar video"
+    },
+    "lab": {
+      "title": "Lab",
+      "lead": "Experimentos de 3D, movimiento e ilustración. Aquí pruebo lo que después llega a los proyectos.",
+      "open": "abrir experimento"
+    },
+    "about": {
+      "title": "Sobre mí",
+      "p1": "Soy Leonardo Ferreira, director creativo y desarrollador. Hace más de 6 años construyo marcas, sitios y sistemas para empresas que necesitan parecer grandes desde el primer contacto.",
+      "p2": "Hablas directo con quien piensa y ejecuta, sin intermediarios que diluyan la idea. Estrategia, diseño y código quedan en las mismas manos, y por eso la entrega sale coherente del logo al último píxel.",
+      "p3": "Ahora llevo esta forma de trabajar a una agencia de IA, con agentes que producen bajo mi dirección.",
+      "steps": [
+        {
+          "t": "Diagnóstico",
+          "d": "Negocio, público, competencia y objetivo. Sin eso, lo demás es suposición."
+        },
+        {
+          "t": "Dirección",
+          "d": "Posicionamiento, mensaje y referencias aprobados antes de convertirse en píxel."
+        },
+        {
+          "t": "Construcción",
+          "d": "Diseño y código contigo acompañando en el camino, no solo al final."
+        },
+        {
+          "t": "Lanzamiento",
+          "d": "En línea, medido y ajustado con los primeros resultados."
+        }
+      ]
+    },
+    "cta": {
+      "title_a": "¿Construimos",
+      "title_b": "el próximo?",
+      "sub": "Cuéntame qué necesitas y vuelvo con los próximos pasos.",
+      "primary": "Solicitar propuesta",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados.",
+      "privacy": "Privacidad",
+      "top": "Arriba"
+    }
   }
 }

@@ -2,10 +2,10 @@
            1. CORE VARIABLES & THEME SETUP (Design System Base)
            ========================================================================= */
     :root {
-        --font-primary: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-        --font-secondary: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-        --font-display: var(--font-serif), "Instrument Serif", Georgia, serif;
-        --font-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+        --font-primary: var(--font-sans), "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-secondary: var(--font-sans), "Poppins", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        --font-display: var(--font-sans), "Poppins", -apple-system, sans-serif;
+        --font-monospace: var(--font-mono), ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
         --ds-bg-color: #000000;
         --ds-text-primary: #e0e0e0;
@@ -84,7 +84,7 @@
 
     .ds-text-stroke {
         font-family: var(--font-display);
-        font-style: italic;
+        font-style: normal;
         font-weight: 400;
         letter-spacing: -0.01em;
         color: var(--ds-text-secondary);
@@ -116,7 +116,7 @@
 
     .ds-display-1 em {
         font-family: var(--font-display);
-        font-style: italic;
+        font-style: normal;
         font-weight: 400;
         letter-spacing: -0.025em;
     }

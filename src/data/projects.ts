@@ -261,6 +261,26 @@ export const projectsData = [
     "website": "https://www.remachcapital.com.br/"
   },
   {
+    "slug": "projeto-nexa",
+    "category": "brand",
+    "title": "NEXA.co",
+    "description": "A NEXA.co é uma consultoria de negócios.",
+    "coverImage": "/assets/v2/identidade/nexa-cover.webp",
+    "challenge": "Uma consultoria que precisava de uma marca à altura do que vende: clareza, método e direção para o futuro do negócio do cliente.",
+    "solution": "O símbolo reúne pétalas em volta de um centro comum, com uma delas em laranja marcando o passo à frente. Azul-marinho e laranja dão seriedade e energia na mesma medida, e a Nunito Sans deixa a leitura leve do outdoor à caneca.",
+    "images": [
+      "/assets/v2/identidade/nexa-1.webp",
+      "/assets/v2/identidade/nexa-2.webp",
+      "/assets/v2/identidade/nexa-3.webp",
+      "/assets/v2/identidade/nexa-4.webp",
+      "/assets/v2/identidade/nexa-5.webp",
+      "/assets/v2/identidade/nexa-6.webp"
+    ],
+    "client": "NEXA.co",
+    "services": "Identidade Visual e Branding",
+    "year": "2026"
+  },
+  {
     "slug": "projeto-p1marketing",
     "category": "web",
     "title": "P1 Marketing",

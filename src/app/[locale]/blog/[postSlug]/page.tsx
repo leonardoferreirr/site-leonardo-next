@@ -130,7 +130,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ locale: str
                     style={{
                       borderLeft: '2px solid var(--ds-text-primary)',
                       paddingLeft: '24px',
-                      fontStyle: 'italic',
+                      fontStyle: 'normal',
                       color: 'var(--ds-text-secondary)',
                       margin: '8px 0',
                     }}

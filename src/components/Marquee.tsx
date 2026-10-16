@@ -58,7 +58,7 @@ export default function Marquee({
               key={i}
               style={{
                 fontFamily: isSep ? 'var(--font-display)' : 'var(--font-primary)',
-                fontStyle: isSep ? 'italic' : 'normal',
+                fontStyle: 'normal',
                 fontSize: isSep
                   ? 'clamp(1.6rem, 3vw, 2.6rem)'
                   : 'clamp(1rem, 1.6vw, 1.4rem)',

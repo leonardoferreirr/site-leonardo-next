@@ -187,6 +187,12 @@
       "challenge": "Construir presença digital pra um food service que precisava se diferenciar num mercado cada vez mais saturado de poke houses.",
       "solution": "Site em Next.js com cardápio interativo, fotos vibrantes do produto, integração com WhatsApp pra pedidos e identidade visual jovem que conversa direto com o público. Performance, mobile-first e SEO local trabalhado pra brigar em buscas tipo 'poke uberlândia'.",
       "services": "Webdesign e Desenvolvimento"
+    },
+    "projeto-nexa": {
+      "description": "A NEXA.co é uma consultoria de negócios.",
+      "challenge": "Uma consultoria que precisava de uma marca à altura do que vende: clareza, método e direção para o futuro do negócio do cliente.",
+      "solution": "O símbolo reúne pétalas em volta de um centro comum, com uma delas em laranja marcando o passo à frente. Azul-marinho e laranja dão seriedade e energia na mesma medida, e a Nunito Sans deixa a leitura leve do outdoor à caneca.",
+      "services": "Identidade Visual e Branding"
     }
   },
   "Form": {
@@ -234,8 +240,8 @@
     "read_more": "Ler artigo"
   },
   "Metadata": {
-    "home_title": "Branding, Webdesign e Tráfego Pago",
-    "home_description": "Leonardo Ferreira — branding, websites em Next.js e gestão de tráfego pra empresas que querem parecer grandes desde o primeiro contato com o público.",
+    "home_title": "Sites, sistemas e identidade visual",
+    "home_description": "Leonardo Ferreira: sites, sistemas sob medida, identidade visual, social media e vídeo para empresas que querem parecer grandes desde o primeiro contato.",
     "orcamento_title": "Solicite um Orçamento",
     "orcamento_description": "Pronto para inovar? Entre em contato, conte mais sobre o seu projeto e solicite um orçamento sob medida para alavancar a presença digital da sua marca.",
     "project_title_prefix": "Case de Sucesso",
@@ -286,5 +292,113 @@
         "desc": "Copy de site, anúncios, e-mails e roteiros. Texto que vende, sem clichê, na voz da sua marca."
       }
     ]
+  },
+  "Home2": {
+    "nav": {
+      "work": "Trabalhos",
+      "systems": "Sistemas",
+      "services": "Serviços",
+      "about": "Sobre",
+      "blog": "Blog",
+      "cta": "Orçamento",
+      "menu": "Abrir menu",
+      "close": "Fechar menu"
+    },
+    "hero": {
+      "title_a": "Design e código,",
+      "title_b": "do rascunho ao ar.",
+      "sub": "Sites, sistemas sob medida, identidade visual, social media e vídeo para empresas que querem parecer grandes desde o primeiro contato.",
+      "cta_primary": "Solicitar proposta",
+      "cta_secondary": "Ver trabalhos",
+      "status": "Agenda aberta · atendo em português, inglês e espanhol",
+      "show_label": "Vitrine de projetos"
+    },
+    "stats": {
+      "sites": "sites no ar",
+      "systems": "sistemas sob medida",
+      "brands": "identidades visuais",
+      "years": "anos de mercado"
+    },
+    "sites": {
+      "title": "Sites",
+      "lead": "De landing page a e-commerce, todos no ar e rápidos no celular. Clique e abra o site de verdade.",
+      "index_title": "Todos os sites",
+      "all": "Todos",
+      "more": "Ver todos os {count}",
+      "less": "Mostrar menos"
+    },
+    "systems": {
+      "title": "Sistemas",
+      "lead": "Software sob medida para operar o negócio, não só para aparecer.",
+      "soon": "EM BREVE",
+      "agency_cta": "Quero saber quando abrir",
+      "demo": "telas com dados de demonstração, sem nome de cliente",
+      "kpi_sent": "enviados",
+      "kpi_opens": "aberturas",
+      "kpi_clicks": "cliques",
+      "kpi_meetings": "reuniões"
+    },
+    "services": {
+      "title": "O que eu faço",
+      "lead": "Um fluxo só, da estratégia ao ar, com as ferramentas que eu uso de verdade em cada serviço.",
+      "tools_label": "Ferramentas"
+    },
+    "identity": {
+      "title": "Identidade visual",
+      "lead": "Marcas construídas do diagnóstico ao manual, com sistema visual pronto para usar.",
+      "case": "ver o case"
+    },
+    "social": {
+      "title": "Social media",
+      "lead": "Posts, carrosséis e criativos de anúncio para restaurantes, clínicas, SaaS e serviços."
+    },
+    "video": {
+      "title": "Vídeo",
+      "lead": "Reels, cortes e vídeos de portfólio com legenda, trilha e efeito sonoro.",
+      "play": "Assistir",
+      "close": "Fechar vídeo"
+    },
+    "lab": {
+      "title": "Lab",
+      "lead": "Experimentos de 3D, movimento e ilustração. É onde eu testo o que depois entra nos projetos.",
+      "open": "abrir experimento"
+    },
+    "about": {
+      "title": "Sobre",
+      "p1": "Sou Leonardo Ferreira, diretor criativo e desenvolvedor. Há mais de 6 anos construo marcas, sites e sistemas para empresas que precisam parecer grandes desde o primeiro contato.",
+      "p2": "Você fala direto com quem pensa e executa, sem intermediário diluindo a ideia. Estratégia, design e código ficam na mesma mão, e é por isso que a entrega sai coerente do logo ao último pixel.",
+      "p3": "Agora estou levando esse jeito de trabalhar para uma agência de IA, com agentes que produzem sob a minha direção.",
+      "steps": [
+        {
+          "t": "Diagnóstico",
+          "d": "Negócio, público, concorrência e objetivo. Sem isso, o resto é achismo."
+        },
+        {
+          "t": "Direção",
+          "d": "Posicionamento, mensagem e referências aprovados antes de virar pixel."
+        },
+        {
+          "t": "Construção",
+          "d": "Design e código com você acompanhando no caminho, não só no fim."
+        },
+        {
+          "t": "Lançamento",
+          "d": "No ar, medido e ajustado com os primeiros resultados."
+        }
+      ]
+    },
+    "cta": {
+      "title_a": "Vamos construir",
+      "title_b": "o próximo?",
+      "sub": "Conte o que você precisa e eu volto com os próximos passos.",
+      "primary": "Solicitar proposta",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail"
+    },
+    "footer": {
+      "rights": "Todos os direitos reservados.",
+      "privacy": "Privacidade",
+      "top": "Topo"
+    }
   }
 }

@@ -21,9 +21,6 @@ export default function ProjectView({ project, ctaText }: { project: any, ctaTex
           {t('back_portfolio')}
         </Link>
         <div ref={setRef(0)} className="fade-in-up delay-1" style={{ maxWidth: '800px', marginBottom: '80px' }}>
-          <span className="ds-body-sm" style={{ color: 'var(--ds-accent-primary)', marginBottom: '16px', display: 'block' }}>
-            {t('case_study')}
-          </span>
           <h1 className="ds-display-1" style={{ marginBottom: '24px' }}>{project.title}</h1>
           <p className="ds-body-lg">
             {tData('challenge')}

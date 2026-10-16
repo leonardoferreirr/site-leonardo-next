@@ -1,0 +1,222 @@
+/* cabeçalho global (home v2, cases, blog, privacidade) */
+
+.lf-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  font-family: var(--font-sans), 'Poppins', system-ui, sans-serif;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
+}
+
+.lf-header.is-solid {
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+.lf-header.is-open {
+  background: #000;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.lf-header.is-hidden {
+  transform: translateY(-101%);
+}
+
+.lf-header__in {
+  max-width: 1240px;
+  margin: 0 auto;
+  height: 68px;
+  padding: 0 clamp(16px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.lf-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ededed;
+  text-decoration: none;
+  flex: none;
+}
+
+.lf-logo__mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 60%);
+  font: 500 14px/1 var(--font-sans), 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.lf-logo__name {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.lf-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.2vw, 30px);
+}
+
+.lf-nav > a {
+  color: #a8a8a8;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.lf-nav > a:hover {
+  color: #fff;
+}
+
+.lf-nav__extra {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-left: clamp(8px, 1.2vw, 16px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lf-lang {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.lf-lang button {
+  height: 28px;
+  min-width: 30px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #808080;
+  font: 400 12px/1 var(--font-mono), ui-monospace, monospace;
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s;
+}
+
+.lf-lang button:hover {
+  color: #fff;
+}
+
+.lf-lang button[aria-pressed='true'] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lf-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #000 !important;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lf-cta:hover {
+  background: #e6e6e6;
+  transform: translateY(-1px);
+}
+
+.lf-burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  position: relative;
+}
+
+.lf-burger span {
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lf-burger span:first-child {
+  top: 18px;
+}
+
+.lf-burger span:last-child {
+  top: 24px;
+}
+
+.is-open .lf-burger span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.is-open .lf-burger span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .lf-burger {
+    display: block;
+  }
+
+  .lf-nav {
+    position: fixed;
+    inset: 68px 0 0 0;
+    height: calc(100dvh - 68px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 28px clamp(16px, 4vw, 48px) 40px;
+    background: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s;
+  }
+
+  .is-open .lf-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lf-nav > a {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: #ededed;
+    padding: 8px 0;
+  }
+
+  .lf-nav__extra {
+    margin-top: auto;
+    border-left: 0;
+    padding-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lf-cta {
+    height: 48px;
+    padding: 0 24px;
+    font-size: 15px;
+  }
+}

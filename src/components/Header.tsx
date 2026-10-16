@@ -1,112 +1,94 @@
 'use client';
 
+import './header.css';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/routing';
 import { useEffect, useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 
+// cabeçalho do site: some ao descer, volta ao subir; no celular vira menu em tela cheia
 export default function Header() {
-  const t = useTranslations('Header');
+  const t = useTranslations('Home2.nav');
   const [hidden, setHidden] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [solid, setSolid] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // @ts-ignore
-    if (typeof window !== 'undefined' && window.feather) {
-      // @ts-ignore
-      window.feather.replace();
-    }
-  }); // Run after every render to catch any dynamically injected icons (like the Footer)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
+    let last = window.scrollY;
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = window.scrollY;
+        setSolid(y > 24);
+        const h = y > 240 && y > last;
+        setHidden(h);
+        // a barra de categorias da home sobe quando o cabeçalho some
+        document.documentElement.dataset.hdr = h ? 'off' : 'on';
+        last = y;
+      });
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
+  useEffect(() => {
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  const links = [
+    { href: '/#sites', label: t('work') },
+    { href: '/#sistemas', label: t('systems') },
+    { href: '/#servicos', label: t('services') },
+    { href: '/#sobre', label: t('about') },
+    { href: '/blog', label: t('blog') },
+  ];
+
   return (
-    <header
-      id="main-header"
-      style={{
-        position: 'fixed' as const,
-        top: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 100,
-        padding: '24px 0',
-        pointerEvents: 'none',
-        transition: 'transform 0.4s ease, opacity 0.4s ease',
-        transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
-        opacity: hidden ? 0 : 1
-      }}
-    >
-      <div
-        className="ds-container fade-in-up visible header-container"
-        style={{ padding: 0, display: 'flex', justifyContent: 'center', pointerEvents: 'auto' }}
-      >
-        <nav
-          className="ds-glass-card main-nav"
-          style={{
-            padding: '16px 40px',
-            borderRadius: '100px',
-            display: 'flex',
-            gap: '32px',
-            alignItems: 'center',
-            background: 'rgba(0, 0, 0, 0.4)',
-            backdropFilter: 'blur(24px)',
-            boxShadow: 'var(--ds-shadow-light), var(--ds-glass-inner)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            transition: 'all var(--speed-normal)'
-          }}
-        >
-          {/* Mobile Menu Toggle */}
-          <button
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              color: 'var(--ds-text-primary)',
-              cursor: 'pointer',
-              display: 'none',
-              padding: '8px'
-            }}
-          >
-            <i data-feather={isMenuOpen ? "x" : "menu"} style={{ width: '24px', height: '24px' }}></i>
-          </button>
+    <header className={`lf-header${hidden && !open ? ' is-hidden' : ''}${solid || open ? ' is-solid' : ''}${open ? ' is-open' : ''}`}>
+      <div className="lf-header__in">
+        <Link href="/" className="lf-logo" onClick={() => setOpen(false)} aria-label="Leonardo Ferreira">
+          <span className="lf-logo__mark" aria-hidden="true">
+            L
+          </span>
+          <span className="lf-logo__name">Leonardo Ferreira</span>
+        </Link>
 
-          {/* Desktop Links */}
-          <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-            <Link href="/#servicos" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('services')}</Link>
-            <Link href="/#projetos" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('projects')}</Link>
-            <Link href="/#metodologia" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('methodology')}</Link>
-            <Link href="/#sobre" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('about')}</Link>
-            <Link href="/blog" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('blog')}</Link>
-            <Link href="/#contato" className="ds-body-sm nav-link" onClick={() => setIsMenuOpen(false)}>{t('contact')}</Link>
+        <nav className="lf-nav" id="lf-nav" aria-label="Principal">
+          {links.map((l) => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+              {l.label}
+            </Link>
+          ))}
+          <div className="lf-nav__extra">
+            <LanguageSwitcher />
+            <Link href="/orcamento" className="lf-cta" onClick={() => setOpen(false)}>
+              {t('cta')}
+            </Link>
           </div>
-
-          <div className="nav-divider" style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.2)' }}></div>
-          <LanguageSwitcher />
         </nav>
+
+        <button
+          type="button"
+          className="lf-burger"
+          aria-expanded={open}
+          aria-controls="lf-nav"
+          aria-label={open ? t('close') : t('menu')}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+        </button>
       </div>
-      <style jsx>{`
-        .nav-link {
-          text-decoration: none;
-          font-weight: 500;
-          transition: color var(--speed-normal);
-          color: var(--ds-text-primary);
-        }
-        .nav-link:hover {
-          color: #FFFFFF;
-        }
-      `}</style>
     </header>
   );
 }

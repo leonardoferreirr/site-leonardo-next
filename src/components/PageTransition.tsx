@@ -22,7 +22,8 @@ export default function PageTransition({ children }: { children: React.ReactNode
     <div
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(16px)',
+        // 'none' depois de entrar: transform residual quebra position:fixed dos filhos (cabeçalho)
+        transform: visible ? 'none' : 'translateY(16px)',
         transition: 'opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)',
       }}
     >
