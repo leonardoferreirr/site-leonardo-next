@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('orcamento_title'),
     description: t('orcamento_description'),
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? 'orcamento' : `${locale}/orcamento`}`,
+      canonical: `https://www.leonardoferreirr.com.br/${locale}/orcamento`,
       languages: {
-        'pt': 'https://www.leonardoferreirr.com.br/orcamento',
+        'pt': 'https://www.leonardoferreirr.com.br/pt/orcamento',
         'en': 'https://www.leonardoferreirr.com.br/en/orcamento',
         'es': 'https://www.leonardoferreirr.com.br/es/orcamento',
       },
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: t('orcamento_title'),
       description: t('orcamento_description'),
-      url: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? 'orcamento' : `${locale}/orcamento`}`,
+      url: `https://www.leonardoferreirr.com.br/${locale}/orcamento`,
     }
   };
 }

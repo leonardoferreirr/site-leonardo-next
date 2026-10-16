@@ -18,17 +18,24 @@ export default function ThirdPartyScripts() {
 
   return (
     <>
-      <Script
-        src="https://unpkg.com/feather-icons"
-        strategy="afterInteractive"
-        onLoad={() => {
-          // @ts-ignore
-          window.feather?.replace();
-        }}
-      />
-      {/* só no domínio de produção: localhost e prévias da Vercel não sujam o pixel */}
+      {/* feather só nas páginas que ainda usam data-feather (orçamento e blog); a home não precisa */}
+      {/\/(orcamento|blog)(\/|$)/.test(pathname) ? (
+        <Script
+          src="https://unpkg.com/feather-icons"
+          strategy="afterInteractive"
+          onLoad={() => {
+            // @ts-ignore
+            window.feather?.replace();
+          }}
+        />
+      ) : null}
+      {/* só no domínio de produção e só depois da primeira interação: carregado no load ele custava
+          ~700 ms de processamento no celular (nota 59 no PageSpeed) */}
       <Script id="meta-pixel" strategy="lazyOnload">
-        {`if(/(^|\\.)leonardoferreirr\\.com\\.br$/.test(location.hostname)){!function(f,b,e,v,n,t,s)
+        {`(function(){if(!/(^|\\.)leonardoferreirr\\.com\\.br$/.test(location.hostname))return;
+          var ev=['scroll','pointerdown','touchstart','keydown'],done=false;
+          function go(){if(done)return;done=true;ev.forEach(function(e){removeEventListener(e,go)});
+          !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
           n.callMethod.apply(n,arguments):n.queue.push(arguments)};
           if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -37,7 +44,8 @@ export default function ThirdPartyScripts() {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '2116057592584389');
-          fbq('track', 'PageView');}`}
+          fbq('track', 'PageView');}
+          ev.forEach(function(e){addEventListener(e,go,{passive:true})});})();`}
       </Script>
     </>
   );

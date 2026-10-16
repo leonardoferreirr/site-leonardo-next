@@ -18,9 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: title,
     description: t('project_description'),
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? slug : `${locale}/${slug}`}`,
+      canonical: `https://www.leonardoferreirr.com.br/${locale}/${slug}`,
       languages: {
-        'pt': `https://www.leonardoferreirr.com.br/${slug}`,
+        'pt': `https://www.leonardoferreirr.com.br/pt/${slug}`,
         'en': `https://www.leonardoferreirr.com.br/en/${slug}`,
         'es': `https://www.leonardoferreirr.com.br/es/${slug}`,
       },
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: title,
       description: t('project_description'),
-      url: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? slug : `${locale}/${slug}`}`,
+      url: `https://www.leonardoferreirr.com.br/${locale}/${slug}`,
     }
   };
 }

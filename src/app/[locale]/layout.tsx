@@ -43,17 +43,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     description: t('home_description'),
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? '' : locale}`,
+      // sempre com o prefixo do idioma: sem ele a raiz redireciona e as páginas internas dão 404
+      canonical: `https://www.leonardoferreirr.com.br/${locale}`,
       languages: {
-        'pt': 'https://www.leonardoferreirr.com.br',
+        'pt': 'https://www.leonardoferreirr.com.br/pt',
         'en': 'https://www.leonardoferreirr.com.br/en',
         'es': 'https://www.leonardoferreirr.com.br/es',
+        'x-default': 'https://www.leonardoferreirr.com.br/pt',
       },
     },
     openGraph: {
       title: t('home_title'),
       description: t('home_description'),
-      url: `https://www.leonardoferreirr.com.br/${locale === 'pt' ? '' : locale}`,
+      url: `https://www.leonardoferreirr.com.br/${locale}`,
       siteName: 'Leonardo Ferreira',
       images: [{ url: 'https://www.leonardoferreirr.com.br/assets/profile.png', width: 1200, height: 630 }],
       locale: locale,
