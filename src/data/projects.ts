@@ -3,7 +3,7 @@ export const projectsData = [
     "slug": "projeto-mademax",
     "category": "brand",
     "title": "MADEMAX",
-    "description": "A MADEMAX é uma fabricante de telhas em chapa de aço e telha termoacústica.",
+    "description": "O MADEMAX é um clube de tiro esportivo.",
     "coverImage": "/assets/00. Cover/01. MADEMAX.webp",
     "challenge": "O clube MADEMAX estabelece um novo padrão para o tiro esportivo no Brasil, unindo o respeito às\n                    tradições do esporte com uma infraestrutura de alto desempenho e sofisticação tática.",
     "solution": "A identidade visual foi concebida para projetar precisão absoluta e exclusividade, utilizando um\n                    símbolo central que remete à retícula de mira e à convergência de valores tradicionais. Através de\n                    uma paleta que combina o azul profundo da autoridade com o laranja tático da energia e precisão, a\n                    marca comunica segurança, rigor técnico e prestígio. O design posiciona o MADEMAX não apenas como um\n                    clube de tiro, mas como um selo de excelência para quem busca o domínio técnico em um ambiente de\n                    absoluta confiança e herança esportiva.",
@@ -24,14 +24,14 @@ export const projectsData = [
       "/assets/01. MADEMAX/MADEMAX-5.png"
     ],
     "client": "MADEMAX",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2025"
   },
   {
     "slug": "projeto-biothera",
     "category": "brand",
     "title": "Biothera",
-    "description": "A Biothera atua no segmento de saúde e estética voltada para o natural.",
+    "description": "A Biothera desenvolve soluções biológicas para o agronegócio.",
     "coverImage": "/assets/00. Cover/02. Biothera.webp",
     "challenge": "Especializada em soluções biológicas para o agronegócio, a Biothera une a força da natureza à\n                    eficiência da gestão sustentável.",
     "solution": "O logotipo funde o símbolo de \"energia/power\" com elementos botânicos, simbolizando a ativação da\n                    vida e a produtividade no campo. A identidade visual comunica equilíbrio e inovação biológica,\n                    estabelecendo a Biothera como uma referência em sustentabilidade e tecnologia agrícola.",
@@ -51,7 +51,7 @@ export const projectsData = [
       "/assets/02. Biothera/Biothera-33.png"
     ],
     "client": "Biothera",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2025"
   },
   {
@@ -83,7 +83,7 @@ export const projectsData = [
       "/assets/03. Divino Car/Divino Car-23.png"
     ],
     "client": "Divino Car",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2025",
     "website": "https://divinocar.com.br/"
   },
@@ -114,7 +114,7 @@ export const projectsData = [
       "/assets/04. ProConsult/ProConsult-66.png"
     ],
     "client": "ProConsult",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2025",
     "website": "https://www.proconsult.tech/"
   },
@@ -143,7 +143,7 @@ export const projectsData = [
       "/assets/05. Hello BIM/Hello BIM-42.png"
     ],
     "client": "Hello BIM",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2023",
     "website": "https://hellobim.com.br/msv-01/"
   },
@@ -171,7 +171,7 @@ export const projectsData = [
       "/assets/06. RAX Seguros/RAX Seguros-35.png"
     ],
     "client": "RAX Seguros",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2024"
   },
   {
@@ -203,7 +203,7 @@ export const projectsData = [
       "/assets/07. Poly Santos/Poly Santos-57.png"
     ],
     "client": "Poly Santos",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2023"
   },
   {
@@ -228,7 +228,7 @@ export const projectsData = [
       "/assets/08. Ecomove/Prancheta 9.png"
     ],
     "client": "Ecomove",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2023"
   },
   {
@@ -256,7 +256,7 @@ export const projectsData = [
       "/assets/09. Remach Capital/Remach-32.png"
     ],
     "client": "Remach Capital",
-    "services": "Identidade Visual e  Branding",
+    "services": "Identidade Visual e Branding",
     "year": "2025",
     "website": "https://www.remachcapital.com.br/"
   },

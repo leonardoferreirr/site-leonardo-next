@@ -54,7 +54,7 @@ const perfil = (pt: string, en: string, es: string) => ({ pt: `Reel do perfil: $
 const disp = (pt: string, en: string, es: string) => ({ pt: `Corte de futebol: ${pt}`, en: `Football cut: ${en}`, es: `Corte de fútbol: ${es}` });
 
 // vídeos ainda em conversão: saem desta lista quando os arquivos estiverem em public/assets/v2/video
-const PENDENTES = new Set<string>(['reel-marimaria', 'reel-timex', 'dispensados-vasco', 'dispensados-neymar', 'dispensados-var']);
+const PENDENTES = new Set<string>(['dispensados-neymar', 'dispensados-var']);
 
 const TODOS: Reel[] = [
   { slug: 'p1-luiz', title: 'P1 Marketing', sub: { pt: 'Vídeo de portfólio para agência', en: 'Portfolio video for an agency', es: 'Video de portafolio para agencia' }, ...reel('p1-luiz') },
