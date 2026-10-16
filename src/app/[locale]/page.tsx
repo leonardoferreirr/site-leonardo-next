@@ -12,7 +12,7 @@ import { IdentitySection, LabSection, SocialSection, VideoSection } from '@/comp
 import { AboutSection, ContactSection } from '@/components/v2/AboutContact';
 import { useRevealAll } from '@/components/v2/hooks';
 
-// home v2: institucional e portfólio juntos (o /portfolio sai depois da aprovação)
+// home v2: institucional e portfólio juntos (o /portfolio antigo redireciona para cá)
 export default function Home() {
   useRevealAll();
 

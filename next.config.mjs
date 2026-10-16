@@ -9,6 +9,14 @@ const nextConfig = {
   experimental: {
     inlineCss: true,
   },
+  // /portfolio saiu do ar em 17/10/2026: o portfólio agora vive na home. 301 para a seção de sites,
+  // porque o link antigo está nos e-mails frios já enviados
+  async redirects() {
+    return [
+      { source: '/portfolio', destination: '/pt#sites', permanent: true },
+      { source: '/portfolio/:path*', destination: '/pt#sites', permanent: true },
+    ];
+  },
   // Landing do CRM servida como página estática em /crm (public/crm/index.html).
   async rewrites() {
     return [{ source: '/crm', destination: '/crm/index.html' }];
