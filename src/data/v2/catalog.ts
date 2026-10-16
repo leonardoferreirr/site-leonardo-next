@@ -302,7 +302,7 @@ export const SERVICES: Service[] = [
   },
 ];
 
-// logos do devicon (MIT), em public/assets/v2/tools
+// símbolos do Simple Icons (CC0) pintados de cinza, em public/assets/v2/tools
 export const TOOLS: { name: string; logo: string }[] = [
   { name: 'Illustrator', logo: 'illustrator' },
   { name: 'Photoshop', logo: 'photoshop' },

@@ -8,20 +8,42 @@ import { ArrowRight } from './Icons';
 import { useCycle, useInView, useReducedMotion } from './hooks';
 import { AGENCY, SYSTEMS, tr, type Category } from '@/data/v2/catalog';
 
-type Slide = { title: string; cat: Category; src: string; md: string; pixel?: boolean };
+type Slide = {
+  title: string;
+  cat: Category;
+  src: string;
+  md: string;
+  pixel?: boolean;
+};
 
-const site = (slug: string) => ({ src: `/assets/portfolio/${slug}-lg.webp`, md: `/assets/portfolio/${slug}-md.webp` });
+const site = (slug: string) => ({
+  src: `/assets/portfolio/${slug}-lg.webp`,
+  md: `/assets/portfolio/${slug}-md.webp`,
+});
 const shotOf = (src: string) => ({ src, md: src.replace('.webp', '-sm.webp') });
 
-// ordem pedida pelo Leonardo (16/10): agência, Wigga, Nalu, os dois CRMs, AL e Vessar
+// ordem pedida pelo Leonardo (16/10): agência, Wigga, Nalu, os dois CRMs, Pedras do Brasil e Retrô em Campo
 const SLIDES = (locale: string): Slide[] => [
-  { title: tr(AGENCY.name, locale), cat: 'sistemas', ...shotOf(AGENCY.screens[0].src), pixel: true },
+  {
+    title: tr(AGENCY.name, locale),
+    cat: 'sistemas',
+    ...shotOf(AGENCY.screens[0].src),
+    pixel: true,
+  },
   { title: 'Wigga', cat: 'sites', ...site('wigga') },
   { title: 'Nalu Poke', cat: 'sites', ...site('nalu-poke') },
-  { title: tr(SYSTEMS[0].name, locale), cat: 'sistemas', ...shotOf(SYSTEMS[0].screens[0].src) },
-  { title: tr(SYSTEMS[2].name, locale), cat: 'sistemas', ...shotOf(SYSTEMS[2].screens[0].src) },
-  { title: 'AL Revestimentos', cat: 'sites', ...site('al-revestimentos') },
-  { title: 'Vessar', cat: 'sites', ...site('vessar') },
+  {
+    title: tr(SYSTEMS[0].name, locale),
+    cat: 'sistemas',
+    ...shotOf(SYSTEMS[0].screens[0].src),
+  },
+  {
+    title: tr(SYSTEMS[2].name, locale),
+    cat: 'sistemas',
+    ...shotOf(SYSTEMS[2].screens[0].src),
+  },
+  { title: 'Pedras do Brasil', cat: 'sites', ...site('pedras-do-brasil') },
+  { title: 'Retrô em Campo', cat: 'sites', ...site('retro-em-campo') },
 ];
 
 export default function Hero() {
@@ -85,21 +107,23 @@ export default function Hero() {
   return (
     <section className="v2-hero" id="inicio">
       <div className="v2-wrap">
-        <h1 className="v2-h1 v2-rise" style={{ animationDelay: '0.05s' }}>
-          {t('hero.title_a')} <span>{t('hero.title_b')}</span>
-        </h1>
-        <p className="v2-hero__sub v2-rise" style={{ animationDelay: '0.25s' }}>
-          {t('hero.sub_a')}
-          <br />
-          {t('hero.sub_b')}
-        </p>
-        <div className="v2-hero__ctas v2-rise" style={{ animationDelay: '0.4s' }}>
-          <Link href="/orcamento" className="v2-btn v2-btn--solid">
-            {t('hero.cta_primary')} <ArrowRight />
-          </Link>
-          <a href="#sites" className="v2-btn v2-btn--ghost">
-            {t('hero.cta_secondary')}
-          </a>
+        <div className="v2-hero__top">
+          <h1 className="v2-h1 v2-rise" style={{ animationDelay: '0.05s' }}>
+            {t('hero.title_a')} <span>{t('hero.title_b')}</span>
+          </h1>
+          <p className="v2-hero__sub v2-rise" style={{ animationDelay: '0.25s' }}>
+            {t('hero.sub_a')}
+            <br />
+            {t('hero.sub_b')}
+          </p>
+          <div className="v2-hero__ctas v2-rise" style={{ animationDelay: '0.4s' }}>
+            <Link href="/orcamento" className="v2-btn v2-btn--solid">
+              {t('hero.cta_primary')} <ArrowRight />
+            </Link>
+            <a href="#sites" className="v2-btn v2-btn--ghost">
+              {t('hero.cta_secondary')}
+            </a>
+          </div>
         </div>
 
         <div className="v2-show v2-rise" style={{ animationDelay: '0.6s' }} ref={showRef} aria-label={t('hero.show_label')} role="region">
@@ -130,4 +154,3 @@ export default function Hero() {
     </section>
   );
 }
-
