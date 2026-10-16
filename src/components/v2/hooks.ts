@@ -40,6 +40,29 @@ export function useInView<T extends HTMLElement>(margin = '120px') {
   return [ref, inView] as const;
 }
 
+// vira true uma vez quando o elemento chega perto da tela e não volta: serve para só pedir
+// capa de vídeo (poster) perto da hora; o navegador baixa poster na abertura mesmo lá embaixo
+export function useNear<T extends HTMLElement>(margin = '900px') {
+  const ref = useRef<T>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || near) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: margin },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [margin, near]);
+  return [ref, near] as const;
+}
+
 export function useReducedMotion() {
   const [reduced, setReduced] = useState(false);
   useEffect(() => {

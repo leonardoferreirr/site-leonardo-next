@@ -7,7 +7,7 @@ import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight, Close, Play } from './Icons';
 import SectionCta from './SectionCta';
-import { useInView, useReducedMotion } from './hooks';
+import { useInView, useNear, useReducedMotion } from './hooks';
 import { BRANDS, CATEGORY_COLOR, tr } from '@/data/v2/catalog';
 import { LAB, REELS, SOCIAL, type Reel } from '@/data/v2/media';
 
@@ -113,6 +113,7 @@ export function SocialSection() {
 function ReelTile({ reel, onOpen, label, sub }: { reel: Reel; onOpen: (r: Reel) => void; label: string; sub: string }) {
   const reduced = useReducedMotion();
   const [ref, inView] = useInView<HTMLButtonElement>('0px');
+  const [nearRef, near] = useNear<HTMLDivElement>();
   const vref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -125,9 +126,9 @@ function ReelTile({ reel, onOpen, label, sub }: { reel: Reel; onOpen: (r: Reel) 
   }, [inView, reduced, reel.loop]);
 
   return (
-    <div className={`v2-reel v2-in${reel.wide ? ' v2-reel--wide' : ''}`}>
+    <div ref={nearRef} className={`v2-reel v2-in${reel.wide ? ' v2-reel--wide' : ''}`}>
       <button ref={ref} type="button" className="v2-reel__frame" onClick={() => onOpen(reel)} aria-label={`${label}: ${reel.title}`}>
-        <video ref={vref} poster={reel.poster} muted loop playsInline preload="none" aria-hidden="true" />
+        <video ref={vref} poster={near ? reel.poster : undefined} muted loop playsInline preload="none" aria-hidden="true" />
         <span className="v2-reel__play" aria-hidden="true">
           <Play />
         </span>
@@ -183,7 +184,15 @@ export function VideoSection() {
           <button ref={closeRef} type="button" className="v2-lb__close" onClick={() => setOpen(null)} aria-label={t('close')}>
             <Close />
           </button>
-          <video src={open.full} poster={open.poster} controls autoPlay playsInline onClick={(e) => e.stopPropagation()} aria-label={`${open.title}: ${tr(open.sub, locale)}`} />
+          <video
+            src={open.full}
+            poster={open.poster}
+            controls
+            autoPlay
+            playsInline
+            onClick={(e) => e.stopPropagation()}
+            aria-label={`${open.title}: ${tr(open.sub, locale)}`}
+          />
         </div>
       ) : null}
     </section>
@@ -195,6 +204,7 @@ export function VideoSection() {
 function LabCard({ item, locale, openLabel }: { item: (typeof LAB)[number]; locale: string; openLabel: string }) {
   const reduced = useReducedMotion();
   const [ref, inView] = useInView<HTMLDivElement>('0px');
+  const [nearRef, near] = useNear<HTMLDivElement>();
   const vref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -208,14 +218,16 @@ function LabCard({ item, locale, openLabel }: { item: (typeof LAB)[number]; loca
 
   const body = (
     <>
-      <div ref={ref}>
-        <MacWindow title={item.title}>
-          {item.loop ? (
-            <video ref={vref} poster={item.cover} muted loop playsInline preload="none" aria-hidden="true" />
-          ) : (
-            <img src={item.cover} alt={item.title} width={1600} height={1000} loading="lazy" decoding="async" />
-          )}
-        </MacWindow>
+      <div ref={nearRef}>
+        <div ref={ref}>
+          <MacWindow title={item.title}>
+            {item.loop ? (
+              <video ref={vref} poster={near ? item.cover : undefined} muted loop playsInline preload="none" aria-hidden="true" />
+            ) : (
+              <img src={item.cover} alt={item.title} width={1600} height={1000} loading="lazy" decoding="async" />
+            )}
+          </MacWindow>
+        </div>
       </div>
       <div className="v2-card__meta">
         <div>

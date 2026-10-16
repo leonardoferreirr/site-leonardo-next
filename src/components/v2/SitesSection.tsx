@@ -6,18 +6,21 @@ import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight } from './Icons';
 import SectionCta from './SectionCta';
+import { useNear } from './hooks';
 import { KIND_LABEL, KIND_PLURAL, SITES, siteCover, tr, type Site, type SiteKind } from '@/data/v2/catalog';
 
 // bento dos destaques: [7,5] [4,4,4] [5,7] e um panorâmico no fim
 const LAYOUT = ['v2-c7 v2-card--lead', 'v2-c5 v2-card--fill', 'v2-c4', 'v2-c4', 'v2-c4', 'v2-c5 v2-card--fill', 'v2-c7 v2-card--lead', 'v2-c12 v2-card--pano'];
 
 function SiteCard({ site, layout, locale }: { site: Site; layout: string; locale: string }) {
+  // a imagem só é pedida perto da tela: o lazy nativo baixava as 6 na abertura do celular
+  const [ref, near] = useNear<HTMLAnchorElement>('700px');
   return (
-    <a className={`v2-card v2-in ${layout}`} href={site.url} target="_blank" rel="noopener">
+    <a ref={ref} className={`v2-card v2-in ${layout}`} href={site.url} target="_blank" rel="noopener">
       <MacWindow title={site.title}>
         <img
-          src={`/assets/portfolio/${site.slug}-lg.webp`}
-          srcSet={`/assets/portfolio/${site.slug}-md.webp 800w, /assets/portfolio/${site.slug}-lg.webp 1600w`}
+          src={near ? `/assets/portfolio/${site.slug}-lg.webp` : undefined}
+          srcSet={near ? `/assets/portfolio/${site.slug}-md.webp 800w, /assets/portfolio/${site.slug}-lg.webp 1600w` : undefined}
           sizes={layout.includes('c12') ? '(max-width: 860px) 100vw, 1240px' : layout.includes('c7') ? '(max-width: 860px) 100vw, 720px' : '(max-width: 860px) 100vw, 520px'}
           alt={`${site.title}: ${tr(site.segment, locale)}`}
           width={1600}

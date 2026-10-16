@@ -6,7 +6,7 @@ import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowRight } from './Icons';
 import SectionCta from './SectionCta';
-import { useCycle, useInView, useReducedMotion } from './hooks';
+import { useCycle, useInView, useNear, useReducedMotion } from './hooks';
 import { AGENCY, SYSTEMS, tr, type System } from '@/data/v2/catalog';
 import { Link } from '@/routing';
 
@@ -15,6 +15,7 @@ function Screens({ sys, locale, pixel = false, interval = 4200 }: { sys: System;
   const reduced = useReducedMotion();
   const [ref, inView] = useInView<HTMLDivElement>('0px');
   const [cur, pick] = useCycle(sys.screens.length, interval, inView && !reduced);
+  const [nearRef, near] = useNear<HTMLDivElement>();
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   // monta só a aba atual e a próxima (as outras baixam quando chegar a vez)
   const [ready, setReady] = useState<Set<number>>(() => new Set([0]));
@@ -41,51 +42,53 @@ function Screens({ sys, locale, pixel = false, interval = 4200 }: { sys: System;
   }, [cur, inView, reduced, ready]);
 
   return (
-    <div ref={ref}>
-      <MacWindow title={tr(sys.name, locale)}>
-        {sys.screens.map((s, i) =>
-          !ready.has(i) ? null : s.video ? (
-            <video
-              key={s.src}
-              ref={(el) => {
-                videoRefs.current[i] = el;
-              }}
-              className={`v2-slide${i === cur ? ' is-on' : ''}`}
-              data-src={s.video}
-              poster={s.src}
-              muted
-              loop
-              playsInline
-              preload="none"
-              aria-label={tr(s.label, locale)}
-              style={pixel ? { imageRendering: 'pixelated' } : undefined}
-            />
-          ) : (
-            <img
-              key={s.src}
-              className={`v2-slide${i === cur ? ' is-on' : ''}`}
-              src={s.src}
-              srcSet={`${s.src.replace('.webp', '-sm.webp')} 800w, ${s.src} 1600w`}
-              sizes="(max-width: 860px) 100vw, 720px"
-              alt={`${tr(sys.name, locale)}: ${tr(s.label, locale)}`}
-              width={1600}
-              height={1000}
-              loading="lazy"
-              decoding="async"
-              style={pixel ? { imageRendering: 'pixelated' } : undefined}
-            />
-          ),
-        )}
-      </MacWindow>
-      {sys.screens.length > 1 ? (
-        <div className="v2-tabs" role="group" aria-label={tr(sys.name, locale)}>
-          {sys.screens.map((s, i) => (
-            <button key={s.src} type="button" aria-pressed={i === cur} onClick={() => pick(i)}>
-              {tr(s.label, locale)}
-            </button>
-          ))}
-        </div>
-      ) : null}
+    <div ref={nearRef}>
+      <div ref={ref}>
+        <MacWindow title={tr(sys.name, locale)}>
+          {sys.screens.map((s, i) =>
+            !ready.has(i) ? null : s.video ? (
+              <video
+                key={s.src}
+                ref={(el) => {
+                  videoRefs.current[i] = el;
+                }}
+                className={`v2-slide${i === cur ? ' is-on' : ''}`}
+                data-src={s.video}
+                poster={near ? s.src.replace('.webp', '-sm.webp') : undefined}
+                muted
+                loop
+                playsInline
+                preload="none"
+                aria-label={tr(s.label, locale)}
+                style={pixel ? { imageRendering: 'pixelated' } : undefined}
+              />
+            ) : (
+              <img
+                key={s.src}
+                className={`v2-slide${i === cur ? ' is-on' : ''}`}
+                src={s.src}
+                srcSet={`${s.src.replace('.webp', '-sm.webp')} 800w, ${s.src} 1600w`}
+                sizes="(max-width: 860px) 100vw, 720px"
+                alt={`${tr(sys.name, locale)}: ${tr(s.label, locale)}`}
+                width={1600}
+                height={1000}
+                loading="lazy"
+                decoding="async"
+                style={pixel ? { imageRendering: 'pixelated' } : undefined}
+              />
+            ),
+          )}
+        </MacWindow>
+        {sys.screens.length > 1 ? (
+          <div className="v2-tabs" role="group" aria-label={tr(sys.name, locale)}>
+            {sys.screens.map((s, i) => (
+              <button key={s.src} type="button" aria-pressed={i === cur} onClick={() => pick(i)}>
+                {tr(s.label, locale)}
+              </button>
+            ))}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -189,7 +192,11 @@ export default function SystemsSection() {
             <article className="v2-sys__card v2-in" key={s.slug}>
               <h3 className="v2-sys__name">{tr(s.name, locale)}</h3>
               <p className="v2-sys__desc">{tr(s.desc, locale)}</p>
-              {s.screens.length ? <Screens sys={s} locale={locale} /> : <Outreach label={tr(s.name, locale)} kpi={[t('kpi_sent'), t('kpi_opens'), t('kpi_clicks'), t('kpi_meetings')]} />}
+              {s.screens.length ? (
+                <Screens sys={s} locale={locale} />
+              ) : (
+                <Outreach label={tr(s.name, locale)} kpi={[t('kpi_sent'), t('kpi_opens'), t('kpi_clicks'), t('kpi_meetings')]} />
+              )}
               <div className="v2-sys__foot">
                 <span className="v2-stack">{`{ ${s.stack} }  2026`}</span>
               </div>
