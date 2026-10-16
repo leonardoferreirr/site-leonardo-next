@@ -307,21 +307,14 @@
     "hero": {
       "title_a": "Design and code,",
       "title_b": "from sketch to launch.",
-      "sub": "Websites, custom systems, visual identity, social media and video for companies that want to look big from the very first contact.",
       "cta_primary": "Request a proposal",
       "cta_secondary": "See the work",
-      "status": "Booking new projects · I work in Portuguese, English and Spanish",
-      "show_label": "Project showcase"
-    },
-    "stats": {
-      "sites": "websites live",
-      "systems": "custom systems",
-      "brands": "visual identities",
-      "years": "years in the field"
+      "show_label": "Project showcase",
+      "sub_a": "Websites, custom systems, visual identity, social media and video",
+      "sub_b": "for companies that want to look big from the very first contact."
     },
     "sites": {
       "title": "Websites",
-      "lead": "From landing pages to e-commerce, all live and fast on mobile. Click to open the real site.",
       "index_title": "All websites",
       "all": "All",
       "more": "See all {count}",
@@ -329,7 +322,6 @@
     },
     "systems": {
       "title": "Systems",
-      "lead": "Custom software to run the business, not just to look good.",
       "soon": "COMING SOON",
       "agency_cta": "Tell me when it opens",
       "demo": "screens with demo data, no client names",
@@ -340,27 +332,22 @@
     },
     "services": {
       "title": "What I do",
-      "lead": "One flow, from strategy to launch, with the tools I actually use for each service.",
       "tools_label": "Tools"
     },
     "identity": {
       "title": "Visual identity",
-      "lead": "Brands built from diagnosis to guidelines, with a visual system ready to use.",
       "case": "see the case"
     },
     "social": {
-      "title": "Social media",
-      "lead": "Posts, carousels and ad creatives for restaurants, clinics, SaaS and services."
+      "title": "Social media"
     },
     "video": {
       "title": "Video",
-      "lead": "Reels, clips and portfolio videos with captions, music and sound design.",
       "play": "Watch",
       "close": "Close video"
     },
     "lab": {
       "title": "Lab",
-      "lead": "Experiments in 3D, motion and illustration. This is where I test what later goes into client work.",
       "open": "open experiment"
     },
     "about": {

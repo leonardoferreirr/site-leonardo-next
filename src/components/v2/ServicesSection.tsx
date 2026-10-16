@@ -11,9 +11,8 @@ export default function ServicesSection() {
   return (
     <section className="v2-sec v2-paper" id="servicos">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">{t('title')}</h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
 
         <div className="v2-services">
@@ -34,14 +33,14 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="v2-tools v2-in" aria-label={t('tools_label')}>
-          {TOOLS.map((tool, i) => (
-            <span className="v2-tool" key={tool}>
-              <span className="v2-dot" style={{ background: ['#4da3ff', '#6be07a', '#ff5c8a', '#ffb547', '#ff6b4a', '#b18cff'][i % 6] }} />
-              {tool}
-            </span>
+        <ul className="v2-tools v2-in" aria-label={t('tools_label')}>
+          {TOOLS.map((tool) => (
+            <li className="v2-tool" key={tool.name}>
+              <img src={`/assets/v2/tools/${tool.logo}.svg`} alt="" width={40} height={40} loading="lazy" decoding="async" />
+              <span>{tool.name}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

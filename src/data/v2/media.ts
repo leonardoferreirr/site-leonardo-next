@@ -43,5 +43,28 @@ export const SOCIAL: SocialBrand[] = [
   { slug: 'digital-tk', title: 'Digital TK', posts: [1, 2, 3].map((n) => `/assets/v2/social/digital-tk-${n}.webp`) },
   { slug: 'donna-personalizados', title: 'Donna Personalizados', posts: [1, 2, 3].map((n) => `/assets/v2/social/donna-personalizados-${n}.webp`) },
 ];
-export const REELS: Reel[] = [];
-export const LAB: LabItem[] = [];
+const reel = (slug: string) => ({
+  poster: `/assets/v2/video/${slug}-poster.webp`,
+  loop: `/assets/v2/video/${slug}-loop.mp4`,
+  full: `/assets/v2/video/${slug}-full.mp4`,
+});
+
+// reels de marca (OLIPOP, Nike, Amazônia) são conteúdo do perfil dele, não projeto para a marca
+export const REELS: Reel[] = [
+  { slug: 'p1-luiz', title: 'P1 Marketing', sub: { pt: 'Vídeo de portfólio para agência', en: 'Portfolio video for an agency', es: 'Video de portafolio para agencia' }, ...reel('p1-luiz') },
+  { slug: 'dispensados-azambuja', title: 'Dispensados', sub: { pt: 'Corte de futebol: final da Libertadores', en: 'Football cut: Libertadores final', es: 'Corte de fútbol: final de la Libertadores' }, ...reel('dispensados-azambuja') },
+  { slug: 'dispensados-gaug', title: 'Dispensados', sub: { pt: 'Corte de futebol: Barra FC', en: 'Football cut: Barra FC', es: 'Corte de fútbol: Barra FC' }, ...reel('dispensados-gaug') },
+  { slug: 'reel-mg', title: 'MG Pães de Queijo', sub: { pt: 'Reel do perfil: marca criada do zero', en: 'Profile reel: a brand built from scratch', es: 'Reel del perfil: marca creada desde cero' }, ...reel('reel-mg') },
+  { slug: 'reel-olipop', title: 'OLIPOP', sub: { pt: 'Reel do perfil: análise de marca', en: 'Profile reel: brand breakdown', es: 'Reel del perfil: análisis de marca' }, ...reel('reel-olipop') },
+  { slug: 'reel-amazonia', title: 'Amazônia', sub: { pt: 'Reel do perfil: análise de marca', en: 'Profile reel: brand breakdown', es: 'Reel del perfil: análisis de marca' }, ...reel('reel-amazonia') },
+  { slug: 'reel-nike', title: 'Venda emocional', sub: { pt: 'Reel do perfil: Nike, Apple e McDonald’s', en: 'Profile reel: Nike, Apple and McDonald’s', es: 'Reel del perfil: Nike, Apple y McDonald’s' }, ...reel('reel-nike') },
+];
+
+const lab = (slug: string) => ({ cover: `/assets/v2/lab/${slug}-cover.webp`, loop: `/assets/v2/lab/${slug}-loop.mp4` });
+
+export const LAB: LabItem[] = [
+  { slug: 'lab-3d', title: 'Lab 3D', desc: { pt: '55 objetos 3D interativos, feitos em código', en: '55 interactive 3D objects, built in code', es: '55 objetos 3D interactivos, hechos en código' }, stack: 'Babylon.js + TypeScript', url: 'https://lab-3d.vercel.app/', ...lab('lab-3d') },
+  { slug: 'prisma', title: 'Prisma', desc: { pt: 'Cristal 3D guiado pela rolagem', en: 'A 3D crystal driven by scroll', es: 'Cristal 3D guiado por el scroll' }, stack: 'Babylon.js + GSAP', url: 'https://blenderprisma.vercel.app/', ...lab('prisma') },
+  { slug: 'beija-flor', title: 'Beija-flor 3D', desc: { pt: 'Modelo 3D realista na página. Modelo por LasquetiSpice, CC BY 4.0', en: 'A realistic 3D model on the page. Model by LasquetiSpice, CC BY 4.0', es: 'Modelo 3D realista en la página. Modelo de LasquetiSpice, CC BY 4.0' }, stack: 'WebGL', ...lab('beija-flor') },
+  { slug: 'pixar-popup', title: 'Pixar Pop-up Book', desc: { pt: 'Portfólio ilustrado de 6 filmes', en: 'An illustrated portfolio of 6 films', es: 'Portafolio ilustrado de 6 películas' }, stack: 'Illustrator + Photoshop', ...lab('pixar-popup') },
+];

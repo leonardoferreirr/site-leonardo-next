@@ -302,4 +302,18 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export const TOOLS = ['Illustrator', 'Photoshop', 'Premiere', 'Figma', 'HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Node', 'Supabase', 'Vercel'];
+// logos do devicon (MIT), em public/assets/v2/tools
+export const TOOLS: { name: string; logo: string }[] = [
+  { name: 'Illustrator', logo: 'illustrator' },
+  { name: 'Photoshop', logo: 'photoshop' },
+  { name: 'Premiere', logo: 'premiere' },
+  { name: 'Figma', logo: 'figma' },
+  { name: 'HTML', logo: 'html' },
+  { name: 'CSS', logo: 'css' },
+  { name: 'JavaScript', logo: 'javascript' },
+  { name: 'React', logo: 'react' },
+  { name: 'Next.js', logo: 'nextjs' },
+  { name: 'Node.js', logo: 'node' },
+  { name: 'Supabase', logo: 'supabase' },
+  { name: 'Vercel', logo: 'vercel' },
+];

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
@@ -15,6 +15,16 @@ function Screens({ sys, locale, pixel = false, interval = 4200 }: { sys: System;
   const [ref, inView] = useInView<HTMLDivElement>('0px');
   const [cur, pick] = useCycle(sys.screens.length, interval, inView && !reduced);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  // monta só a aba atual e a próxima (as outras baixam quando chegar a vez)
+  const [ready, setReady] = useState<Set<number>>(() => new Set([0]));
+  useEffect(() => {
+    if (!inView) return;
+    setReady((prev) => {
+      const next = (cur + 1) % sys.screens.length;
+      if (prev.has(cur) && prev.has(next)) return prev;
+      return new Set([...prev, cur, next]);
+    });
+  }, [cur, inView, sys.screens.length]);
 
   // vídeo só toca na aba ativa e com a seção na tela
   useEffect(() => {
@@ -27,13 +37,13 @@ function Screens({ sys, locale, pixel = false, interval = 4200 }: { sys: System;
         v.pause();
       }
     });
-  }, [cur, inView, reduced]);
+  }, [cur, inView, reduced, ready]);
 
   return (
     <div ref={ref}>
       <MacWindow title={tr(sys.name, locale)}>
         {sys.screens.map((s, i) =>
-          s.video ? (
+          !ready.has(i) ? null : s.video ? (
             <video
               key={s.src}
               ref={(el) => {
@@ -128,12 +138,11 @@ export default function SystemsSection() {
   return (
     <section className="v2-sec" id="sistemas">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="sistemas" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
 
         {/* o maior destaque: a agência de IA */}

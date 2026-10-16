@@ -49,15 +49,10 @@
 }
 
 .lf-logo__mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.02) 60%);
-  font: 500 14px/1 var(--font-sans), 'Poppins', sans-serif;
-  color: #fff;
+  width: 36px;
+  height: 36px;
+  display: block;
+  flex: none;
 }
 
 .lf-logo__name {

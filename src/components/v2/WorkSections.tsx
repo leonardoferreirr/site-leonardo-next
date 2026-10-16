@@ -18,12 +18,11 @@ export function IdentitySection() {
   return (
     <section className="v2-sec" id="identidade">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="identidade" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
 
         <div className="v2-brands">
@@ -31,7 +30,7 @@ export function IdentitySection() {
             const inner = (
               <>
                 <div className="v2-brand__img">
-                  <img src={b.cover} alt={b.title} width={1200} height={900} loading="lazy" decoding="async" />
+                  <img src={b.cover} alt="" width={1200} height={900} loading="lazy" decoding="async" />
                 </div>
                 <div className="v2-card__meta">
                   <h3 className="v2-card__name">
@@ -89,27 +88,16 @@ export function SocialSection() {
   return (
     <section className="v2-sec" id="social">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="social" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
       </div>
       <div ref={ref} className={`v2-social${!inView || reduced ? ' is-paused' : ''}`}>
         {row(top, false, Math.max(60, top.length * 4))}
         {row(bottom, true, Math.max(60, bottom.length * 4))}
-      </div>
-      <div className="v2-wrap">
-        <div className="v2-social__brands">
-          {SOCIAL.map((b) => (
-            <span key={b.slug}>
-              <span className="v2-dot" style={{ background: b.featured ? CATEGORY_COLOR.social : '#3a3a3a' }} />
-              {b.title}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -117,7 +105,7 @@ export function SocialSection() {
 
 /* ------------------------------------------------------------------ vídeo */
 
-function ReelTile({ reel, onOpen, label }: { reel: Reel; onOpen: (r: Reel) => void; label: string }) {
+function ReelTile({ reel, onOpen, label, sub }: { reel: Reel; onOpen: (r: Reel) => void; label: string; sub: string }) {
   const reduced = useReducedMotion();
   const [ref, inView] = useInView<HTMLButtonElement>('0px');
   const vref = useRef<HTMLVideoElement>(null);
@@ -139,10 +127,11 @@ function ReelTile({ reel, onOpen, label }: { reel: Reel; onOpen: (r: Reel) => vo
           <Play />
         </span>
       </button>
-      <div className="v2-card__meta" style={{ marginTop: 14 }}>
+      <div style={{ marginTop: 14 }}>
         <h3 className="v2-card__name" style={{ fontSize: '1rem' }}>
           {reel.title}
         </h3>
+        <p className="v2-card__seg">{sub}</p>
       </div>
     </div>
   );
@@ -167,16 +156,15 @@ export function VideoSection() {
   return (
     <section className="v2-sec" id="video">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="video" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
         <div className="v2-reels">
           {REELS.map((r) => (
-            <ReelTile key={r.slug} reel={r} onOpen={setOpen} label={t('play')} />
+            <ReelTile key={r.slug} reel={r} onOpen={setOpen} label={t('play')} sub={tr(r.sub, locale)} />
           ))}
         </div>
         <span className="v2-stack" style={{ display: 'block', marginTop: 20 }}>
@@ -252,12 +240,11 @@ export function LabSection() {
   return (
     <section className="v2-sec" id="lab">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="lab" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
         <div className="v2-lab">
           {LAB.map((item) => (

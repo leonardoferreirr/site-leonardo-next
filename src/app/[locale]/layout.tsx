@@ -17,11 +17,13 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600'],
 });
 
+// mono não entra no preload: só aparece em detalhes e não pode disputar banda com a imagem do topo
 const mono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['400', '500'],
+  weight: ['400'],
   display: 'swap',
+  preload: false,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {

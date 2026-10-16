@@ -307,21 +307,14 @@
     "hero": {
       "title_a": "Diseño y código,",
       "title_b": "del boceto al lanzamiento.",
-      "sub": "Sitios, sistemas a medida, identidad visual, social media y video para empresas que quieren parecer grandes desde el primer contacto.",
       "cta_primary": "Solicitar propuesta",
       "cta_secondary": "Ver trabajos",
-      "status": "Agenda abierta · atiendo en portugués, inglés y español",
-      "show_label": "Vitrina de proyectos"
-    },
-    "stats": {
-      "sites": "sitios en línea",
-      "systems": "sistemas a medida",
-      "brands": "identidades visuales",
-      "years": "años en el mercado"
+      "show_label": "Vitrina de proyectos",
+      "sub_a": "Sitios, sistemas a medida, identidad visual, social media y video",
+      "sub_b": "para empresas que quieren parecer grandes desde el primer contacto."
     },
     "sites": {
       "title": "Sitios",
-      "lead": "De landing page a e-commerce, todos en línea y rápidos en el celular. Haz clic y abre el sitio real.",
       "index_title": "Todos los sitios",
       "all": "Todos",
       "more": "Ver los {count}",
@@ -329,7 +322,6 @@
     },
     "systems": {
       "title": "Sistemas",
-      "lead": "Software a medida para operar el negocio, no solo para aparecer.",
       "soon": "PRÓXIMAMENTE",
       "agency_cta": "Avísame cuando abra",
       "demo": "pantallas con datos de demostración, sin nombres de clientes",
@@ -340,27 +332,22 @@
     },
     "services": {
       "title": "Lo que hago",
-      "lead": "Un solo flujo, de la estrategia al lanzamiento, con las herramientas que uso de verdad en cada servicio.",
       "tools_label": "Herramientas"
     },
     "identity": {
       "title": "Identidad visual",
-      "lead": "Marcas construidas del diagnóstico al manual, con un sistema visual listo para usar.",
       "case": "ver el caso"
     },
     "social": {
-      "title": "Social media",
-      "lead": "Posts, carruseles y creativos de anuncio para restaurantes, clínicas, SaaS y servicios."
+      "title": "Social media"
     },
     "video": {
       "title": "Video",
-      "lead": "Reels, cortes y videos de portafolio con subtítulos, música y efectos de sonido.",
       "play": "Ver",
       "close": "Cerrar video"
     },
     "lab": {
       "title": "Lab",
-      "lead": "Experimentos de 3D, movimiento e ilustración. Aquí pruebo lo que después llega a los proyectos.",
       "open": "abrir experimento"
     },
     "about": {

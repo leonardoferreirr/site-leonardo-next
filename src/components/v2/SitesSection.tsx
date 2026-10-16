@@ -139,12 +139,11 @@ export default function SitesSection() {
   return (
     <section className="v2-sec" id="sites">
       <div className="v2-wrap">
-        <div className="v2-head v2-in">
+        <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
             <PixelIcon cat="sites" />
             {t('title')}
           </h2>
-          <p className="v2-lead">{t('lead')}</p>
         </div>
 
         <div className="v2-bento">

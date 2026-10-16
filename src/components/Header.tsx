@@ -56,10 +56,8 @@ export default function Header() {
   return (
     <header className={`lf-header${hidden && !open ? ' is-hidden' : ''}${solid || open ? ' is-solid' : ''}${open ? ' is-open' : ''}`}>
       <div className="lf-header__in">
-        <Link href="/" className="lf-logo" onClick={() => setOpen(false)} aria-label="Leonardo Ferreira">
-          <span className="lf-logo__mark" aria-hidden="true">
-            L
-          </span>
+        <Link href="/" className="lf-logo" onClick={() => setOpen(false)}>
+          <img className="lf-logo__mark" src="/assets/v2/logo-caricatura.webp" alt="" width={36} height={36} />
           <span className="lf-logo__name">Leonardo Ferreira</span>
         </Link>
 
