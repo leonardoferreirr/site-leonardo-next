@@ -53,10 +53,7 @@ const reel = (slug: string) => ({
 const perfil = (pt: string, en: string, es: string) => ({ pt: `Reel do perfil: ${pt}`, en: `Profile reel: ${en}`, es: `Reel del perfil: ${es}` });
 const disp = (pt: string, en: string, es: string) => ({ pt: `Corte de futebol: ${pt}`, en: `Football cut: ${en}`, es: `Corte de fútbol: ${es}` });
 
-// vídeos ainda em conversão: saem desta lista quando os arquivos estiverem em public/assets/v2/video
-const PENDENTES = new Set<string>(['dispensados-neymar', 'dispensados-var']);
-
-const TODOS: Reel[] = [
+export const REELS: Reel[] = [
   { slug: 'p1-luiz', title: 'P1 Marketing', sub: { pt: 'Vídeo de portfólio para agência', en: 'Portfolio video for an agency', es: 'Video de portafolio para agencia' }, ...reel('p1-luiz') },
   { slug: 'reel-mg', title: 'Leonardo Ferreira', sub: perfil('criação de logo', 'logo design', 'creación de logo'), ...reel('reel-mg') },
   { slug: 'dispensados-azambuja', title: 'Dispensados', sub: disp('final da Libertadores', 'Libertadores final', 'final de la Libertadores'), ...reel('dispensados-azambuja') },
@@ -72,7 +69,6 @@ const TODOS: Reel[] = [
   { slug: 'reel-nike', title: 'Leonardo Ferreira', sub: perfil('venda emocional', 'emotional selling', 'venta emocional'), ...reel('reel-nike') },
 ];
 
-export const REELS: Reel[] = TODOS.filter((r) => !PENDENTES.has(r.slug));
 
 const lab = (slug: string) => ({ cover: `/assets/v2/lab/${slug}-cover.webp`, loop: `/assets/v2/lab/${slug}-loop.mp4` });
 

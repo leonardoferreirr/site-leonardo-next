@@ -65,7 +65,7 @@ export default function Hero() {
       window.clearTimeout(t);
     };
   }, []);
-  const [cur] = useCycle(slides.length, 3800, armed && inView && !reduced);
+  const [cur, pick] = useCycle(slides.length, 3800, armed && inView && !reduced);
   const tiltRef = useRef<HTMLDivElement>(null);
   // só monta a imagem do slide atual e a do próximo: antes as 7 baixavam juntas e atrasavam o LCP
   const [ready, setReady] = useState<Set<number>>(() => new Set([0]));
@@ -148,6 +148,21 @@ export default function Hero() {
                 ) : null,
               )}
             </MacWindow>
+          </div>
+          {/* bolinhas: mostram que a vitrine tem mais projetos; clicar troca o slide */}
+          <div className="v2-dots" role="group" aria-label={t('hero.show_label')}>
+            {slides.map((sl, i) => (
+              <button
+                key={sl.src}
+                type="button"
+                aria-label={`${i + 1}. ${sl.title}`}
+                aria-current={i === cur ? 'true' : undefined}
+                onClick={() => {
+                  setArmed(true);
+                  pick(i);
+                }}
+              />
+            ))}
           </div>
         </div>
       </div>
