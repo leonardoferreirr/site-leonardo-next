@@ -7,6 +7,8 @@ const inter = Inter({
   variable: '--font-sans',
   display: 'swap',
   weight: ['300', '400', '500', '600'],
+  // sem preload: no build do Turbopack a Inter vazava para o preload da home nova (48 KB no caminho do LCP)
+  preload: false,
 });
 
 export const metadata: Metadata = {
