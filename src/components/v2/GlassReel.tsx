@@ -135,6 +135,7 @@ export default function GlassReel({ items, label, variant }: { items: ReelItem[]
     // só trabalha enquanto a vitrine está na tela
     const io = new IntersectionObserver(([e]) => {
       live = e.isIntersecting;
+      wrap.classList.toggle('is-live', live);
       if (live) ask();
       else if (playing) {
         playing.pause();

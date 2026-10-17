@@ -636,30 +636,8 @@ html[data-hdr='off'] .v2-subnav {
 
 /* ---------------------------------------------------------------- cartões */
 
-.v2-bento {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(40px, 5vw, 64px) clamp(16px, 2vw, 28px);
-}
-
-.v2-c7 {
-  grid-column: span 7;
-}
-
 .v2-c6 {
   grid-column: span 6;
-}
-
-.v2-c5 {
-  grid-column: span 5;
-}
-
-.v2-c4 {
-  grid-column: span 4;
-}
-
-.v2-c12 {
-  grid-column: span 12;
 }
 
 .v2-card {
@@ -747,13 +725,11 @@ html[data-hdr='off'] .v2-subnav {
 }
 
 /* cartão estreito: ferramentas embaixo do nome, não espremendo o texto */
-.v2-c4 .v2-card__meta,
 .v2-brand .v2-card__meta {
   flex-direction: column;
   gap: 6px;
 }
 
-.v2-c4 .v2-card__meta .v2-stack,
 .v2-brand .v2-card__meta .v2-stack {
   padding-top: 0;
 }
@@ -919,182 +895,7 @@ html[data-hdr='off'] .v2-subnav {
 
 /* --------------------------------------------------------------- sistemas */
 
-.v2-agency {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
-  padding: clamp(28px, 4vw, 56px);
-  border-radius: 22px;
-  border: 1px solid var(--line);
-  background:
-    radial-gradient(120% 90% at 85% 10%, rgba(107, 224, 122, 0.07), transparent 60%),
-    radial-gradient(90% 80% at 0% 100%, rgba(77, 163, 255, 0.06), transparent 60%),
-    #070708;
-  overflow: hidden;
-}
-
 /* grade de pixel bem fraca no fundo */
-.v2-agency::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 16px 16px;
-  mask-image: radial-gradient(80% 70% at 70% 40%, #000, transparent);
-  -webkit-mask-image: radial-gradient(80% 70% at 70% 40%, #000, transparent);
-  pointer-events: none;
-}
-
-.v2-agency > * {
-  position: relative;
-}
-
-.v2-agency__name {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  font-size: clamp(2rem, 3.8vw, 3.1rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1.02;
-}
-
-.v2-agency__desc {
-  margin: 20px 0 0;
-  color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.65;
-  font-weight: 300;
-}
-
-.v2-points {
-  list-style: none;
-  margin: 26px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 12px;
-}
-
-.v2-points li {
-  display: flex;
-  gap: 12px;
-  align-items: baseline;
-  color: var(--soft);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.v2-points li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  flex: none;
-  background: var(--c-sistemas);
-  transform: translateY(-2px);
-}
-
-.v2-agency__foot {
-  margin-top: 28px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.v2-agency .v2-win__body video,
-.v2-agency .v2-win__body img {
-  image-rendering: pixelated;
-}
-
-.v2-tabs {
-  display: flex;
-  gap: 4px;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-
-.v2-tabs button {
-  height: 30px;
-  padding: 0 12px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  background: none;
-  color: #858585;
-  font: 400 12px/1 var(--mono);
-  cursor: pointer;
-  transition: color 0.3s, background 0.3s, border-color 0.3s;
-}
-
-.v2-tabs button:hover {
-  color: #fff;
-}
-
-.v2-tabs button[aria-pressed='true'] {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: var(--line-2);
-}
-
-.v2-sys {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 2.4vw, 32px);
-  margin-top: clamp(20px, 2.4vw, 32px);
-}
-
-.v2-sys__card {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(20px, 2.6vw, 32px);
-  border-radius: 20px;
-  border: 1px solid var(--line);
-  background: #070708;
-  min-width: 0;
-}
-
-.v2-sys__card--wide {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(28px, 4vw, 56px);
-  align-items: center;
-}
-
-.v2-sys__name {
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
-.v2-sys__card--wide .v2-sys__name {
-  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-}
-
-.v2-sys__desc {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  font-weight: 300;
-}
-
-.v2-sys__card .v2-win {
-  margin-top: 24px;
-}
-
-.v2-sys__card--wide .v2-win {
-  margin-top: 0;
-}
-
-.v2-sys__foot {
-  margin-top: 18px;
-}
 
 /* painel de prospecção desenhado em código */
 .v2-outreach {
@@ -1707,10 +1508,6 @@ html[data-hdr='off'] .v2-subnav {
 /* ------------------------------------------------------------ responsivo */
 
 @media (max-width: 1080px) {
-  .v2-agency,
-  .v2-sys__card--wide {
-    grid-template-columns: 1fr;
-  }
 
   .v2-services {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1741,23 +1538,12 @@ html[data-hdr='off'] .v2-subnav {
 }
 
 @media (max-width: 860px) {
-  .v2-bento > * {
-    grid-column: span 12;
-  }
 
   .v2-card--lead .v2-win__body,
   .v2-card--fill .v2-win__body,
   .v2-card--pano .v2-win__body {
     aspect-ratio: 16 / 10;
     min-height: 0;
-  }
-
-  .v2-sys {
-    grid-template-columns: 1fr;
-  }
-
-  .v2-sys__card--wide {
-    grid-column: span 1;
   }
 
   .v2-lab {
@@ -1928,6 +1714,8 @@ html[data-hdr='off'] .v2-subnav {
   height: 100svh;
   overflow: hidden;
   pointer-events: none;
+  /* fora da tela o navegador pula os 12 vidros em 3D: a 1ª pintura do topo sai antes do JS */
+  content-visibility: auto;
   perspective: 1500px;
   perspective-origin: 50% 44%;
 }
@@ -1967,9 +1755,13 @@ html[data-hdr='off'] .v2-subnav {
   /* estado de partida antes do JS: mesma diagonal com o primeiro no centro */
   transform: translate(-50%, -50%) translate3d(calc(var(--i) * 41vw), calc(var(--i) * -6.5vw), calc(var(--i) * -260px)) rotateY(max(-50deg, calc(var(--i) * -24deg)));
   opacity: clamp(0, calc(3.2 - var(--i)), 1);
-  will-change: transform, opacity;
   backface-visibility: hidden;
   pointer-events: auto;
+}
+
+/* camada de GPU só com a vitrine na tela: 12 camadas na abertura atrasavam a 1ª pintura do topo */
+.v2-pin.is-live .v2-glass {
+  will-change: transform, opacity;
 }
 
 .v2-glass__shine {
@@ -2368,5 +2160,4 @@ html[data-hdr='off'] .v2-subnav {
   width: 20px;
   background: #bdbdbd;
 }
-
 
