@@ -2,11 +2,47 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight } from './Icons';
 import SectionCta from './SectionCta';
-import SitesReel from './SitesReel';
-import { KIND_LABEL, KIND_PLURAL, SITES, siteCover, tr, type SiteKind } from '@/data/v2/catalog';
+import { useNear } from './hooks';
+import { KIND_LABEL, KIND_PLURAL, SITES, siteCover, tr, type Site, type SiteKind } from '@/data/v2/catalog';
+
+// bento dos destaques: [7,5] [4,4,4] [5,7] e um panorâmico no fim
+const LAYOUT = ['v2-c7 v2-card--lead', 'v2-c5 v2-card--fill', 'v2-c4', 'v2-c4', 'v2-c4', 'v2-c5 v2-card--fill', 'v2-c7 v2-card--lead', 'v2-c12 v2-card--pano'];
+
+function SiteCard({ site, layout, locale }: { site: Site; layout: string; locale: string }) {
+  // a imagem só é pedida perto da tela: o lazy nativo baixava as 6 na abertura do celular
+  const [ref, near] = useNear<HTMLAnchorElement>('700px');
+  return (
+    <a ref={ref} className={`v2-card v2-in ${layout}`} href={site.url} target="_blank" rel="noopener">
+      <MacWindow title={site.title}>
+        <img
+          src={near ? `/assets/portfolio/${site.slug}-lg.webp` : undefined}
+          srcSet={near ? `/assets/portfolio/${site.slug}-md.webp 800w, /assets/portfolio/${site.slug}-lg.webp 1600w` : undefined}
+          sizes={layout.includes('c12') ? '(max-width: 860px) 100vw, 1240px' : layout.includes('c7') ? '(max-width: 860px) 100vw, 720px' : '(max-width: 860px) 100vw, 520px'}
+          alt={`${site.title}: ${tr(site.segment, locale)}`}
+          width={1600}
+          height={1000}
+          loading="lazy"
+          decoding="async"
+        />
+      </MacWindow>
+      <div className="v2-card__meta">
+        <div>
+          <h3 className="v2-card__name">
+            {site.title} <ArrowUpRight />
+          </h3>
+          <p className="v2-card__seg">
+            {tr(site.segment, locale)} · {tr(KIND_LABEL[site.kind], locale)}
+          </p>
+        </div>
+        <span className="v2-stack">{`{ ${site.stack} }`}</span>
+      </div>
+    </a>
+  );
+}
 
 const KINDS: SiteKind[] = ['landing', 'institucional', 'ecommerce', 'conceito'];
 const FIRST = 12;
@@ -102,9 +138,10 @@ function SiteIndex({ locale }: { locale: string }) {
 export default function SitesSection() {
   const t = useTranslations('Home2.sites');
   const locale = useLocale();
+  const featured = SITES.filter((s) => s.featured);
 
   return (
-    <section className="v2-sec v2-sec--reel" id="sites">
+    <section className="v2-sec" id="sites">
       <div className="v2-wrap">
         <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
@@ -112,11 +149,13 @@ export default function SitesSection() {
             {t('title')}
           </h2>
         </div>
-      </div>
 
-      <SitesReel locale={locale} />
+        <div className="v2-bento">
+          {featured.map((s, i) => (
+            <SiteCard key={s.slug} site={s} layout={LAYOUT[i] ?? 'v2-c4'} locale={locale} />
+          ))}
+        </div>
 
-      <div className="v2-wrap">
         <SiteIndex locale={locale} />
         <SectionCta />
       </div>
