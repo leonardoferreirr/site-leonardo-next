@@ -57,7 +57,8 @@
 
 .v2-sec {
   position: relative;
-  padding: clamp(96px, 12vw, 168px) 0;
+  /* respiro entre seções: era 168 px em cima e embaixo (336 px vazios no desktop), ele pediu mais compacto */
+  padding: clamp(56px, 7vw, 96px) 0;
   scroll-margin-top: 72px;
 }
 
@@ -1903,12 +1904,13 @@ html[data-hdr='off'] .v2-subnav {
 /* ------------------------------------------- vitrine fixada da seção 2 */
 /* trilho alto + palco grudado: o scroll vertical vira passagem das telas da direita para a esquerda */
 
-.v2-sec--reel {
-  padding-bottom: clamp(72px, 9vw, 128px);
-}
-
 .v2-sec--reel .v2-head {
   margin-bottom: 0;
+}
+
+/* depois da vitrine o palco já sobra espaço embaixo do vidro */
+.v2-sec--reel .v2-index {
+  margin-top: clamp(16px, 2.5vw, 32px);
 }
 
 .v2-pin {
@@ -1916,6 +1918,8 @@ html[data-hdr='off'] .v2-subnav {
   --per: 58vh;
   position: relative;
   height: calc((var(--n) - 1) * var(--per) + 40vh + 100svh);
+  /* o palco tem respiro em cima (para o menu quando gruda): sobe por baixo do título para colar o vidro nele */
+  margin-top: calc(-1 * clamp(40px, 10vh, 120px));
 }
 
 .v2-pin__stage {
@@ -1923,6 +1927,7 @@ html[data-hdr='off'] .v2-subnav {
   top: 0;
   height: 100svh;
   overflow: hidden;
+  pointer-events: none;
   perspective: 1500px;
   perspective-origin: 50% 44%;
 }
@@ -1964,6 +1969,7 @@ html[data-hdr='off'] .v2-subnav {
   opacity: clamp(0, calc(3.2 - var(--i)), 1);
   will-change: transform, opacity;
   backface-visibility: hidden;
+  pointer-events: auto;
 }
 
 .v2-glass__shine {
@@ -2036,7 +2042,7 @@ html[data-hdr='off'] .v2-subnav {
 }
 
 .v2-pin__note {
-  margin: 28px 0 0;
+  margin: 0;
   text-align: center;
   color: #8a8a8a;
 }
@@ -2123,6 +2129,7 @@ html[data-hdr='off'] .v2-subnav {
 @media (max-width: 760px) {
   .v2-pin {
     --per: 50vh;
+    margin-top: calc(-1 * clamp(40px, 9vh, 90px));
   }
 
   .v2-pin__stage {
@@ -2195,7 +2202,7 @@ html[data-hdr='off'] .v2-subnav {
 @media (prefers-reduced-motion: reduce) {
   .v2-pin {
     height: auto;
-    margin-top: clamp(40px, 6vw, 72px);
+    margin-top: clamp(32px, 5vw, 56px);
   }
 
   .v2-pin__stage {
