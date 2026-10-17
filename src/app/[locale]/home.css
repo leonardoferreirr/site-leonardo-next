@@ -1911,14 +1911,14 @@ html[data-hdr='off'] .v2-subnav {
   margin-bottom: 0;
 }
 
-.v2-reel {
+.v2-pin {
   --n: 7;
   --per: 58vh;
   position: relative;
   height: calc((var(--n) - 1) * var(--per) + 40vh + 100svh);
 }
 
-.v2-reel__stage {
+.v2-pin__stage {
   position: sticky;
   top: 0;
   height: 100svh;
@@ -1927,7 +1927,7 @@ html[data-hdr='off'] .v2-subnav {
   perspective-origin: 50% 44%;
 }
 
-.v2-reel__glow {
+.v2-pin__glow {
   position: absolute;
   left: 50%;
   top: 56%;
@@ -1960,7 +1960,7 @@ html[data-hdr='off'] .v2-subnav {
     inset 1px 0 0 rgba(255, 255, 255, 0.06),
     0 50px 90px -30px rgba(0, 0, 0, 0.85);
   /* estado de partida antes do JS: mesma diagonal com o primeiro no centro */
-  transform: translate(-50%, -50%) translate3d(calc(var(--i) * 41vw), calc(var(--i) * 6.5vw), calc(var(--i) * -260px)) rotateY(max(-50deg, calc(var(--i) * -24deg)));
+  transform: translate(-50%, -50%) translate3d(calc(var(--i) * 41vw), calc(var(--i) * -6.5vw), calc(var(--i) * -260px)) rotateY(max(-50deg, calc(var(--i) * -24deg)));
   opacity: clamp(0, calc(3.2 - var(--i)), 1);
   will-change: transform, opacity;
   backface-visibility: hidden;
@@ -2001,6 +2001,46 @@ html[data-hdr='off'] .v2-subnav {
   object-fit: cover;
 }
 
+/* sistemas: a tela do centro troca de print com fade */
+.v2-glass__img {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease);
+}
+
+.v2-glass__img.is-on {
+  opacity: 1;
+}
+
+.v2-glass__name .v2-soon {
+  height: 22px;
+  margin-left: 6px;
+  font-size: 10px;
+}
+
+/* sistemas: a descrição cabe em até 2 linhas no vidro */
+.v2-pin--systems .v2-glass__meta {
+  align-items: flex-end;
+}
+
+.v2-pin--systems .v2-glass__sub {
+  max-width: 64ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.is-active .v2-outreach__bars i {
+  transform: scaleY(1);
+}
+
+.v2-pin__note {
+  margin: 28px 0 0;
+  text-align: center;
+  color: #8a8a8a;
+}
+
 .v2-glass__meta {
   display: flex;
   align-items: center;
@@ -2038,14 +2078,14 @@ html[data-hdr='off'] .v2-subnav {
   outline-offset: 4px;
 }
 
-.v2-glass__seg {
+.v2-glass__sub {
   margin: 3px 0 0;
   color: var(--muted);
   font-size: 13.5px;
   font-weight: 300;
 }
 
-.v2-reel__hud {
+.v2-pin__hud {
   position: absolute;
   left: 50%;
   bottom: clamp(18px, 4.5vh, 44px);
@@ -2059,12 +2099,12 @@ html[data-hdr='off'] .v2-subnav {
   color: var(--muted);
 }
 
-.v2-reel__hud b {
+.v2-pin__hud b {
   color: var(--text);
   font-weight: 400;
 }
 
-.v2-reel__bar {
+.v2-pin__bar {
   width: 160px;
   height: 2px;
   border-radius: 2px;
@@ -2072,7 +2112,7 @@ html[data-hdr='off'] .v2-subnav {
   background: var(--line-2);
 }
 
-.v2-reel__bar i {
+.v2-pin__bar i {
   display: block;
   height: 100%;
   background: var(--text);
@@ -2081,11 +2121,11 @@ html[data-hdr='off'] .v2-subnav {
 }
 
 @media (max-width: 760px) {
-  .v2-reel {
+  .v2-pin {
     --per: 50vh;
   }
 
-  .v2-reel__stage {
+  .v2-pin__stage {
     perspective: 1000px;
   }
 
@@ -2094,7 +2134,7 @@ html[data-hdr='off'] .v2-subnav {
     width: min(64vw, calc((100svh - 240px) * 0.5));
     padding: 8px 8px 0;
     border-radius: 18px;
-    transform: translate(-50%, -50%) translate3d(calc(var(--i) * 58vw), calc(var(--i) * 52px), calc(var(--i) * -160px)) rotateY(max(-32deg, calc(var(--i) * -14deg)));
+    transform: translate(-50%, -50%) translate3d(calc(var(--i) * 58vw), calc(var(--i) * -52px), calc(var(--i) * -160px)) rotateY(max(-32deg, calc(var(--i) * -14deg)));
   }
 
   /* no celular a tela vem em retrato (print do site no celular) */
@@ -2107,7 +2147,7 @@ html[data-hdr='off'] .v2-subnav {
     font-size: 1rem;
   }
 
-  .v2-glass__seg {
+  .v2-glass__sub {
     font-size: 12px;
     white-space: nowrap;
     overflow: hidden;
@@ -2125,16 +2165,40 @@ html[data-hdr='off'] .v2-subnav {
   .v2-glass__meta .v2-stack {
     display: none;
   }
+
+  /* sistemas no celular: tela deitada (são painéis de computador) e a descrição embaixo */
+  .v2-pin--systems .v2-glass {
+    width: 86vw;
+    transform: translate(-50%, -50%) translate3d(calc(var(--i) * 77vw), calc(var(--i) * -30px), calc(var(--i) * -160px)) rotateY(max(-32deg, calc(var(--i) * -14deg)));
+  }
+
+  .v2-pin--systems .v2-glass__shot {
+    aspect-ratio: 16 / 10;
+  }
+
+  .v2-pin--systems .v2-glass__sub {
+    white-space: normal;
+    -webkit-line-clamp: 4;
+  }
+
+  .v2-pin--systems .v2-outreach {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .v2-pin--systems .v2-outreach__kpi {
+    padding: 6px;
+  }
 }
 
 /* sem movimento: as telas viram uma grade comum, sem prender o scroll */
 @media (prefers-reduced-motion: reduce) {
-  .v2-reel {
+  .v2-pin {
     height: auto;
     margin-top: clamp(40px, 6vw, 72px);
   }
 
-  .v2-reel__stage {
+  .v2-pin__stage {
     position: relative;
     height: auto;
     overflow: visible;
@@ -2156,11 +2220,15 @@ html[data-hdr='off'] .v2-subnav {
     opacity: 1 !important;
   }
 
-  .v2-reel__glow,
-  .v2-reel__hud,
+  .v2-pin__glow,
+  .v2-pin__hud,
   .v2-glass__shine,
   .v2-glass__veil {
     display: none;
+  }
+
+  .v2-outreach__bars i {
+    transform: none;
   }
 }
 

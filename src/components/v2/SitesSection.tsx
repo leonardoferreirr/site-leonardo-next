@@ -5,8 +5,34 @@ import { useLocale, useTranslations } from 'next-intl';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight } from './Icons';
 import SectionCta from './SectionCta';
-import SitesReel from './SitesReel';
-import { KIND_LABEL, KIND_PLURAL, SITES, siteCover, tr, type SiteKind } from '@/data/v2/catalog';
+import GlassReel, { type ReelItem } from './GlassReel';
+import { KIND_LABEL, KIND_PLURAL, SITE_REEL, SITES, siteCover, tr, type SiteKind } from '@/data/v2/catalog';
+
+// cor do brilho atrás da tela do centro
+const GLOW: Record<string, string> = {
+  cazetv: '#c13bff',
+  duolingo: '#58cc02',
+  'buenas-taqueria': '#ff4f9a',
+  'nalu-poke': '#ff8a00',
+  'air-jordan': '#e1121b',
+  pokemon: '#7b4dff',
+};
+
+const reelItems = (locale: string): ReelItem[] =>
+  SITE_REEL.map((slug) => {
+    const s = SITES.find((x) => x.slug === slug)!;
+    const base = `/assets/portfolio/${slug}`;
+    return {
+      key: slug,
+      name: s.title,
+      sub: `${tr(s.segment, locale)} · ${tr(KIND_LABEL[s.kind], locale)}`,
+      stack: s.stack,
+      color: GLOW[slug],
+      href: s.url,
+      shots: [{ lg: `${base}-lg.webp`, md: `${base}-md.webp` }],
+      m: `${base}-m.webp`,
+    };
+  });
 
 const KINDS: SiteKind[] = ['landing', 'institucional', 'ecommerce', 'conceito'];
 const FIRST = 12;
@@ -102,6 +128,7 @@ function SiteIndex({ locale }: { locale: string }) {
 export default function SitesSection() {
   const t = useTranslations('Home2.sites');
   const locale = useLocale();
+  const items = useMemo(() => reelItems(locale), [locale]);
 
   return (
     <section className="v2-sec v2-sec--reel" id="sites">
@@ -114,7 +141,7 @@ export default function SitesSection() {
         </div>
       </div>
 
-      <SitesReel locale={locale} />
+      <GlassReel items={items} label={t('title')} variant="sites" />
 
       <div className="v2-wrap">
         <SiteIndex locale={locale} />

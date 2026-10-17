@@ -121,8 +121,8 @@ export const SITES: Site[] = [
   { slug: 'portao-eletronico-mg', title: 'Portão Eletrônico MG', segment: { pt: 'Portões e automação', en: 'Gates and automation', es: 'Portones y automatización' }, kind: 'landing', stack: S.static, url: 'https://portaoeletronico.vercel.app/' },
 ];
 
-// vitrine fixada da seção 2, nesta ordem ('agencia-ia' é o sistema, as outras são sites)
-export const SITE_REEL = ['cazetv', 'duolingo', 'agencia-ia', 'buenas-taqueria', 'nalu-poke', 'air-jordan', 'pokemon'];
+// vitrine fixada da seção Sites, nesta ordem (a de Sistemas segue AGENCY + SYSTEMS)
+export const SITE_REEL = ['cazetv', 'duolingo', 'buenas-taqueria', 'nalu-poke', 'air-jordan', 'pokemon'];
 
 export const siteCover = (slug: string, small = false) => `/assets/portfolio/${slug}${small ? '-sm' : ''}.webp`;
 
