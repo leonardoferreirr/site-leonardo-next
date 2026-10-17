@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowRight, ArrowUpRight } from './Icons';
+import { useNear } from './hooks';
 import { AGENCY, KIND_LABEL, SITES, SITE_REEL, tr, type L } from '@/data/v2/catalog';
 
 // Vitrine fixada: a seção prende a tela e as janelas de vidro passam da direita para a esquerda
@@ -78,25 +79,8 @@ const MOB = { kx: 0.9, ky: 0.1, kz: 160, ry: 14, maxRy: 32 };
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 
-export default function SitesReel({ locale, label }: { locale: string; label: string }) {
-  const outer = useRef<HTMLDivElement>(null);
-  // a 1ª tela vem no HTML (é o que aparece na abertura); as outras só depois do load ou do 1º gesto,
-  // para não disputar banda com a imagem do topo
-  const [armed, setArmed] = useState(false);
-  useEffect(() => {
-    const go = () => setArmed(true);
-    const evs = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'] as const;
-    evs.forEach((e) => window.addEventListener(e, go, { once: true, passive: true }));
-    let t = 0;
-    const onLoad = () => (t = window.setTimeout(go, 1200));
-    if (document.readyState === 'complete') onLoad();
-    else window.addEventListener('load', onLoad, { once: true });
-    return () => {
-      evs.forEach((e) => window.removeEventListener(e, go));
-      window.removeEventListener('load', onLoad);
-      window.clearTimeout(t);
-    };
-  }, []);
+export default function SitesReel({ locale }: { locale: string }) {
+  const [outer, near] = useNear<HTMLDivElement>('400px');
   const stage = useRef<HTMLDivElement>(null);
   const glow = useRef<HTMLDivElement>(null);
   const num = useRef<HTMLElement>(null);
@@ -217,10 +201,10 @@ export default function SitesReel({ locale, label }: { locale: string; label: st
       cards.forEach((c, i) => c.removeEventListener('focus', focusers[i]));
       if (raf) cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [outer]);
 
   return (
-    <div className="v2-reel" ref={outer} style={{ ['--n' as string]: N }} role="region" aria-label={label}>
+    <div className="v2-reel" ref={outer} style={{ ['--n' as string]: N }}>
       <div className="v2-reel__stage" ref={stage}>
         <div className="v2-reel__glow" ref={glow} aria-hidden="true" />
 
@@ -235,17 +219,15 @@ export default function SitesReel({ locale, label }: { locale: string; label: st
             <span className="v2-glass__shine" aria-hidden="true" />
             <div className="v2-glass__shot">
               <picture>
-                {i === 0 || armed ? <source media="(max-width: 760px)" srcSet={it.m} width={540} height={960} /> : null}
+                {near ? <source media="(max-width: 760px)" srcSet={it.m} width={540} height={960} /> : null}
                 <img
-                  src={i === 0 || armed ? it.lg : undefined}
-                  srcSet={i === 0 || armed ? `${it.md} 800w, ${it.lg} 1600w` : undefined}
+                  src={near ? it.lg : undefined}
+                  srcSet={near ? `${it.md} 800w, ${it.lg} 1600w` : undefined}
                   sizes="60vw"
                   alt={`${tr(it.name, locale)}: ${tr(it.seg, locale)}`}
                   width={1600}
                   height={1000}
-                  decoding={i === 0 ? 'sync' : 'async'}
-                  fetchPriority={i === 0 ? 'high' : 'low'}
-                  style={it.key === AGENCY.slug ? { imageRendering: 'pixelated' } : undefined}
+                  decoding="async"
                 />
               </picture>
               {it.video ? <video data-src={it.video} muted loop playsInline preload="none" aria-hidden="true" /> : null}
