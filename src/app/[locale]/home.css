@@ -1966,12 +1966,14 @@ html[data-hdr='off'] .v2-subnav {
   }
 
   /* sistemas no celular: tela deitada (são painéis de computador) e a descrição embaixo */
-  .v2-pin--systems .v2-glass {
+  .v2-pin--systems .v2-glass,
+  .v2-pin--brands .v2-glass {
     width: 86vw;
     transform: translate(-50%, -50%) translate3d(calc(var(--i) * 77vw), calc(var(--i) * -30px), calc(var(--i) * -160px)) rotateY(max(-32deg, calc(var(--i) * -14deg)));
   }
 
-  .v2-pin--systems .v2-glass__shot {
+  .v2-pin--systems .v2-glass__shot,
+  .v2-pin--brands .v2-glass__shot {
     aspect-ratio: 16 / 10;
   }
 

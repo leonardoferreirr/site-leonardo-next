@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useRef, type ReactNode } from 'react';
+import { Link } from '@/routing';
 import { ArrowUpRight } from './Icons';
 import { useNear } from './hooks';
 
 // Vitrine fixada: a seção prende a tela e as janelas de vidro descem da direita para a esquerda
 // numa diagonal em perspectiva (cover flow). Tudo em transform/opacity, calculado no rAF do scroll.
-// Usada em Sites (prints dos sites, link externo) e Sistemas (telas trocando sozinhas, sem link).
+// Usada em Sites (prints dos sites, link externo), Sistemas (telas trocando sozinhas, sem link)
+// e Identidade (logo e aplicações trocando sozinhas, link para o case no próprio site).
 
 export type ReelItem = {
   key: string;
@@ -15,6 +17,7 @@ export type ReelItem = {
   stack: string;
   color: string; // brilho atrás quando a tela está no centro
   href?: string; // sem link o cartão não é clicável
+  internal?: boolean; // link para página do próprio site (abre na mesma aba, com o idioma)
   shots: { lg: string; md: string }[]; // com mais de uma, a tela do centro troca sozinha
   m?: string; // print em retrato para o celular
   video?: string;
@@ -30,7 +33,7 @@ const SWAP_MS = 3200;
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 
-export default function GlassReel({ items, label, variant }: { items: ReelItem[]; label: string; variant: 'sites' | 'systems' }) {
+export default function GlassReel({ items, label, variant }: { items: ReelItem[]; label: string; variant: 'sites' | 'systems' | 'brands' }) {
   const N = items.length;
   const [outer, near] = useNear<HTMLDivElement>('400px');
   const stage = useRef<HTMLDivElement>(null);
@@ -231,6 +234,12 @@ export default function GlassReel({ items, label, variant }: { items: ReelItem[]
               <span className="v2-glass__veil" aria-hidden="true" />
             </>
           );
+          if (it.href && it.internal)
+            return (
+              <Link key={it.key} className="v2-glass" style={{ ['--i' as string]: i }} href={it.href}>
+                {body}
+              </Link>
+            );
           return it.href ? (
             <a key={it.key} className="v2-glass" style={{ ['--i' as string]: i }} href={it.href} target="_blank" rel="noopener">
               {body}

@@ -1,23 +1,39 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Link } from '@/routing';
 import MacWindow from './MacWindow';
 import PixelIcon from './PixelIcon';
 import { ArrowUpRight, Close, Play } from './Icons';
 import SectionCta from './SectionCta';
+import GlassReel, { type ReelItem } from './GlassReel';
 import { useInView, useNear, useReducedMotion } from './hooks';
-import { BRANDS, CATEGORY_COLOR, tr } from '@/data/v2/catalog';
+import { BRANDS, CATEGORY_COLOR, brandShots, tr } from '@/data/v2/catalog';
 import { LAB, REELS, SOCIAL, type Reel } from '@/data/v2/media';
 
 /* ------------------------------------------------------------- identidade */
 
 export function IdentitySection() {
   const t = useTranslations('Home2.identity');
+  const locale = useLocale();
+  // mesma vitrine de Sites e Sistemas: cada marca mostra o logo e duas aplicações, trocando no centro
+  const items = useMemo<ReelItem[]>(
+    () =>
+      BRANDS.map((b) => ({
+        key: b.slug,
+        name: b.title,
+        sub: tr(b.segment, locale),
+        stack: 'Illustrator + Photoshop',
+        color: b.color,
+        href: b.href,
+        internal: true,
+        shots: brandShots(b.slug),
+      })),
+    [locale],
+  );
 
   return (
-    <section className="v2-sec" id="identidade">
+    <section className="v2-sec v2-sec--reel" id="identidade">
       <div className="v2-wrap">
         <div className="v2-head v2-head--center v2-in">
           <h2 className="v2-h2">
@@ -25,34 +41,11 @@ export function IdentitySection() {
             {t('title')}
           </h2>
         </div>
+      </div>
 
-        <div className="v2-brands">
-          {BRANDS.map((b, i) => {
-            const inner = (
-              <>
-                <div className="v2-brand__img">
-                  <img src={b.cover} alt="" width={1200} height={900} loading="lazy" decoding="async" />
-                </div>
-                <div className="v2-card__meta">
-                  <h3 className="v2-card__name">
-                    {b.title} {b.href ? <ArrowUpRight /> : null}
-                  </h3>
-                  <span className="v2-stack">{'{ Illustrator + Photoshop }'}</span>
-                </div>
-              </>
-            );
-            const cls = `v2-brand v2-card v2-in${i < 3 || i > 6 ? ' v2-brand--big' : ''}`;
-            return b.href ? (
-              <Link key={b.slug} href={b.href} className={cls} aria-label={`${b.title}: ${t('case')}`}>
-                {inner}
-              </Link>
-            ) : (
-              <div key={b.slug} className={cls}>
-                {inner}
-              </div>
-            );
-          })}
-        </div>
+      <GlassReel items={items} label={t('title')} variant="brands" />
+
+      <div className="v2-wrap">
         <SectionCta />
       </div>
     </section>

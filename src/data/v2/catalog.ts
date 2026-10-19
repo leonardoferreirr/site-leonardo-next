@@ -239,22 +239,26 @@ export const SYSTEMS: System[] = [
 
 /* ------------------------------------------------------------- identidade */
 
-export type Brand = { slug: string; title: string; cover: string; href?: string; featured?: boolean };
+export type Brand = { slug: string; title: string; cover: string; href?: string; featured?: boolean; segment: L; color: string };
 
 const cover = (n: string) => `/assets/00. Cover/${n}.webp`;
 
 export const BRANDS: Brand[] = [
-  { slug: 'biothera', title: 'Biothera', cover: cover('02. Biothera'), href: '/projeto-biothera' },
-  { slug: 'hello-bim', title: 'Hello BIM', cover: cover('05. Hello BIM'), href: '/projeto-hellobim' },
-  { slug: 'rax-seguros', title: 'RAX Seguros', cover: cover('06. RAX Seguros'), href: '/projeto-raxseguros' },
-  { slug: 'nexa', title: 'NEXA.co', cover: '/assets/v2/identidade/nexa-cover.webp', href: '/projeto-nexa' },
-  { slug: 'mademax', title: 'MADEMAX', cover: cover('01. MADEMAX'), href: '/projeto-mademax' },
-  { slug: 'divino-car', title: 'Divino Car', cover: cover('03. Divino Car'), href: '/projeto-divinocar' },
-  { slug: 'proconsult', title: 'ProConsult', cover: cover('04. ProConsult'), href: '/projeto-proconsult' },
-  { slug: 'poly-santos', title: 'Poly Santos', cover: cover('07. Poly Santos'), href: '/projeto-polysantos' },
-  { slug: 'ecomove', title: 'Ecomove', cover: cover('08. Ecomove'), href: '/projeto-ecomove' },
-  { slug: 'remach-capital', title: 'Remach Capital', cover: cover('09. Remach Capital'), href: '/projeto-remachcapital' },
+  { slug: 'biothera', title: 'Biothera', cover: cover('02. Biothera'), href: '/projeto-biothera', color: '#3f9b46', segment: tab('Agronegócio', 'Agribusiness', 'Agronegocio') },
+  { slug: 'hello-bim', title: 'Hello BIM', cover: cover('05. Hello BIM'), href: '/projeto-hellobim', color: '#e8a23a', segment: tab('Arquitetura e compatibilização', 'Architecture and BIM coordination', 'Arquitectura y compatibilización') },
+  { slug: 'rax-seguros', title: 'RAX Seguros', cover: cover('06. RAX Seguros'), href: '/projeto-raxseguros', color: '#f2b33e', segment: tab('Seguros', 'Insurance', 'Seguros') },
+  { slug: 'nexa', title: 'NEXA.co', cover: '/assets/v2/identidade/nexa-cover.webp', href: '/projeto-nexa', color: '#ee8440', segment: tab('Consultoria de negócios', 'Business consulting', 'Consultoría de negocios') },
+  { slug: 'mademax', title: 'MADEMAX', cover: cover('01. MADEMAX'), href: '/projeto-mademax', color: '#f0a030', segment: tab('Clube de tiro esportivo', 'Sport shooting club', 'Club de tiro deportivo') },
+  { slug: 'divino-car', title: 'Divino Car', cover: cover('03. Divino Car'), href: '/projeto-divinocar', color: '#f07820', segment: tab('Setor automotivo', 'Automotive', 'Sector automotriz') },
+  { slug: 'proconsult', title: 'ProConsult', cover: cover('04. ProConsult'), href: '/projeto-proconsult', color: '#8ed9c4', segment: tab('Gestão de obras e consultoria', 'Construction management and consulting', 'Gestión de obras y consultoría') },
+  { slug: 'poly-santos', title: 'Poly Santos', cover: cover('07. Poly Santos'), href: '/projeto-polysantos', color: '#c8662a', segment: tab('Arquitetura e urbanismo', 'Architecture and urban planning', 'Arquitectura y urbanismo') },
+  { slug: 'ecomove', title: 'Ecomove', cover: cover('08. Ecomove'), href: '/projeto-ecomove', color: '#d7df46', segment: tab('Mobilidade elétrica', 'Electric mobility', 'Movilidad eléctrica') },
+  { slug: 'remach-capital', title: 'Remach Capital', cover: cover('09. Remach Capital'), href: '/projeto-remachcapital', color: '#1f9abf', segment: tab('Assessoria financeira e M&A', 'Financial advisory and M&A', 'Asesoría financiera y M&A') },
 ];
+
+// telas da vitrine de identidade: logo e duas aplicações de cada marca, em 16:10 (public/assets/v2/identidade/reel)
+export const brandShots = (slug: string) =>
+  [1, 2, 3].map((n) => ({ lg: `/assets/v2/identidade/reel/${slug}-${n}-lg.webp`, md: `/assets/v2/identidade/reel/${slug}-${n}-md.webp` }));
 
 /* ----------------------------------------------------------------- serviços */
 
