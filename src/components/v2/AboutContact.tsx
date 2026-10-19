@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Link } from '@/routing';
-import { ArrowRight, WhatsApp } from './Icons';
+import { WhatsApp } from './Icons';
 import SectionCta, { WHATSAPP_URL } from './SectionCta';
 
 const STEP_COLORS = ['#4da3ff', '#6be07a', '#ffb547', '#ff5c8a'];
@@ -59,11 +59,9 @@ export function ContactSection() {
           </h2>
           <p className="v2-cta__sub v2-in">{t('sub')}</p>
           <div className="v2-cta__links v2-in">
-            <Link href="/orcamento" className="v2-btn v2-btn--solid">
-              {t('primary')} <ArrowRight />
-            </Link>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="v2-btn v2-btn--ghost">
-              <WhatsApp /> {t('whatsapp')}
+            {/* contato só pelo WhatsApp (pedido de 19/10): o formulário de proposta saiu daqui */}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="v2-btn v2-btn--solid">
+              <WhatsApp /> {t('section')}
             </a>
           </div>
         </div>
@@ -81,7 +79,6 @@ export function ContactSection() {
             <a href="https://www.linkedin.com/in/leonardo-ferreirr/" target="_blank" rel="noopener">
               LinkedIn
             </a>
-            <Link href="/blog">Blog</Link>
             <Link href="/privacidade">{f('privacy')}</Link>
             <a href="#top">{f('top')} ↑</a>
           </nav>

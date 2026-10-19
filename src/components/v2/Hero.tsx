@@ -1,8 +1,8 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/routing';
-import { ArrowRight } from './Icons';
+import { WhatsApp } from './Icons';
+import { WHATSAPP_URL } from './SectionCta';
 
 // topo: título, frase e os dois botões. A vitrine em slideshow que vinha logo abaixo saiu (19/10):
 // depois do topo já entram os ícones das categorias e a seção de sites.
@@ -22,9 +22,10 @@ export default function Hero() {
             {t('hero.sub_b')}
           </p>
           <div className="v2-hero__ctas v2-rise" style={{ animationDelay: '0.4s' }}>
-            <Link href="/orcamento" className="v2-btn v2-btn--solid">
-              {t('hero.cta_primary')} <ArrowRight />
-            </Link>
+            {/* contato só pelo WhatsApp (19/10) */}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="v2-btn v2-btn--solid">
+              <WhatsApp /> {t('cta.section')}
+            </a>
             <a href="#sites" className="v2-btn v2-btn--ghost">
               {t('hero.cta_secondary')}
             </a>
