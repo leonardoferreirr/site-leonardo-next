@@ -5,10 +5,13 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/routing';
 import { useEffect, useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import { WhatsApp } from './v2/Icons';
+import { WHATSAPP_URL } from './v2/SectionCta';
 
 // cabeçalho do site: some ao descer, volta ao subir; no celular vira menu em tela cheia
 export default function Header() {
   const t = useTranslations('Home2.nav');
+  const c = useTranslations('Home2.cta');
   const [hidden, setHidden] = useState(false);
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
@@ -50,7 +53,6 @@ export default function Header() {
     { href: '/#sistemas', label: t('systems') },
     { href: '/#servicos', label: t('services') },
     { href: '/#sobre', label: t('about') },
-    { href: '/blog', label: t('blog') },
   ];
 
   return (
@@ -69,9 +71,10 @@ export default function Header() {
           ))}
           <div className="lf-nav__extra">
             <LanguageSwitcher />
-            <Link href="/orcamento" className="lf-cta" onClick={() => setOpen(false)}>
-              {t('cta')}
-            </Link>
+            {/* contato só pelo WhatsApp (19/10): o botão do topo deixou de levar ao formulário */}
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="lf-cta" onClick={() => setOpen(false)}>
+              <WhatsApp /> {c('section')}
+            </a>
           </div>
         </nav>
 

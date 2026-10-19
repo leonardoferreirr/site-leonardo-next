@@ -312,6 +312,8 @@
   position: relative;
   padding: clamp(132px, 17vh, 176px) 0 0;
   text-align: center;
+  /* a sombra atrás do título tem 130vw: sem recorte ela alargava a página no celular e o menu sumia à direita */
+  overflow-x: clip;
 }
 
 .v2-h1 {
