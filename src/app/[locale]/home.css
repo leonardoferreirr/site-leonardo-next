@@ -819,6 +819,11 @@ html[data-hdr='off'] .v2-subnav {
   padding-left: 14px;
 }
 
+/* só prévia (sem link): mostra a imagem no hover, mas não finge ser clicável */
+.v2-row a:not([href]) {
+  cursor: default;
+}
+
 .v2-row__n {
   color: #8a8a8a;
 }

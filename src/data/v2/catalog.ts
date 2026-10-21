@@ -54,7 +54,7 @@ export type Site = {
   segment: L;
   kind: SiteKind;
   stack: string;
-  url: string;
+  url?: string; // sem url: só a prévia aparece, sem link (conceito ainda não lançado ou repo privado)
 };
 
 const S = {
@@ -66,8 +66,7 @@ const S = {
 };
 
 export const SITES: Site[] = [
-  { slug: 'cazetv', title: 'CazéTV', segment: { pt: 'Canal de esportes no YouTube', en: 'Sports channel on YouTube', es: 'Canal de deportes en YouTube' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://cazetvconcept.vercel.app/' },
-  { slug: 'duolingo', title: 'Duolingo', segment: { pt: 'App de idiomas', en: 'Language app', es: 'App de idiomas' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://duolingoconcept.vercel.app/' },
+  { slug: 'cazetv', title: 'CazéTV', segment: { pt: 'Canal de esportes no YouTube', en: 'Sports channel on YouTube', es: 'Canal de deportes en YouTube' }, kind: 'conceito', stack: 'Three.js + GSAP' },
   { slug: 'wigga', title: 'Wigga', segment: { pt: 'Esquadrias de PVC', en: 'PVC windows and doors', es: 'Carpintería de PVC' }, kind: 'landing', stack: S.static, url: 'https://wiggaesquadrias.vercel.app/' },
   { slug: 'buenas-taqueria', title: '¡Buenas! Taquería', segment: { pt: 'Taquería em Los Angeles', en: 'Taqueria in Los Angeles', es: 'Taquería en Los Ángeles' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://buenastaqueria.vercel.app/' },
   { slug: 'al-revestimentos', title: 'AL Revestimentos', segment: { pt: 'Pedra natural de alto padrão', en: 'High-end natural stone', es: 'Piedra natural de alto nivel' }, kind: 'landing', stack: S.static, url: 'https://www.alrevestimentosexclusivos.com.br/' },
@@ -122,7 +121,7 @@ export const SITES: Site[] = [
 ];
 
 // vitrine fixada da seção Sites, nesta ordem (a de Sistemas segue AGENCY + SYSTEMS)
-export const SITE_REEL = ['cazetv', 'duolingo', 'buenas-taqueria', 'nalu-poke', 'air-jordan', 'pokemon'];
+export const SITE_REEL = ['cazetv', 'buenas-taqueria', 'nalu-poke', 'air-jordan', 'pokemon'];
 
 export const siteCover = (slug: string, small = false) => `/assets/portfolio/${slug}${small ? '-sm' : ''}.webp`;
 

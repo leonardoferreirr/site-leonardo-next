@@ -11,7 +11,6 @@ import { KIND_LABEL, KIND_PLURAL, SITE_REEL, SITES, siteCover, tr, type SiteKind
 // cor do brilho atrás da tela do centro
 const GLOW: Record<string, string> = {
   cazetv: '#c13bff',
-  duolingo: '#58cc02',
   'buenas-taqueria': '#ff4f9a',
   'nalu-poke': '#ff8a00',
   'air-jordan': '#e1121b',
@@ -93,7 +92,8 @@ function SiteIndex({ locale }: { locale: string }) {
       <ul className="v2-rows" onMouseLeave={hide}>
         {shown.map((s, i) => (
           <li className="v2-row" key={s.slug}>
-            <a href={s.url} target="_blank" rel="noopener" onMouseEnter={() => show(s.slug)} onFocus={() => show(s.slug)} onBlur={hide}>
+            {/* sem url o <a> fica sem href: mesma linha, só prévia, nada para clicar */}
+            <a href={s.url} target={s.url ? '_blank' : undefined} rel={s.url ? 'noopener' : undefined} onMouseEnter={() => show(s.slug)} onFocus={() => show(s.slug)} onBlur={hide}>
               <span className="v2-row__n v2-mono">{String(i + 1).padStart(2, '0')}</span>
               <span className="v2-row__thumb" aria-hidden="true">
                 <img src={siteCover(s.slug, true)} alt="" width={480} height={300} loading="lazy" decoding="async" />
@@ -104,7 +104,7 @@ function SiteIndex({ locale }: { locale: string }) {
               </span>
               <span className="v2-row__kind">{tr(KIND_LABEL[s.kind], locale)}</span>
               <span className="v2-row__stack v2-stack">{`{ ${s.stack} }`}</span>
-              <ArrowUpRight />
+              {s.url ? <ArrowUpRight /> : null}
             </a>
           </li>
         ))}
