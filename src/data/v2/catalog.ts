@@ -66,9 +66,11 @@ const S = {
 };
 
 export const SITES: Site[] = [
-  { slug: 'cazetv', title: 'CazéTV', segment: { pt: 'Canal de esportes no YouTube', en: 'Sports channel on YouTube', es: 'Canal de deportes en YouTube' }, kind: 'conceito', stack: 'Three.js + GSAP' },
-  { slug: 'wigga', title: 'Wigga', segment: { pt: 'Esquadrias de PVC', en: 'PVC windows and doors', es: 'Carpintería de PVC' }, kind: 'landing', stack: S.static, url: 'https://wiggaesquadrias.vercel.app/' },
+  { slug: 'cazetv', title: 'CazéTV', segment: { pt: 'Canal de esportes no YouTube', en: 'Sports channel on YouTube', es: 'Canal de deportes en YouTube' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://cazetvconcept.vercel.app/' },
+  { slug: 'mestmidia', title: 'MestMidia', segment: { pt: 'Agência de tráfego pago', en: 'Paid ads agency', es: 'Agencia de tráfico pago' }, kind: 'institucional', stack: 'Babylon.js + Vite', url: 'https://sitemestmidia.vercel.app/' },
+  { slug: 'xwolves', title: 'X Wolves', segment: { pt: 'Consultoria TOTVS', en: 'TOTVS consulting', es: 'Consultoría TOTVS' }, kind: 'institucional', stack: S.three, url: 'https://xwolves.vercel.app/' },
   { slug: 'buenas-taqueria', title: '¡Buenas! Taquería', segment: { pt: 'Taquería em Los Angeles', en: 'Taqueria in Los Angeles', es: 'Taquería en Los Ángeles' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://buenastaqueria.vercel.app/' },
+  { slug: 'wigga', title: 'Wigga', segment: { pt: 'Esquadrias de PVC', en: 'PVC windows and doors', es: 'Carpintería de PVC' }, kind: 'landing', stack: S.static, url: 'https://wiggaesquadrias.vercel.app/' },
   { slug: 'al-revestimentos', title: 'AL Revestimentos', segment: { pt: 'Pedra natural de alto padrão', en: 'High-end natural stone', es: 'Piedra natural de alto nivel' }, kind: 'landing', stack: S.static, url: 'https://www.alrevestimentosexclusivos.com.br/' },
   { slug: 'vessar', title: 'Vessar', segment: { pt: 'Valores mobiliários', en: 'Securities', es: 'Valores mobiliarios' }, kind: 'institucional', stack: S.static, url: 'https://vessarlandingpage.vercel.app/' },
   { slug: 'gervasio-marmores', title: 'Gervásio Mármores', segment: { pt: 'Marmoraria', en: 'Marble workshop', es: 'Marmolería' }, kind: 'landing', stack: S.static, url: 'https://gervasio-marmoraria.vercel.app/' },
