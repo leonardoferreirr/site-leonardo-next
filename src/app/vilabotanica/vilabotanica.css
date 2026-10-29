@@ -248,6 +248,7 @@ svg {
   display: block;
   margin-top: 0.35em;
   font-size: 0.48em;
+  font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 1.2;
   color: #8a8a8a;
@@ -851,7 +852,7 @@ svg {
 .vb-plano__lista {
   display: grid;
   gap: 10px;
-  margin: 24px 0 30px;
+  margin: 24px 0 0;
   padding-top: 24px;
   border-top: 1px solid var(--line);
   color: var(--soft);
@@ -874,16 +875,6 @@ svg {
   background: var(--cor);
 }
 
-.vb-plano__cta {
-  margin-top: auto;
-  width: 100%;
-  height: auto;
-  min-height: 52px;
-  padding-block: 12px;
-  white-space: normal;
-  text-align: center;
-  line-height: 1.25;
-}
 
 .vb-nota {
   margin-top: 28px;
@@ -973,9 +964,19 @@ svg {
 /* ---------------------------------------------------------- computador */
 
 @media (min-width: 1000px) {
+  /* abertura sem a tela cheia no computador: o contexto entra logo depois, sem o vazio entre os dois */
+  .vb-hero {
+    min-height: 0;
+    padding: clamp(150px, 19vh, 210px) 0 clamp(36px, 5vh, 64px);
+  }
+
+  .vb-sec--colado {
+    padding-top: clamp(40px, 5vw, 72px);
+  }
+
   .vb-contexto {
     grid-template-columns: 1.35fr 1fr;
-    align-items: center;
+    align-items: start;
   }
 
   .vb-passos {

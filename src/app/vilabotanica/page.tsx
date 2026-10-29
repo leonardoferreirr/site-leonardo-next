@@ -2,24 +2,16 @@
 
 import { useEffect } from 'react';
 import CodeField from '@/components/CodeField';
-import { ArrowRight, WhatsApp } from '@/components/v2/Icons';
+import { ArrowRight } from '@/components/v2/Icons';
 
-const WA = '5534936180691'; // mesmo número do botão do site (SectionCta)
-
-const MSG = {
-  identidade: 'Oi Léo! Vi a proposta do Vila Botânica e quero seguir com a Identidade Visual.',
-  branding: 'Oi Léo! Vi a proposta do Vila Botânica e quero seguir com o Branding Completo.',
-  conversa: 'Oi Léo! Vi a proposta do Vila Botânica e queria conversar antes de decidir.',
-};
-
-const wa = (texto: string) => `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
+// Sem WhatsApp nem link para o site: quem negocia é o parceiro que atende o resort, e a proposta não pode
+// parecer um atalho do cliente direto para mim (pedido do Leonardo em 29/10).
 
 // pontos de cor das categorias da home (sites, sistemas, identidade, social, vídeo, lab), misturados pela página.
 // No papel entra o mesmo tom mais fundo: o claro não passa no contraste sobre o branco.
 const CORES = ['#4da3ff', '#6be07a', '#ff5c8a', '#ffb547', '#ff6b4a', '#b18cff'];
 const CORES_PAPEL = ['#1f6fd6', '#16803a', '#c8155a', '#9a6200', '#cc3a17', '#7448d6'];
 const cor = (i: number, papel = false) => ({ ['--cor' as string]: (papel ? CORES_PAPEL : CORES)[i % 6] });
-
 
 const NUMEROS = [
   { valor: 135, casas: 0, sufixo: '', texto: 'resorts em funcionamento no Brasil', fonte: 'Radar Resorts Brasil, set/2025' },
@@ -97,8 +89,6 @@ const PLANOS = [
     preco: '2.500',
     parcela: '208,33',
     prazo: '1 semana',
-    msg: MSG.identidade,
-    cta: 'Quero a Identidade Visual',
     itens: [
       'Logotipo principal desenhado do zero',
       'Variações horizontal, vertical, símbolo e versão reduzida',
@@ -117,8 +107,6 @@ const PLANOS = [
     preco: '4.000',
     parcela: '333,33',
     prazo: '2 semanas',
-    msg: MSG.branding,
-    cta: 'Quero o Branding Completo',
     itens: [
       'Tudo da Identidade Visual',
       'Imersão com vocês e leitura do diagnóstico estratégico',
@@ -205,14 +193,11 @@ export default function VilaBotanicaProposta() {
 
       <header className="vb-topo">
         <div className="vb-topo__in">
-          <a href="https://www.leonardoferreirr.com.br" className="vb-logo" aria-label="Leonardo Ferreira, site">
+          <span className="vb-logo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/v2/logo-caricatura.webp" alt="" width={36} height={36} />
             <span>Leonardo Ferreira</span>
-          </a>
-          <a href={wa(MSG.conversa)} target="_blank" rel="noopener" className="vb-btn vb-btn--solid vb-btn--p">
-            <WhatsApp /> Entrar em contato
-          </a>
+          </span>
         </div>
       </header>
 
@@ -222,14 +207,11 @@ export default function VilaBotanicaProposta() {
           <div className="vb-wrap">
             <h1 className="vb-h1 vb-sobe">
               <span className="vb-h1__a">Proposta de Identidade Visual e Branding</span>{' '}
-              <span className="vb-h1__b">para o Vila Botânica Eco Resort</span>
+              <span className="vb-h1__b">Vila Botânica Eco Resort</span>
             </h1>
             <div className="vb-hero__ctas vb-sobe" style={{ animationDelay: '0.25s' }}>
               <a href="#investimento" className="vb-btn vb-btn--solid">
-                Ver as opções <ArrowRight />
-              </a>
-              <a href={wa(MSG.conversa)} target="_blank" rel="noopener" className="vb-btn vb-btn--ghost">
-                <WhatsApp /> Conversar no WhatsApp
+                Ver as duas opções <ArrowRight />
               </a>
             </div>
             <p className="vb-hero__status vb-mono vb-sobe" style={{ animationDelay: '0.4s' }}>
@@ -244,7 +226,7 @@ export default function VilaBotanicaProposta() {
         </section>
 
         {/* CONTEXTO */}
-        <section className="vb-sec">
+        <section className="vb-sec vb-sec--colado">
           <div className="vb-wrap">
             <div className="vb-contexto">
               <div className="vb-in">
@@ -452,14 +434,11 @@ export default function VilaBotanicaProposta() {
                       </li>
                     ))}
                   </ul>
-                  <a href={wa(p.msg)} target="_blank" rel="noopener" className="vb-btn vb-btn--solid vb-plano__cta">
-                    <WhatsApp /> {p.cta}
-                  </a>
                 </article>
               ))}
             </div>
             <p className="vb-nota vb-in">
-              Se preferir Pix ou outro formato de pagamento, me chama que a gente acerta.
+              Pix ou outro formato de pagamento também dá para combinar.
             </p>
           </div>
         </section>
@@ -469,13 +448,7 @@ export default function VilaBotanicaProposta() {
           <div className="vb-wrap">
             <div className="vb-in">
               <h2 className="vb-h2">Vamos desenhar o Vila Botânica?</h2>
-              <p className="vb-lead">
-                Escolha o caminho que faz sentido agora ou me chama para conversar antes de decidir. O fechamento é
-                direto pelo WhatsApp.
-              </p>
-              <a href={wa(MSG.conversa)} target="_blank" rel="noopener" className="vb-btn vb-btn--solid">
-                <WhatsApp /> Conversar no WhatsApp
-              </a>
+              <p className="vb-lead">É só escolher o caminho que faz sentido para o momento do resort.</p>
             </div>
           </div>
         </section>
@@ -484,7 +457,6 @@ export default function VilaBotanicaProposta() {
       <footer className="vb-pe">
         <div className="vb-wrap vb-pe__in">
           <span>Proposta elaborada por Leonardo Ferreira · outubro de 2026</span>
-          <a href="https://www.leonardoferreirr.com.br">leonardoferreirr.com.br</a>
         </div>
       </footer>
     </>
