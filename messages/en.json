@@ -392,8 +392,7 @@
     "clients": {
       "title": "Brands that trust my work",
       "more": "See all",
-      "back": "Back",
-      "count": "{n} brands, in alphabetical order"
+      "back": "Back"
     }
   }
 }

@@ -392,8 +392,7 @@
     "clients": {
       "title": "Marcas que confiam no meu trabalho",
       "more": "Ver mais",
-      "back": "Voltar",
-      "count": "{n} marcas, em ordem alfabética"
+      "back": "Voltar"
     }
   }
 }

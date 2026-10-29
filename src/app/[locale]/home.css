@@ -2178,15 +2178,24 @@ html[data-hdr='off'] .v2-subnav {
 .v2-clients {
   --k: 1;
   position: relative;
-  padding-top: clamp(64px, 8vw, 104px);
+  /* respiro maior depois do hero (pedido de 29/10) */
+  padding-top: clamp(104px, 13vw, 184px);
 }
 
-.v2-clients__title {
-  margin: 0 auto clamp(28px, 3.6vw, 40px);
+/* título longo: o ícone vai dentro da primeira linha e as linhas ficam centralizadas e equilibradas */
+.v2-clients__h2 {
+  display: block;
+  max-width: 17ch;
+  margin: 0 auto;
   text-align: center;
-  font: 400 clamp(1rem, 1.5vw, 1.2rem) / 1.35 var(--sans);
-  letter-spacing: -0.01em;
-  color: var(--muted);
+  text-wrap: balance;
+}
+
+.v2-clients__h2 .v2-px {
+  display: inline-block;
+  margin-right: 0.3em;
+  vertical-align: -0.02em;
+  transform: none;
 }
 
 .v2-clients__rows {
@@ -2318,10 +2327,6 @@ html[data-hdr='off'] .v2-subnav {
   max-width: 19ch;
   text-align: center;
   text-wrap: balance;
-}
-
-.v2-clients-page__count {
-  color: var(--muted);
 }
 
 .v2-clients-grid {

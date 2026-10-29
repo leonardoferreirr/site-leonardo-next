@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/routing';
+import PixelIcon from './PixelIcon';
 import { CLIENTS, clientLogo, type Client } from '@/data/v2/clients';
 
 // tamanho de exibição pela área, não pela altura: logo comprida fica baixa e logo quadrada fica alta,
@@ -47,10 +48,14 @@ export default function ClientsMarquee() {
 
   return (
     <section className="v2-clients" id="marcas" aria-labelledby="marcas-titulo" ref={ref}>
+      {/* mesmo título das seções (fonte e ícone de pixel), centralizado; sem v2-in: aparece já na primeira tela */}
       <div className="v2-wrap">
-        <h2 className="v2-clients__title v2-in" id="marcas-titulo">
-          {t('title')}
-        </h2>
+        <div className="v2-head v2-head--center">
+          <h2 className="v2-h2 v2-clients__h2" id="marcas-titulo">
+            <PixelIcon cat="marcas" />
+            {t('title')}
+          </h2>
+        </div>
       </div>
 
       <div className="v2-clients__rows">

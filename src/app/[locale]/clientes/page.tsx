@@ -34,7 +34,6 @@ export default function ClientesPage() {
             {/* entrada por transform (v2-rise), não por opacidade: o título é o LCP desta página */}
             <div className="v2-head v2-rise">
               <h1 className="v2-h2">{t('title')}</h1>
-              <p className="v2-mono v2-clients-page__count">{t('count', { n: lista.length })}</p>
             </div>
 
             <ul className="v2-clients-grid">
