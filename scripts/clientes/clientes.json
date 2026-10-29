@@ -15,6 +15,13 @@
   ]
  },
  {
+  "slug": "ferras",
+  "nome": "Ferras",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "wigga",
   "nome": "Wigga",
   "servicos": [
@@ -41,6 +48,13 @@
   "nome": "X Wolves",
   "servicos": [
    "sites"
+  ]
+ },
+ {
+  "slug": "hotel-garnet",
+  "nome": "Hotel Garnet",
+  "servicos": [
+   "identidade"
   ]
  },
  {
@@ -75,6 +89,13 @@
   ]
  },
  {
+  "slug": "pinvo",
+  "nome": "Pinvo",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "vessar",
   "nome": "Vessar",
   "servicos": [
@@ -105,6 +126,13 @@
   ]
  },
  {
+  "slug": "kova",
+  "nome": "Kova",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "hello-bim",
   "nome": "Hello BIM",
   "servicos": [
@@ -131,6 +159,13 @@
   "servicos": [
    "sites",
    "social"
+  ]
+ },
+ {
+  "slug": "prontufy",
+  "nome": "Prontufy",
+  "servicos": [
+   "identidade"
   ]
  },
  {
@@ -164,6 +199,13 @@
   ]
  },
  {
+  "slug": "caliburn-club",
+  "nome": "Caliburn Club",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "bip-vale",
   "nome": "BIP Vale",
   "servicos": [
@@ -192,6 +234,13 @@
   ]
  },
  {
+  "slug": "quatro-patas",
+  "nome": "Quatro Patas",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "the-toxic-land",
   "nome": "The Toxic Land",
   "servicos": [
@@ -216,6 +265,13 @@
  {
   "slug": "poly-santos",
   "nome": "Poly Santos",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "farco-engenharia",
+  "nome": "Farco Engenharia",
   "servicos": [
    "identidade"
   ]
@@ -250,6 +306,13 @@
   ]
  },
  {
+  "slug": "voynara",
+  "nome": "Voynara",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "lizzy-prime",
   "nome": "Lizzy Prime",
   "servicos": [
@@ -275,6 +338,13 @@
   "nome": "AeroPrev",
   "servicos": [
    "sites"
+  ]
+ },
+ {
+  "slug": "canis",
+  "nome": "Canis",
+  "servicos": [
+   "identidade"
   ]
  },
  {
@@ -306,6 +376,13 @@
   ]
  },
  {
+  "slug": "buenarte",
+  "nome": "Buenarte",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "vougue-festas",
   "nome": "Vougue Festas",
   "servicos": [
@@ -331,6 +408,13 @@
   "nome": "Paulani",
   "servicos": [
    "sites"
+  ]
+ },
+ {
+  "slug": "engage-us",
+  "nome": "Engage.us",
+  "servicos": [
+   "identidade"
   ]
  },
  {
@@ -362,6 +446,13 @@
   ]
  },
  {
+  "slug": "dois-sem-acucar",
+  "nome": "Dois Sem Açúcar",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "sensorial-moove",
   "nome": "Sensorial",
   "servicos": [
@@ -390,6 +481,13 @@
   ]
  },
  {
+  "slug": "oqvu",
+  "nome": "OQVU",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
   "slug": "miami-haus",
   "nome": "Miami Haus",
   "servicos": [
@@ -415,6 +513,13 @@
   "nome": "LD Services",
   "servicos": [
    "sites"
+  ]
+ },
+ {
+  "slug": "bleacher",
+  "nome": "Bleacher.co",
+  "servicos": [
+   "identidade"
   ]
  },
  {
