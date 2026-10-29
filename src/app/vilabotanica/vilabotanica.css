@@ -1,7 +1,7 @@
 /* ==========================================================================
    Proposta Vila Botânica · no visual novo do site: preto como território,
-   Poppins sem itálico, mono nos detalhes, rosa da categoria Identidade como
-   ponto de cor, seções claras de papel e janela de Mac simulando a tela
+   Poppins sem itálico, mono nos detalhes, os seis pontos de cor das categorias
+   da home misturados, seções claras de papel e janela de Mac simulando a tela
    ========================================================================== */
 
 :root {
@@ -104,7 +104,7 @@ svg {
   width: 7px;
   height: 7px;
   border-radius: 2px;
-  background: var(--rosa);
+  background: var(--cor, var(--rosa));
 }
 
 /* ---------------------------------------------------------------- botões */
@@ -231,26 +231,27 @@ svg {
   z-index: -1;
 }
 
+/* uma frase só, em dois tamanhos: o nome do serviço grande, o do resort menor e em cinza */
 .vb-h1 {
-  font-size: clamp(2.5rem, 8vw, 6.9rem);
+  font-size: clamp(2.05rem, 6vw, 5.2rem);
   font-weight: 500;
-  letter-spacing: -0.048em;
-  line-height: 0.98;
-  text-wrap: balance;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
 }
 
-.vb-h1 span {
+.vb-h1__a {
   display: block;
-  color: #7d7d7d;
+  text-wrap: balance;
 }
 
-.vb-hero__sub {
-  max-width: 640px;
+.vb-h1__b {
+  display: block;
+  margin-top: 0.35em;
+  font-size: 0.48em;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: #8a8a8a;
   text-wrap: balance;
-  margin: clamp(22px, 3vw, 32px) auto 0;
-  font-size: clamp(1.02rem, 1.5vw, 1.2rem);
-  font-weight: 300;
-  color: var(--muted);
 }
 
 .vb-hero__ctas {
@@ -261,21 +262,26 @@ svg {
   margin-top: clamp(28px, 4vw, 40px);
 }
 
+.vb-cores {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.vb-cores i {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+}
+
 .vb-hero__status {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 30px;
   color: #8f8f8f;
 }
 
-.vb-hero__px {
-  width: 14px;
-  height: 14px;
-  animation: vbPisca 2.4s steps(1) infinite;
-}
-
-.vb-hero :is(.vb-h1, .vb-hero__sub, .vb-hero__status),
+.vb-hero :is(.vb-h1, .vb-hero__status),
 .vb-sec:not(.vb-papel) :is(.vb-h2, .vb-lead, .vb-texto) {
   text-shadow: 0 0 14px #000, 0 0 4px #000;
 }
@@ -329,6 +335,11 @@ svg {
   line-height: 1.65;
 }
 
+.vb-lead--largo {
+  max-width: 700px;
+  text-wrap: balance;
+}
+
 .vb-papel .vb-lead {
   color: var(--paper-muted);
 }
@@ -349,12 +360,7 @@ svg {
 }
 
 .vb-num {
-  color: var(--rosa);
-}
-
-/* no papel o rosa claro não passa no contraste: mesmo tom, mais fundo */
-.vb-papel .vb-num {
-  color: #c8155a;
+  color: var(--cor, var(--rosa));
 }
 
 /* entrada no scroll: sobe e aparece */
@@ -402,6 +408,15 @@ svg {
   gap: 6px;
   padding: clamp(22px, 3vw, 32px);
   background: var(--card);
+}
+
+.vb-numeros li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background: var(--cor);
 }
 
 .vb-numeros strong {
@@ -454,16 +469,6 @@ svg {
   margin-top: 8px;
   color: var(--paper-muted);
   font-weight: 300;
-}
-
-.vb-fecho {
-  max-width: 760px;
-  margin: clamp(40px, 5vw, 56px) auto 0;
-  text-align: center;
-  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
 }
 
 /* --------------------------------------------- janela do Illustrator */
@@ -704,32 +709,6 @@ svg {
   font-weight: 300;
 }
 
-.vb-preciso {
-  margin-top: clamp(40px, 5vw, 64px);
-  padding: clamp(22px, 3vw, 32px);
-  border: 1px dashed var(--line-2);
-  border-radius: 18px;
-  display: grid;
-  gap: 16px;
-}
-
-.vb-preciso h3 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.vb-preciso ul {
-  display: grid;
-  gap: 8px;
-  color: var(--soft);
-}
-
-.vb-preciso li::before {
-  content: '> ';
-  color: var(--rosa);
-}
-
 /* ----------------------------------------------------- faixas de aplicação */
 
 .vb-sec--faixas {
@@ -812,6 +791,7 @@ svg {
 
 .vb-planos {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   max-width: 1040px;
   margin: 0 auto;
@@ -828,7 +808,7 @@ svg {
 }
 
 .vb-plano:hover {
-  border-color: rgba(255, 92, 138, 0.45);
+  border-color: color-mix(in srgb, var(--cor) 55%, transparent);
 }
 
 .vb-plano h3 {
@@ -865,7 +845,7 @@ svg {
 
 .vb-plano__prazo {
   margin-top: 6px;
-  color: var(--rosa);
+  color: var(--cor);
 }
 
 .vb-plano__lista {
@@ -891,12 +871,18 @@ svg {
   height: 7px;
   margin-top: 0.55em;
   border-radius: 2px;
-  background: var(--rosa);
+  background: var(--cor);
 }
 
 .vb-plano__cta {
   margin-top: auto;
   width: 100%;
+  height: auto;
+  min-height: 52px;
+  padding-block: 12px;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .vb-nota {
@@ -979,7 +965,7 @@ svg {
   }
 
   .vb-planos {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
   }
 }
@@ -1030,8 +1016,7 @@ svg {
   }
 
   .vb-sobe,
-  .vb-faixa,
-  .vb-hero__px {
+  .vb-faixa {
     animation: none !important;
   }
 

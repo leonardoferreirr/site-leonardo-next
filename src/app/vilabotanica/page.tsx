@@ -14,17 +14,12 @@ const MSG = {
 
 const wa = (texto: string) => `https://wa.me/${WA}?text=${encodeURIComponent(texto)}`;
 
-// ícone 8x8 da categoria Identidade da home (mesmo desenho do PixelIcon, sem puxar o catálogo inteiro)
-const PIXEL_IDENTIDADE = ['...##...', '..####..', '.##..##.', '##....##', '.##..##.', '..####..', '...##...'];
-function PixelIdentidade({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 8 8" fill="#ff5c8a" aria-hidden="true" shapeRendering="crispEdges">
-      {PIXEL_IDENTIDADE.flatMap((linha, y) =>
-        [...linha].map((c, x) => (c === '#' ? <rect key={`${x}-${y}`} x={x} y={y} width="1" height="1" /> : null)),
-      )}
-    </svg>
-  );
-}
+// pontos de cor das categorias da home (sites, sistemas, identidade, social, vídeo, lab), misturados pela página.
+// No papel entra o mesmo tom mais fundo: o claro não passa no contraste sobre o branco.
+const CORES = ['#4da3ff', '#6be07a', '#ff5c8a', '#ffb547', '#ff6b4a', '#b18cff'];
+const CORES_PAPEL = ['#1f6fd6', '#16803a', '#c8155a', '#9a6200', '#cc3a17', '#7448d6'];
+const cor = (i: number, papel = false) => ({ ['--cor' as string]: (papel ? CORES_PAPEL : CORES)[i % 6] });
+
 
 const NUMEROS = [
   { valor: 135, casas: 0, sufixo: '', texto: 'resorts em funcionamento no Brasil', fonte: 'Radar Resorts Brasil, set/2025' },
@@ -101,7 +96,7 @@ const PLANOS = [
     nome: 'Identidade Visual',
     preco: '2.500',
     parcela: '208,33',
-    prazo: '4 semanas',
+    prazo: '1 semana',
     msg: MSG.identidade,
     cta: 'Quero a Identidade Visual',
     itens: [
@@ -121,7 +116,7 @@ const PLANOS = [
     nome: 'Branding Completo',
     preco: '4.000',
     parcela: '333,33',
-    prazo: '6 semanas',
+    prazo: '2 semanas',
     msg: MSG.branding,
     cta: 'Quero o Branding Completo',
     itens: [
@@ -226,12 +221,10 @@ export default function VilaBotanicaProposta() {
         <section className="vb-hero">
           <div className="vb-wrap">
             <h1 className="vb-h1 vb-sobe">
-              Uma marca que nasce <span>do próprio lugar.</span>
+              <span className="vb-h1__a">Proposta de Identidade Visual e Branding</span>{' '}
+              <span className="vb-h1__b">para o Vila Botânica Eco Resort</span>
             </h1>
-            <p className="vb-hero__sub vb-sobe" style={{ animationDelay: '0.2s' }}>
-              Proposta de identidade visual e branding para o Vila Botânica Eco Resort.
-            </p>
-            <div className="vb-hero__ctas vb-sobe" style={{ animationDelay: '0.35s' }}>
+            <div className="vb-hero__ctas vb-sobe" style={{ animationDelay: '0.25s' }}>
               <a href="#investimento" className="vb-btn vb-btn--solid">
                 Ver as opções <ArrowRight />
               </a>
@@ -239,8 +232,13 @@ export default function VilaBotanicaProposta() {
                 <WhatsApp /> Conversar no WhatsApp
               </a>
             </div>
-            <p className="vb-hero__status vb-mono vb-sobe" style={{ animationDelay: '0.5s' }}>
-              <PixelIdentidade className="vb-hero__px" /> proposta · outubro de 2026
+            <p className="vb-hero__status vb-mono vb-sobe" style={{ animationDelay: '0.4s' }}>
+              <span className="vb-cores" aria-hidden="true">
+                {CORES.map((c) => (
+                  <i key={c} style={{ background: c }} />
+                ))}
+              </span>
+              proposta · outubro de 2026
             </p>
           </div>
         </section>
@@ -250,29 +248,23 @@ export default function VilaBotanicaProposta() {
           <div className="vb-wrap">
             <div className="vb-contexto">
               <div className="vb-in">
-                <h2 className="vb-h2">Natureza virou disputa.</h2>
+                <h2 className="vb-h2">Cada vez mais gente busca o verde.</h2>
                 <div className="vb-texto">
                   <p>
-                    O Brasil tem hoje 135 resorts em funcionamento e outros 21 a caminho, que vão somar perto de 6.700
-                    quartos até 2029. Ao mesmo tempo, os parques nacionais passaram de 11,8 milhões de visitas em
-                    2025, 8% a mais que no ano anterior. Tem mais gente querendo descansar no meio do verde, e cada vez
-                    mais lugar oferecendo exatamente isso.
+                    O Brasil tem 135 resorts funcionando e outros 21 a caminho até 2029. Os parques nacionais
+                    passaram de 11,8 milhões de visitas em 2025. Tem muita gente querendo desacelerar perto da
+                    natureza.
                   </p>
                   <p>
-                    Quem escolhe um resort assim decide pelo celular, muito antes de chegar à portaria. Abre o
-                    Instagram de três ou quatro opções, compara as fotos, entra no site, volta. Nessa hora, quem tem
-                    uma marca clara e bonita sai na frente de quem só tem uma boa estrutura.
-                  </p>
-                  <p>
-                    E aqui mora o risco do segmento: folha, sol nascente e telhado viraram quase um uniforme dos
-                    resorts de natureza. Quando todo mundo usa os mesmos símbolos, o hóspede não lembra quem é quem. A
-                    marca do Vila Botânica precisa ser reconhecida antes mesmo de alguém ler o nome.
+                    E essa escolha começa no celular, bem antes da chegada. Uma marca com jeito próprio faz o Vila
+                    Botânica ser lembrado com carinho, e não confundido com os lugares que usam a mesma folha, o
+                    mesmo sol e o mesmo telhado.
                   </p>
                 </div>
               </div>
               <ul className="vb-numeros vb-in">
-                {NUMEROS.map((n) => (
-                  <li key={n.texto}>
+                {NUMEROS.map((n, i) => (
+                  <li key={n.texto} style={cor(i)}>
                     <strong data-valor={n.valor} data-casas={n.casas} data-sufixo={n.sufixo}>
                       {n.valor.toLocaleString('pt-BR', { minimumFractionDigits: n.casas }) + n.sufixo}
                     </strong>
@@ -288,35 +280,27 @@ export default function VilaBotanicaProposta() {
         {/* O QUE EU LI */}
         <section className="vb-sec vb-papel">
           <div className="vb-wrap">
-            <div className="vb-cabeca vb-in">
+            <div className="vb-cabeca vb-cabeca--centro vb-in">
               <h2 className="vb-h2">O que já está claro</h2>
-              <p className="vb-lead">
-                Li com calma a proposta preliminar que vocês reuniram. Quatro pontos já estão bem definidos e vão
-                guiar o desenho.
-              </p>
             </div>
             <ol className="vb-lido">
               {LIDO.map((item, i) => (
-                <li key={item.t} className="vb-in" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <li key={item.t} className="vb-in" style={{ transitionDelay: `${i * 0.08}s`, ...cor(i, true) }}>
                   <span className="vb-num vb-mono">{String(i + 1).padStart(2, '0')}</span>
                   <h3>{item.t}</h3>
                   <p>{item.p}</p>
                 </li>
               ))}
             </ol>
-            <p className="vb-fecho vb-in">
-              Os estudos preliminares acertam o clima. O meu trabalho é transformar esse clima num desenho que só o
-              Vila Botânica tem.
-            </p>
           </div>
         </section>
 
         {/* FEITO À MÃO */}
         <section className="vb-sec">
           <div className="vb-wrap">
-            <div className="vb-cabeca vb-in">
+            <div className="vb-cabeca vb-cabeca--centro vb-in">
               <h2 className="vb-h2">Desenhado à mão, do zero</h2>
-              <p className="vb-lead">
+              <p className="vb-lead vb-lead--largo">
                 Nada de modelo pronto, banco de imagem ou símbolo de catálogo. A marca nasce no papel, vai para o
                 Illustrator e só sai de lá quando cada curva tem um motivo.
               </p>
@@ -380,7 +364,7 @@ export default function VilaBotanicaProposta() {
 
             <ol className="vb-passos">
               {PASSOS.map((p, i) => (
-                <li key={p.t} className="vb-in" style={{ transitionDelay: `${i * 0.08}s` }}>
+                <li key={p.t} className="vb-in" style={{ transitionDelay: `${i * 0.08}s`, ...cor(i + 2) }}>
                   <span className="vb-num vb-mono">{String(i + 1).padStart(2, '0')}</span>
                   <h3>{p.t}</h3>
                   <p>{p.p}</p>
@@ -388,27 +372,14 @@ export default function VilaBotanicaProposta() {
               ))}
             </ol>
 
-            <div className="vb-preciso vb-in">
-              <h3>Para começar, eu preciso de</h3>
-              <ul className="vb-mono">
-                <li>renders ou plantas do projeto arquitetônico</li>
-                <li>fotos do terreno e da região</li>
-                <li>a síntese do diagnóstico estratégico</li>
-                <li>uma conversa de uma hora com quem decide</li>
-              </ul>
-            </div>
           </div>
         </section>
 
         {/* APLICAÇÕES */}
         <section className="vb-sec vb-sec--faixas" data-vivo>
           <div className="vb-wrap">
-            <div className="vb-cabeca vb-in">
+            <div className="vb-cabeca vb-cabeca--centro vb-in">
               <h2 className="vb-h2">A marca no lugar</h2>
-              <p className="vb-lead">
-                Cada aplicação é apresentada em mockup realista, para vocês enxergarem a marca na portaria, no quarto e
-                no celular antes de produzir qualquer peça.
-              </p>
             </div>
           </div>
           <div className="vb-faixas" aria-label="Aplicações apresentadas em mockup">
@@ -416,9 +387,9 @@ export default function VilaBotanicaProposta() {
               <div key={i} className={`vb-faixa${i ? ' vb-faixa--volta' : ''}`}>
                 {[0, 1].map((copia) => (
                   <div key={copia} className="vb-faixa__grupo" aria-hidden={copia === 1}>
-                    {linha.map((t) => (
+                    {linha.map((t, j) => (
                       <span key={t}>
-                        <i className="vb-dot" />
+                        <i className="vb-dot" style={cor(j + i * 3)} />
                         {t}
                       </span>
                     ))}
@@ -445,7 +416,7 @@ export default function VilaBotanicaProposta() {
             </div>
             <ol className="vb-pilha">
               {ESTRATEGIA.map((e, i) => (
-                <li key={e.t} className="vb-cartao" style={{ ['--i' as string]: i }}>
+                <li key={e.t} className="vb-cartao" style={{ ['--i' as string]: i, ...cor(i + 1, true) }}>
                   <span className="vb-num vb-mono">{String(i + 1).padStart(2, '0')}</span>
                   <h3>{e.t}</h3>
                   <p>{e.p}</p>
@@ -464,7 +435,7 @@ export default function VilaBotanicaProposta() {
             </div>
             <div className="vb-planos">
               {PLANOS.map((p, i) => (
-                <article key={p.nome} className="vb-plano vb-in" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <article key={p.nome} className="vb-plano vb-in" style={{ transitionDelay: `${i * 0.1}s`, ...cor(i ? 5 : 2) }}>
                   <h3>{p.nome}</h3>
                   <div className="vb-plano__preco">
                     <span className="vb-plano__moeda">R$</span>
@@ -475,8 +446,10 @@ export default function VilaBotanicaProposta() {
                   </p>
                   <p className="vb-plano__prazo vb-mono">prazo · {p.prazo}</p>
                   <ul className="vb-plano__lista">
-                    {p.itens.map((it) => (
-                      <li key={it}>{it}</li>
+                    {p.itens.map((it, j) => (
+                      <li key={it} style={cor(j)}>
+                        {it}
+                      </li>
                     ))}
                   </ul>
                   <a href={wa(p.msg)} target="_blank" rel="noopener" className="vb-btn vb-btn--solid vb-plano__cta">
