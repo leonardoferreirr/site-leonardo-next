@@ -62,7 +62,7 @@ export default function SystemsSection() {
   // a agência abre a vitrine; o CRM da clínica vem logo depois
   const items = useMemo<ReelItem[]>(
     () =>
-      [AGENCY, ...SYSTEMS].map((sys) => ({
+      [AGENCY, ...SYSTEMS.filter((s) => !s.hidden)].map((sys) => ({
         key: sys.slug,
         name: tr(sys.name, locale),
         sub: tr(sys.desc, locale),

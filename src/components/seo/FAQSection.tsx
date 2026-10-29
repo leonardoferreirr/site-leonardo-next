@@ -51,7 +51,7 @@ export const defaultFAQItems: FAQItem[] = [
   {
     question: 'Como solicitar um orçamento para identidade visual ou design?',
     answer:
-      'Para solicitar um orçamento, basta acessar a página de orçamento em leonardoferreirr.com.br/pt/orcamento, preencher o formulário com as informações do projeto ou enviar um e-mail para leonardoferreirrs@gmail.com. Após o contato inicial, é agendada uma conversa para alinhar expectativas, entender os objetivos do projeto e apresentar a proposta personalizada.',
+      'Para solicitar um orçamento, basta acessar a página de orçamento em leonardoferreirr.com.br/orcamento, preencher o formulário com as informações do projeto ou enviar um e-mail para leonardoferreirrs@gmail.com. Após o contato inicial, é agendada uma conversa para alinhar expectativas, entender os objetivos do projeto e apresentar a proposta personalizada.',
   },
 ]
 

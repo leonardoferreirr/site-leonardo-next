@@ -245,7 +245,9 @@
     "orcamento_title": "Request a Quote",
     "orcamento_description": "Ready to innovate? Get in touch, tell me more about your project, and request a tailored quote to boost your brand's digital presence.",
     "project_title_prefix": "Success Case",
-    "project_description": "Explore the details and creative process of this UI/UX Design project developed by Leonardo Ferreira, focused on refined aesthetics and exceptional performance."
+    "project_description": "Explore the details and creative process of this UI/UX Design project developed by Leonardo Ferreira, focused on refined aesthetics and exceptional performance.",
+    "clients_title": "Brands that trust my work",
+    "clients_description": "Companies that have hired Leonardo Ferreira for websites, systems, visual identity, social media and video."
   },
   "Pillars": {
     "tag": "Services",
@@ -386,6 +388,12 @@
       "rights": "All rights reserved.",
       "privacy": "Privacy",
       "top": "Top"
+    },
+    "clients": {
+      "title": "Brands that trust my work",
+      "more": "See all",
+      "back": "Back",
+      "count": "{n} brands, in alphabetical order"
     }
   }
 }

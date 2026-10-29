@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { routing } from '@/routing';
+import { languageAlternates, routing, siteUrl } from '@/routing';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string, slug: string }> }) {
@@ -18,17 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: title,
     description: t('project_description'),
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${locale}/${slug}`,
-      languages: {
-        'pt': `https://www.leonardoferreirr.com.br/pt/${slug}`,
-        'en': `https://www.leonardoferreirr.com.br/en/${slug}`,
-        'es': `https://www.leonardoferreirr.com.br/es/${slug}`,
-      },
+      canonical: siteUrl(locale, `/${slug}`),
+      languages: languageAlternates(`/${slug}`),
     },
     openGraph: {
       title: title,
       description: t('project_description'),
-      url: `https://www.leonardoferreirr.com.br/${locale}/${slug}`,
+      url: siteUrl(locale, `/${slug}`),
     }
   };
 }

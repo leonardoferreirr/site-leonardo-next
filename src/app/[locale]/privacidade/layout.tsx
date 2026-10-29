@@ -1,3 +1,4 @@
+import { languageAlternates, siteUrl } from '@/routing';
 import type { Metadata } from 'next';
 
 // canonical própria: sem isto a página herdava a da home e o Google a tratava como cópia dela
@@ -6,12 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const path = `/privacidade`;
   return {
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${p.locale}${path}`,
-      languages: {
-        pt: `https://www.leonardoferreirr.com.br/pt${path}`,
-        en: `https://www.leonardoferreirr.com.br/en${path}`,
-        es: `https://www.leonardoferreirr.com.br/es${path}`,
-      },
+      canonical: siteUrl(p.locale, path),
+      languages: languageAlternates(path),
     },
   };
 }

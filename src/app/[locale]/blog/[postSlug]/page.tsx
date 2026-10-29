@@ -4,7 +4,7 @@ import { notFound, useRouter } from 'next/navigation';
 import { use } from 'react';
 import { blogPosts } from '@/data/blogPosts';
 import Header from '@/components/Header';
-import { Link } from '@/routing';
+import { Link, siteUrl } from '@/routing';
 import SchemaMarkup from '@/components/seo/SchemaMarkup';
 
 export default function BlogPostPage({ params }: { params: Promise<{ locale: string; postSlug: string }> }) {
@@ -18,11 +18,11 @@ export default function BlogPostPage({ params }: { params: Promise<{ locale: str
     '@type': 'Article',
     headline: post.title,
     description: post.description,
-    author: { '@type': 'Person', name: post.author, url: `https://www.leonardoferreirr.com.br/${locale}` },
+    author: { '@type': 'Person', name: post.author, url: siteUrl(locale) },
     publisher: { '@type': 'Organization', name: 'Leonardo Ferreira Design', url: 'https://www.leonardoferreirr.com.br' },
     datePublished: post.date,
     dateModified: post.dateModified,
-    url: `https://www.leonardoferreirr.com.br/${locale}/blog/${post.slug}`,
+    url: siteUrl(locale, `/blog/${post.slug}`),
     inLanguage: locale === 'pt' ? 'pt-BR' : locale,
   };
 

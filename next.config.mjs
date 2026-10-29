@@ -13,8 +13,11 @@ const nextConfig = {
   // porque o link antigo está nos e-mails frios já enviados
   async redirects() {
     return [
-      { source: '/portfolio', destination: '/pt#sites', permanent: true },
-      { source: '/portfolio/:path*', destination: '/pt#sites', permanent: true },
+      { source: '/portfolio', destination: '/#sites', permanent: true },
+      { source: '/portfolio/:path*', destination: '/#sites', permanent: true },
+      // português perdeu o /pt (29/10/2026): link antigo vai para o endereço sem prefixo
+      { source: '/pt', destination: '/', permanent: true },
+      { source: '/pt/:path*', destination: '/:path*', permanent: true },
     ];
   },
   // Landing do CRM servida como página estática em /crm (public/crm/index.html).

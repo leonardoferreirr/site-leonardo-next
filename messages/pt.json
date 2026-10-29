@@ -245,7 +245,9 @@
     "orcamento_title": "Solicite um Orçamento",
     "orcamento_description": "Pronto para inovar? Entre em contato, conte mais sobre o seu projeto e solicite um orçamento sob medida para alavancar a presença digital da sua marca.",
     "project_title_prefix": "Case de Sucesso",
-    "project_description": "Explore os detalhes e o processo criativo deste projeto de UI/UX Design desenvolvido por Leonardo Ferreira, focado em estética apurada e performance excepcional."
+    "project_description": "Explore os detalhes e o processo criativo deste projeto de UI/UX Design desenvolvido por Leonardo Ferreira, focado em estética apurada e performance excepcional.",
+    "clients_title": "Marcas que confiam no meu trabalho",
+    "clients_description": "Empresas que já contrataram o Leonardo Ferreira para sites, sistemas, identidade visual, social media e vídeo."
   },
   "Pillars": {
     "tag": "Serviços",
@@ -386,6 +388,12 @@
       "rights": "Todos os direitos reservados.",
       "privacy": "Privacidade",
       "top": "Topo"
+    },
+    "clients": {
+      "title": "Marcas que confiam no meu trabalho",
+      "more": "Ver mais",
+      "back": "Voltar",
+      "count": "{n} marcas, em ordem alfabética"
     }
   }
 }

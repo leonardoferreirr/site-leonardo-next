@@ -1,0 +1,455 @@
+[
+ {
+  "slug": "mestmidia",
+  "nome": "MestMidia",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "rax-seguros",
+  "nome": "RAX Seguros",
+  "servicos": [
+   "identidade",
+   "social"
+  ]
+ },
+ {
+  "slug": "wigga",
+  "nome": "Wigga",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "buenas-taqueria",
+  "nome": "¡Buenas! Taquería",
+  "servicos": [
+   "sites",
+   "social"
+  ]
+ },
+ {
+  "slug": "biothera",
+  "nome": "Biothera",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "xwolves",
+  "nome": "X Wolves",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "p1-marketing",
+  "nome": "P1 Marketing",
+  "servicos": [
+   "social",
+   "video"
+  ]
+ },
+ {
+  "slug": "agata",
+  "nome": "Agata Soldato",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "mademax",
+  "nome": "MADEMAX",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "dispensados",
+  "nome": "Dispensados",
+  "servicos": [
+   "identidade",
+   "social",
+   "video"
+  ]
+ },
+ {
+  "slug": "vessar",
+  "nome": "Vessar",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "mia-compra",
+  "nome": "Mia Compra",
+  "servicos": [
+   "sites",
+   "sistemas"
+  ]
+ },
+ {
+  "slug": "body-tonic",
+  "nome": "Body Tonic",
+  "servicos": [
+   "sistemas"
+  ]
+ },
+ {
+  "slug": "nalu-poke",
+  "nome": "Nalu Poke",
+  "servicos": [
+   "sites",
+   "social"
+  ]
+ },
+ {
+  "slug": "hello-bim",
+  "nome": "Hello BIM",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "al-revestimentos",
+  "nome": "AL Revestimentos",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "klinycs",
+  "nome": "Klinycs",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "digital-tk",
+  "nome": "Digital TK",
+  "servicos": [
+   "sites",
+   "social"
+  ]
+ },
+ {
+  "slug": "remach-capital",
+  "nome": "Remach Capital",
+  "servicos": [
+   "sites",
+   "identidade"
+  ]
+ },
+ {
+  "slug": "forset",
+  "nome": "Forset",
+  "servicos": [
+   "sites",
+   "social"
+  ]
+ },
+ {
+  "slug": "nexa",
+  "nome": "NEXA.co",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "retro-em-campo",
+  "nome": "Retrô em Campo",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "bip-vale",
+  "nome": "BIP Vale",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "race-valley",
+  "nome": "Race Valley",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "divino-car",
+  "nome": "Divino Car",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "neuro-summit",
+  "nome": "Neuro Summit",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "the-toxic-land",
+  "nome": "The Toxic Land",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "proconsult",
+  "nome": "ProConsult",
+  "servicos": [
+   "sites",
+   "identidade"
+  ]
+ },
+ {
+  "slug": "brn-streaming",
+  "nome": "BRN Streaming",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "poly-santos",
+  "nome": "Poly Santos",
+  "servicos": [
+   "identidade"
+  ]
+ },
+ {
+  "slug": "onlife",
+  "nome": "OnLife",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "calaza-doreto",
+  "nome": "Calaza Doreto",
+  "servicos": [
+   "sistemas"
+  ]
+ },
+ {
+  "slug": "gcarneiro",
+  "nome": "Gabriel Carneiro",
+  "servicos": [
+   "sites",
+   "social"
+  ]
+ },
+ {
+  "slug": "espaco-crescer",
+  "nome": "Espaço Crescer",
+  "servicos": [
+   "sistemas"
+  ]
+ },
+ {
+  "slug": "lizzy-prime",
+  "nome": "Lizzy Prime",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "pedras-do-brasil",
+  "nome": "Pedras do Brasil",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "the-auad-method",
+  "nome": "Auad Hair Restoration",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "aeroprev",
+  "nome": "AeroPrev",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "invista-capital",
+  "nome": "Invista Capital",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "tadex",
+  "nome": "Tadex",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "iiot",
+  "nome": "IIOT Ortopedia",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "elisangela-selau",
+  "nome": "Elisângela Selau",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "vougue-festas",
+  "nome": "Vougue Festas",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "fino-acabamento",
+  "nome": "Fino Acabamento",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "gervasio-marmores",
+  "nome": "Gervásio Mármores",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "paulani",
+  "nome": "Paulani",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "toque-e-retoque",
+  "nome": "Toque & Retoque",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "constru-facil",
+  "nome": "Constru Fácil",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "pedras-decorativas",
+  "nome": "Pedras Decorativas",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "canopus",
+  "nome": "Canopus",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "sensorial-moove",
+  "nome": "Sensorial",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "clau-carvalho",
+  "nome": "Cláudia Carvalho",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "clinica-tempora",
+  "nome": "Têmpora",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "neuromov",
+  "nome": "Neuromov",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "miami-haus",
+  "nome": "Miami Haus",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "casa-design",
+  "nome": "Casa Design",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "cts-construction",
+  "nome": "CTS Construction",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "ld-services",
+  "nome": "LD Services",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "united-way",
+  "nome": "United Way",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "blck-belt",
+  "nome": "BLCK BELT",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "torofila",
+  "nome": "Torofila",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "d7-home",
+  "nome": "D7 Home",
+  "servicos": [
+   "sites"
+  ]
+ },
+ {
+  "slug": "dedetizacao-raio-x",
+  "nome": "Dedetização Raio X",
+  "servicos": [
+   "sites"
+  ]
+ }
+]

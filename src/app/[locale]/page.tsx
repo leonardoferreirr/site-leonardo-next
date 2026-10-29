@@ -4,6 +4,7 @@ import './home.css';
 import Header from '@/components/Header';
 import CodeField from '@/components/CodeField';
 import Hero from '@/components/v2/Hero';
+import ClientsMarquee from '@/components/v2/ClientsMarquee';
 import SubNav from '@/components/v2/SubNav';
 import SitesSection from '@/components/v2/SitesSection';
 import SystemsSection from '@/components/v2/SystemsSection';
@@ -23,6 +24,7 @@ export default function Home() {
       <Header />
       <main className="v2">
         <Hero />
+        <ClientsMarquee />
         <SubNav />
         <SitesSection />
         <SystemsSection />

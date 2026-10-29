@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { routing } from '@/routing';
+import { languageAlternates, routing, siteUrl } from '@/routing';
 import React from 'react';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -16,17 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('orcamento_title'),
     description: t('orcamento_description'),
     alternates: {
-      canonical: `https://www.leonardoferreirr.com.br/${locale}/orcamento`,
-      languages: {
-        'pt': 'https://www.leonardoferreirr.com.br/pt/orcamento',
-        'en': 'https://www.leonardoferreirr.com.br/en/orcamento',
-        'es': 'https://www.leonardoferreirr.com.br/es/orcamento',
-      },
+      canonical: siteUrl(locale, '/orcamento'),
+      languages: languageAlternates('/orcamento'),
     },
     openGraph: {
       title: t('orcamento_title'),
       description: t('orcamento_description'),
-      url: `https://www.leonardoferreirr.com.br/${locale}/orcamento`,
+      url: siteUrl(locale, '/orcamento'),
     }
   };
 }

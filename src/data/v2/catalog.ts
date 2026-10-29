@@ -69,7 +69,7 @@ export const SITES: Site[] = [
   { slug: 'cazetv', title: 'CazéTV', segment: { pt: 'Canal de esportes no YouTube', en: 'Sports channel on YouTube', es: 'Canal de deportes en YouTube' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://cazetvconcept.vercel.app/' },
   { slug: 'mestmidia', title: 'MestMidia', segment: { pt: 'Agência de tráfego pago', en: 'Paid ads agency', es: 'Agencia de tráfico pago' }, kind: 'institucional', stack: 'Babylon.js + Vite', url: 'https://sitemestmidia.vercel.app/' },
   { slug: 'xwolves', title: 'X Wolves', segment: { pt: 'Consultoria TOTVS', en: 'TOTVS consulting', es: 'Consultoría TOTVS' }, kind: 'institucional', stack: S.three, url: 'https://xwolves.vercel.app/' },
-  { slug: 'buenas-taqueria', title: '¡Buenas! Taquería', segment: { pt: 'Taquería em Los Angeles', en: 'Taqueria in Los Angeles', es: 'Taquería en Los Ángeles' }, kind: 'conceito', stack: 'Three.js + GSAP', url: 'https://buenastaqueria.vercel.app/' },
+  { slug: 'buenas-taqueria', title: '¡Buenas! Taquería', segment: { pt: 'Taquería em Los Angeles', en: 'Taqueria in Los Angeles', es: 'Taquería en Los Ángeles' }, kind: 'institucional', stack: 'Three.js + GSAP', url: 'https://buenastaqueria.vercel.app/' },
   { slug: 'wigga', title: 'Wigga', segment: { pt: 'Esquadrias de PVC', en: 'PVC windows and doors', es: 'Carpintería de PVC' }, kind: 'landing', stack: S.static, url: 'https://wiggaesquadrias.vercel.app/' },
   { slug: 'al-revestimentos', title: 'AL Revestimentos', segment: { pt: 'Pedra natural de alto padrão', en: 'High-end natural stone', es: 'Piedra natural de alto nivel' }, kind: 'landing', stack: S.static, url: 'https://www.alrevestimentosexclusivos.com.br/' },
   { slug: 'vessar', title: 'Vessar', segment: { pt: 'Valores mobiliários', en: 'Securities', es: 'Valores mobiliarios' }, kind: 'institucional', stack: S.static, url: 'https://vessarlandingpage.vercel.app/' },
@@ -82,7 +82,7 @@ export const SITES: Site[] = [
   { slug: 'pedras-decorativas', title: 'Pedras Decorativas', segment: { pt: 'Pedras decorativas', en: 'Decorative stones', es: 'Piedras decorativas' }, kind: 'landing', stack: S.static, url: 'https://petranobile.vercel.app/' },
   { slug: 'toque-e-retoque', title: 'Toque & Retoque', segment: { pt: 'Acabamentos e porcelanato', en: 'Finishes and porcelain', es: 'Acabados y porcelanato' }, kind: 'landing', stack: S.static, url: 'https://toqueeretoque.vercel.app/' },
   { slug: 'constru-facil', title: 'Constru Fácil', segment: { pt: 'Pedras e churrasqueiras', en: 'Stones and barbecue grills', es: 'Piedras y parrillas' }, kind: 'landing', stack: S.static, url: 'https://construfacilitu.vercel.app/' },
-  { slug: 'iiot', title: 'IIOT', segment: { pt: 'Internet industrial', en: 'Industrial IoT', es: 'IoT industrial' }, kind: 'institucional', stack: S.static, url: 'https://iiotlandingpage.vercel.app/' },
+  { slug: 'iiot', title: 'IIOT', segment: { pt: 'Ortopedia e traumatologia', en: 'Orthopedics and traumatology', es: 'Ortopedia y traumatología' }, kind: 'institucional', stack: S.static, url: 'https://iiotlandingpage.vercel.app/' },
   { slug: 'agata-aesthetics', title: 'Agata Medical Aesthetics', segment: { pt: 'Estética médica', en: 'Medical aesthetics', es: 'Medicina estética' }, kind: 'institucional', stack: S.static, url: 'https://agatasoldato.vercel.app/' },
   { slug: 'elisangela-selau', title: 'Elisângela Selau', segment: { pt: 'Arquitetura', en: 'Architecture', es: 'Arquitectura' }, kind: 'landing', stack: S.static, url: 'https://elisangelaselau.vercel.app/' },
   { slug: 'vougue-festas', title: 'Vougue Festas', segment: { pt: 'Casa de festas', en: 'Event venue', es: 'Salón de fiestas' }, kind: 'landing', stack: S.static, url: 'https://vouguefestas.vercel.app/' },
@@ -139,6 +139,7 @@ export type System = {
   stack: string;
   screens: Screen[];
   soon?: boolean;
+  hidden?: boolean; // fica no catálogo, mas fora da vitrine
 };
 
 const tab = (pt: string, en: string, es: string): L => ({ pt, en, es });
@@ -235,6 +236,7 @@ export const SYSTEMS: System[] = [
     ),
     stack: 'Next.js + Supabase',
     screens: [],
+    hidden: true, // ainda não existe (29/10): volta quando estiver pronto
   },
 ];
 

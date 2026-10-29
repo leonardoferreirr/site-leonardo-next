@@ -1,78 +1,79 @@
-// components/seo/GlobalSchemas.tsx
-// Adicione este componente no app/[locale]/layout.tsx para injetar schemas globais em todas as páginas
+// Schemas globais (entram no <head> de todas as páginas pelo app/[locale]/layout.tsx).
+// Posicionamento de out/2026: sites, sistemas, identidade visual, social, vídeo e tráfego.
+// Contato só pelo WhatsApp (pedido de 19/10), por isso não há e-mail aqui.
 
-import SchemaMarkup from './SchemaMarkup'
+import SchemaMarkup from './SchemaMarkup';
+import { SERVICES } from '@/data/v2/catalog';
+
+const BASE = 'https://www.leonardoferreirr.com.br';
+const WHATSAPP = '+55 34 93618-0691';
 
 export default function GlobalSchemas() {
-  const organizationSchema = {
+  const grafo = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Leonardo Ferreira — Design UI/UX',
-    url: 'https://www.leonardoferreirr.com.br',
-    logo: 'https://www.leonardoferreirr.com.br/assets/profile.png',
-    description:
-      'Especialista em design estratégico e construção de marcas com mais de 5 anos de experiência. Criação de identidade visual, logotipos e brandbooks para empresas de todos os segmentos.',
-    email: 'leonardoferreirrs@gmail.com',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'BR',
-    },
-    sameAs: [
-      // Adicione seus perfis sociais aqui quando disponíveis
-      // 'https://linkedin.com/in/...',
-      // 'https://instagram.com/...',
-      // 'https://behance.net/...',
+    '@graph': [
+      {
+        '@type': 'Person',
+        '@id': `${BASE}/#leonardo`,
+        name: 'Leonardo Ferreira',
+        jobTitle: 'Designer e desenvolvedor de sites e sistemas',
+        description:
+          'Leonardo Ferreira faz sites, sistemas sob medida, identidade visual, social media e vídeo para empresas que querem parecer grandes desde o primeiro contato.',
+        url: `${BASE}/`,
+        image: `${BASE}/assets/profile.png`,
+        telephone: WHATSAPP,
+        nationality: { '@type': 'Country', name: 'Brasil' },
+        knowsAbout: [
+          'Sites e landing pages',
+          'Sistemas sob medida e CRM',
+          'Identidade visual e branding',
+          'Social media',
+          'Edição de vídeo',
+          'Tráfego pago (Meta Ads e Google Ads)',
+          'Next.js',
+          'React',
+        ],
+        worksFor: { '@id': `${BASE}/#negocio` },
+      },
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${BASE}/#negocio`,
+        name: 'Leonardo Ferreira',
+        url: BASE,
+        logo: `${BASE}/assets/v2/logo-caricatura.webp`,
+        image: `${BASE}/assets/profile.png`,
+        description:
+          'Sites, sistemas sob medida, identidade visual, social media, vídeo e tráfego pago, do rascunho ao ar, em português, inglês e espanhol.',
+        telephone: WHATSAPP,
+        address: { '@type': 'PostalAddress', addressCountry: 'BR' },
+        areaServed: ['BR', 'US', 'ES'],
+        founder: { '@id': `${BASE}/#leonardo` },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'sales',
+          telephone: WHATSAPP,
+          url: 'https://wa.me/5534936180691',
+          availableLanguage: ['pt-BR', 'en', 'es'],
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Serviços',
+          itemListElement: SERVICES.map((s) => ({
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: s.title.pt, description: s.desc.pt },
+          })),
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE}/#site`,
+        name: 'Leonardo Ferreira',
+        url: BASE,
+        inLanguage: ['pt-BR', 'en', 'es'],
+        publisher: { '@id': `${BASE}/#negocio` },
+      },
     ],
-    founder: {
-      '@type': 'Person',
-      name: 'Leonardo Ferreira',
-    },
-  }
+  };
 
-  const personSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Leonardo Ferreira',
-    jobTitle: 'Designer UI/UX e Especialista em Identidade Visual',
-    description:
-      'Especialista em design estratégico com mais de 5 anos de experiência na criação de identidades visuais de alto impacto para empresas.',
-    url: 'https://www.leonardoferreirr.com.br/pt',
-    email: 'leonardoferreirrs@gmail.com',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Leonardo Ferreira — Design UI/UX',
-    },
-    knowsAbout: [
-      'Identidade Visual',
-      'Design de Logotipo',
-      'Branding',
-      'Design UI/UX',
-      'Desenvolvimento Web',
-      'Brandbook',
-      'Manual de Marca',
-    ],
-  }
-
-  const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Leonardo Ferreira — Design UI/UX',
-    url: 'https://www.leonardoferreirr.com.br',
-    description:
-      'Portfólio e serviços de design estratégico, identidade visual e desenvolvimento web de Leonardo Ferreira.',
-    inLanguage: ['pt-BR', 'en', 'es'],
-    potentialAction: {
-      '@type': 'ContactAction',
-      target: 'https://www.leonardoferreirr.com.br/pt/orcamento',
-      name: 'Solicitar Orçamento',
-    },
-  }
-
-  return (
-    <>
-      <SchemaMarkup schema={organizationSchema} />
-      <SchemaMarkup schema={personSchema} />
-      <SchemaMarkup schema={websiteSchema} />
-    </>
-  )
+  return <SchemaMarkup schema={grafo} />;
 }
