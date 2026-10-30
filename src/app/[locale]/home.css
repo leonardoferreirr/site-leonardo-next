@@ -603,18 +603,22 @@ html[data-hdr='off'] .v2-subnav {
   top: 14px;
 }
 
-/* celular: ícones grandes em 3 x 2; grudado, volta a ser a barra que rola de lado */
+/* celular: ícones grandes 3 por linha, última linha centralizada; grudado, volta a ser a barra que rola de lado */
 @media (max-width: 860px) {
   .v2-subnav {
     height: 176px;
   }
 
   .v2-subnav:not(.is-stuck) .v2-subnav__in {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
     width: calc(100vw - 32px);
     max-width: 420px;
+  }
+
+  .v2-subnav:not(.is-stuck) a {
+    flex: 0 0 calc((100% - 16px) / 3);
   }
 
   .v2-subnav a {

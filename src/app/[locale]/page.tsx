@@ -9,7 +9,7 @@ import SubNav from '@/components/v2/SubNav';
 import SitesSection from '@/components/v2/SitesSection';
 import SystemsSection from '@/components/v2/SystemsSection';
 import ServicesSection from '@/components/v2/ServicesSection';
-import { IdentitySection, LabSection, SocialSection, VideoSection } from '@/components/v2/WorkSections';
+import { IdentitySection, SocialSection, VideoSection } from '@/components/v2/WorkSections';
 import { AboutSection, ContactSection } from '@/components/v2/AboutContact';
 import { useRevealAll } from '@/components/v2/hooks';
 
@@ -32,7 +32,7 @@ export default function Home() {
         <IdentitySection />
         <SocialSection />
         <VideoSection />
-        <LabSection />
+        {/* Lab oculto (29/10): o LabSection e os dados em media.ts ficam, para voltar quando tiver mais peças */}
         <AboutSection />
         <ContactSection />
       </main>

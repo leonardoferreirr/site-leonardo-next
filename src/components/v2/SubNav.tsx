@@ -5,7 +5,8 @@ import { useLocale } from 'next-intl';
 import PixelIcon from './PixelIcon';
 import { CATEGORY_LABEL, tr, type Category } from '@/data/v2/catalog';
 
-const ORDER: Category[] = ['sites', 'sistemas', 'identidade', 'social', 'video', 'lab'];
+// sem o Lab desde 29/10 (seção oculta na home)
+const ORDER: Category[] = ['sites', 'sistemas', 'identidade', 'social', 'video'];
 
 // ícones grandes logo depois do hero; ao grudar no topo, encolhem e viram a barra de categorias
 export default function SubNav() {
